@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://bd03o2lio4k6m"]
+
+[ext_resource type="Script" uid="uid://dt8os701xe3xf" path="res://scripts/game_manager.gd" id="1_oo155"]
+[ext_resource type="Script" uid="uid://dpd0wkimog5pm" path="res://scripts/global_effect_manager/global_effect_manager.gd" id="2_eaq8r"]
+[ext_resource type="Script" uid="uid://8752cp1jpjry" path="res://scripts/global_effect_manager/music_manager.gd" id="3_ternb"]
+[ext_resource type="Script" uid="uid://dxorshs2ji7b3" path="res://scripts/global_effect_manager/sound_manager.gd" id="4_q8mjp"]
+[ext_resource type="Script" uid="uid://dftjfdxfckpq4" path="res://scripts/main_menu/main_menu.gd" id="5_eaq8r"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_oo155")
+
+[node name="GlobalEffectManager" type="Node" parent="."]
+script = ExtResource("2_eaq8r")
+
+[node name="MusicManager" type="Node" parent="GlobalEffectManager"]
+script = ExtResource("3_ternb")
+
+[node name="SoundManager" type="Node" parent="GlobalEffectManager"]
+script = ExtResource("4_q8mjp")
+
+[node name="MainMenu" type="Node2D" parent="."]
+script = ExtResource("5_eaq8r")
