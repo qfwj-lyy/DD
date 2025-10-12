@@ -7,7 +7,7 @@ var has_music : bool = true
 
 # 默认的随机音乐播放器所使用的参数
 var music_names = [
-	"chu_ji__normal"
+	
 ]
 var last_music_name : String
 
@@ -59,5 +59,6 @@ func random_music_player():
 		await get_tree().create_timer(1).timeout
 		
 func initialize() -> void:
-	play_music("yu_sheng_can_xiang__open_game")
-	random_music_player()
+	#play_music("yu_sheng_can_xiang__open_game")
+	#random_music_player()
+	pass

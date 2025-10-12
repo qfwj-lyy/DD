@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ProjectWeb" load_steps=4 format=3 uid="uid://nk4hgf3up1el"]
+
+[ext_resource type="Script" uid="uid://7a2lp0yd04fg" path="res://scripts/computer_scene/project.gd" id="1_025mu"]
+[ext_resource type="Resource" uid="uid://cri0rjnebj6oi" path="res://assets/projects/project_0.tres" id="2_20a71"]
+[ext_resource type="Script" uid="uid://ofcmgwxm3mbm" path="res://scripts/computer_scene/project_web.gd" id="2_j83cn"]
+
+[resource]
+script = ExtResource("2_j83cn")
+projects = Array[ExtResource("1_025mu")]([ExtResource("2_20a71")])
+metadata/_custom_type_script = "uid://ofcmgwxm3mbm"

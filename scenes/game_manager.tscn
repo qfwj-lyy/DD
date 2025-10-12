@@ -1,10 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://bd03o2lio4k6m"]
+[gd_scene load_steps=14 format=3 uid="uid://bd03o2lio4k6m"]
 
 [ext_resource type="Script" uid="uid://dt8os701xe3xf" path="res://scripts/game_manager.gd" id="1_oo155"]
 [ext_resource type="Script" uid="uid://dpd0wkimog5pm" path="res://scripts/global_effect_manager/global_effect_manager.gd" id="2_eaq8r"]
 [ext_resource type="Script" uid="uid://8752cp1jpjry" path="res://scripts/global_effect_manager/music_manager.gd" id="3_ternb"]
 [ext_resource type="Script" uid="uid://dxorshs2ji7b3" path="res://scripts/global_effect_manager/sound_manager.gd" id="4_q8mjp"]
 [ext_resource type="Script" uid="uid://dftjfdxfckpq4" path="res://scripts/main_menu/main_menu.gd" id="5_eaq8r"]
+[ext_resource type="Script" uid="uid://cyxxmhvja0apb" path="res://scripts/computer_scene/computer_scene.gd" id="6_q8mjp"]
+[ext_resource type="Script" uid="uid://onqn7vb0nepd" path="res://scripts/computer_scene/calendar_scene.gd" id="7_jdad8"]
+[ext_resource type="Script" uid="uid://bm7s8ivf8kbmv" path="res://scripts/computer_scene/property_manager.gd" id="8_jdad8"]
+[ext_resource type="Script" uid="uid://1rt3osc1d8k" path="res://scripts/computer_scene/card.gd" id="8_k4jhu"]
+[ext_resource type="Texture2D" uid="uid://caxcl6cx8u4by" path="res://assets/cards/wang_mang.jpg" id="9_0rse5"]
+[ext_resource type="Script" uid="uid://ce08b43y0bjxs" path="res://scripts/computer_scene/browser_scene.gd" id="11_aonbx"]
+[ext_resource type="Script" uid="uid://d3j87kqt0wpi6" path="res://scripts/computer_scene/project_v_box.gd" id="12_aonbx"]
+[ext_resource type="Texture2D" uid="uid://c581trk6qm57j" path="res://assets/computer_scene/desktop_browser_icon.jpg" id="13_lcbjr"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_oo155")
@@ -18,5 +26,186 @@ script = ExtResource("3_ternb")
 [node name="SoundManager" type="Node" parent="GlobalEffectManager"]
 script = ExtResource("4_q8mjp")
 
-[node name="MainMenu" type="Node2D" parent="."]
+[node name="MainMenu" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("5_eaq8r")
+
+[node name="ComputerScene" type="CanvasLayer" parent="."]
+script = ExtResource("6_q8mjp")
+
+[node name="CardStore" type="Node2D" parent="ComputerScene"]
+
+[node name="CalendarScene" type="Control" parent="ComputerScene" node_paths=PackedStringArray("computer_scene", "debug_hand", "activity_hand")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_jdad8")
+computer_scene = NodePath("..")
+debug_hand = NodePath("DebugHand")
+activity_hand = NodePath("ActivityHand")
+
+[node name="DebugHand" type="Control" parent="ComputerScene/CalendarScene"]
+anchors_preset = 0
+offset_left = 356.0
+offset_top = 332.0
+offset_right = 891.0
+offset_bottom = 423.0
+
+[node name="Card" type="Control" parent="ComputerScene/CalendarScene/DebugHand"]
+anchors_preset = 0
+offset_left = 150.0
+offset_top = -104.0
+offset_right = 285.0
+offset_bottom = 96.0
+script = ExtResource("8_k4jhu")
+
+[node name="TextureRect" type="TextureRect" parent="ComputerScene/CalendarScene/DebugHand/Card"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_0rse5")
+expand_mode = 1
+
+[node name="ActivityHand" type="Control" parent="ComputerScene/CalendarScene"]
+anchors_preset = 0
+offset_left = 328.0
+offset_top = 512.0
+offset_right = 953.0
+offset_bottom = 614.0
+
+[node name="ExecutePlanButton" type="Button" parent="ComputerScene/CalendarScene"]
+layout_mode = 0
+offset_left = 752.0
+offset_top = 437.0
+offset_right = 824.0
+offset_bottom = 468.0
+text = "执行计划"
+
+[node name="PropertyManager" type="Panel" parent="ComputerScene" node_paths=PackedStringArray("money_label", "mood_label", "skill_label", "project_progress_bar", "bug_amount_bar")]
+offset_left = 937.0
+offset_top = 36.0
+offset_right = 1244.0
+offset_bottom = 191.0
+script = ExtResource("8_jdad8")
+money_label = NodePath("MoneyLabel")
+mood_label = NodePath("MoodLabel")
+skill_label = NodePath("SkillLabel")
+project_progress_bar = NodePath("ProjectProgressBar")
+bug_amount_bar = NodePath("BugAmountBar")
+
+[node name="ProjectProgressBar" type="ProgressBar" parent="ComputerScene/PropertyManager"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 25.0
+offset_right = 248.0
+offset_bottom = 52.0
+
+[node name="BugAmountBar" type="ProgressBar" parent="ComputerScene/PropertyManager"]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 59.0
+offset_right = 250.0
+offset_bottom = 86.0
+
+[node name="ProjectProgressLabel" type="Label" parent="ComputerScene/PropertyManager"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 25.0
+offset_right = 96.0
+offset_bottom = 48.0
+text = "项目进度"
+
+[node name="BugAmountLabel" type="Label" parent="ComputerScene/PropertyManager"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 61.0
+offset_right = 97.0
+offset_bottom = 84.0
+text = "bug数量"
+
+[node name="MoneyLabel" type="Label" parent="ComputerScene/PropertyManager"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 116.0
+offset_right = 88.0
+offset_bottom = 139.0
+text = "资金："
+
+[node name="MoodLabel" type="Label" parent="ComputerScene/PropertyManager"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 116.0
+offset_right = 168.0
+offset_bottom = 139.0
+text = "心情："
+
+[node name="SkillLabel" type="Label" parent="ComputerScene/PropertyManager"]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 118.0
+offset_right = 249.0
+offset_bottom = 141.0
+text = "技术："
+
+[node name="BrowserScene" type="Control" parent="ComputerScene"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11_aonbx")
+
+[node name="URLEdit" type="LineEdit" parent="ComputerScene/BrowserScene"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 129.0
+offset_right = 770.0
+offset_bottom = 160.0
+
+[node name="Button" type="Button" parent="ComputerScene/BrowserScene"]
+layout_mode = 0
+offset_left = 257.0
+offset_top = 194.0
+offset_right = 393.0
+offset_bottom = 225.0
+text = "某收藏的外包网址"
+
+[node name="ExitBrowser" type="Button" parent="ComputerScene/BrowserScene"]
+layout_mode = 0
+offset_left = 776.0
+offset_top = 129.0
+offset_right = 864.0
+offset_bottom = 160.0
+text = "退出浏览器"
+
+[node name="ProjectVBox" type="VBoxContainer" parent="ComputerScene/BrowserScene"]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 269.0
+offset_right = 888.0
+offset_bottom = 694.0
+theme_override_constants/separation = 0
+script = ExtResource("12_aonbx")
+
+[node name="OpenBrowser" type="Button" parent="ComputerScene"]
+offset_left = 63.0
+offset_top = 75.0
+offset_right = 143.0
+offset_bottom = 156.0
+icon = ExtResource("13_lcbjr")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="ComputerScene/CalendarScene/ExecutePlanButton" to="ComputerScene/CalendarScene" method="_on_execute_plan_button_pressed"]
+[connection signal="text_submitted" from="ComputerScene/BrowserScene/URLEdit" to="ComputerScene/BrowserScene" method="_on_url_edit_text_submitted"]
+[connection signal="pressed" from="ComputerScene/BrowserScene/Button" to="ComputerScene/BrowserScene" method="_on_button_pressed"]
+[connection signal="pressed" from="ComputerScene/BrowserScene/ExitBrowser" to="ComputerScene/BrowserScene" method="_on_exit_browser_pressed"]
+[connection signal="pressed" from="ComputerScene/OpenBrowser" to="ComputerScene/BrowserScene" method="_on_open_browser_pressed"]

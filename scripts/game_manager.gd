@@ -39,7 +39,7 @@ func read_data_file_and_initialize() -> void:
 # 整个软件的开始
 func _ready() -> void:
 	print("这是测试版。正式版需要修改存储地址")
-	current_scene = $MainScene
+	current_scene = $MainMenu
 	G.M = self
 	inspect_data_file()
 	read_data_file_and_initialize()

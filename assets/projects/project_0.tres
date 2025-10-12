@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Project" load_steps=2 format=3 uid="uid://cri0rjnebj6oi"]
+
+[ext_resource type="Script" uid="uid://7a2lp0yd04fg" path="res://scripts/computer_scene/project.gd" id="1_gt65m"]
+
+[resource]
+script = ExtResource("1_gt65m")
+project_name = "《Debug小能手》游戏开发"
+initial_progress = 10.0
+initial_bug_amount = 20.0
+bug_amount_limit = 200.0
+initial_money = 50000.0
+initial_mood = 60.0
+initial_skill = 15.0
+metadata/_custom_type_script = "uid://7a2lp0yd04fg"
