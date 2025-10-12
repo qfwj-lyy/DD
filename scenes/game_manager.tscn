@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bd03o2lio4k6m"]
+[gd_scene load_steps=17 format=3 uid="uid://bd03o2lio4k6m"]
 
 [ext_resource type="Script" uid="uid://dt8os701xe3xf" path="res://scripts/game_manager.gd" id="1_oo155"]
 [ext_resource type="Script" uid="uid://dpd0wkimog5pm" path="res://scripts/global_effect_manager/global_effect_manager.gd" id="2_eaq8r"]
@@ -11,8 +11,11 @@
 [ext_resource type="Script" uid="uid://1rt3osc1d8k" path="res://scripts/computer_scene/card.gd" id="8_k4jhu"]
 [ext_resource type="Texture2D" uid="uid://caxcl6cx8u4by" path="res://assets/cards/wang_mang.jpg" id="9_0rse5"]
 [ext_resource type="Script" uid="uid://ce08b43y0bjxs" path="res://scripts/computer_scene/browser_scene.gd" id="11_aonbx"]
+[ext_resource type="Script" uid="uid://cannks0lt5d1e" path="res://scripts/computer_scene/global_buffs.gd" id="11_cjvif"]
 [ext_resource type="Script" uid="uid://d3j87kqt0wpi6" path="res://scripts/computer_scene/project_v_box.gd" id="12_aonbx"]
-[ext_resource type="Texture2D" uid="uid://c581trk6qm57j" path="res://assets/computer_scene/desktop_browser_icon.jpg" id="13_lcbjr"]
+[ext_resource type="Script" uid="uid://dwhc1hbrg4em" path="res://scripts/computer_scene/buffs/buff.gd" id="12_ry0e6"]
+[ext_resource type="Texture2D" uid="uid://cfg2ihodiec08" path="res://assets/computer_scene/desktop_browser_icon.png" id="13_lcbjr"]
+[ext_resource type="Texture2D" uid="uid://bm5phhix34ag2" path="res://assets/computer_scene/desktop_setting_icon.png" id="14_30v7y"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_oo155")
@@ -27,8 +30,28 @@ script = ExtResource("3_ternb")
 script = ExtResource("4_q8mjp")
 
 [node name="MainMenu" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("5_eaq8r")
+
+[node name="OpenSetting" type="Button" parent="MainMenu"]
+offset_left = 471.0
+offset_top = 339.0
+offset_right = 543.0
+offset_bottom = 370.0
+text = "打开设置"
+
+[node name="BeginGame" type="Button" parent="MainMenu"]
+offset_left = 471.0
+offset_top = 260.0
+offset_right = 543.0
+offset_bottom = 291.0
+text = "开始游戏"
+
+[node name="ExitGame" type="Button" parent="MainMenu"]
+offset_left = 474.0
+offset_top = 424.0
+offset_right = 546.0
+offset_bottom = 455.0
+text = "退出游戏"
 
 [node name="ComputerScene" type="CanvasLayer" parent="."]
 script = ExtResource("6_q8mjp")
@@ -87,7 +110,7 @@ offset_right = 824.0
 offset_bottom = 468.0
 text = "执行计划"
 
-[node name="PropertyManager" type="Panel" parent="ComputerScene" node_paths=PackedStringArray("money_label", "mood_label", "skill_label", "project_progress_bar", "bug_amount_bar")]
+[node name="PropertyManager" type="Panel" parent="ComputerScene" node_paths=PackedStringArray("money_label", "mood_label", "skill_label", "project_progress_bar", "bug_amount_bar", "global_buffs")]
 offset_left = 937.0
 offset_top = 36.0
 offset_right = 1244.0
@@ -98,6 +121,7 @@ mood_label = NodePath("MoodLabel")
 skill_label = NodePath("SkillLabel")
 project_progress_bar = NodePath("ProjectProgressBar")
 bug_amount_bar = NodePath("BugAmountBar")
+global_buffs = NodePath("GlobalBuffs")
 
 [node name="ProjectProgressBar" type="ProgressBar" parent="ComputerScene/PropertyManager"]
 layout_mode = 0
@@ -153,6 +177,12 @@ offset_right = 249.0
 offset_bottom = 141.0
 text = "技术："
 
+[node name="GlobalBuffs" type="Node" parent="ComputerScene/PropertyManager"]
+script = ExtResource("11_cjvif")
+
+[node name="Buff" type="Node" parent="ComputerScene/PropertyManager/GlobalBuffs"]
+script = ExtResource("12_ry0e6")
+
 [node name="BrowserScene" type="Control" parent="ComputerScene"]
 layout_mode = 3
 anchors_preset = 15
@@ -199,13 +229,31 @@ offset_left = 63.0
 offset_top = 75.0
 offset_right = 143.0
 offset_bottom = 156.0
+text = "浏览器"
 icon = ExtResource("13_lcbjr")
 flat = true
 icon_alignment = 1
+vertical_icon_alignment = 0
 expand_icon = true
 
+[node name="OpenSetting" type="Button" parent="ComputerScene"]
+offset_left = 68.0
+offset_top = 155.0
+offset_right = 143.0
+offset_bottom = 245.0
+text = "设置"
+icon = ExtResource("14_30v7y")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[connection signal="pressed" from="MainMenu/OpenSetting" to="MainMenu" method="_on_open_setting_pressed"]
+[connection signal="pressed" from="MainMenu/BeginGame" to="MainMenu" method="_on_begin_game_pressed"]
+[connection signal="pressed" from="MainMenu/ExitGame" to="MainMenu" method="_on_exit_game_pressed"]
 [connection signal="pressed" from="ComputerScene/CalendarScene/ExecutePlanButton" to="ComputerScene/CalendarScene" method="_on_execute_plan_button_pressed"]
 [connection signal="text_submitted" from="ComputerScene/BrowserScene/URLEdit" to="ComputerScene/BrowserScene" method="_on_url_edit_text_submitted"]
 [connection signal="pressed" from="ComputerScene/BrowserScene/Button" to="ComputerScene/BrowserScene" method="_on_button_pressed"]
 [connection signal="pressed" from="ComputerScene/BrowserScene/ExitBrowser" to="ComputerScene/BrowserScene" method="_on_exit_browser_pressed"]
 [connection signal="pressed" from="ComputerScene/OpenBrowser" to="ComputerScene/BrowserScene" method="_on_open_browser_pressed"]
+[connection signal="pressed" from="ComputerScene/OpenSetting" to="ComputerScene" method="_on_open_setting_pressed"]

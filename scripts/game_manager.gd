@@ -1,4 +1,5 @@
 extends Node
+class_name GameManager
 
 @onready var global_effect_manager: Node = $GlobalEffectManager
 @onready var music_manager: Node = $GlobalEffectManager/MusicManager
@@ -52,7 +53,6 @@ func change_main_scene(new_scene , kill_last_scene : bool , change_M_scene_param
 	# 修改可见度
 	current_scene.visible = false
 	new_scene.visible = true
-	
 	if kill_last_scene:
 		if change_M_scene_parameter:
 			previous_scene = null

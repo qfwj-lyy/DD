@@ -1,0 +1,76 @@
+[gd_scene load_steps=2 format=3 uid="uid://gsy1cl8sxedn"]
+
+[ext_resource type="Script" uid="uid://c2q40brietbhw" path="res://scripts/setting_scene.gd" id="1_2bek4"]
+
+[node name="SettingScene" type="CanvasLayer" node_paths=PackedStringArray("music_scroll_bar", "sound_scroll_bar", "music_check_button", "sound_check_button")]
+script = ExtResource("1_2bek4")
+music_scroll_bar = NodePath("Panel/MusicScrollBar")
+sound_scroll_bar = NodePath("Panel/SoundScrollBar")
+music_check_button = NodePath("Panel/MusicCheckButton")
+sound_check_button = NodePath("Panel/SoundCheckButton")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MusicScrollBar" type="HScrollBar" parent="Panel"]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 248.0
+offset_right = 311.0
+offset_bottom = 256.0
+scale = Vector2(3, 3)
+
+[node name="SoundScrollBar" type="HScrollBar" parent="Panel"]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 309.0
+offset_right = 311.0
+offset_bottom = 317.0
+scale = Vector2(3, 3)
+
+[node name="MusicLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 245.0
+offset_right = 133.0
+offset_bottom = 280.0
+text = "音乐"
+
+[node name="SoundLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 302.0
+offset_right = 137.0
+offset_bottom = 337.0
+text = "音效"
+
+[node name="MusicCheckButton" type="CheckButton" parent="Panel"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 243.0
+offset_right = 187.0
+offset_bottom = 267.0
+scale = Vector2(2, 2)
+
+[node name="SoundCheckButton" type="CheckButton" parent="Panel"]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 295.0
+offset_right = 181.0
+offset_bottom = 319.0
+scale = Vector2(2, 2)
+
+[node name="ReturnButton" type="Button" parent="."]
+offset_right = 108.0
+offset_bottom = 43.0
+text = "返回游戏"
+
+[connection signal="value_changed" from="Panel/MusicScrollBar" to="." method="_on_music_scroll_bar_value_changed"]
+[connection signal="value_changed" from="Panel/SoundScrollBar" to="." method="_on_sound_scroll_bar_value_changed"]
+[connection signal="toggled" from="Panel/MusicCheckButton" to="." method="_on_music_check_button_toggled"]
+[connection signal="toggled" from="Panel/SoundCheckButton" to="." method="_on_sound_check_button_toggled"]
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

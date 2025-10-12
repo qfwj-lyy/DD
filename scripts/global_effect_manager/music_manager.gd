@@ -59,6 +59,6 @@ func random_music_player():
 		await get_tree().create_timer(1).timeout
 		
 func initialize() -> void:
-	#play_music("yu_sheng_can_xiang__open_game")
+	play_music("a")
 	#random_music_player()
 	pass

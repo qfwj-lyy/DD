@@ -12,6 +12,9 @@ var skill_amount : float
 @export var skill_label: Node
 @export var project_progress_bar: Node
 @export var bug_amount_bar: Node
+@export var global_buffs: Node
+
+
 
 #region add_property
 func add_money(n):
@@ -66,3 +69,6 @@ func set_bug_amount(n):
 func set_current_project(p : Project):
 	current_project = p
 #endregion
+
+func time_goes_by(time : int):
+	global_buffs.time_goes_by(time)
