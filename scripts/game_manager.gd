@@ -40,7 +40,8 @@ func read_data_file_and_initialize() -> void:
 # 整个软件的开始
 func _ready() -> void:
 	print("这是测试版。正式版需要修改存储地址")
-	current_scene = $MainMenu
+	print("这是测试版。正式版需要修改初始的current_scene")
+	current_scene = $ComputerScene
 	G.M = self
 	inspect_data_file()
 	read_data_file_and_initialize()
@@ -85,3 +86,6 @@ func return_last_main_scene(kill_current_scene : bool , change_M_scene_parameter
 		current_scene.queue_free()
 	
 #endregion
+
+#region ComputerWindow的z_index管理
+var computer_window_max_z_index := 1 # 1-9999

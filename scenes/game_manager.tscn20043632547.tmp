@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bd03o2lio4k6m"]
+[gd_scene load_steps=18 format=3 uid="uid://bd03o2lio4k6m"]
 
 [ext_resource type="Script" uid="uid://dt8os701xe3xf" path="res://scripts/game_manager.gd" id="1_oo155"]
 [ext_resource type="Script" uid="uid://dpd0wkimog5pm" path="res://scripts/global_effect_manager/global_effect_manager.gd" id="2_eaq8r"]
@@ -8,14 +8,15 @@
 [ext_resource type="Script" uid="uid://cyxxmhvja0apb" path="res://scripts/computer_scene/computer_scene.gd" id="6_q8mjp"]
 [ext_resource type="Script" uid="uid://onqn7vb0nepd" path="res://scripts/computer_scene/calendar_scene.gd" id="7_jdad8"]
 [ext_resource type="Script" uid="uid://bm7s8ivf8kbmv" path="res://scripts/computer_scene/property_manager.gd" id="8_jdad8"]
+[ext_resource type="Script" uid="uid://1rt3osc1d8k" path="res://scripts/computer_scene/card.gd" id="8_k4jhu"]
+[ext_resource type="Texture2D" uid="uid://caxcl6cx8u4by" path="res://assets/cards/wang_mang.jpg" id="9_0rse5"]
 [ext_resource type="Script" uid="uid://ce08b43y0bjxs" path="res://scripts/computer_scene/browser_scene.gd" id="11_aonbx"]
 [ext_resource type="Script" uid="uid://cannks0lt5d1e" path="res://scripts/computer_scene/global_buffs.gd" id="11_cjvif"]
 [ext_resource type="Script" uid="uid://d3j87kqt0wpi6" path="res://scripts/computer_scene/project_v_box.gd" id="12_aonbx"]
 [ext_resource type="Script" uid="uid://dwhc1hbrg4em" path="res://scripts/computer_scene/buffs/buff.gd" id="12_ry0e6"]
 [ext_resource type="Texture2D" uid="uid://cfg2ihodiec08" path="res://assets/computer_scene/desktop_browser_icon.png" id="13_lcbjr"]
 [ext_resource type="Texture2D" uid="uid://bm5phhix34ag2" path="res://assets/computer_scene/desktop_setting_icon.png" id="14_30v7y"]
-[ext_resource type="Script" uid="uid://b227pdi84qmke" path="res://scripts/computer_scene/store_scene.gd" id="16_cjvif"]
-[ext_resource type="Texture2D" uid="uid://bs7sjc4yqbr6c" path="res://assets/computer_scene/browser_main_web.png" id="17_ry0e6"]
+[ext_resource type="PackedScene" uid="uid://bsslyqr7uad18" path="res://scenes/computer_scene/computer_window.tscn" id="17_ry0e6"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_oo155")
@@ -55,10 +56,12 @@ offset_bottom = 455.0
 text = "退出游戏"
 
 [node name="ComputerScene" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("6_q8mjp")
 
+[node name="CardStore" type="Node2D" parent="ComputerScene"]
+
 [node name="CalendarScene" type="Control" parent="ComputerScene" node_paths=PackedStringArray("computer_scene", "debug_hand", "activity_hand")]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -77,6 +80,24 @@ offset_top = 332.0
 offset_right = 891.0
 offset_bottom = 423.0
 
+[node name="Card" type="Control" parent="ComputerScene/CalendarScene/DebugHand"]
+anchors_preset = 0
+offset_left = 150.0
+offset_top = -104.0
+offset_right = 285.0
+offset_bottom = 96.0
+script = ExtResource("8_k4jhu")
+
+[node name="TextureRect" type="TextureRect" parent="ComputerScene/CalendarScene/DebugHand/Card"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_0rse5")
+expand_mode = 1
+
 [node name="ActivityHand" type="Control" parent="ComputerScene/CalendarScene"]
 anchors_preset = 0
 offset_left = 328.0
@@ -93,7 +114,6 @@ offset_bottom = 468.0
 text = "执行计划"
 
 [node name="PropertyManager" type="Panel" parent="ComputerScene" node_paths=PackedStringArray("money_label", "mood_label", "skill_label", "project_progress_bar", "bug_amount_bar", "global_buffs")]
-visible = false
 offset_left = 937.0
 offset_top = 36.0
 offset_right = 1244.0
@@ -166,54 +186,48 @@ script = ExtResource("11_cjvif")
 [node name="Buff" type="Node" parent="ComputerScene/PropertyManager/GlobalBuffs"]
 script = ExtResource("12_ry0e6")
 
-[node name="BrowserScene" type="Window" parent="ComputerScene"]
-oversampling_override = 1.0
-position = Vector2i(160, 100)
-size = Vector2i(960, 600)
-visible = false
-script = ExtResource("11_aonbx")
-
-[node name="TextureRect" type="TextureRect" parent="ComputerScene/BrowserScene"]
+[node name="BrowserScene" type="Control" parent="ComputerScene"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("17_ry0e6")
-expand_mode = 1
+script = ExtResource("11_aonbx")
 
 [node name="URLEdit" type="LineEdit" parent="ComputerScene/BrowserScene"]
-offset_left = 25.0
-offset_top = 35.0
-offset_right = 951.0
-offset_bottom = 66.0
-flat = true
+layout_mode = 0
+offset_left = 256.0
+offset_top = 129.0
+offset_right = 770.0
+offset_bottom = 160.0
 
 [node name="Button" type="Button" parent="ComputerScene/BrowserScene"]
-offset_left = 33.0
-offset_top = 81.0
-offset_right = 169.0
-offset_bottom = 112.0
+layout_mode = 0
+offset_left = 257.0
+offset_top = 194.0
+offset_right = 393.0
+offset_bottom = 225.0
 text = "某收藏的外包网址"
 
 [node name="ExitBrowser" type="Button" parent="ComputerScene/BrowserScene"]
-visible = false
-offset_left = 866.0
-offset_top = 34.0
-offset_right = 954.0
-offset_bottom = 65.0
+layout_mode = 0
+offset_left = 776.0
+offset_top = 129.0
+offset_right = 864.0
+offset_bottom = 160.0
 text = "退出浏览器"
 
 [node name="ProjectVBox" type="VBoxContainer" parent="ComputerScene/BrowserScene"]
-offset_left = 161.0
-offset_top = 238.0
-offset_right = 804.0
-offset_bottom = 531.0
+layout_mode = 0
+offset_left = 261.0
+offset_top = 269.0
+offset_right = 888.0
+offset_bottom = 694.0
 theme_override_constants/separation = 0
 script = ExtResource("12_aonbx")
 
 [node name="OpenBrowser" type="Button" parent="ComputerScene"]
-visible = false
 offset_left = 63.0
 offset_top = 75.0
 offset_right = 143.0
@@ -226,7 +240,6 @@ vertical_icon_alignment = 0
 expand_icon = true
 
 [node name="OpenSetting" type="Button" parent="ComputerScene"]
-visible = false
 offset_left = 68.0
 offset_top = 155.0
 offset_right = 143.0
@@ -238,25 +251,13 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
-[node name="StoreScene" type="Control" parent="ComputerScene"]
-layout_mode = 3
-anchors_preset = 0
-offset_top = 400.0
-offset_right = 400.0
-offset_bottom = 800.0
-script = ExtResource("16_cjvif")
-
-[node name="Cards" type="HBoxContainer" parent="ComputerScene/StoreScene"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 0
-offset_right = 400.0
-offset_bottom = 250.0
+[node name="ComputerWindow" parent="ComputerScene" instance=ExtResource("17_ry0e6")]
+script = ExtResource("11_aonbx")
 
 [connection signal="pressed" from="MainMenu/OpenSetting" to="MainMenu" method="_on_open_setting_pressed"]
 [connection signal="pressed" from="MainMenu/BeginGame" to="MainMenu" method="_on_begin_game_pressed"]
 [connection signal="pressed" from="MainMenu/ExitGame" to="MainMenu" method="_on_exit_game_pressed"]
 [connection signal="pressed" from="ComputerScene/CalendarScene/ExecutePlanButton" to="ComputerScene/CalendarScene" method="_on_execute_plan_button_pressed"]
-[connection signal="close_requested" from="ComputerScene/BrowserScene" to="ComputerScene/BrowserScene" method="_on_close_requested"]
 [connection signal="text_submitted" from="ComputerScene/BrowserScene/URLEdit" to="ComputerScene/BrowserScene" method="_on_url_edit_text_submitted"]
 [connection signal="pressed" from="ComputerScene/BrowserScene/Button" to="ComputerScene/BrowserScene" method="_on_button_pressed"]
 [connection signal="pressed" from="ComputerScene/BrowserScene/ExitBrowser" to="ComputerScene/BrowserScene" method="_on_exit_browser_pressed"]

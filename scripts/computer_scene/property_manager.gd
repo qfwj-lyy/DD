@@ -6,6 +6,8 @@ var current_project : Project
 var money_amount : float
 var mood_amount : float
 var skill_amount : float
+var time_amount : float # 时空穿越所需要，目前没有需求
+
 
 @export var money_label: Node
 @export var mood_label: Node
@@ -32,6 +34,11 @@ func add_skill(n):
 	pass
 	pass
 	skill_label.text = "技术：" + str(skill_amount)
+func add_time(t : int):
+	time_amount += t
+	pass
+	pass
+	global_buffs.time_goes_by(t)
 func add_project_progress(n):
 	pass
 	pass
@@ -69,6 +76,3 @@ func set_bug_amount(n):
 func set_current_project(p : Project):
 	current_project = p
 #endregion
-
-func time_goes_by(time : int):
-	global_buffs.time_goes_by(time)

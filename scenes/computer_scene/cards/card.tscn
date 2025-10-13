@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl4ah171acyxi"]
+
+[ext_resource type="Script" uid="uid://1rt3osc1d8k" path="res://scripts/computer_scene/card.gd" id="1_0mwqf"]
+[ext_resource type="Texture2D" uid="uid://caxcl6cx8u4by" path="res://assets/cards/wang_mang.jpg" id="2_tgtni"]
+
+[node name="Card" type="Control"]
+custom_minimum_size = Vector2(135, 200)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 135.0
+offset_bottom = 200.0
+script = ExtResource("1_0mwqf")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_tgtni")
+expand_mode = 1

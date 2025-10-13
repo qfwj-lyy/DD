@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbk5nvbdmgp0t"]
+
+[ext_resource type="PackedScene" uid="uid://cl4ah171acyxi" path="res://scenes/computer_scene/cards/card.tscn" id="1_0d7ht"]
+
+[node name="Code" instance=ExtResource("1_0d7ht")]
+money = 2
+mood = 1
+time = 1
+progress = 3
+bug = 3
+skill = 0

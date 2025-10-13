@@ -1,4 +1,4 @@
-extends Control
+extends Window
 
 @onready var project_v_box: VBoxContainer = $ProjectVBox
 
@@ -22,3 +22,6 @@ func _on_exit_browser_pressed() -> void:
 
 func _on_open_browser_pressed() -> void:
 	visible = true
+
+func _on_close_requested() -> void:
+	visible = false
