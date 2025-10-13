@@ -1,16 +1,16 @@
 extends Control
 
 @export var computer_scene: ComputerScene
-@export var debug_hand: Control
-@export var activity_hand: Control
-
+@export var debug_hand: Node
+@export var activity_hand: Node
+@export var unused_hand: Node
 
 func execute_plan():
 	#region 时间结算架构
 	var debug_time_flag_array : Array[int] #按顺序存储玩家放置的所有debug卡的时间
-	var debug_current_card_flag : int = 1 #标识待执行debug卡
+	var debug_current_card_flag : int = 0 #标识待执行debug卡
 	var activity_time_flag_array : Array[int] #按顺序存储玩家放置的所有activity卡的时间
-	var activity_current_card_flag : int = 1 #标识待执行debug卡
+	var activity_current_card_flag : int = 0 #标识待执行debug卡
 	var debug_time_sum : int = 0 #本回合debug卡时间总和
 	var activity_time_sum : int = 0 #本回合activity卡时间总和
 	
@@ -27,6 +27,8 @@ func execute_plan():
 	var max_time : int = max(debug_time_sum , activity_time_sum)
 	var current_time : int = 0
 	
+	
+	# 按单位时间推进日程安排
 	while(current_time != max_time):
 		
 		#----------这里写员工计算工资相关方法----------

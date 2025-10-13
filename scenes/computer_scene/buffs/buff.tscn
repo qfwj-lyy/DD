@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnv0vfvik148k"]
+
+[ext_resource type="Script" uid="uid://dwhc1hbrg4em" path="res://scripts/computer_scene/buffs/buff.gd" id="1_ypt3p"]
+
+[node name="Buff" type="Node"]
+script = ExtResource("1_ypt3p")
