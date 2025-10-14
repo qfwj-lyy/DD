@@ -5,12 +5,14 @@ class_name Buff
 # -9:round left time  -99:project left time
 
 enum ExecutionTime {
+	property,
 	each_round_begin,
-	each_time,
-	this_round_over
+	each_round_over,
+	each_time
 }
 @export var execution_time : ExecutionTime
 
+var buff_manager = G.M.current_scene.property_manager.buff_manager
 
 # 当进入场景树时，即生效某效果
 func _enter_tree() -> void:
@@ -21,3 +23,16 @@ func time_goes_by(_time : int):
 	
 func execute():
 	pass
+
+func reparent_to_buff_manager():
+	match execution_time:
+		ExecutionTime.property:
+			reparent(buff_manager.property)
+		ExecutionTime.each_round_begin:
+			reparent(buff_manager.each_round_begin)
+		ExecutionTime.each_round_over:
+			reparent(buff_manager.each_round_over)
+		ExecutionTime.each_time:
+			reparent(buff_manager.each_time)
+	
+	

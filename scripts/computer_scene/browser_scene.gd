@@ -20,8 +20,6 @@ func _on_exit_browser_pressed() -> void:
 	visible = false
 
 
-func _on_open_browser_pressed() -> void:
-	visible = true
 
 func _on_close_requested() -> void:
 	visible = false

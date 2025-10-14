@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd3m0pasxa1i0"]
+
+[ext_resource type="PackedScene" uid="uid://cl4ah171acyxi" path="res://scenes/computer_scene/cards/card.tscn" id="1_jplx5"]
+[ext_resource type="Script" uid="uid://bse3ljhhcaude" path="res://scripts/computer_scene/activity_cards/activity_card.gd" id="2_278o5"]
+
+[node name="ActivityCard" instance=ExtResource("1_jplx5")]
+script = ExtResource("2_278o5")

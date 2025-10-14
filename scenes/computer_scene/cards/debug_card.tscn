@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dubitep1ioo2t"]
+
+[ext_resource type="PackedScene" uid="uid://cl4ah171acyxi" path="res://scenes/computer_scene/cards/card.tscn" id="1_18kfh"]
+[ext_resource type="Script" uid="uid://6bbps2e1eqgu" path="res://scripts/computer_scene/debug_cards/debug_card.gd" id="2_8fy4r"]
+
+[node name="DebugCard" instance=ExtResource("1_18kfh")]
+script = ExtResource("2_8fy4r")

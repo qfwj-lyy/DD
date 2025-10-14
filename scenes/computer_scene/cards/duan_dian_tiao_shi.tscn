@@ -1,18 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://8wqfekulcaa7"]
 
-[ext_resource type="PackedScene" uid="uid://cl4ah171acyxi" path="res://scenes/computer_scene/cards/card.tscn" id="1_6t2uy"]
+[ext_resource type="PackedScene" uid="uid://dubitep1ioo2t" path="res://scenes/computer_scene/cards/debug_card.tscn" id="1_6t2uy"]
 [ext_resource type="Script" uid="uid://kmirxldvrtyi" path="res://scripts/computer_scene/buffs/duan_dian_tiao_shi.gd" id="2_wd5er"]
 
 [node name="DuanDianTiaoShi" instance=ExtResource("1_6t2uy")]
 money = 2
 mood = -3
 time = 2
-progress = 0
-bug = 0
-skill = 0
+description = "断点调试
+2/-3/2
+本回合的剩余时间内，每单位时间bug-3"
 
-[node name="Buff" type="Node" parent="." index="1"]
+[node name="Buff" type="Node" parent="Buffs" index="0"]
 script = ExtResource("2_wd5er")
 duration = -9
-execution_time = 1
+execution_time = 3
 metadata/_custom_type_script = "uid://dwhc1hbrg4em"

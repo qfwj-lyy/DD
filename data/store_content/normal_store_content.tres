@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="StoreContent" load_steps=7 format=3 uid="uid://dkmur3i65ofh8"]
+
+[ext_resource type="Script" uid="uid://bydujhct6k6eb" path="res://scripts/computer_scene/store_content.gd" id="1_kh3p8"]
+[ext_resource type="Script" uid="uid://cwlvl1e5xlg4d" path="res://scripts/computer_scene/store_card_parameter.gd" id="1_qcdww"]
+
+[sub_resource type="Resource" id="Resource_34jyr"]
+script = ExtResource("1_qcdww")
+name = "code"
+weight = 10
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_qcdww"]
+script = ExtResource("1_qcdww")
+name = "debug"
+weight = 10
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_wv100"]
+script = ExtResource("1_qcdww")
+name = "lian_xi_hello_world"
+weight = 10
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_w3sm6"]
+script = ExtResource("1_qcdww")
+name = "duan_dian_tiao_shi"
+weight = 10
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[resource]
+script = ExtResource("1_kh3p8")
+normal_cards = Array[ExtResource("1_qcdww")]([SubResource("Resource_34jyr"), SubResource("Resource_qcdww"), SubResource("Resource_wv100"), SubResource("Resource_w3sm6")])
+metadata/_custom_type_script = "uid://bydujhct6k6eb"

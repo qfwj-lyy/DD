@@ -16,6 +16,7 @@ var time_amount : float # 时空穿越所需要，目前没有需求
 @export var bug_amount_bar: Node
 @export var global_buffs: Node
 
+@onready var buff_manager: Node = $BuffManager
 
 
 #region add_property
@@ -34,11 +35,13 @@ func add_skill(n):
 	pass
 	pass
 	skill_label.text = "技术：" + str(skill_amount)
+# 已弃用函数
 func add_time(t : int):
 	time_amount += t
 	pass
 	pass
-	global_buffs.time_goes_by(t)
+	pass
+	
 func add_project_progress(n):
 	pass
 	pass
@@ -76,3 +79,11 @@ func set_bug_amount(n):
 func set_current_project(p : Project):
 	current_project = p
 #endregion
+
+func use_money(a) -> bool:
+	if money_amount >= a:
+		money_amount -= a
+		money_label.text = "资金：" + str(money_amount)
+		return true
+	else:
+		return false
