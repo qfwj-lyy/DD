@@ -53,49 +53,71 @@ script = ExtResource("4_q8mjp")
 visible = false
 script = ExtResource("5_eaq8r")
 
+[node name="CharacterPicture" type="Panel" parent="MainMenu"]
+offset_left = 540.0
+offset_top = 100.0
+offset_right = 740.0
+offset_bottom = 300.0
+
+[node name="CharacterName" type="Panel" parent="MainMenu"]
+offset_left = 540.0
+offset_top = 350.0
+offset_right = 740.0
+offset_bottom = 400.0
+
 [node name="OpenSetting" type="Button" parent="MainMenu"]
-offset_left = 471.0
-offset_top = 339.0
-offset_right = 543.0
-offset_bottom = 370.0
+offset_left = 980.0
+offset_top = 650.0
+offset_right = 1080.0
+offset_bottom = 750.0
 text = "打开设置"
 
 [node name="BeginGame" type="Button" parent="MainMenu"]
-offset_left = 471.0
-offset_top = 260.0
-offset_right = 543.0
-offset_bottom = 291.0
-text = "开始游戏"
+offset_left = 590.0
+offset_top = 500.0
+offset_right = 690.0
+offset_bottom = 550.0
+text = "登录"
 
 [node name="ExitGame" type="Button" parent="MainMenu"]
-offset_left = 474.0
-offset_top = 424.0
-offset_right = 546.0
-offset_bottom = 455.0
+offset_left = 1130.0
+offset_top = 650.0
+offset_right = 1230.0
+offset_bottom = 750.0
 text = "退出游戏"
+
+[node name="ChangeCharacter" type="Button" parent="MainMenu"]
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 690.0
+offset_bottom = 615.0
+theme_override_font_sizes/font_size = 12
+text = "不是您?"
+icon_alignment = 1
 
 [node name="ComputerScene" type="CanvasLayer" parent="." node_paths=PackedStringArray("unused_hand", "debug_hand", "activity_hand", "calendar_scene")]
 script = ExtResource("6_q8mjp")
 unused_hand = NodePath("CalendarScene/UnusedHand")
 debug_hand = NodePath("CalendarScene/DebugHand")
 activity_hand = NodePath("CalendarScene/ActivityHand")
-calendar_scene = NodePath("CalendarScene")
+calendar_scene = NodePath("")
 
 [node name="DesktopIconManager" type="Control" parent="ComputerScene" node_paths=PackedStringArray("calendar_scene", "browser_scene")]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("14_4vth2")
-calendar_scene = NodePath("../CalendarScene")
-browser_scene = NodePath("../BrowserScene")
+calendar_scene = NodePath("")
+browser_scene = NodePath("")
 
 [node name="OpenSetting" type="Button" parent="ComputerScene/DesktopIconManager"]
 layout_mode = 0
-offset_left = 68.0
-offset_top = 155.0
-offset_right = 143.0
-offset_bottom = 245.0
+offset_left = 45.0
+offset_top = 180.0
+offset_right = 145.0
+offset_bottom = 280.0
 text = "设置"
 icon = ExtResource("14_30v7y")
 flat = true
@@ -105,10 +127,10 @@ expand_icon = true
 
 [node name="OpenBrowser" type="Button" parent="ComputerScene/DesktopIconManager"]
 layout_mode = 0
-offset_left = 63.0
-offset_top = 75.0
-offset_right = 143.0
-offset_bottom = 156.0
+offset_left = 45.0
+offset_top = 30.0
+offset_right = 145.0
+offset_bottom = 130.0
 text = "浏览器"
 icon = ExtResource("13_lcbjr")
 flat = true
@@ -118,10 +140,10 @@ expand_icon = true
 
 [node name="OpenCalendar" type="Button" parent="ComputerScene/DesktopIconManager"]
 layout_mode = 0
-offset_left = 67.0
-offset_top = 244.0
-offset_right = 147.0
-offset_bottom = 325.0
+offset_left = 45.0
+offset_top = 330.0
+offset_right = 145.0
+offset_bottom = 430.0
 text = "日历"
 icon = ExtResource("16_c7a3q")
 flat = true
@@ -131,10 +153,10 @@ expand_icon = true
 
 [node name="OpenDatabase" type="Button" parent="ComputerScene/DesktopIconManager"]
 layout_mode = 0
-offset_left = 147.0
-offset_top = 262.0
-offset_right = 227.0
-offset_bottom = 343.0
+offset_left = 195.0
+offset_top = 330.0
+offset_right = 295.0
+offset_bottom = 430.0
 text = " 数据库"
 icon = ExtResource("17_4vth2")
 flat = true
@@ -144,10 +166,10 @@ expand_icon = true
 
 [node name="OpenCmd" type="Button" parent="ComputerScene/DesktopIconManager"]
 layout_mode = 0
-offset_left = 154.0
-offset_top = 184.0
-offset_right = 234.0
-offset_bottom = 265.0
+offset_left = 195.0
+offset_top = 180.0
+offset_right = 295.0
+offset_bottom = 280.0
 text = "控制台"
 icon = ExtResource("18_yxe1x")
 flat = true
@@ -157,10 +179,10 @@ expand_icon = true
 
 [node name="OpenCompany" type="Button" parent="ComputerScene/DesktopIconManager"]
 layout_mode = 0
-offset_left = 129.0
-offset_top = 73.0
-offset_right = 266.0
-offset_bottom = 186.0
+offset_left = 195.0
+offset_top = 30.0
+offset_right = 295.0
+offset_bottom = 130.0
 text = "组织"
 icon = ExtResource("19_jrl6a")
 flat = true
@@ -169,28 +191,94 @@ vertical_icon_alignment = 0
 expand_icon = true
 
 [node name="StoreScene" type="Control" parent="ComputerScene"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_top = 400.0
-offset_right = 600.0
+offset_top = 500.0
+offset_right = 495.0
 offset_bottom = 800.0
 script = ExtResource("16_cjvif")
 
-[node name="Cards" type="HBoxContainer" parent="ComputerScene/StoreScene"]
+[node name="StoreBackGround" type="Panel" parent="ComputerScene/StoreScene"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cards(Flag)" type="HBoxContainer" parent="ComputerScene/StoreScene"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 0
 offset_right = 500.0
 offset_bottom = 250.0
 
+[node name="Card1" type="Panel" parent="ComputerScene/StoreScene"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 95.0
+offset_bottom = 145.0
+
+[node name="Card2" type="Panel" parent="ComputerScene/StoreScene"]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 20.0
+offset_right = 190.0
+offset_bottom = 145.0
+
+[node name="Card3" type="Panel" parent="ComputerScene/StoreScene"]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 20.0
+offset_right = 285.0
+offset_bottom = 145.0
+
+[node name="Card4" type="Panel" parent="ComputerScene/StoreScene"]
+layout_mode = 0
+offset_left = 305.0
+offset_top = 20.0
+offset_right = 380.0
+offset_bottom = 145.0
+
+[node name="Card5" type="Panel" parent="ComputerScene/StoreScene"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 20.0
+offset_right = 475.0
+offset_bottom = 145.0
+
+[node name="Description" type="Panel" parent="ComputerScene/StoreScene"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 172.5
+offset_right = 395.0
+offset_bottom = 272.5
+
 [node name="RefreshCards" type="Button" parent="ComputerScene/StoreScene"]
 layout_mode = 0
-offset_left = 512.0
-offset_top = 268.0
-offset_right = 552.0
-offset_bottom = 299.0
+offset_left = 410.0
+offset_top = 222.5
+offset_right = 485.0
+offset_bottom = 272.5
 text = "刷新"
 
+[node name="RefreshIcon" type="Panel" parent="ComputerScene/StoreScene"]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 185.0
+offset_right = 435.0
+offset_bottom = 210.0
+
+[node name="RefreshTime" type="Panel" parent="ComputerScene/StoreScene"]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 185.0
+offset_right = 475.0
+offset_bottom = 210.0
+
 [node name="PropertyManager" type="Panel" parent="ComputerScene" node_paths=PackedStringArray("money_label", "mood_label", "skill_label", "project_progress_bar", "bug_amount_bar", "global_buffs")]
+visible = false
 offset_left = 937.0
 offset_top = 36.0
 offset_right = 1244.0
@@ -268,16 +356,16 @@ script = ExtResource("11_cjvif")
 
 [node name="EachRoundOver" type="Node" parent="ComputerScene/PropertyManager/BuffManager"]
 
-[node name="BrowserScene" type="Window" parent="ComputerScene"]
-oversampling_override = 1.0
-position = Vector2i(160, 36)
-size = Vector2i(960, 600)
+[node name="BrowserScene" type="Panel" parent="ComputerScene"]
 visible = false
-unresizable = true
+offset_top = 36.0
+offset_right = 960.0
+offset_bottom = 636.0
 theme = SubResource("Theme_kvitc")
 script = ExtResource("11_aonbx")
 
 [node name="TextureRect" type="TextureRect" parent="ComputerScene/BrowserScene"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -287,6 +375,7 @@ texture = ExtResource("17_ry0e6")
 expand_mode = 1
 
 [node name="URLEdit" type="LineEdit" parent="ComputerScene/BrowserScene"]
+layout_mode = 0
 offset_left = 25.0
 offset_top = 35.0
 offset_right = 951.0
@@ -294,6 +383,7 @@ offset_bottom = 66.0
 flat = true
 
 [node name="Button" type="Button" parent="ComputerScene/BrowserScene"]
+layout_mode = 0
 offset_left = 33.0
 offset_top = 81.0
 offset_right = 169.0
@@ -301,7 +391,7 @@ offset_bottom = 112.0
 text = "某收藏的外包网址"
 
 [node name="ExitBrowser" type="Button" parent="ComputerScene/BrowserScene"]
-visible = false
+layout_mode = 0
 offset_left = 866.0
 offset_top = 34.0
 offset_right = 954.0
@@ -309,6 +399,7 @@ offset_bottom = 65.0
 text = "退出浏览器"
 
 [node name="ProjectVBox" type="VBoxContainer" parent="ComputerScene/BrowserScene"]
+layout_mode = 0
 offset_left = 161.0
 offset_top = 238.0
 offset_right = 804.0
@@ -317,6 +408,7 @@ theme_override_constants/separation = 0
 script = ExtResource("12_aonbx")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="ComputerScene/BrowserScene"]
+layout_mode = 0
 offset_left = 215.0
 offset_top = 226.0
 offset_right = 765.0
@@ -380,11 +472,12 @@ layout_mode = 2
 text = "我是一个正方形啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊"
 autowrap_mode = 3
 
-[node name="CalendarScene" type="Window" parent="ComputerScene" node_paths=PackedStringArray("computer_scene", "debug_hand", "activity_hand", "unused_hand")]
-oversampling_override = 1.0
-position = Vector2i(160, 100)
-size = Vector2i(860, 700)
+[node name="CalendarScene" type="Panel" parent="ComputerScene" node_paths=PackedStringArray("computer_scene", "debug_hand", "activity_hand", "unused_hand")]
 visible = false
+offset_left = 530.0
+offset_top = 230.0
+offset_right = 990.0
+offset_bottom = 800.0
 theme = SubResource("Theme_dlmsr")
 script = ExtResource("7_jdad8")
 computer_scene = NodePath("..")
@@ -392,54 +485,403 @@ debug_hand = NodePath("DebugHand")
 activity_hand = NodePath("ActivityHand")
 unused_hand = NodePath("UnusedHand")
 
-[node name="DebugHand" type="HBoxContainer" parent="ComputerScene/CalendarScene"]
-offset_left = 50.0
-offset_top = 20.0
-offset_right = 910.0
-offset_bottom = 220.0
-
-[node name="ActivityHand" type="HBoxContainer" parent="ComputerScene/CalendarScene"]
-offset_left = 50.0
-offset_top = 280.0
-offset_right = 910.0
-offset_bottom = 480.0
-
-[node name="UnusedHand" type="HBoxContainer" parent="ComputerScene/CalendarScene"]
-offset_left = 50.0
-offset_top = 500.0
-offset_right = 910.0
-offset_bottom = 700.0
+[node name="CalenderButton" type="Panel" parent="ComputerScene/CalendarScene"]
+layout_mode = 0
+offset_left = 180.0
+offset_top = -25.0
+offset_right = 280.0
 
 [node name="ExecutePlanButton" type="Button" parent="ComputerScene/CalendarScene"]
-offset_left = 620.0
-offset_top = 248.0
-offset_right = 698.0
-offset_bottom = 279.0
+layout_mode = 0
+offset_left = 330.0
+offset_top = 175.0
+offset_right = 430.0
+offset_bottom = 225.0
 text = "执行计划"
 
-[node name="CompanyScene" type="Window" parent="ComputerScene"]
-oversampling_override = 1.0
-size = Vector2i(700, 700)
+[node name="RoundTips" type="Panel" parent="ComputerScene/CalendarScene"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 175.0
+offset_right = 280.0
+offset_bottom = 225.0
+
+[node name="DebugHand" type="HBoxContainer" parent="ComputerScene/CalendarScene"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 430.0
+offset_bottom = 155.0
+
+[node name="ActivityHand" type="HBoxContainer" parent="ComputerScene/CalendarScene"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 245.0
+offset_right = 430.0
+offset_bottom = 370.0
+
+[node name="UnusedHand" type="HBoxContainer" parent="ComputerScene/CalendarScene"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 390.0
+offset_right = 430.0
+offset_bottom = 540.0
+
+[node name="CompanyScene" type="Panel" parent="ComputerScene"]
 visible = false
+offset_right = 500.0
+offset_bottom = 400.0
 script = ExtResource("21_jrl6a")
 
-[node name="Control" type="Control" parent="ComputerScene/CompanyScene"]
-layout_mode = 3
+[node name="Control(Flag)" type="Control" parent="ComputerScene/CompanyScene"]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Employee" type="Control" parent="ComputerScene/CompanyScene/Control"]
+[node name="Employee(Flag)" type="Control" parent="ComputerScene/CompanyScene/Control(Flag)"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("22_wcunu")
 
-[node name="Control2" type="Control" parent="ComputerScene/CompanyScene"]
-layout_mode = 3
+[node name="Control2(Flag)" type="Control" parent="ComputerScene/CompanyScene"]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="ResumeLabel" type="Panel" parent="ComputerScene/CompanyScene"]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 25.0
+
+[node name="Employee1" type="Panel" parent="ComputerScene/CompanyScene"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 40.0
+offset_right = 80.0
+offset_bottom = 120.0
+
+[node name="Employee2" type="Panel" parent="ComputerScene/CompanyScene"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 40.0
+offset_right = 160.0
+offset_bottom = 120.0
+
+[node name="Employee3" type="Panel" parent="ComputerScene/CompanyScene"]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 40.0
+offset_right = 240.0
+offset_bottom = 120.0
+
+[node name="Employee4" type="Panel" parent="ComputerScene/CompanyScene"]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 40.0
+offset_right = 320.0
+offset_bottom = 120.0
+
+[node name="Employee5" type="Panel" parent="ComputerScene/CompanyScene"]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 40.0
+offset_right = 400.0
+offset_bottom = 120.0
+
+[node name="RefreshEmployee" type="Panel" parent="ComputerScene/CompanyScene"]
+layout_mode = 0
+offset_left = 427.5
+offset_top = 68.5
+offset_right = 477.5
+offset_bottom = 93.5
+
+[node name="StaffLabel" type="Panel" parent="ComputerScene/CompanyScene"]
+layout_mode = 0
+offset_top = 135.0
+offset_right = 150.0
+offset_bottom = 160.0
+
+[node name="Staff1" type="Panel" parent="ComputerScene/CompanyScene"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 175.0
+offset_right = 125.0
+offset_bottom = 275.0
+
+[node name="Staff2" type="Panel" parent="ComputerScene/CompanyScene"]
+layout_mode = 0
+offset_left = 172.5
+offset_top = 175.0
+offset_right = 247.5
+offset_bottom = 275.0
+
+[node name="Staff3" type="Panel" parent="ComputerScene/CompanyScene"]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 175.0
+offset_right = 370.0
+offset_bottom = 275.0
+
+[node name="FireStaff" type="Panel" parent="ComputerScene/CompanyScene"]
+layout_mode = 0
+offset_left = 427.5
+offset_top = 212.5
+offset_right = 477.5
+offset_bottom = 237.5
+
+[node name="CompanyDescription" type="Panel" parent="ComputerScene/CompanyScene"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 290.0
+offset_right = 475.0
+offset_bottom = 377.5
+
+[node name="Close" type="Panel" parent="ComputerScene/CompanyScene"]
+layout_mode = 0
+offset_left = 462.5
+offset_top = 12.5
+offset_right = 487.5
+offset_bottom = 37.5
+
+[node name="CharacterScene" type="Panel" parent="ComputerScene"]
+visible = false
+offset_right = 500.0
+offset_bottom = 400.0
+
+[node name="CharacterPicture" type="Panel" parent="ComputerScene/CharacterScene"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 400.0
+
+[node name="CharacterHead" type="Panel" parent="ComputerScene/CharacterScene"]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 37.5
+offset_right = 300.0
+offset_bottom = 112.5
+
+[node name="CharacterName" type="Panel" parent="ComputerScene/CharacterScene"]
+layout_mode = 0
+offset_left = 325.0
+offset_top = 62.5
+offset_right = 425.0
+offset_bottom = 87.5
+
+[node name="Close" type="Panel" parent="ComputerScene/CharacterScene"]
+layout_mode = 0
+offset_left = 462.5
+offset_top = 12.5
+offset_right = 487.5
+offset_bottom = 37.5
+
+[node name="Saving" type="Panel" parent="ComputerScene/CharacterScene"]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 137.5
+offset_right = 475.0
+offset_bottom = 187.5
+
+[node name="EmotionBuff" type="Panel" parent="ComputerScene/CharacterScene"]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 212.5
+offset_right = 475.0
+offset_bottom = 377.5
+
+[node name="BuffList" type="Panel" parent="ComputerScene/CharacterScene"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 225.0
+offset_right = 450.0
+offset_bottom = 262.5
+
+[node name="BuffContent" type="Panel" parent="ComputerScene/CharacterScene"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 270.0
+offset_right = 450.0
+offset_bottom = 360.0
+
+[node name="Emotion0Buff1" type="Panel" parent="ComputerScene/CharacterScene"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 225.0
+offset_right = 250.0
+offset_bottom = 235.0
+
+[node name="Emotion0Buff2" type="Panel" parent="ComputerScene/CharacterScene"]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 225.0
+offset_right = 270.0
+offset_bottom = 235.0
+
+[node name="Emotion20Buff1" type="Panel" parent="ComputerScene/CharacterScene"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 250.0
+offset_right = 250.0
+offset_bottom = 260.0
+
+[node name="Emotion50Buff1" type="Panel" parent="ComputerScene/CharacterScene"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 275.0
+offset_right = 250.0
+offset_bottom = 285.0
+
+[node name="Emotion50Buff2" type="Panel" parent="ComputerScene/CharacterScene"]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 275.0
+offset_right = 270.0
+offset_bottom = 285.0
+
+[node name="Emotion60Buff1" type="Panel" parent="ComputerScene/CharacterScene"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 300.0
+offset_right = 250.0
+offset_bottom = 310.0
+
+[node name="Emotion60Buff2" type="Panel" parent="ComputerScene/CharacterScene"]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 300.0
+offset_right = 270.0
+offset_bottom = 310.0
+
+[node name="Emotion90Buff1" type="Panel" parent="ComputerScene/CharacterScene"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 325.0
+offset_right = 250.0
+offset_bottom = 335.0
+
+[node name="Emotion100Buff1" type="Panel" parent="ComputerScene/CharacterScene"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 350.0
+offset_right = 250.0
+offset_bottom = 360.0
+
+[node name="Emotion100Buff2" type="Panel" parent="ComputerScene/CharacterScene"]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 350.0
+offset_right = 270.0
+offset_bottom = 360.0
+
+[node name="Emotion100Buff3" type="Panel" parent="ComputerScene/CharacterScene"]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 350.0
+offset_right = 290.0
+offset_bottom = 360.0
+
+[node name="SettingsScene" type="Panel" parent="ComputerScene"]
+visible = false
+offset_right = 500.0
+offset_bottom = 400.0
+
+[node name="CharacterHead" type="Panel" parent="ComputerScene/SettingsScene"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 75.0
+offset_bottom = 75.0
+
+[node name="CharacterName" type="Panel" parent="ComputerScene/SettingsScene"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 40.0
+offset_right = 175.0
+offset_bottom = 60.0
+
+[node name="SettingsDescription" type="Panel" parent="ComputerScene/SettingsScene"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 87.5
+offset_right = 450.0
+offset_bottom = 362.5
+
+[node name="ScreenIcon" type="Panel" parent="ComputerScene/SettingsScene"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 100.0
+offset_right = 70.0
+offset_bottom = 120.0
+
+[node name="ScreenName" type="Panel" parent="ComputerScene/SettingsScene"]
+layout_mode = 0
+offset_left = 87.5
+offset_top = 105.0
+offset_right = 137.5
+offset_bottom = 115.0
+
+[node name="SoundIcon" type="Panel" parent="ComputerScene/SettingsScene"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 140.0
+offset_right = 70.0
+offset_bottom = 160.0
+
+[node name="SoundName" type="Panel" parent="ComputerScene/SettingsScene"]
+layout_mode = 0
+offset_left = 87.5
+offset_top = 145.0
+offset_right = 137.5
+offset_bottom = 155.0
+
+[node name="AccountIcon" type="Panel" parent="ComputerScene/SettingsScene"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 180.0
+offset_right = 70.0
+offset_bottom = 200.0
+
+[node name="AccountName" type="Panel" parent="ComputerScene/SettingsScene"]
+layout_mode = 0
+offset_left = 87.5
+offset_top = 185.0
+offset_right = 137.5
+offset_bottom = 195.0
+
+[node name="MarkLine" type="Panel" parent="ComputerScene/SettingsScene"]
+layout_mode = 0
+offset_left = 37.5
+offset_top = 97.5
+offset_right = 38.5
+offset_bottom = 122.5
+
+[node name="DataBaseScene" type="Panel" parent="ComputerScene"]
+visible = false
+offset_right = 500.0
+offset_bottom = 400.0
+
+[node name="Close" type="Panel" parent="ComputerScene/DataBaseScene"]
+layout_mode = 0
+offset_left = 462.5
+offset_top = 12.5
+offset_right = 487.5
+offset_bottom = 37.5
+
+[node name="DataList" type="Panel" parent="ComputerScene/DataBaseScene"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 125.0
+offset_bottom = 375.0
+
+[node name="DataDescription" type="Panel" parent="ComputerScene/DataBaseScene"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 50.0
+offset_right = 475.0
+offset_bottom = 375.0
 
 [connection signal="pressed" from="MainMenu/OpenSetting" to="MainMenu" method="_on_open_setting_pressed"]
 [connection signal="pressed" from="MainMenu/BeginGame" to="MainMenu" method="_on_begin_game_pressed"]
@@ -448,9 +890,7 @@ offset_bottom = 40.0
 [connection signal="pressed" from="ComputerScene/DesktopIconManager/OpenBrowser" to="ComputerScene/DesktopIconManager" method="_on_open_browser_pressed"]
 [connection signal="pressed" from="ComputerScene/DesktopIconManager/OpenCalendar" to="ComputerScene/DesktopIconManager" method="_on_open_calendar_pressed"]
 [connection signal="pressed" from="ComputerScene/StoreScene/RefreshCards" to="ComputerScene/StoreScene" method="_on_refresh_cards_pressed"]
-[connection signal="close_requested" from="ComputerScene/BrowserScene" to="ComputerScene/BrowserScene" method="_on_close_requested"]
 [connection signal="text_submitted" from="ComputerScene/BrowserScene/URLEdit" to="ComputerScene/BrowserScene" method="_on_url_edit_text_submitted"]
 [connection signal="pressed" from="ComputerScene/BrowserScene/Button" to="ComputerScene/BrowserScene" method="_on_button_pressed"]
 [connection signal="pressed" from="ComputerScene/BrowserScene/ExitBrowser" to="ComputerScene/BrowserScene" method="_on_exit_browser_pressed"]
-[connection signal="close_requested" from="ComputerScene/CalendarScene" to="ComputerScene/CalendarScene" method="_on_close_requested"]
 [connection signal="pressed" from="ComputerScene/CalendarScene/ExecutePlanButton" to="ComputerScene/CalendarScene" method="_on_execute_plan_button_pressed"]
