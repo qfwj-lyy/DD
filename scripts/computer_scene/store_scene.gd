@@ -18,7 +18,7 @@ func _ready() -> void:
 	store_content = load("res://data/store_content/normal_store_content.tres")
 	store_cards = store_content.normal_cards
 	
-	refresh_cards()
+	#refresh_cards()
 	
 func refresh_cards():
 	for c in cards.get_children():

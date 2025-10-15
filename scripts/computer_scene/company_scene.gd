@@ -1,1 +1,1 @@
-extends Window
+extends Panel

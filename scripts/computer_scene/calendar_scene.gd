@@ -1,4 +1,4 @@
-extends Window
+extends Panel
 
 @export var computer_scene: ComputerScene
 @export var debug_hand: Node

@@ -1,4 +1,4 @@
-extends Window
+extends Panel
 
 @onready var project_v_box: VBoxContainer = $ProjectVBox
 
