@@ -1,6 +1,6 @@
 extends Control
 
-@onready var cards: HBoxContainer = $Cards
+
 
 var store_content : StoreContent
 var store_cards : Array
@@ -9,7 +9,7 @@ var refresh_time_flag := 3
 func load_card(card_name : String):
 	var path = "res://scenes/computer_scene/cards/" + card_name + ".tscn"
 	var card = load(path).instantiate()
-	cards.add_child(card)
+	#cards.add_child(card)
 	card.position = Vector2(100,0)
 	
 func _ready() -> void:
@@ -21,8 +21,8 @@ func _ready() -> void:
 	#refresh_cards()
 	
 func refresh_cards():
-	for c in cards.get_children():
-		c.free()
+	#for c in cards.get_children():
+		#c.free()
 	var card_amount := 0
 	while(1):
 		var weight_sum := 0

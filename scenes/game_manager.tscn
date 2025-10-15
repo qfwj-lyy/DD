@@ -8,12 +8,12 @@
 [ext_resource type="Script" uid="uid://cyxxmhvja0apb" path="res://scripts/computer_scene/computer_scene.gd" id="6_q8mjp"]
 [ext_resource type="Script" uid="uid://onqn7vb0nepd" path="res://scripts/computer_scene/calendar_scene.gd" id="7_jdad8"]
 [ext_resource type="Script" uid="uid://bm7s8ivf8kbmv" path="res://scripts/computer_scene/property_manager.gd" id="8_jdad8"]
+[ext_resource type="Texture2D" uid="uid://bm5phhix34ag2" path="res://assets/computer_scene/desktop_setting_icon.png" id="8_jrl6a"]
 [ext_resource type="Script" uid="uid://ce08b43y0bjxs" path="res://scripts/computer_scene/browser_scene.gd" id="11_aonbx"]
 [ext_resource type="Script" uid="uid://cannks0lt5d1e" path="res://scripts/computer_scene/buff_manager.gd" id="11_cjvif"]
 [ext_resource type="Script" uid="uid://d3j87kqt0wpi6" path="res://scripts/computer_scene/project_v_box.gd" id="12_aonbx"]
 [ext_resource type="Texture2D" uid="uid://cfg2ihodiec08" path="res://assets/computer_scene/desktop_browser_icon.png" id="13_lcbjr"]
 [ext_resource type="Script" uid="uid://bjv7w1v3yn4qs" path="res://scripts/computer_scene/desktop_icon_manager.gd" id="14_4vth2"]
-[ext_resource type="Texture2D" uid="uid://bm5phhix34ag2" path="res://assets/computer_scene/desktop_setting_icon.png" id="14_30v7y"]
 [ext_resource type="Texture2D" uid="uid://boovs3btuf43l" path="res://assets/computer_scene/desktop_calendar_icon.png" id="16_c7a3q"]
 [ext_resource type="Script" uid="uid://b227pdi84qmke" path="res://scripts/computer_scene/store_scene.gd" id="16_cjvif"]
 [ext_resource type="Texture2D" uid="uid://b6bnp8q1xr1oj" path="res://assets/computer_scene/desktop_database_icon.png" id="17_4vth2"]
@@ -104,7 +104,7 @@ offset_right = 160.0
 offset_bottom = 160.0
 script = ExtResource("14_4vth2")
 calendar_scene = NodePath("../CalendarScene")
-browser_scene = NodePath("../BrowserScene")
+browser_scene = NodePath("")
 
 [node name="OpenSetting" type="Button" parent="ComputerScene/DesktopIconManager"]
 layout_mode = 0
@@ -112,6 +112,10 @@ offset_left = 90.0
 offset_top = 360.0
 offset_right = 290.0
 offset_bottom = 560.0
+text = "设置"
+icon = ExtResource("8_jrl6a")
+flat = true
+icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
@@ -189,21 +193,12 @@ offset_bottom = 1600.0
 script = ExtResource("16_cjvif")
 
 [node name="StoreBackGround" type="Panel" parent="ComputerScene/StoreScene"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 990.0
-offset_bottom = 600.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Cards(Flag)" type="HBoxContainer" parent="ComputerScene/StoreScene"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 0
-offset_right = 2000.0
-offset_bottom = 1000.0
 
 [node name="Card1" type="Panel" parent="ComputerScene/StoreScene"]
 layout_mode = 0
@@ -347,13 +342,11 @@ script = ExtResource("11_cjvif")
 
 [node name="EachRoundOver" type="Node" parent="ComputerScene/PropertyManager/BuffManager"]
 
-[node name="BrowserScene" type="Window" parent="ComputerScene"]
-oversampling_override = 1.0
-position = Vector2i(320, 72)
-size = Vector2i(1920, 1200)
+[node name="BrowserScene" type="Panel" parent="ComputerScene"]
 visible = false
+offset_left = 320.0
 offset_top = 72.0
-offset_right = 1920.0
+offset_right = 2240.0
 offset_bottom = 1272.0
 theme = SubResource("Theme_kvitc")
 script = ExtResource("11_aonbx")
@@ -371,6 +364,7 @@ texture = ExtResource("17_ry0e6")
 expand_mode = 1
 
 [node name="URLEdit" type="LineEdit" parent="ComputerScene/BrowserScene"]
+layout_mode = 0
 offset_left = 50.0
 offset_top = 70.0
 offset_right = 1902.0
@@ -378,6 +372,7 @@ offset_bottom = 132.0
 flat = true
 
 [node name="Button" type="Button" parent="ComputerScene/BrowserScene"]
+layout_mode = 0
 offset_left = 66.0
 offset_top = 162.0
 offset_right = 338.0
@@ -386,6 +381,7 @@ text = "某收藏的外包网址"
 
 [node name="ExitBrowser" type="Button" parent="ComputerScene/BrowserScene"]
 visible = false
+layout_mode = 0
 offset_left = 1732.0
 offset_top = 68.0
 offset_right = 1908.0
@@ -393,6 +389,7 @@ offset_bottom = 130.0
 text = "退出浏览器"
 
 [node name="ProjectVBox" type="VBoxContainer" parent="ComputerScene/BrowserScene"]
+layout_mode = 0
 offset_left = 322.0
 offset_top = 476.0
 offset_right = 1608.0
@@ -401,6 +398,7 @@ theme_override_constants/separation = 0
 script = ExtResource("12_aonbx")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="ComputerScene/BrowserScene"]
+layout_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ComputerScene/BrowserScene/ScrollContainer"]
 custom_minimum_size = Vector2(550, 0)
