@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://da20ico2ibtul"]
+
+[ext_resource type="Script" uid="uid://d2uxd7k1l251p" path="res://scripts/computer_scene/buffs/fan_shui.gd" id="1_pqi6t"]
+[ext_resource type="PackedScene" uid="uid://cnv0vfvik148k" path="res://scenes/computer_scene/buffs/buff.tscn" id="1_yl7kn"]
+
+[node name="FanShui" instance=ExtResource("1_yl7kn")]
+script = ExtResource("1_pqi6t")
+duration = -9999
+execution_time = 1
+description = "反水：每回合开始时，进度增加bug数*10%（向下取整）（降低难度，也是凑个buff位置）"
