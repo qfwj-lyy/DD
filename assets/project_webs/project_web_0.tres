@@ -1,21 +1,27 @@
 [gd_resource type="Resource" script_class="ProjectWeb" load_steps=5 format=3 uid="uid://nk4hgf3up1el"]
 
 [ext_resource type="Script" uid="uid://7a2lp0yd04fg" path="res://scripts/computer_scene/project.gd" id="1_025mu"]
-[ext_resource type="Resource" uid="uid://cri0rjnebj6oi" path="res://assets/projects/project_0.tres" id="2_20a71"]
+[ext_resource type="PackedScene" uid="uid://cd6rf0dya4jhd" path="res://scenes/computer_scene/buffs/zhong_wang_suo_gui.tscn" id="2_20a71"]
 [ext_resource type="Script" uid="uid://ofcmgwxm3mbm" path="res://scripts/computer_scene/project_web.gd" id="2_j83cn"]
 
-[sub_resource type="Resource" id="Resource_j83cn"]
+[sub_resource type="Resource" id="Resource_025mu"]
 script = ExtResource("1_025mu")
-project_name = "大学教务系统"
-initial_progress = 50.0
-initial_bug_amount = 100.0
-bug_amount_limit = 350.0
-initial_money = 200.0
+project_name = "《全民打飞机》游戏开发"
+initial_progress = 60.0
+initial_bug_amount = 10.0
+bug_amount_limit = 250.0
+initial_bug_rate = 5.0
+initial_money = 20.0
 initial_mood = 50.0
-initial_skill = 10.0
+initial_skill = 20.0
+deposit_reward = 20.0
+description = "初始buff：
+①众望所归：每回合开始时，获得(项目进度-bug数)的资金（不会为负）
+②仿真体验：交付时bug数若低于bug上限的80%，获得额外50%的存款"
+initial_buffs = Array[Resource]([ExtResource("2_20a71")])
 metadata/_custom_type_script = "uid://7a2lp0yd04fg"
 
 [resource]
 script = ExtResource("2_j83cn")
-projects = Array[ExtResource("1_025mu")]([ExtResource("2_20a71"), SubResource("Resource_j83cn")])
+projects = Array[ExtResource("1_025mu")]([SubResource("Resource_025mu")])
 metadata/_custom_type_script = "uid://ofcmgwxm3mbm"

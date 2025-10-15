@@ -2,7 +2,7 @@ extends Node
 class_name Buff
 
 @export var duration : int 
-# -9:round left time  -99:project left time
+# -9:round left time  -9999:project left time
 
 enum ExecutionTime {
 	property,

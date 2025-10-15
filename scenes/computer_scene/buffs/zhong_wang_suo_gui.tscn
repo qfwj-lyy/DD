@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd6rf0dya4jhd"]
+
+[ext_resource type="PackedScene" uid="uid://cnv0vfvik148k" path="res://scenes/computer_scene/buffs/buff.tscn" id="1_e0g3e"]
+[ext_resource type="Script" uid="uid://cx3ptsrd2gg3m" path="res://scripts/computer_scene/buffs/zhong_wang_suo_gui.gd" id="2_uny8c"]
+
+[node name="ZhongWangSuoGui" instance=ExtResource("1_e0g3e")]
+script = ExtResource("2_uny8c")
+duration = -9999
+execution_time = 1

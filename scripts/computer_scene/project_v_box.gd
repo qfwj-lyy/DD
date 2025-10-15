@@ -2,7 +2,7 @@ extends VBoxContainer
 
 @onready var property_manager: PropertyManager = $"../../PropertyManager"
 
-var display_project_limit := 2
+var display_project_limit := 3
 func browse_web(web_name : String):
 	for p in get_children():
 		p.queue_free()
@@ -32,3 +32,7 @@ func choose_project(p : Project):
 	property_manager.set_project_progress(p.initial_progress)
 	property_manager.set_bug_amount(p.initial_bug_amount)
 	
+	for buff_resource in p.initial_buffs:
+		var buff_node = buff_resource.instantiate()
+		add_child(buff_node)
+		buff_node.reparent_to_buff_manager()

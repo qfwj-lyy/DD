@@ -1,9 +1,11 @@
 extends Panel
 
-@onready var project_v_box: VBoxContainer = $ProjectVBox
+@export var project_v_box: Node
 
 func _ready() -> void:
 	visible = false
+	browse_web("project_web_0")
+	
 
 func _on_url_edit_text_submitted(new_text: String) -> void:
 	pass
