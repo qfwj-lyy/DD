@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://be0mwhecua20m"]
+
+[ext_resource type="Script" uid="uid://c81ty7c26qcga" path="res://scripts/computer_scene/buffs/ru_lv_bo_bing.gd" id="1_odv7s"]
+
+[node name="RuLvBoBing" type="Node"]
+script = ExtResource("1_odv7s")
+duration = -9999
+execution_time = 3
+metadata/_custom_type_script = "uid://dwhc1hbrg4em"

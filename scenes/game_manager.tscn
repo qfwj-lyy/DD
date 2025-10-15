@@ -359,7 +359,6 @@ script = ExtResource("11_cjvif")
 [node name="EachProjectDelivery" type="Node" parent="ComputerScene/PropertyManager/BuffManager"]
 
 [node name="BrowserScene" type="Panel" parent="ComputerScene" node_paths=PackedStringArray("project_v_box")]
-visible = false
 self_modulate = Color(1, 1, 1, 0)
 offset_right = 1000.0
 offset_bottom = 2950.0
@@ -458,7 +457,7 @@ custom_minimum_size = Vector2(1000, 650)
 layout_mode = 0
 offset_top = 150.0
 offset_right = 1000.0
-offset_bottom = 950.0
+offset_bottom = 800.0
 
 [node name="MainVBox" type="VBoxContainer" parent="ComputerScene/BrowserScene/MainScrollContainer"]
 custom_minimum_size = Vector2(1000, 800)
@@ -829,6 +828,7 @@ offset_right = 860.0
 offset_bottom = 1080.0
 
 [node name="CompanyScene" type="Panel" parent="ComputerScene"]
+visible = false
 offset_right = 1000.0
 offset_bottom = 800.0
 script = ExtResource("21_jrl6a")

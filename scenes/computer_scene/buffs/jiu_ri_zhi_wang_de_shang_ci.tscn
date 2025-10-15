@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2aadk2jpdkas"]
+
+[ext_resource type="Script" uid="uid://b4seuhnoiklhb" path="res://scripts/computer_scene/buffs/jiu_ri_zhi_wang_de_shang_ci.gd" id="1_dir7s"]
+
+[node name="JiuRiZhiWangDeShangCi" type="Node"]
+script = ExtResource("1_dir7s")
+duration = -9999
+execution_time = 3
+description = "旧日之王的赏赐：每单位时间获得项目进度*20%的资金（向上取整）"
+metadata/_custom_type_script = "uid://dwhc1hbrg4em"
