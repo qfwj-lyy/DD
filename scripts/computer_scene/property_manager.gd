@@ -50,6 +50,7 @@ func add_bug_amount(n):
 	pass
 	pass
 	bug_amount_bar.value += n
+	
 #endregion
 
 #region set_property

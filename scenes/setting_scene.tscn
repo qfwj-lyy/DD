@@ -64,6 +64,14 @@ offset_right = 181.0
 offset_bottom = 319.0
 scale = Vector2(2, 2)
 
+[node name="FullScreenButton" type="CheckButton" parent="Panel"]
+layout_mode = 0
+offset_left = 562.0
+offset_top = 251.0
+offset_right = 642.0
+offset_bottom = 282.0
+text = "全屏"
+
 [node name="ReturnButton" type="Button" parent="."]
 offset_right = 108.0
 offset_bottom = 43.0
@@ -73,4 +81,5 @@ text = "返回游戏"
 [connection signal="value_changed" from="Panel/SoundScrollBar" to="." method="_on_sound_scroll_bar_value_changed"]
 [connection signal="toggled" from="Panel/MusicCheckButton" to="." method="_on_music_check_button_toggled"]
 [connection signal="toggled" from="Panel/SoundCheckButton" to="." method="_on_sound_check_button_toggled"]
+[connection signal="toggled" from="Panel/FullScreenButton" to="." method="_on_full_screen_button_toggled"]
 [connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

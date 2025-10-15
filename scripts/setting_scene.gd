@@ -46,3 +46,13 @@ func _on_return_button_pressed() -> void:
 	#else:
 		#G.temporary_scene_over()
 #endregion
+
+
+func _on_full_screen_button_toggled(toggled_on: bool) -> void:
+	DisplayServer
+	
+	if toggled_on:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		

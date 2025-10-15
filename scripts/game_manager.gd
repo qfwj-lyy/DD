@@ -37,15 +37,39 @@ func read_data_file_and_initialize() -> void:
 	music_manager.has_music = G.read_setting_data("has_music")
 	sound_manager.has_sound = G.read_setting_data("has_sound")
 	
+# 递归处理所有节点
+func scale_all_nodes(node: Node):
+	# 检查节点是否有position和size属性
+	print(0)
+	if node.has_method("get_position") and node.has_method("set_position"):
+		print("1")
+		var new_pos = node.get_position() * 2
+		print(new_pos)
+		node.set_position(new_pos)
+	
+	if node.has_method("get_size") and node.has_method("set_size"):
+		var new_size = node.get_size() * 2
+		node.set_size(new_size)
+	
+	# 处理子节点
+	for child in node.get_children():
+		scale_all_nodes(child)
 # 整个软件的开始
 func _ready() -> void:
+	
 	print("这是测试版。正式版需要修改存储地址")
 	print("这是测试版。正式版需要修改初始的current_scene")
+	print("测试开启了窗口置顶")
 	current_scene = $ComputerScene
 	G.M = self
 	inspect_data_file()
 	read_data_file_and_initialize()
 	music_manager.initialize()
+	
+	#await get_tree().create_timer(3).timeout
+	#var root_node = get_tree().root.get_child(1)
+	#scale_all_nodes(root_node)
+	#print("所有节点已按2倍比例缩放")
 #endregion
 
 #region 场景切换管理器 场景复用
