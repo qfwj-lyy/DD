@@ -8,7 +8,12 @@
 script = ExtResource("2_y40ya")
 mood = -2
 time = 4
+description = "调整作息
+0/-2/4
+本回合剩余时间内，每单位时间心情+2"
 
 [node name="Buff" type="Node" parent="Buffs" index="0"]
 script = ExtResource("3_y40ya")
+duration = -9
+execution_time = 3
 metadata/_custom_type_script = "uid://dwhc1hbrg4em"

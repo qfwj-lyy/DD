@@ -9,7 +9,12 @@ script = ExtResource("2_wnt0a")
 money = 1
 mood = 10
 time = 1
+description = "刷视频
+1/10/1
+本回合剩余时间内，每单位时间心情-2"
 
 [node name="Buff" type="Node" parent="Buffs" index="0"]
 script = ExtResource("3_wnt0a")
+duration = -9
+execution_time = 3
 metadata/_custom_type_script = "uid://dwhc1hbrg4em"

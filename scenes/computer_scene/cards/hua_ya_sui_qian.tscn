@@ -8,3 +8,6 @@ script = ExtResource("2_prebo")
 money = 10
 mood = 10
 time = 1
+description = "花压岁钱
+10/10/1
+无额外效果"

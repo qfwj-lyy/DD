@@ -6,3 +6,6 @@
 [node name="KanKanChuangWai" instance=ExtResource("1_vyv3a")]
 script = ExtResource("2_ijlcq")
 mood = 1
+description = "看看窗外
+0/1/0
+无额外效果"

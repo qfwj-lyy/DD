@@ -9,7 +9,12 @@ script = ExtResource("2_goicj")
 money = 5
 mood = 10
 time = 1
+description = "网吧通宵
+5/10/1
+本回合剩余时间内，每单位时间心情-1"
 
 [node name="Buff" type="Node" parent="Buffs" index="0"]
 script = ExtResource("3_goicj")
+duration = -9
+execution_time = 3
 metadata/_custom_type_script = "uid://dwhc1hbrg4em"
