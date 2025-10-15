@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b07wke32bj74k"]
+
+[ext_resource type="PackedScene" uid="uid://cnv0vfvik148k" path="res://scenes/computer_scene/buffs/buff.tscn" id="1_3kfcg"]
+[ext_resource type="Script" uid="uid://cb260f8732kag" path="res://scripts/computer_scene/buffs/property_buff.gd" id="2_bho0j"]
+
+[node name="PropertyBuff" instance=ExtResource("1_3kfcg")]
+script = ExtResource("2_bho0j")
+money = 0
+mood = 0
+skill = 0
+project_progress = 0
+bug_amount = 0

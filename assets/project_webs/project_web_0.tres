@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="ProjectWeb" load_steps=5 format=3 uid="uid://nk4hgf3up1el"]
+[gd_resource type="Resource" script_class="ProjectWeb" load_steps=6 format=3 uid="uid://nk4hgf3up1el"]
 
 [ext_resource type="Script" uid="uid://7a2lp0yd04fg" path="res://scripts/computer_scene/project.gd" id="1_025mu"]
 [ext_resource type="PackedScene" uid="uid://cd6rf0dya4jhd" path="res://scenes/computer_scene/buffs/zhong_wang_suo_gui.tscn" id="2_20a71"]
 [ext_resource type="Script" uid="uid://ofcmgwxm3mbm" path="res://scripts/computer_scene/project_web.gd" id="2_j83cn"]
+[ext_resource type="PackedScene" uid="uid://ckpbf0m7memhf" path="res://scenes/computer_scene/buffs/fang_zhen_ti_yan.tscn" id="3_20a71"]
 
 [sub_resource type="Resource" id="Resource_025mu"]
 script = ExtResource("1_025mu")
@@ -18,7 +19,7 @@ deposit_reward = 20.0
 description = "初始buff：
 ①众望所归：每回合开始时，获得(项目进度-bug数)的资金（不会为负）
 ②仿真体验：交付时bug数若低于bug上限的80%，获得额外50%的存款"
-initial_buffs = Array[Resource]([ExtResource("2_20a71")])
+initial_buffs = Array[Resource]([ExtResource("2_20a71"), ExtResource("3_20a71")])
 metadata/_custom_type_script = "uid://7a2lp0yd04fg"
 
 [resource]

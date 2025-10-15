@@ -7,3 +7,4 @@
 script = ExtResource("2_uny8c")
 duration = -9999
 execution_time = 1
+description = "众望所归：每回合开始时，获得(项目进度-bug数)的资金（不会为负）"

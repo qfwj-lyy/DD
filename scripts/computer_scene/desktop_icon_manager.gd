@@ -3,7 +3,9 @@ extends Control
 @export var calendar_scene: Node
 @export var browser_scene: Node
 
-
+func _ready() -> void:
+	visible = true
+	
 
 
 func _on_open_setting_pressed() -> void:

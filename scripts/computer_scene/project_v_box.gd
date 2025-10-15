@@ -9,10 +9,10 @@ func browse_web(web_name : String):
 	var web : ProjectWeb = load("res://assets/project_webs/" + web_name + ".tres")
 	var display_project_amount := 0
 	while(1):
-		var project_scene = load("res://scenes/computer_scene/browser_scene/project_scene.tscn").instantiate()
-		add_child(project_scene)
+		var project_detail_scene = load("res://scenes/computer_scene/browser_scene/project_detail_scene.tscn").instantiate()
+		add_child(project_detail_scene)
 		var rand_project = web.projects[randi_range(0 , web.projects.size() - 1)]
-		project_scene.set_project_information(rand_project)
+		project_detail_scene.set_project_information(rand_project)
 		web.projects.erase(rand_project)
 		display_project_amount += 1
 		if web.projects.size() <= 0:

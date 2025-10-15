@@ -1,12 +1,14 @@
 [gd_scene load_steps=2 format=3 uid="uid://r87qtl7hufmt"]
 
-[ext_resource type="Script" uid="uid://bcy5o23ro4f5y" path="res://scripts/computer_scene/project_scene.gd" id="1_ubw6j"]
+[ext_resource type="Script" uid="uid://bcy5o23ro4f5y" path="res://scripts/computer_scene/project_detail_scene.gd" id="1_rvwmx"]
 
-[node name="ProjectScene" type="Control" node_paths=PackedStringArray("project_name_label", "initial_progress_label", "initial_bug_amount_label", "bug_amount_limit_label", "initial_money_label", "initial_mood_label", "initial_skill_label")]
-custom_minimum_size = Vector2(0, 150)
+[node name="ProjectDetailScene" type="Control" node_paths=PackedStringArray("project_name_label", "initial_progress_label", "initial_bug_amount_label", "bug_amount_limit_label", "initial_money_label", "initial_mood_label", "initial_skill_label", "description_label")]
+custom_minimum_size = Vector2(980, 360)
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_ubw6j")
+offset_right = 980.0
+offset_bottom = 359.0
+script = ExtResource("1_rvwmx")
 project_name_label = NodePath("ProjectButton/ProjectNameLabel")
 initial_progress_label = NodePath("ProjectButton/InitialProgressLabel")
 initial_bug_amount_label = NodePath("ProjectButton/InitialBugAmountLabel")
@@ -14,14 +16,13 @@ bug_amount_limit_label = NodePath("ProjectButton/BugAmountLimitLabel")
 initial_money_label = NodePath("ProjectButton/InitialMoneyLabel")
 initial_mood_label = NodePath("ProjectButton/InitialMoodLabel")
 initial_skill_label = NodePath("ProjectButton/InitialSkillLabel")
+description_label = NodePath("ProjectButton/DescriptionLabel")
 
 [node name="ProjectButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 20.0
-offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -80,5 +81,12 @@ offset_top = 78.0
 offset_right = 447.0
 offset_bottom = 101.0
 text = "项目内容熟练度"
+
+[node name="DescriptionLabel" type="Label" parent="ProjectButton"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 137.0
+offset_right = 959.0
+offset_bottom = 341.0
 
 [connection signal="pressed" from="ProjectButton" to="." method="_on_project_button_pressed"]

@@ -8,6 +8,7 @@ var displayed_project
 @export var initial_money_label: Node
 @export var initial_mood_label: Node
 @export var initial_skill_label: Node
+@export var description_label: Node
 
 signal click_project(p)
 
@@ -23,7 +24,7 @@ func set_project_information(project : Project):
 	initial_money_label.text = "初始资金：" + str(project.initial_money)
 	initial_mood_label.text = "参与意向：" + str(project.initial_mood)
 	initial_skill_label.text = "项目内容熟练度：" + str(project.initial_skill)
-
+	description_label.text = project.description
 
 func _on_project_button_pressed() -> void:
 	emit_signal("click_project" , displayed_project)

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckpbf0m7memhf"]
+
+[ext_resource type="PackedScene" uid="uid://cnv0vfvik148k" path="res://scenes/computer_scene/buffs/buff.tscn" id="1_djnck"]
+[ext_resource type="Script" uid="uid://ct7j7c4n1f426" path="res://scripts/computer_scene/buffs/fang_zhen_ti_yan.gd" id="2_8b5i2"]
+
+[node name="FangZhenTiYan" instance=ExtResource("1_djnck")]
+script = ExtResource("2_8b5i2")
+duration = -9999
+execution_time = 4
+description = "仿真体验：交付时bug数若低于bug上限的80%，获得额外50%的存款"

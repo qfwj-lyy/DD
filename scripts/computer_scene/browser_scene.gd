@@ -12,6 +12,7 @@ func _on_url_edit_text_submitted(new_text: String) -> void:
 	
 func browse_web(web_name : String):
 	project_v_box.browse_web(web_name)
+
 func _on_button_pressed() -> void:
 	browse_web("project_web_0")
 	

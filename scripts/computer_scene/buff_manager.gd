@@ -1,9 +1,10 @@
 extends Node
 
-@onready var property: Node = $Property
+@onready var once: Node = $Once
 @onready var each_time: Node = $EachTime
 @onready var each_round_begin: Node = $EachRoundBegin
 @onready var each_round_over: Node = $EachRoundOver
+@onready var each_project_delivery: Node = $EachProjectDelivery
 
 func get_all_buffs() -> Array[Buff]:
 	var buffs : Array[Buff]

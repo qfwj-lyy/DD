@@ -5,12 +5,15 @@ class_name Buff
 # -9:round left time  -9999:project left time
 
 enum ExecutionTime {
-	property,
+	once,
 	each_round_begin,
 	each_round_over,
-	each_time
+	each_time,
+	each_project_delivery
 }
 @export var execution_time : ExecutionTime
+
+@export_multiline var description : String
 
 var buff_manager = G.M.current_scene.property_manager.buff_manager
 
@@ -26,13 +29,14 @@ func execute():
 
 func reparent_to_buff_manager():
 	match execution_time:
-		ExecutionTime.property:
-			reparent(buff_manager.property)
+		ExecutionTime.once:
+			reparent(buff_manager.once)
 		ExecutionTime.each_round_begin:
 			reparent(buff_manager.each_round_begin)
 		ExecutionTime.each_round_over:
 			reparent(buff_manager.each_round_over)
 		ExecutionTime.each_time:
 			reparent(buff_manager.each_time)
-	
+		ExecutionTime.each_project_delivery:
+			reparent(buff_manager.each_project_delivery)
 	

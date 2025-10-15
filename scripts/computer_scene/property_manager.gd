@@ -3,6 +3,18 @@ class_name PropertyManager
 
 var current_project : Project
 
+var project_progress : float:
+	set(i):
+		project_progress = i
+		project_progress_bar.value = i
+var bug_amount : float:
+	set(i):
+		bug_amount = i
+		bug_amount_bar.value = i
+var bug_amount_limit : float:
+	set(i):
+		bug_amount_limit = i
+		bug_amount_bar.max = i
 var money_amount : float
 var mood_amount : float
 var skill_amount : float
@@ -45,11 +57,11 @@ func add_time(t : int):
 func add_project_progress(n):
 	pass
 	pass
-	project_progress_bar.value += n
+	project_progress += n
 func add_bug_amount(n):
 	pass
 	pass
-	bug_amount_bar.value += n
+	bug_amount += n
 	
 #endregion
 
@@ -72,11 +84,11 @@ func set_skill(n):
 func set_project_progress(n):
 	pass
 	pass
-	project_progress_bar.value = n
+	project_progress = n
 func set_bug_amount(n):
 	pass
 	pass
-	bug_amount_bar.value = n
+	bug_amount = n
 func set_current_project(p : Project):
 	current_project = p
 #endregion
