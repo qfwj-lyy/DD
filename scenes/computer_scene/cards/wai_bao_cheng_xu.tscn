@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dky072kyxjifr"]
+
+[ext_resource type="PackedScene" uid="uid://cl4ah171acyxi" path="res://scenes/computer_scene/cards/card.tscn" id="1_413x0"]
+[ext_resource type="Script" uid="uid://6bbps2e1eqgu" path="res://scripts/computer_scene/debug_cards/debug_card.gd" id="2_epian"]
+
+[node name="WaiBaoChengXu" instance=ExtResource("1_413x0")]
+script = ExtResource("2_epian")
+money = 10
+mood = 2
+time = 2
+progress = 8
+bug = -5

@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://k5u7rl4rhtoa"]
+
+[ext_resource type="PackedScene" uid="uid://cl4ah171acyxi" path="res://scenes/computer_scene/cards/card.tscn" id="1_6xoca"]
+[ext_resource type="Script" uid="uid://bse3ljhhcaude" path="res://scripts/computer_scene/activity_cards/activity_card.gd" id="2_74sqf"]
+[ext_resource type="Script" uid="uid://cdsij8n70sph3" path="res://scripts/computer_scene/buffs/gao_ge_meng_jin.gd" id="3_74sqf"]
+
+[node name="GaoGeMengJin" instance=ExtResource("1_6xoca")]
+script = ExtResource("2_74sqf")
+money = 5
+mood = 4
+time = 1
+
+[node name="Buff" type="Node" parent="Buffs" index="0"]
+script = ExtResource("3_74sqf")
+metadata/_custom_type_script = "uid://dwhc1hbrg4em"

@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://uurq06fca3v"]
+
+[ext_resource type="PackedScene" uid="uid://cl4ah171acyxi" path="res://scenes/computer_scene/cards/card.tscn" id="1_baysl"]
+[ext_resource type="Script" uid="uid://bse3ljhhcaude" path="res://scripts/computer_scene/activity_cards/activity_card.gd" id="2_wnt0a"]
+[ext_resource type="Script" uid="uid://bwqju7pq4bcxo" path="res://scripts/computer_scene/buffs/shua_shi_ping.gd" id="3_wnt0a"]
+
+[node name="ShuaShiPing" instance=ExtResource("1_baysl")]
+script = ExtResource("2_wnt0a")
+money = 1
+mood = 10
+time = 1
+
+[node name="Buff" type="Node" parent="Buffs" index="0"]
+script = ExtResource("3_wnt0a")
+metadata/_custom_type_script = "uid://dwhc1hbrg4em"

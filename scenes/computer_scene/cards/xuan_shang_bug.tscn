@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c233xwaodvihf"]
+
+[ext_resource type="PackedScene" uid="uid://cl4ah171acyxi" path="res://scenes/computer_scene/cards/card.tscn" id="1_vcs58"]
+[ext_resource type="Script" uid="uid://6bbps2e1eqgu" path="res://scripts/computer_scene/debug_cards/debug_card.gd" id="2_o0ith"]
+
+[node name="XuanShangbug" instance=ExtResource("1_vcs58")]
+script = ExtResource("2_o0ith")
+money = 4
+bug = -5

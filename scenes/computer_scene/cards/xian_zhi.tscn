@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://2wpjisgmlnfs"]
+
+[ext_resource type="PackedScene" uid="uid://cl4ah171acyxi" path="res://scenes/computer_scene/cards/card.tscn" id="1_gnrvp"]
+[ext_resource type="Script" uid="uid://bse3ljhhcaude" path="res://scripts/computer_scene/activity_cards/activity_card.gd" id="2_ek0qg"]
+
+[node name="XianZhi" instance=ExtResource("1_gnrvp")]
+script = ExtResource("2_ek0qg")
+mood = 1
+time = 1

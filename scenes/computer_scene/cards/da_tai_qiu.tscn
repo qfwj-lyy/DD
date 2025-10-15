@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb6tgulqtiut2"]
+
+[ext_resource type="PackedScene" uid="uid://cl4ah171acyxi" path="res://scenes/computer_scene/cards/card.tscn" id="1_8ql8u"]
+[ext_resource type="Script" uid="uid://bse3ljhhcaude" path="res://scripts/computer_scene/activity_cards/activity_card.gd" id="2_x3hmd"]
+
+[node name="DaTaiQiu" instance=ExtResource("1_8ql8u")]
+script = ExtResource("2_x3hmd")
+money = 3
+mood = 8
+time = 2

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdcdc3tkmr5le"]
+
+[ext_resource type="PackedScene" uid="uid://cl4ah171acyxi" path="res://scenes/computer_scene/cards/card.tscn" id="1_yrhj3"]
+[ext_resource type="Script" uid="uid://6bbps2e1eqgu" path="res://scripts/computer_scene/debug_cards/debug_card.gd" id="2_b3dmv"]
+
+[node name="LeeCodeShuaTi" instance=ExtResource("1_yrhj3")]
+script = ExtResource("2_b3dmv")
+mood = -5
+time = 3
+skill = 6
