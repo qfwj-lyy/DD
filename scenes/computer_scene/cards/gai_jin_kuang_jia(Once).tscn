@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://clur14vwewow6"]
+
+[ext_resource type="PackedScene" uid="uid://cl4ah171acyxi" path="res://scenes/computer_scene/cards/card.tscn" id="1_3tb7f"]
+[ext_resource type="Script" uid="uid://6bbps2e1eqgu" path="res://scripts/computer_scene/debug_cards/debug_card.gd" id="2_fnoej"]
+[ext_resource type="Script" uid="uid://pfwgulo3nmyf" path="res://scripts/computer_scene/buffs/gai_jin_kuang_jia.gd" id="3_elh4g"]
+
+[node name="GaiJinKuangJia(Once)" instance=ExtResource("1_3tb7f")]
+script = ExtResource("2_fnoej")
+money = 5
+mood = -3
+time = 3
+description = "改进框架
+5/-3/3
+本轮游戏的剩余时间内，每回合开始时项目进度+2"
+
+[node name="Buff" type="Node" parent="Buffs" index="0"]
+script = ExtResource("3_elh4g")
+duration = -9999
+execution_time = 1
+metadata/_custom_type_script = "uid://dwhc1hbrg4em"
