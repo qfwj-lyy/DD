@@ -104,7 +104,7 @@ offset_right = 160.0
 offset_bottom = 160.0
 script = ExtResource("14_4vth2")
 calendar_scene = NodePath("../CalendarScene")
-browser_scene = NodePath("")
+browser_scene = NodePath("../BrowserScene")
 
 [node name="OpenSetting" type="Button" parent="ComputerScene/DesktopIconManager"]
 layout_mode = 0
