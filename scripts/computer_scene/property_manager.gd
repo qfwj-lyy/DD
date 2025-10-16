@@ -21,7 +21,6 @@ var skill_amount : float
 var time_amount : float # 时空穿越所需要，目前没有需求
 
 var bug_rate : float
-var bug_limit : float
 
 
 @export var money_label: Node
@@ -32,10 +31,11 @@ var bug_limit : float
 @export var global_buffs: Node
 
 #----------还没有bug_rate对应的label----------
-#----------还没有bug_limit对应的label----------
 
 @onready var buff_manager: Node = $BuffManager
 
+var is_stop_bug_growth : bool = false #标记本回合是否停止增长bug
+var is_stop_income : bool = false #标记本回合是否停止固定收益
 
 #region add_property
 func add_money(n):
@@ -77,7 +77,7 @@ func add_bug_rate(n):
 func add_bug_limit(n):
 	pass
 	pass
-	bug_limit += n
+	bug_amount_limit += n
 #endregion
 
 #region set_property
@@ -110,7 +110,7 @@ func set_current_project(p : Project):
 func set_bug_rate(n):
 	bug_rate = n
 func set_bug_limit(n):
-	bug_limit = n
+	bug_amount_limit = n
 #endregion
 
 func use_money(a) -> bool:

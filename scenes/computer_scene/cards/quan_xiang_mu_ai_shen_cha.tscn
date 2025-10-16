@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://neqf8golx4t6"]
+
+[ext_resource type="PackedScene" uid="uid://cl4ah171acyxi" path="res://scenes/computer_scene/cards/card.tscn" id="1_ijm56"]
+[ext_resource type="Script" uid="uid://b6dcfbv4mrcvl" path="res://scripts/computer_scene/buffs/quan_xiang_mu_ai_shen_cha_root.gd" id="2_ijm56"]
+
+[node name="QuanXiangMuAIShenCha" instance=ExtResource("1_ijm56")]
+script = ExtResource("2_ijm56")
+money = 10
+time = 1
+description = "全项目ai审查
+10/0/1
+bug增长率-10%"

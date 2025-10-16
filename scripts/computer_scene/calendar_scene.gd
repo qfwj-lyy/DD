@@ -19,9 +19,6 @@ func execute_plan():
 	var debug_time_sum : int = 0 #本回合debug卡时间总和
 	var activity_time_sum : int = 0 #本回合activity卡时间总和
 	
-	var is_stop_bug_growth : bool = false #标记本回合是否停止增长bug
-	var is_stop_income : bool = false #标记本回合是否停止固定收益
-	
 	#这里分别告诉计算机debug卡和activity卡的时间，并分别计算时间总和
 	for card in debug_hand.get_children():
 		if card is Card:
@@ -71,8 +68,8 @@ func execute_plan():
 		#----------单位时间结束
 		
 		#region 每单位时间固定收益
-		if !is_stop_income:
-			var bug_income_correction : float = ceil(G.M.current_scene.property_manager.bug_amount / G.M.current_scene.property_manager.bug_limit * 5) * 0.5
+		if !G.M.current_scene.property_manager.is_stop_income:
+			var bug_income_correction : float = ceil(G.M.current_scene.property_manager.bug_amount / G.M.current_scene.property_manager.bug_amount_limit * 5) * 0.5
 			if bug_income_correction == 0:
 				var income : int = G.M.current_scene.property_manager.project_progress * G.M.current_scene.property_manager.skill_amount / 1000
 				if income <= 1:
@@ -104,18 +101,18 @@ func execute_plan():
 		if current_time == max_time :
 			#region 回合结束时固定增长bug
 			
-			if !is_stop_bug_growth:
+			if !G.M.current_scene.property_manager.is_stop_bug_growth:
 				G.M.current_scene.property_manager.add_bug_amount(G.M.current_scene.property_manager.project_progress * G.M.current_scene.property_manager.bug_rate)
 				var project_stage_correction = ceil(G.M.current_scene.property_manager.project_progress / 20)
 				var bug_rate_correction = ceil(G.M.current_scene.property_manager.project_progress / G.M.current_scene.property_manager.skill_amount) * project_stage_correction 
 				G.M.current_scene.property_manager.add_bug_rate(bug_rate_correction)
-			if is_stop_bug_growth:
-				is_stop_bug_growth = false
+			if G.M.current_scene.property_manager.is_stop_bug_growth:
+				G.M.current_scene.property_manager.is_stop_bug_growth = false
 				#清除阻止回合结束时增长的buff
 			
 			#endregion
 			
-			is_stop_income = false #回合结束时清除阻止固定收入的buff
+			G.M.current_scene.property_manager.is_stop_income = false #回合结束时清除阻止固定收入的buff
 			
 			#----------这里执行"每回合结束时"相关buff----------
 			for buff in buff_manager.each_round_over.get_children():
