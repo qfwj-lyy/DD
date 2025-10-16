@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcfvrh74o63s6"]
+
+[ext_resource type="PackedScene" uid="uid://cl4ah171acyxi" path="res://scenes/computer_scene/cards/card.tscn" id="1_w4724"]
+[ext_resource type="Script" uid="uid://d0ehc1xcrfab8" path="res://scripts/computer_scene/buffs/ke_fu_tiao_jie_root.gd" id="2_w4724"]
+
+[node name="KeFuTiaoJie" instance=ExtResource("1_w4724")]
+script = ExtResource("2_w4724")
+money = 8
+mood = 5
+time = 3
+description = "客服调节
+8/-5/3
+bug上限增加10%（向下取整）"

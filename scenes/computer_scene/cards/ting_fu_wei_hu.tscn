@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2n4xbuuegdk7"]
+
+[ext_resource type="PackedScene" uid="uid://cl4ah171acyxi" path="res://scenes/computer_scene/cards/card.tscn" id="1_o5hq7"]
+[ext_resource type="Script" uid="uid://bs5rgasr7nody" path="res://scripts/computer_scene/buffs/ting_fu_wei_hu_root.gd" id="2_o5hq7"]
+[ext_resource type="Script" uid="uid://cg5hxg6y2kf1f" path="res://scripts/computer_scene/buffs/ting_fu_wei_hu.gd" id="3_bfryf"]
+
+[node name="TingFuWeiHu" instance=ExtResource("1_o5hq7")]
+script = ExtResource("2_o5hq7")
+mood = -5
+time = 3
+description = "停服维护
+0/-5/3
+本回合剩余时间内，每单位时间bug-5，但固定收益变为0"
+
+[node name="Buff" type="Node" parent="Buffs" index="0"]
+script = ExtResource("3_bfryf")
+duration = -9
+execution_time = 3
+metadata/_custom_type_script = "uid://dwhc1hbrg4em"

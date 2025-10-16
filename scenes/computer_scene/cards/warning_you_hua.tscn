@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl7k7bxlx3lar"]
+
+[ext_resource type="PackedScene" uid="uid://cl4ah171acyxi" path="res://scenes/computer_scene/cards/card.tscn" id="1_wivd0"]
+[ext_resource type="Script" uid="uid://btlylqkqetsas" path="res://scripts/computer_scene/buffs/warning_you_hua_root.gd" id="2_wivd0"]
+
+[node name="WARNINGYouHua" instance=ExtResource("1_wivd0")]
+script = ExtResource("2_wivd0")
+money = 5
+mood = -2
+time = 2
+description = "warning优化
+5/-2/2
+本回合结束时，bug固定增长变为0"
