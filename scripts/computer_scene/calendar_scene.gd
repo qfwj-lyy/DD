@@ -75,10 +75,16 @@ func execute_plan():
 			var bug_income_correction : float = ceil(G.M.current_scene.property_manager.bug_amount / G.M.current_scene.property_manager.bug_limit * 5) * 0.5
 			if bug_income_correction == 0:
 				var income : int = G.M.current_scene.property_manager.project_progress * G.M.current_scene.property_manager.skill_amount / 1000
-				G.M.current_scene.property_manager.add_money(income)
+				if income <= 1:
+					G.M.current_scene.property_manager.add_money(1)
+				else :
+					G.M.current_scene.property_manager.add_money(income)
 			else :
 				var income : int = G.M.current_scene.property_manager.project_progress * G.M.current_scene.property_manager.skill_amount / 1000 * bug_income_correction
-				G.M.current_scene.property_manager.add_money(income)
+				if income <= 1:
+					G.M.current_scene.property_manager.add_money(1)
+				else :
+					G.M.current_scene.property_manager.add_money(income)
 		
 		#endregion
 		
