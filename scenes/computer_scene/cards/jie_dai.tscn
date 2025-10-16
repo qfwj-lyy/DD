@@ -6,6 +6,11 @@
 
 [node name="JieDai" instance=ExtResource("1_t1wqu")]
 script = ExtResource("2_mbdop")
+mood = -1
+time = 1
+description = "借贷
+0/-1/1
+获得10资金，本回合剩余时间内每单位时间资金-1"
 
 [node name="Buff" type="Node" parent="Buffs" index="0"]
 script = ExtResource("3_mbdop")

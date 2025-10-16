@@ -6,6 +6,8 @@
 
 [node name="TingFuWeiHu" instance=ExtResource("1_o5hq7")]
 script = ExtResource("2_o5hq7")
+mood = -5
+time = 3
 description = "停服维护
 0/-5/3
 本回合剩余时间内，每单位时间bug-5，但固定收益变为0"
