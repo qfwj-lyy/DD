@@ -4,6 +4,8 @@ extends VBoxContainer
 
 var display_project_limit := 3
 func browse_web(web_name : String):
+	printerr("项目读取未适配完毕")
+	return
 	for p in get_children():
 		p.queue_free()
 	var web : ProjectWeb = load("res://assets/project_webs/" + web_name + ".tres")

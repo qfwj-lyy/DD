@@ -9,9 +9,13 @@ enum ExecutionTime {
 	each_round_begin,
 	each_round_over,
 	each_time,
-	each_project_delivery
+	each_project_delivery,
+	each_debug_card_use,
+	each_activity_card_use
 }
 @export var execution_time : ExecutionTime
+
+
 
 @export_multiline var description : String
 
