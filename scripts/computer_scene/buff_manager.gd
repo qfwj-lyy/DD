@@ -5,6 +5,10 @@ extends Node
 @onready var each_round_begin: Node = $EachRoundBegin
 @onready var each_round_over: Node = $EachRoundOver
 @onready var each_project_delivery: Node = $EachProjectDelivery
+@onready var each_debug_card_use: Node = $EachDebugCardUse
+@onready var each_activity_card_use: Node = $EachActivityCardUse
+
+
 
 func get_all_buffs() -> Array[Buff]:
 	var buffs : Array[Buff]

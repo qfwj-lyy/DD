@@ -43,4 +43,8 @@ func reparent_to_buff_manager():
 			reparent(buff_manager.each_time)
 		ExecutionTime.each_project_delivery:
 			reparent(buff_manager.each_project_delivery)
-	
+		ExecutionTime.each_debug_card_use:
+			reparent(buff_manager.each_debug_card_use)
+		ExecutionTime.each_activity_card_use:
+			reparent(buff_manager.each_activity_card_use)
+			

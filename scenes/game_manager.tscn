@@ -356,6 +356,10 @@ script = ExtResource("11_cjvif")
 
 [node name="EachProjectDelivery" type="Node" parent="ComputerScene/PropertyManager/BuffManager"]
 
+[node name="EachDebugCardUse" type="Node" parent="ComputerScene/PropertyManager/BuffManager"]
+
+[node name="EachActivityCardUse" type="Node" parent="ComputerScene/PropertyManager/BuffManager"]
+
 [node name="BrowserScene" type="Panel" parent="ComputerScene" node_paths=PackedStringArray("project_v_box")]
 visible = false
 self_modulate = Color(1, 1, 1, 0)
