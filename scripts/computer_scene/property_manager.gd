@@ -20,6 +20,9 @@ var mood_amount : float
 var skill_amount : float
 var time_amount : float # 时空穿越所需要，目前没有需求
 
+var bug_rate : float
+var bug_limit : float
+
 
 @export var money_label: Node
 @export var mood_label: Node
@@ -27,6 +30,9 @@ var time_amount : float # 时空穿越所需要，目前没有需求
 @export var project_progress_bar: Node
 @export var bug_amount_bar: Node
 @export var global_buffs: Node
+
+#----------还没有bug_rate对应的label----------
+#----------还没有bug_limit对应的label----------
 
 @onready var buff_manager: Node = $BuffManager
 
@@ -63,6 +69,15 @@ func add_bug_amount(n):
 	pass
 	bug_amount += n
 	
+func add_bug_rate(n):
+	pass
+	pass
+	bug_rate += n
+
+func add_bug_limit(n):
+	pass
+	pass
+	bug_limit += n
 #endregion
 
 #region set_property
@@ -91,6 +106,11 @@ func set_bug_amount(n):
 	bug_amount = n
 func set_current_project(p : Project):
 	current_project = p
+	
+func set_bug_rate(n):
+	bug_rate = n
+func set_bug_limit(n):
+	bug_limit = n
 #endregion
 
 func use_money(a) -> bool:
