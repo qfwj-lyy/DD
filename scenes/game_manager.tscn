@@ -1,19 +1,27 @@
-[gd_scene load_steps=29 format=3 uid="uid://bd03o2lio4k6m"]
+[gd_scene load_steps=37 format=3 uid="uid://bd03o2lio4k6m"]
 
 [ext_resource type="Script" uid="uid://dt8os701xe3xf" path="res://scripts/game_manager.gd" id="1_oo155"]
 [ext_resource type="Script" uid="uid://dpd0wkimog5pm" path="res://scripts/global_effect_manager/global_effect_manager.gd" id="2_eaq8r"]
 [ext_resource type="Script" uid="uid://8752cp1jpjry" path="res://scripts/global_effect_manager/music_manager.gd" id="3_ternb"]
 [ext_resource type="Script" uid="uid://dxorshs2ji7b3" path="res://scripts/global_effect_manager/sound_manager.gd" id="4_q8mjp"]
 [ext_resource type="Script" uid="uid://dftjfdxfckpq4" path="res://scripts/main_menu/main_menu.gd" id="5_eaq8r"]
+[ext_resource type="Texture2D" uid="uid://td7noav2d2ej" path="res://assets/computer_scene/Administrator_background.png" id="6_8ldib"]
 [ext_resource type="Script" uid="uid://cyxxmhvja0apb" path="res://scripts/computer_scene/computer_scene.gd" id="6_q8mjp"]
 [ext_resource type="Script" uid="uid://onqn7vb0nepd" path="res://scripts/computer_scene/calendar_scene.gd" id="7_jdad8"]
+[ext_resource type="Texture2D" uid="uid://nx4unpp8nprg" path="res://assets/computer_scene/character_head_400x400.png" id="7_kvitc"]
+[ext_resource type="Texture2D" uid="uid://bbvg7lu78tosc" path="res://assets/computer_scene/log_in_207x107.png" id="8_hqtnj"]
 [ext_resource type="Script" uid="uid://bm7s8ivf8kbmv" path="res://scripts/computer_scene/property_manager.gd" id="8_jdad8"]
 [ext_resource type="Texture2D" uid="uid://bm5phhix34ag2" path="res://assets/computer_scene/desktop_setting_icon.png" id="8_jrl6a"]
+[ext_resource type="Texture2D" uid="uid://cnk510ftwgxbi" path="res://assets/computer_scene/Administrator_name_407x107.png" id="8_uiwhc"]
+[ext_resource type="Texture2D" uid="uid://db1rkwt4fb8q0" path="res://assets/computer_scene/change_administrator_209x59.png" id="9_dlmsr"]
+[ext_resource type="Texture2D" uid="uid://djv85jayq1q47" path="res://assets/computer_scene/settings_100x104.png" id="9_rscnb"]
 [ext_resource type="Script" uid="uid://ce08b43y0bjxs" path="res://scripts/computer_scene/browser_scene.gd" id="11_aonbx"]
 [ext_resource type="Script" uid="uid://cannks0lt5d1e" path="res://scripts/computer_scene/buff_manager.gd" id="11_cjvif"]
+[ext_resource type="Texture2D" uid="uid://b5fwx5nx45dvy" path="res://assets/computer_scene/off_computer_100x103.png" id="11_d7j7a"]
 [ext_resource type="Script" uid="uid://d3j87kqt0wpi6" path="res://scripts/computer_scene/project_v_box.gd" id="12_aonbx"]
 [ext_resource type="Texture2D" uid="uid://cfg2ihodiec08" path="res://assets/computer_scene/desktop_browser_icon.png" id="13_lcbjr"]
 [ext_resource type="Script" uid="uid://bjv7w1v3yn4qs" path="res://scripts/computer_scene/desktop_icon_manager.gd" id="14_4vth2"]
+[ext_resource type="Texture2D" uid="uid://by5p2m3k3u3yo" path="res://assets/computer_scene/desktop_background.png" id="14_d7j7a"]
 [ext_resource type="Texture2D" uid="uid://boovs3btuf43l" path="res://assets/computer_scene/desktop_calendar_icon.png" id="16_c7a3q"]
 [ext_resource type="Script" uid="uid://b227pdi84qmke" path="res://scripts/computer_scene/store_scene.gd" id="16_cjvif"]
 [ext_resource type="Texture2D" uid="uid://b6bnp8q1xr1oj" path="res://assets/computer_scene/desktop_database_icon.png" id="17_4vth2"]
@@ -51,47 +59,114 @@ script = ExtResource("4_q8mjp")
 visible = false
 script = ExtResource("5_eaq8r")
 
-[node name="CharacterPicture" type="Panel" parent="MainMenu"]
+[node name="AdministratorBackGround" type="TextureRect" parent="MainMenu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_8ldib")
+
+[node name="CharacterPicture" type="TextureRect" parent="MainMenu"]
 offset_left = 1080.0
 offset_top = 200.0
 offset_right = 1480.0
 offset_bottom = 600.0
+texture = ExtResource("7_kvitc")
 
 [node name="CharacterName" type="Panel" parent="MainMenu"]
+self_modulate = Color(1, 1, 1, 0)
 offset_left = 1080.0
 offset_top = 700.0
 offset_right = 1480.0
 offset_bottom = 800.0
 
+[node name="TextureRect" type="TextureRect" parent="MainMenu/CharacterName"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_uiwhc")
+
 [node name="OpenSetting" type="Button" parent="MainMenu"]
-offset_left = 1960.0
-offset_top = 1300.0
-offset_right = 2160.0
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 2110.0
+offset_top = 1400.0
+offset_right = 2210.0
 offset_bottom = 1500.0
-text = "打开设置"
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/OpenSetting"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -52.0
+offset_right = 50.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_rscnb")
 
 [node name="BeginGame" type="Button" parent="MainMenu"]
+self_modulate = Color(1, 1, 1, 0)
 offset_left = 1180.0
 offset_top = 1000.0
 offset_right = 1380.0
 offset_bottom = 1100.0
-text = "登录"
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/BeginGame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_hqtnj")
 
 [node name="ExitGame" type="Button" parent="MainMenu"]
-offset_left = 2260.0
-offset_top = 1300.0
-offset_right = 2460.0
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 2310.0
+offset_top = 1400.0
+offset_right = 2410.0
 offset_bottom = 1500.0
-text = "退出游戏"
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/ExitGame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -51.5
+offset_right = 50.0
+offset_bottom = 51.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_d7j7a")
 
 [node name="ChangeCharacter" type="Button" parent="MainMenu"]
+self_modulate = Color(1, 1, 1, 0)
 offset_left = 1180.0
 offset_top = 1180.0
 offset_right = 1380.0
 offset_bottom = 1230.0
 theme_override_font_sizes/font_size = 12
-text = "不是您?"
 icon_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/ChangeCharacter"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_dlmsr")
 
 [node name="ComputerScene" type="CanvasLayer" parent="." node_paths=PackedStringArray("unused_hand", "debug_hand", "activity_hand", "calendar_scene")]
 script = ExtResource("6_q8mjp")
@@ -99,6 +174,14 @@ unused_hand = NodePath("CalendarScene/UnusedHand")
 debug_hand = NodePath("CalendarScene/DebugHand")
 activity_hand = NodePath("CalendarScene/ActivityHand")
 calendar_scene = NodePath("CalendarScene")
+
+[node name="ComputerBackground" type="TextureRect" parent="ComputerScene"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_d7j7a")
 
 [node name="DesktopIconManager" type="Control" parent="ComputerScene" node_paths=PackedStringArray("calendar_scene", "browser_scene")]
 layout_mode = 3
