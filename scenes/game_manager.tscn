@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bd03o2lio4k6m"]
+[gd_scene load_steps=45 format=3 uid="uid://bd03o2lio4k6m"]
 
 [ext_resource type="Script" uid="uid://dt8os701xe3xf" path="res://scripts/game_manager.gd" id="1_oo155"]
 [ext_resource type="Script" uid="uid://dpd0wkimog5pm" path="res://scripts/global_effect_manager/global_effect_manager.gd" id="2_eaq8r"]
@@ -31,6 +31,15 @@
 [ext_resource type="Script" uid="uid://bx0dkmbs57kpc" path="res://scripts/computer_scene/supplier_icon.gd" id="20_2j6ol"]
 [ext_resource type="Script" uid="uid://bgfw7mjp2unqo" path="res://scripts/computer_scene/supplier_project.gd" id="21_8ldib"]
 [ext_resource type="Script" uid="uid://do0jk8ds61vr8" path="res://scripts/computer_scene/company_scene.gd" id="21_jrl6a"]
+[ext_resource type="Texture2D" uid="uid://u3xflh36m6g6" path="res://assets/computer_scene/organization_background.png" id="32_d7j7a"]
+[ext_resource type="Texture2D" uid="uid://cis0mhn2goxuh" path="res://assets/computer_scene/refresh_employee_111x60.png" id="33_1llei"]
+[ext_resource type="Texture2D" uid="uid://cpjpgw6ctfnai" path="res://assets/computer_scene/fire_107x56.png" id="34_rtxrx"]
+[ext_resource type="Texture2D" uid="uid://hvrred57t74d" path="res://assets/computer_scene/close_56x57.png" id="35_rtxrx"]
+[ext_resource type="Texture2D" uid="uid://dfjb22xh22eoe" path="res://assets/computer_scene/settings_background.png" id="36_u168d"]
+[ext_resource type="Texture2D" uid="uid://cm514sft36cqe" path="res://assets/computer_scene/conclusion_511x561.png" id="36_x4ngh"]
+[ext_resource type="Texture2D" uid="uid://d1rder1lgfsn" path="res://assets/computer_scene/screen_45x45.png" id="37_5it8k"]
+[ext_resource type="Texture2D" uid="uid://bjyr1lveh3tav" path="res://assets/computer_scene/sound_45x45.png" id="38_d231i"]
+[ext_resource type="Texture2D" uid="uid://cvwyejayox0q1" path="res://assets/computer_scene/administrator_45x45.png" id="40_fmt0c"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2j6ol"]
 
@@ -914,6 +923,223 @@ offset_top = 780.0
 offset_right = 860.0
 offset_bottom = 1080.0
 
+[node name="CompanyScene" type="Panel" parent="ComputerScene"]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 1000.0
+offset_bottom = 800.0
+script = ExtResource("21_jrl6a")
+
+[node name="OrganizationBackground" type="TextureRect" parent="ComputerScene/CompanyScene"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("32_d7j7a")
+
+[node name="ResumeLabel" type="Panel" parent="ComputerScene/CompanyScene"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 50.0
+
+[node name="Label" type="Label" parent="ComputerScene/CompanyScene/ResumeLabel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "简历"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Employee0" type="Panel" parent="ComputerScene/CompanyScene"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 80.0
+offset_right = 160.0
+offset_bottom = 240.0
+
+[node name="Employee1" type="Panel" parent="ComputerScene/CompanyScene"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 80.0
+offset_right = 320.0
+offset_bottom = 240.0
+
+[node name="Employee2" type="Panel" parent="ComputerScene/CompanyScene"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 80.0
+offset_right = 480.0
+offset_bottom = 240.0
+
+[node name="Employee3" type="Panel" parent="ComputerScene/CompanyScene"]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 80.0
+offset_right = 640.0
+offset_bottom = 240.0
+
+[node name="Employee4" type="Panel" parent="ComputerScene/CompanyScene"]
+layout_mode = 0
+offset_left = 680.0
+offset_top = 80.0
+offset_right = 800.0
+offset_bottom = 240.0
+
+[node name="RefreshEmployee" type="Button" parent="ComputerScene/CompanyScene"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 855.0
+offset_top = 137.0
+offset_right = 955.0
+offset_bottom = 187.0
+text = "刷新"
+
+[node name="RefreshTexture" type="TextureRect" parent="ComputerScene/CompanyScene/RefreshEmployee"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.5
+offset_top = -30.0
+offset_right = 55.5
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("33_1llei")
+
+[node name="Label" type="Label" parent="ComputerScene/CompanyScene/RefreshEmployee"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "刷新"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StaffLabel" type="Panel" parent="ComputerScene/CompanyScene"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_top = 270.0
+offset_right = 300.0
+offset_bottom = 320.0
+
+[node name="Label" type="Label" parent="ComputerScene/CompanyScene/StaffLabel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "雇员"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Staff0" type="Panel" parent="ComputerScene/CompanyScene"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 350.0
+offset_right = 250.0
+offset_bottom = 550.0
+
+[node name="Staff1" type="Panel" parent="ComputerScene/CompanyScene"]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 350.0
+offset_right = 495.0
+offset_bottom = 550.0
+
+[node name="Staff2" type="Panel" parent="ComputerScene/CompanyScene"]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 350.0
+offset_right = 740.0
+offset_bottom = 550.0
+
+[node name="FireStaff" type="Button" parent="ComputerScene/CompanyScene"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 855.0
+offset_top = 425.0
+offset_right = 955.0
+offset_bottom = 475.0
+
+[node name="FireTexture" type="TextureRect" parent="ComputerScene/CompanyScene/FireStaff"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.5
+offset_top = -28.0
+offset_right = 53.5
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("34_rtxrx")
+
+[node name="Label" type="Label" parent="ComputerScene/CompanyScene/FireStaff"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "解雇"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CompanyDescription" type="Panel" parent="ComputerScene/CompanyScene"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 50.0
+offset_top = 580.0
+offset_right = 950.0
+offset_bottom = 755.0
+
+[node name="Label" type="Label" parent="ComputerScene/CompanyScene/CompanyDescription"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "描述"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitCompany" type="Button" parent="ComputerScene/CompanyScene"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 925.0
+offset_top = 25.0
+offset_right = 975.0
+offset_bottom = 75.0
+
+[node name="TextureRect" type="TextureRect" parent="ComputerScene/CompanyScene/ExitCompany"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -28.5
+offset_right = 28.0
+offset_bottom = 28.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("35_rtxrx")
+
 [node name="CharacterScene" type="Panel" parent="ComputerScene"]
 visible = false
 offset_right = 1000.0
@@ -1055,19 +1281,51 @@ visible = false
 offset_right = 1000.0
 offset_bottom = 800.0
 
+[node name="SettingsBackground" type="TextureRect" parent="ComputerScene/SettingsScene"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("36_u168d")
+
 [node name="CharacterHead" type="Panel" parent="ComputerScene/SettingsScene"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 50.0
 offset_top = 50.0
 offset_right = 150.0
 offset_bottom = 150.0
 
+[node name="TextureRect" type="TextureRect" parent="ComputerScene/SettingsScene/CharacterHead"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_kvitc")
+expand_mode = 1
+
 [node name="CharacterName" type="Panel" parent="ComputerScene/SettingsScene"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 200.0
 offset_top = 80.0
 offset_right = 350.0
 offset_bottom = 120.0
+
+[node name="Label" type="Label" parent="ComputerScene/SettingsScene/CharacterName"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "玩家名称"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="SettingsDescription" type="Panel" parent="ComputerScene/SettingsScene"]
 layout_mode = 0
@@ -1076,47 +1334,146 @@ offset_top = 175.0
 offset_right = 900.0
 offset_bottom = 725.0
 
+[node name="TextureRect" type="TextureRect" parent="ComputerScene/SettingsScene/SettingsDescription"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -255.5
+offset_top = -280.5
+offset_right = 255.5
+offset_bottom = 280.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("36_x4ngh")
+
 [node name="ScreenIcon" type="Panel" parent="ComputerScene/SettingsScene"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 100.0
 offset_top = 200.0
 offset_right = 140.0
 offset_bottom = 240.0
 
+[node name="TextureRect" type="TextureRect" parent="ComputerScene/SettingsScene/ScreenIcon"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("37_5it8k")
+
 [node name="ScreenName" type="Panel" parent="ComputerScene/SettingsScene"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 175.0
 offset_top = 210.0
 offset_right = 275.0
 offset_bottom = 230.0
 
+[node name="Label" type="Label" parent="ComputerScene/SettingsScene/ScreenName"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "画面"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="SoundIcon" type="Panel" parent="ComputerScene/SettingsScene"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 100.0
 offset_top = 280.0
 offset_right = 140.0
 offset_bottom = 320.0
 
+[node name="TextureRect" type="TextureRect" parent="ComputerScene/SettingsScene/SoundIcon"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.5
+offset_top = -22.5
+offset_right = 22.5
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("38_d231i")
+
 [node name="SoundName" type="Panel" parent="ComputerScene/SettingsScene"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 175.0
 offset_top = 290.0
 offset_right = 275.0
 offset_bottom = 310.0
 
+[node name="Label" type="Label" parent="ComputerScene/SettingsScene/SoundName"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "声音"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="AccountIcon" type="Panel" parent="ComputerScene/SettingsScene"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 100.0
 offset_top = 360.0
 offset_right = 140.0
 offset_bottom = 400.0
 
+[node name="TextureRect" type="TextureRect" parent="ComputerScene/SettingsScene/AccountIcon"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.5
+offset_top = -22.5
+offset_right = 22.5
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("40_fmt0c")
+
 [node name="AccountName" type="Panel" parent="ComputerScene/SettingsScene"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 175.0
 offset_top = 370.0
 offset_right = 275.0
 offset_bottom = 390.0
+
+[node name="Label" type="Label" parent="ComputerScene/SettingsScene/AccountName"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "账号"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MarkLine" type="Panel" parent="ComputerScene/SettingsScene"]
 layout_mode = 0
@@ -1124,6 +1481,29 @@ offset_left = 75.0
 offset_top = 195.0
 offset_right = 77.0
 offset_bottom = 245.0
+
+[node name="Close" type="Button" parent="ComputerScene/SettingsScene"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 925.0
+offset_top = 25.0
+offset_right = 975.0
+offset_bottom = 75.0
+
+[node name="TextureRect" type="TextureRect" parent="ComputerScene/SettingsScene/Close"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -28.5
+offset_right = 28.0
+offset_bottom = 28.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("35_rtxrx")
 
 [node name="DataBaseScene" type="Panel" parent="ComputerScene"]
 visible = false
