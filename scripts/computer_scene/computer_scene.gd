@@ -8,6 +8,9 @@ class_name ComputerScene
 @export var debug_hand: Node
 @export var activity_hand : Node
 @export var calendar_scene : Node
+@export var company_scene : Node
+
+
 
 func _ready() -> void:
 	print("这是测试版，正式版需要修改computer scene的_ready的visible修改")

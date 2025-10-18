@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ProjectWeb" load_steps=3 format=3 uid="uid://nk4hgf3up1el"]
 
 [ext_resource type="Script" uid="uid://bedn2oce7kx6i" path="res://scripts/computer_scene/project_supplier.gd" id="2_025mu"]
-[ext_resource type="Script" uid="uid://ofcmgwxm3mbm" path="res://scripts/computer_scene/project_web.gd" id="2_j83cn"]
+[ext_resource type="Script" uid="uid://ofcmgwxm3mbm" path="res://scripts/computer_scene/resource_type/project_web.gd" id="2_j83cn"]
 
 [resource]
 script = ExtResource("2_j83cn")

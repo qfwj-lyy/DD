@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EmployeeContent" load_steps=4 format=3 uid="uid://bm2lhl1gtp0vw"]
+
+[ext_resource type="Script" uid="uid://b41ouhg7qr7rj" path="res://scripts/computer_scene/resource_type/employee_parameter.gd" id="1_7nt4r"]
+[ext_resource type="Script" uid="uid://cpmkl03aq3xjo" path="res://scripts/computer_scene/resource_type/employee_content.gd" id="2_0r3h3"]
+
+[sub_resource type="Resource" id="Resource_tnivv"]
+script = ExtResource("1_7nt4r")
+name = "zhao_shi_xi_de_fu_er_dai"
+weight = 6
+metadata/_custom_type_script = "uid://b41ouhg7qr7rj"
+
+[resource]
+script = ExtResource("2_0r3h3")
+normal_employees = Array[ExtResource("1_7nt4r")]([SubResource("Resource_tnivv")])
+metadata/_custom_type_script = "uid://cpmkl03aq3xjo"

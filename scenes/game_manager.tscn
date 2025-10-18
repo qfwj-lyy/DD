@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bd03o2lio4k6m"]
+[gd_scene load_steps=36 format=3 uid="uid://bd03o2lio4k6m"]
 
 [ext_resource type="Script" uid="uid://dt8os701xe3xf" path="res://scripts/game_manager.gd" id="1_oo155"]
 [ext_resource type="Script" uid="uid://dpd0wkimog5pm" path="res://scripts/global_effect_manager/global_effect_manager.gd" id="2_eaq8r"]
@@ -31,7 +31,6 @@
 [ext_resource type="Script" uid="uid://bx0dkmbs57kpc" path="res://scripts/computer_scene/supplier_icon.gd" id="20_2j6ol"]
 [ext_resource type="Script" uid="uid://bgfw7mjp2unqo" path="res://scripts/computer_scene/supplier_project.gd" id="21_8ldib"]
 [ext_resource type="Script" uid="uid://do0jk8ds61vr8" path="res://scripts/computer_scene/company_scene.gd" id="21_jrl6a"]
-[ext_resource type="Script" uid="uid://d22jj08m6nbx2" path="res://scripts/computer_scene/employees/employee.gd" id="22_wcunu"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2j6ol"]
 
@@ -168,12 +167,13 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_dlmsr")
 
-[node name="ComputerScene" type="CanvasLayer" parent="." node_paths=PackedStringArray("unused_hand", "debug_hand", "activity_hand", "calendar_scene")]
+[node name="ComputerScene" type="CanvasLayer" parent="." node_paths=PackedStringArray("unused_hand", "debug_hand", "activity_hand", "calendar_scene", "company_scene")]
 script = ExtResource("6_q8mjp")
 unused_hand = NodePath("CalendarScene/UnusedHand")
 debug_hand = NodePath("CalendarScene/DebugHand")
 activity_hand = NodePath("CalendarScene/ActivityHand")
 calendar_scene = NodePath("CalendarScene")
+company_scene = NodePath("CompanyScene")
 
 [node name="ComputerBackground" type="TextureRect" parent="ComputerScene"]
 anchors_preset = 15
@@ -183,14 +183,13 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("14_d7j7a")
 
-[node name="DesktopIconManager" type="Control" parent="ComputerScene" node_paths=PackedStringArray("calendar_scene", "browser_scene")]
+[node name="DesktopIconManager" type="Control" parent="ComputerScene"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 160.0
 offset_bottom = 160.0
 script = ExtResource("14_4vth2")
-calendar_scene = NodePath("../CalendarScene")
-browser_scene = NodePath("../BrowserScene")
 
 [node name="OpenSetting" type="Button" parent="ComputerScene/DesktopIconManager"]
 layout_mode = 0
@@ -271,6 +270,7 @@ vertical_icon_alignment = 0
 expand_icon = true
 
 [node name="StoreScene" type="Control" parent="ComputerScene" node_paths=PackedStringArray("store_cards")]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_top = 1000.0
@@ -914,75 +914,57 @@ offset_right = 860.0
 offset_bottom = 1080.0
 
 [node name="CompanyScene" type="Panel" parent="ComputerScene"]
-visible = false
 offset_right = 1000.0
 offset_bottom = 800.0
 script = ExtResource("21_jrl6a")
-
-[node name="Control(Flag)" type="Control" parent="ComputerScene/CompanyScene"]
-visible = false
-anchors_preset = 0
-offset_right = 160.0
-offset_bottom = 160.0
-
-[node name="Employee(Flag)" type="Control" parent="ComputerScene/CompanyScene/Control(Flag)"]
-anchors_preset = 0
-offset_right = 160.0
-offset_bottom = 160.0
-script = ExtResource("22_wcunu")
-
-[node name="Control2(Flag)" type="Control" parent="ComputerScene/CompanyScene"]
-visible = false
-anchors_preset = 0
-offset_right = 160.0
-offset_bottom = 160.0
 
 [node name="ResumeLabel" type="Panel" parent="ComputerScene/CompanyScene"]
 layout_mode = 0
 offset_right = 300.0
 offset_bottom = 50.0
 
-[node name="Employee1" type="Panel" parent="ComputerScene/CompanyScene"]
+[node name="Employee0" type="Panel" parent="ComputerScene/CompanyScene"]
 layout_mode = 0
 offset_left = 40.0
 offset_top = 80.0
 offset_right = 160.0
 offset_bottom = 240.0
 
-[node name="Employee2" type="Panel" parent="ComputerScene/CompanyScene"]
+[node name="Employee1" type="Panel" parent="ComputerScene/CompanyScene"]
 layout_mode = 0
 offset_left = 200.0
 offset_top = 80.0
 offset_right = 320.0
 offset_bottom = 240.0
 
-[node name="Employee3" type="Panel" parent="ComputerScene/CompanyScene"]
+[node name="Employee2" type="Panel" parent="ComputerScene/CompanyScene"]
 layout_mode = 0
 offset_left = 360.0
 offset_top = 80.0
 offset_right = 480.0
 offset_bottom = 240.0
 
-[node name="Employee4" type="Panel" parent="ComputerScene/CompanyScene"]
+[node name="Employee3" type="Panel" parent="ComputerScene/CompanyScene"]
 layout_mode = 0
 offset_left = 520.0
 offset_top = 80.0
 offset_right = 640.0
 offset_bottom = 240.0
 
-[node name="Employee5" type="Panel" parent="ComputerScene/CompanyScene"]
+[node name="Employee4" type="Panel" parent="ComputerScene/CompanyScene"]
 layout_mode = 0
 offset_left = 680.0
 offset_top = 80.0
 offset_right = 800.0
 offset_bottom = 240.0
 
-[node name="RefreshEmployee" type="Panel" parent="ComputerScene/CompanyScene"]
+[node name="RefreshEmployee" type="Button" parent="ComputerScene/CompanyScene"]
 layout_mode = 0
 offset_left = 855.0
 offset_top = 137.0
 offset_right = 955.0
 offset_bottom = 187.0
+text = "刷新"
 
 [node name="StaffLabel" type="Panel" parent="ComputerScene/CompanyScene"]
 layout_mode = 0
@@ -990,28 +972,28 @@ offset_top = 270.0
 offset_right = 300.0
 offset_bottom = 320.0
 
-[node name="Staff1" type="Panel" parent="ComputerScene/CompanyScene"]
+[node name="Staff0" type="Panel" parent="ComputerScene/CompanyScene"]
 layout_mode = 0
 offset_left = 100.0
 offset_top = 350.0
 offset_right = 250.0
 offset_bottom = 550.0
 
-[node name="Staff2" type="Panel" parent="ComputerScene/CompanyScene"]
+[node name="Staff1" type="Panel" parent="ComputerScene/CompanyScene"]
 layout_mode = 0
 offset_left = 345.0
 offset_top = 350.0
 offset_right = 495.0
 offset_bottom = 550.0
 
-[node name="Staff3" type="Panel" parent="ComputerScene/CompanyScene"]
+[node name="Staff2" type="Panel" parent="ComputerScene/CompanyScene"]
 layout_mode = 0
 offset_left = 590.0
 offset_top = 350.0
 offset_right = 740.0
 offset_bottom = 550.0
 
-[node name="FireStaff" type="Panel" parent="ComputerScene/CompanyScene"]
+[node name="FireStaff" type="Button" parent="ComputerScene/CompanyScene"]
 layout_mode = 0
 offset_left = 855.0
 offset_top = 425.0
@@ -1025,12 +1007,13 @@ offset_top = 580.0
 offset_right = 950.0
 offset_bottom = 755.0
 
-[node name="Close" type="Panel" parent="ComputerScene/CompanyScene"]
+[node name="ExitCompany" type="Button" parent="ComputerScene/CompanyScene"]
 layout_mode = 0
 offset_left = 925.0
 offset_top = 25.0
 offset_right = 975.0
 offset_bottom = 75.0
+text = "退出"
 
 [node name="CharacterScene" type="Panel" parent="ComputerScene"]
 visible = false
@@ -1275,8 +1258,12 @@ offset_bottom = 750.0
 [connection signal="pressed" from="ComputerScene/DesktopIconManager/OpenSetting" to="ComputerScene/DesktopIconManager" method="_on_open_setting_pressed"]
 [connection signal="pressed" from="ComputerScene/DesktopIconManager/OpenBrowser" to="ComputerScene/DesktopIconManager" method="_on_open_browser_pressed"]
 [connection signal="pressed" from="ComputerScene/DesktopIconManager/OpenCalendar" to="ComputerScene/DesktopIconManager" method="_on_open_calendar_pressed"]
+[connection signal="pressed" from="ComputerScene/DesktopIconManager/OpenCompany" to="ComputerScene/DesktopIconManager" method="_on_open_company_pressed"]
 [connection signal="pressed" from="ComputerScene/StoreScene/RefreshCards" to="ComputerScene/StoreScene" method="_on_refresh_cards_pressed"]
 [connection signal="text_submitted" from="ComputerScene/BrowserScene/URLEdit(Flag)" to="ComputerScene/BrowserScene" method="_on_url_edit_text_submitted"]
 [connection signal="pressed" from="ComputerScene/BrowserScene/Button(Flag)" to="ComputerScene/BrowserScene" method="_on_button_pressed"]
 [connection signal="pressed" from="ComputerScene/BrowserScene/ExitBrowser(Flag)" to="ComputerScene/BrowserScene" method="_on_exit_browser_pressed"]
 [connection signal="pressed" from="ComputerScene/CalendarScene/ExecutePlanButton" to="ComputerScene/CalendarScene" method="_on_execute_plan_button_pressed"]
+[connection signal="pressed" from="ComputerScene/CompanyScene/RefreshEmployee" to="ComputerScene/CompanyScene" method="_on_refresh_employee_pressed"]
+[connection signal="pressed" from="ComputerScene/CompanyScene/FireStaff" to="ComputerScene/CompanyScene" method="_on_fire_staff_pressed"]
+[connection signal="pressed" from="ComputerScene/CompanyScene/ExitCompany" to="ComputerScene/CompanyScene" method="_on_exit_company_pressed"]

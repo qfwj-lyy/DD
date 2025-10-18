@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://di6dmnal3qh68"]
+
+[ext_resource type="PackedScene" uid="uid://dhjv4wwlto6p1" path="res://scenes/computer_scene/employees/employee.tscn" id="1_glnfd"]
+
+[node name="ZhaoShiXiDeFuErDai" instance=ExtResource("1_glnfd")]
+joining_expenditure = -3
+severance_pay = 6
+wage = -3
+pay_interval_days = 5
+description = "找实习的富二代
+-3入职，6离职，-3/5
+无效果"

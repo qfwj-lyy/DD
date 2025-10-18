@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhjv4wwlto6p1"]
+
+[ext_resource type="Script" uid="uid://d22jj08m6nbx2" path="res://scripts/computer_scene/employees/employee.gd" id="1_lksn5"]
+
+[node name="Employee" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 120.0
+offset_bottom = 160.0
+script = ExtResource("1_lksn5")
+
+[node name="Buffs" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_behavior_recursive = 1
+autowrap_mode = 3

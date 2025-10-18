@@ -1,7 +1,7 @@
 extends Control
 
-@export var calendar_scene: Node
-@export var browser_scene: Node
+@onready var computer_scene: ComputerScene = $".."
+
 
 func _ready() -> void:
 	visible = true
@@ -14,6 +14,9 @@ func _on_open_setting_pressed() -> void:
 
 
 func _on_open_calendar_pressed() -> void:
-	calendar_scene.visible = true
+	computer_scene.calendar_scene.visible = true
 func _on_open_browser_pressed() -> void:
-	browser_scene.visible = true
+	computer_scene.browser_scene.visible = true
+func _on_open_company_pressed() -> void:
+	computer_scene.company_scene.visible = true
+	
