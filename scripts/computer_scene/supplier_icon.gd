@@ -21,4 +21,6 @@ func browse_supplier(s : ProjectSupplier):
 
 	
 func clear():
-	pass
+	for i in 3:
+		var p_name = "SupplierProject" + str(i)
+		get_node(p_name).clear()
