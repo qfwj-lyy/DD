@@ -6,6 +6,9 @@ var selected_employee : Employee
 
 var employee_content : EmployeeContent
 
+
+
+
 func _ready() -> void:
 	visible = false
 	employee_content = load("res://data/employ_content/employ_content_0.tres")
@@ -20,6 +23,8 @@ func get_staff(e : Employee):
 		if staff_node.get_child_count():
 			continue
 		e.reparent(staff_node)
+		e.position = Vector2(0 , 0)
+		e.joining_date = G.M.current_scene.current_date
 		break
 	
 	
@@ -32,6 +37,7 @@ func load_employee(e_name : String):
 			continue
 		e_node.add_child(e)
 		break
+	
 
 func refresh_employees():
 	for i in 5:
@@ -75,3 +81,14 @@ func _on_refresh_employee_pressed() -> void:
 	pass
 	pass
 	refresh_employees()
+
+
+func inspect_wage():
+	for i in 3:
+		var staff_node = get_node("Staff" + str(i))
+		if staff_node.get_child_count():
+			var staff = staff_node.get_child(0)
+			if staff:
+				if (G.M.current_scene.current_date - staff.joining_date) % staff.pay_interval_days == 0:
+					if not G.M.current_scene.property_manager.use_money(staff.wage):
+						staff.be_fired()

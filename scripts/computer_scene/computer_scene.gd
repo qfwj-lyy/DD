@@ -11,7 +11,12 @@ class_name ComputerScene
 @export var company_scene : Node
 
 
+var current_date := 0
 
 func _ready() -> void:
 	print("这是测试版，正式版需要修改computer scene的_ready的visible修改")
 	visible = true
+
+func time_goes_by(n : int):
+	current_date += n
+	

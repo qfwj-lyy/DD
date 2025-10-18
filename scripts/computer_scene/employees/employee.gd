@@ -11,6 +11,8 @@ class_name Employee
 
 
 @onready var buffs: Node = $Buffs
+var joining_date : int
+
 
 enum Condition{
 	at_store,
@@ -31,11 +33,15 @@ func execute_effect():
 	pass
 
 
+#region 测试用
+@onready var label: Label = $Label
+func _ready() -> void:
+	label.text = description
+#endregion
+
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("LeftMouseDown"):
-		print("点击到商店里的应聘者")
-		
 		if condition == Condition.at_store:
 			print("点击到商店里的应聘者")
 			if G.M.current_scene.company_scene.current_staff_amount >= G.M.current_scene.company_scene.staff_amount_limit:
@@ -54,11 +60,6 @@ func _on_gui_input(event: InputEvent) -> void:
 		elif condition == Condition.at_company:
 			G.M.current_scene.company_scene.select_employee(self)
 
-
-
-
-#region 测试用
-@onready var label: Label = $Label
-func _ready() -> void:
-	label.text = description
-#endregion
+func be_fired():
+	G.M.current_scene.property_manager.add_money( - severance_pay)
+	queue_free()

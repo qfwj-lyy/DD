@@ -16,9 +16,3 @@ func get_all_buffs() -> Array[Buff]:
 		for buff : Buff in buff_type.get_children():
 			buffs.append(buff)
 	return buffs
-
-# 已弃用函数
-func time_goes_by(time : int):
-	#for buff in get_children():
-		#buff.time_goes_by(time)
-	pass

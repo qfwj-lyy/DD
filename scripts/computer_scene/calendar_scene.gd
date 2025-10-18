@@ -35,9 +35,9 @@ func execute_plan():
 	
 	# 按单位时间推进日程安排
 	while(current_time != max_time):
-		
+		G.M.current_scene.time_goes_by(1)
 		#----------这里写员工计算工资相关方法----------
-		
+		G.M.current_scene.company_scene.inspect_wage()
 		if current_time == 0:
 			#----------这里执行"每回合开始时"相关buff----------
 			for buff in buff_manager.each_round_begin.get_children():
