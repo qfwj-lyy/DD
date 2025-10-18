@@ -20,7 +20,7 @@ func open_project_detail():
 func set_project(p : Project):
 	project_name_label.text = p.project_name
 	project = p
-	
+
 func clear():
 	project_name_label.text = ""
 	project = null

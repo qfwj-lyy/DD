@@ -10,10 +10,12 @@ var displayed_project
 @export var initial_skill_label: Node
 @export var description_label: Node
 
+var property_manager = G.M.current_scene.property_manager
+
 signal click_project(p)
 
 func _ready() -> void:
-	connect("click_project" , get_parent().choose_project )
+	connect("click_project" , G.M.current_scene.choose_project )
 
 func set_project_information(project : Project):
 	displayed_project = project
@@ -27,4 +29,4 @@ func set_project_information(project : Project):
 	description_label.text = project.description
 
 func _on_project_button_pressed() -> void:
-	emit_signal("click_project" , displayed_project)
+	emit_signal("click_project" , self)

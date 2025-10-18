@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Project" load_steps=3 format=3 uid="uid://cep0p7gioxyo2"]
+
+[ext_resource type="Script" uid="uid://7a2lp0yd04fg" path="res://scripts/computer_scene/resource_type/project.gd" id="1_kbje1"]
+[ext_resource type="PackedScene" uid="uid://da20ico2ibtul" path="res://scenes/computer_scene/buffs/fan_shui.tscn" id="1_p2ruw"]
+
+[resource]
+script = ExtResource("1_kbje1")
+project_name = "优质水贴"
+initial_progress = 20.0
+bug_amount_limit = 60.0
+initial_money = 20.0
+initial_mood = 60.0
+initial_skill = 100.0
+deposit_reward = 20.0
+description = "初始buff：
+①反水：每回合开始时，进度增加bug数*10%（向下取整）"
+initial_buffs = Array[Resource]([ExtResource("1_p2ruw")])
+metadata/_custom_type_script = "uid://7a2lp0yd04fg"

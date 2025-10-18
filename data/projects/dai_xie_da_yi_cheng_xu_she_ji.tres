@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Project" load_steps=2 format=3 uid="uid://cec338wvnmf6a"]
+
+[ext_resource type="Script" uid="uid://7a2lp0yd04fg" path="res://scripts/computer_scene/resource_type/project.gd" id="1_xeq2i"]
+
+[resource]
+script = ExtResource("1_xeq2i")
+project_name = "代写大一程序设计期末大作业"
+initial_progress = 80.0
+initial_bug_amount = 100.0
+bug_amount_limit = 1000.0
+initial_bug_rate = 10.0
+initial_money = 10.0
+initial_mood = 60.0
+initial_skill = 100.0
+deposit_reward = 20.0
+description = "初始buff：
+①期末作业：项目需要在100单位时间内交付"
+metadata/_custom_type_script = "uid://7a2lp0yd04fg"

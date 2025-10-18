@@ -120,3 +120,6 @@ func use_money(a) -> bool:
 		return true
 	else:
 		return false
+
+func _ready() -> void:
+	visible = true

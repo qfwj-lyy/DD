@@ -64,7 +64,7 @@ func _ready() -> void:
 	DisplayServer.window_set_size(Vector2(1280 , 800))
 	DisplayServer.window_set_position(Vector2(640 , 400))
 	
-	current_scene = $ComputerScene
+	current_scene = $MainMenu
 	G.M = self
 	inspect_data_file()
 	read_data_file_and_initialize()

@@ -9,7 +9,7 @@ func clear():
 
 func browse_web(web_name : String):
 	clear()
-	var web : ProjectWeb = load("res://assets/project_webs/" + web_name + ".tres")
+	var web : ProjectWeb = load("res://data/project_webs/" + web_name + ".tres")
 	var array = Array()
 	array.resize( web.suppliers.size() )
 	array.fill(false)
@@ -22,10 +22,11 @@ func browse_web(web_name : String):
 		t += 1
 		if t >= 3:
 			break
-	var s_name := "SupplierIcon"
+	
 	for i in 3:
+		var s_name := "SupplierIcon"
 		var index := 0
-		for j in array:
+		for j in array.size():
 			if array[j]:
 				array[j] = false
 				index = j

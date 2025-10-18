@@ -6,7 +6,8 @@ func _ready() -> void:
 	pass
 
 var display_project_limit := 3
-func browse_supplier(s : ProjectSupplier):
+func browse_supplier(ps : ProjectSupplier):
+	var s = ps.duplicate(true)
 	var display_project_amount := 0
 	while(1):
 		var rand_project = s.projects[randi_range(0 , s.projects.size() - 1)]

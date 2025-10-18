@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Panel
 
 var global_effect_manager : Node
 
@@ -16,7 +16,7 @@ func _read_global_effect_manager() -> void:
 	sound_check_button.set_pressed_no_signal(global_effect_manager.sound_manager.has_sound)
 	
 func _ready() -> void:
-	global_effect_manager = get_parent().global_effect_manager
+	global_effect_manager = G.M.global_effect_manager
 	_read_global_effect_manager()
 	
 func _on_music_scroll_bar_value_changed(value: float) -> void:

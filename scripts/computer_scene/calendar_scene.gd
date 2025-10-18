@@ -152,3 +152,9 @@ func get_hand_cards_amount() -> int:
 	n += activity_hand.get_child_count()
 	
 	return n
+
+
+func _on_calender_button_pressed() -> void:
+	pass
+	pass
+	visible = false
