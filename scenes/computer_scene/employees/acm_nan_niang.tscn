@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bansq6vpgflg"]
+
+[ext_resource type="PackedScene" uid="uid://dhjv4wwlto6p1" path="res://scenes/computer_scene/employees/employee.tscn" id="1_5xtvt"]
+[ext_resource type="Script" uid="uid://cb260f8732kag" path="res://scripts/computer_scene/buffs/property_buff.gd" id="2_hdm13"]
+
+[node name="ACMNanNiang" instance=ExtResource("1_5xtvt")]
+joining_expenditure = 5
+severance_pay = 8
+wage = 8
+pay_interval_days = 3
+description = "acm男娘
+5入职，8离职，8/3
+增益：每单位时间项目进度+3
+增益：每单位时间bug-2"
+
+[node name="PropertyBuff" type="Node" parent="Buffs" index="0"]
+script = ExtResource("2_hdm13")
+project_progress = 3
+bug_amount = -2
+duration = -7
+execution_time = 3
+description = "增益：每单位时间项目进度+3
+增益：每单位时间bug-2"
+metadata/_custom_type_script = "uid://cb260f8732kag"

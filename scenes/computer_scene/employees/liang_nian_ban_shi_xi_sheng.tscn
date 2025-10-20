@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dosemki4iasy5"]
+
+[ext_resource type="PackedScene" uid="uid://dhjv4wwlto6p1" path="res://scenes/computer_scene/employees/employee.tscn" id="1_oaek3"]
+[ext_resource type="Script" uid="uid://cb260f8732kag" path="res://scripts/computer_scene/buffs/property_buff.gd" id="2_t4n8k"]
+
+[node name="LiangNianBanShiXiSheng" instance=ExtResource("1_oaek3")]
+joining_expenditure = 5
+severance_pay = 2
+pay_interval_days = 5
+description = "两年半实习生（是的，中分头背带裤）
+5入职，2离职，0/5（哇是520，我们黑子没救了）
+增益：资金+10"
+
+[node name="PropertyBuff" type="Node" parent="Buffs" index="0"]
+script = ExtResource("2_t4n8k")
+money = 10
+description = "增益：资金+10"
+metadata/_custom_type_script = "uid://cb260f8732kag"

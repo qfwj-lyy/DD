@@ -9,7 +9,8 @@ extends Panel
 func _ready() -> void:
 	visible = false
 
-
+signal a_debug_card_used()
+signal a_activity_card_used()
 func execute_plan():
 	#region 时间结算架构
 	var debug_time_flag_array : Array[int] #按顺序存储玩家放置的所有debug卡的时间
@@ -49,6 +50,7 @@ func execute_plan():
 			debug_cal_time_sum += cal_time
 			if current_time == debug_cal_time_sum :
 				if debug_hand.get_child(debug_current_card_flag) is Card:
+					emit_signal("a_debug_card_used")
 					debug_hand.get_child(debug_current_card_flag).execute()
 					debug_current_card_flag += 1
 		
@@ -58,6 +60,7 @@ func execute_plan():
 			activity_cal_time_sum += cal_time
 			if current_time == activity_cal_time_sum :
 				if activity_hand.get_child(activity_current_card_flag) is Card:
+					emit_signal("a_activity_card_used")
 					activity_hand.get_child(activity_current_card_flag).execute()
 					activity_current_card_flag += 1
 		
@@ -95,7 +98,7 @@ func execute_plan():
 			if buff.duration >= 2:
 				buff.duration -= 1
 			elif buff.duration == 1:
-				buff.queue_free()
+				buff.die()
 
 		#----------回合结束
 		if current_time == max_time :
@@ -121,7 +124,7 @@ func execute_plan():
 			buffs = buff_manager.get_all_buffs()
 			for buff in buffs:
 				if buff.duration == -9:
-					buff.queue_free()
+					buff.die()
 
 			
 	#------清除所有刚刚使用的牌

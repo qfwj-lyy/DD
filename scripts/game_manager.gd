@@ -5,6 +5,7 @@ class_name GameManager
 @onready var music_manager: Node = $GlobalEffectManager/MusicManager
 @onready var sound_manager: Node = $GlobalEffectManager/SoundManager
 
+
 var previous_scene
 var current_scene
 

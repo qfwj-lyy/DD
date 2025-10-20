@@ -755,7 +755,6 @@ offset_bottom = 74.0
 text = "退出"
 
 [node name="CalendarScene" type="Panel" parent="." node_paths=PackedStringArray("computer_scene", "debug_hand", "activity_hand", "unused_hand")]
-visible = false
 offset_left = 1060.0
 offset_top = 460.0
 offset_right = 1980.0

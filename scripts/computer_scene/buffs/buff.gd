@@ -3,15 +3,15 @@ class_name Buff
 
 @export var duration : int 
 # -9:round left time  -9999:project left time
+# -7:staff buff (over with staff)
+# -8: forever
 
 enum ExecutionTime {
 	once,
 	each_round_begin,
 	each_round_over,
 	each_time,
-	each_project_delivery,
-	each_debug_card_use,
-	each_activity_card_use
+	each_project_delivery
 }
 @export var execution_time : ExecutionTime
 
@@ -35,6 +35,9 @@ func reparent_to_buff_manager():
 	match execution_time:
 		ExecutionTime.once:
 			reparent(buff_manager.once)
+			execute()
+			if duration == 0:
+				die()
 		ExecutionTime.each_round_begin:
 			reparent(buff_manager.each_round_begin)
 		ExecutionTime.each_round_over:
@@ -43,8 +46,7 @@ func reparent_to_buff_manager():
 			reparent(buff_manager.each_time)
 		ExecutionTime.each_project_delivery:
 			reparent(buff_manager.each_project_delivery)
-		ExecutionTime.each_debug_card_use:
-			reparent(buff_manager.each_debug_card_use)
-		ExecutionTime.each_activity_card_use:
-			reparent(buff_manager.each_activity_card_use)
+		
 			
+func die():
+	queue_free()

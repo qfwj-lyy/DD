@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://7rdjt33vxcqw"]
+
+[ext_resource type="PackedScene" uid="uid://dhjv4wwlto6p1" path="res://scenes/computer_scene/employees/employee.tscn" id="1_rhdjy"]
+[ext_resource type="Script" uid="uid://cb260f8732kag" path="res://scripts/computer_scene/buffs/property_buff.gd" id="2_fbriy"]
+
+[node name="ABaABa" instance=ExtResource("1_rhdjy")]
+wage = 5
+pay_interval_days = 5
+description = "阿巴阿巴
+0入职，0离职，5/5
+增益：每回合开始时项目进度+2
+减益：每回合开始时bug+2"
+
+[node name="PropertyBuff" type="Node" parent="Buffs" index="0"]
+script = ExtResource("2_fbriy")
+project_progress = 2
+bug_amount = 2
+duration = -7
+execution_time = 1
+description = "增益：每回合开始时项目进度+2
+减益：每回合开始时bug+2"
+metadata/_custom_type_script = "uid://cb260f8732kag"

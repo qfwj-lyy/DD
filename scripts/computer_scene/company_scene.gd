@@ -43,7 +43,7 @@ func refresh_employees():
 	for i in 5:
 		var e_node = get_node("Employee" + str(i))
 		for j in e_node.get_children():
-			j.queue_free()
+			j.free()
 	var employee_amount := 0
 	while(1):
 		var weight_sum := 0

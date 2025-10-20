@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b271vyulfluri"]
+
+[ext_resource type="PackedScene" uid="uid://dhjv4wwlto6p1" path="res://scenes/computer_scene/employees/employee.tscn" id="1_jtssh"]
+[ext_resource type="Script" uid="uid://dn2stl4mavyhl" path="res://scripts/computer_scene/buffs/da_yi_xue_sheng_buff_0.gd" id="2_dvrlw"]
+[ext_resource type="Script" uid="uid://3f5vcc7fab5j" path="res://scripts/computer_scene/buffs/da_yi_xue_sheng_buff_1.gd" id="3_y2sdb"]
+
+[node name="DaYiXueSheng" instance=ExtResource("1_jtssh")]
+wage = 2
+pay_interval_days = 5
+description = "大一学生
+0入职，0离职，2/5
+增益：每执行一张活动卡，项目进度+1
+减益：每执行一张debug卡，bug+1"
+
+[node name="DaYiXueShengBuff0" type="Node" parent="Buffs" index="0"]
+script = ExtResource("2_dvrlw")
+duration = -7
+description = "增益：每执行一张活动卡，项目进度+1"
+metadata/_custom_type_script = "uid://dwhc1hbrg4em"
+
+[node name="DaYiXueShengBuff1" type="Node" parent="Buffs" index="1"]
+script = ExtResource("3_y2sdb")
+metadata/_custom_type_script = "uid://dwhc1hbrg4em"

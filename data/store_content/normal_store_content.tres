@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="StoreContent" load_steps=7 format=3 uid="uid://dkmur3i65ofh8"]
+[gd_resource type="Resource" script_class="StoreContent" load_steps=34 format=3 uid="uid://dkmur3i65ofh8"]
 
 [ext_resource type="Script" uid="uid://bydujhct6k6eb" path="res://scripts/computer_scene/resource_type/store_content.gd" id="1_kh3p8"]
 [ext_resource type="Script" uid="uid://cwlvl1e5xlg4d" path="res://scripts/computer_scene/resource_type/store_card_parameter.gd" id="1_qcdww"]
@@ -6,28 +6,195 @@
 [sub_resource type="Resource" id="Resource_34jyr"]
 script = ExtResource("1_qcdww")
 name = "code"
-weight = 10
+weight = 32
 metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
 
 [sub_resource type="Resource" id="Resource_qcdww"]
 script = ExtResource("1_qcdww")
 name = "debug"
-weight = 10
+weight = 32
 metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
 
 [sub_resource type="Resource" id="Resource_wv100"]
 script = ExtResource("1_qcdww")
 name = "lian_xi_hello_world"
-weight = 10
+weight = 32
 metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
 
 [sub_resource type="Resource" id="Resource_w3sm6"]
 script = ExtResource("1_qcdww")
 name = "duan_dian_tiao_shi"
-weight = 10
+weight = 12
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_861wr"]
+script = ExtResource("1_qcdww")
+name = "gai_jin_kuang_jia"
+weight = 9
+is_unique = true
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_f8lf2"]
+script = ExtResource("1_qcdww")
+name = "warning_you_hua"
+weight = 12
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_qmlyn"]
+script = ExtResource("1_qcdww")
+name = "wai_bao_cheng_xu"
+weight = 12
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_e8xl2"]
+script = ExtResource("1_qcdww")
+name = "ting_fu_wei_hu"
+weight = 9
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_6cfos"]
+script = ExtResource("1_qcdww")
+name = "LeeCode_shua_ti"
+weight = 9
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_b4da4"]
+script = ExtResource("1_qcdww")
+name = "xuan_shang_bug"
+weight = 12
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_gevus"]
+script = ExtResource("1_qcdww")
+name = "jia_ban"
+weight = 9
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_hy5sy"]
+script = ExtResource("1_qcdww")
+name = "bu_shu_da_mo_xing"
+weight = 4
+is_unique = true
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_devvp"]
+script = ExtResource("1_qcdww")
+name = "ai_dai_ma_shen_cha_zhi_du"
+weight = 4
+is_unique = true
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_1jqjm"]
+script = ExtResource("1_qcdww")
+name = "quan_xiang_mu_AI_shen_cha"
+weight = 6
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_hrnwn"]
+script = ExtResource("1_qcdww")
+name = "AI_tiao_zheng_xiang_mu"
+weight = 4
+is_unique = true
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_coqgs"]
+script = ExtResource("1_qcdww")
+name = "san_bu"
+weight = 32
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_ju2ww"]
+script = ExtResource("1_qcdww")
+name = "kan_kan_chuang_wai"
+weight = 12
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_mdw1q"]
+script = ExtResource("1_qcdww")
+name = "shua_shi_pin"
+weight = 12
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_pvpjn"]
+script = ExtResource("1_qcdww")
+name = "pao_bu"
+weight = 12
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_3qf3x"]
+script = ExtResource("1_qcdww")
+name = "xian_zhi"
+weight = 6
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_ounr6"]
+script = ExtResource("1_qcdww")
+name = "he_cha"
+weight = 12
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_ta513"]
+script = ExtResource("1_qcdww")
+name = "da_tai_qiu"
+weight = 12
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_xurie"]
+script = ExtResource("1_qcdww")
+name = "zu_zhi_ju_hui"
+weight = 9
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_l5p0g"]
+script = ExtResource("1_qcdww")
+name = "ke_fu_tiao_jie"
+weight = 12
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_igehk"]
+script = ExtResource("1_qcdww")
+name = "tiao_zheng_zuo_xi"
+weight = 12
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_y6o11"]
+script = ExtResource("1_qcdww")
+name = "jie_dai"
+weight = 12
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_mo1pp"]
+script = ExtResource("1_qcdww")
+name = "wang_ba_tong_xiao"
+weight = 6
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_bfuxx"]
+script = ExtResource("1_qcdww")
+name = "gao_ge_meng_jin"
+weight = 4
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_d6wm6"]
+script = ExtResource("1_qcdww")
+name = "hua_ya_sui_qian"
+weight = 6
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_eixsl"]
+script = ExtResource("1_qcdww")
+name = "kou_kou_xiang_chuan"
+weight = 2
+is_unique = true
+metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
+
+[sub_resource type="Resource" id="Resource_78aep"]
+script = ExtResource("1_qcdww")
+name = "dui_jiu_dang_ge"
+weight = 6
 metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
 
 [resource]
 script = ExtResource("1_kh3p8")
-normal_cards = Array[ExtResource("1_qcdww")]([SubResource("Resource_34jyr"), SubResource("Resource_qcdww"), SubResource("Resource_wv100"), SubResource("Resource_w3sm6")])
+normal_cards = Array[ExtResource("1_qcdww")]([SubResource("Resource_34jyr"), SubResource("Resource_qcdww"), SubResource("Resource_wv100"), SubResource("Resource_w3sm6"), SubResource("Resource_861wr"), SubResource("Resource_f8lf2"), SubResource("Resource_qmlyn"), SubResource("Resource_e8xl2"), SubResource("Resource_6cfos"), SubResource("Resource_b4da4"), SubResource("Resource_gevus"), SubResource("Resource_hy5sy"), SubResource("Resource_devvp"), SubResource("Resource_1jqjm"), SubResource("Resource_hrnwn"), SubResource("Resource_coqgs"), SubResource("Resource_ju2ww"), SubResource("Resource_mdw1q"), SubResource("Resource_pvpjn"), SubResource("Resource_3qf3x"), SubResource("Resource_ounr6"), SubResource("Resource_ta513"), SubResource("Resource_xurie"), SubResource("Resource_l5p0g"), SubResource("Resource_igehk"), SubResource("Resource_y6o11"), SubResource("Resource_mo1pp"), SubResource("Resource_bfuxx"), SubResource("Resource_d6wm6"), SubResource("Resource_eixsl"), SubResource("Resource_78aep")])
 metadata/_custom_type_script = "uid://bydujhct6k6eb"

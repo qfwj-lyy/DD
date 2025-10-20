@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Project" load_steps=2 format=3 uid="uid://xe2bp2vnh360"]
+
+[ext_resource type="Script" uid="uid://7a2lp0yd04fg" path="res://scripts/computer_scene/resource_type/project.gd" id="1_qq8a6"]
+
+[resource]
+script = ExtResource("1_qq8a6")
+project_name = "个人博客委托"
+bug_amount_limit = 100.0
+initial_bug_rate = 10.0
+initial_money = 40.0
+initial_mood = 80.0
+initial_skill = 60.0
+deposit_reward = 20.0
+description = "初始buff：
+①网站模板：游戏开始时获得一张\"网站模板\"Debug卡，数值为0/0/0，效果为消耗所有资金，获得等量初始进度（这个假如初始用的话，就让一个项目有两个教程的作用，即0初始进度或者0初始资金）"
+initial_buffs = Array[Resource]([null])
+metadata/_custom_type_script = "uid://7a2lp0yd04fg"

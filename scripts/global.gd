@@ -1,6 +1,7 @@
 extends Node
 
 var M : GameManager
+var P : PropertyManager
 
 #region 声音管理
 func play_music(music_name : String , volume_db : float = 0 , from_position : float = 0 ):

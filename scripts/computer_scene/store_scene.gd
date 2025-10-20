@@ -51,8 +51,7 @@ func _on_refresh_cards_pressed() -> void:
 		G.M.current_scene.property_manager.money_amount -= 3
 		refresh_cards()
 	else:
-		pass
-		pass
+		print("没钱呢")
 	
 func time_goes_by(t : int):
 	refresh_time_flag -= t

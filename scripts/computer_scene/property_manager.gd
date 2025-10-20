@@ -37,13 +37,18 @@ var bug_rate : float
 var is_stop_bug_growth : bool = false #标记本回合是否停止增长bug
 var is_stop_income : bool = false #标记本回合是否停止固定收益
 
+
+
 #region add_property
 func add_money(n):
 	money_amount += n
 	pass
 	pass
 	money_label.text = "资金：" + str(money_amount)
+var is_stop_mood_increase := false
 func add_mood(n):
+	if is_stop_mood_increase and n > 0:
+		return
 	mood_amount += n
 	pass
 	pass
@@ -59,11 +64,13 @@ func add_time(t : int):
 	pass
 	pass
 	pass
-	
+signal project_progress_added(_n)
 func add_project_progress(n):
 	pass
 	pass
 	project_progress += n
+	emit_signal("project_progress_added",n)
+	
 func add_bug_amount(n):
 	pass
 	pass
@@ -87,6 +94,8 @@ func set_money(n):
 	pass
 	money_label.text = "资金：" + str(money_amount)
 func set_mood(n):
+	if is_stop_mood_increase and n > mood_amount:
+		return
 	mood_amount = n
 	pass
 	pass
@@ -123,3 +132,4 @@ func use_money(a) -> bool:
 
 func _ready() -> void:
 	visible = true
+	G.P = self

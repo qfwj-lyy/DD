@@ -11,6 +11,9 @@ class_name Employee
 
 
 @onready var buffs: Node = $Buffs
+
+var self_buffs : Array[Buff]
+
 var joining_date : int
 
 
@@ -27,6 +30,7 @@ func execute():
 	execute_effect()
 	
 	for buff : Buff in buffs.get_children():
+		self_buffs.append(buff)
 		buff.reparent_to_buff_manager()
 
 func execute_effect():
@@ -62,4 +66,6 @@ func _on_gui_input(event: InputEvent) -> void:
 
 func be_fired():
 	G.M.current_scene.property_manager.add_money( - severance_pay)
+	for buff : Buff in self_buffs:
+		buff.die()
 	queue_free()
