@@ -69,3 +69,24 @@ func _on_gui_input(event: InputEvent) -> void:
 func _ready() -> void:
 	label.text = description
 #endregion
+
+
+#region 悬停动画区
+
+@onready var card_anim: AnimationPlayer = $CardAnim
+@onready var border: TextureRect = $Border
+
+var mouse_in : bool = false
+
+func _on_area_2d_mouse_entered() -> void:
+	mouse_in = true
+	card_anim.play("hover")
+	border.visible = true
+	
+
+func _on_area_2d_mouse_exited() -> void:
+	mouse_in = false
+	card_anim.play("hover_over")
+	border.visible = false
+
+#endregion

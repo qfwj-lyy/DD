@@ -58,3 +58,19 @@ func time_goes_by(t : int):
 	if refresh_time_flag <= 0:
 		refresh_time_flag = 3
 		refresh_cards()
+
+
+@onready var refresh_anim: AnimationPlayer = $RefreshCards/RefreshAnim
+
+func _on_refresh_cards_button_down() -> void:
+	refresh_anim.play("button_down")
+
+func _on_refresh_cards_button_up() -> void:
+	refresh_anim.play("button_up")
+	# 需要花钱
+	if G.M.current_scene.property_manager.money_amount >= 3:
+		G.M.current_scene.property_manager.money_amount -= 3
+		refresh_cards()
+	else:
+		pass
+		pass
