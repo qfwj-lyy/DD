@@ -6,10 +6,13 @@ func _ready() -> void:
 
 func _on_url_edit_text_submitted(_new_text: String) -> void:
 	pass
-	
+
+
+@onready var browser_self_anim: AnimationPlayer = $BrowserSelfAnim
 
 func _on_exit_browser_pressed() -> void:
-	visible = false
+	#visible = false
+	browser_self_anim.play("close")
 
 
 

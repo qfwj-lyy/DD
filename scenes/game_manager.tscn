@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bd03o2lio4k6m"]
+[gd_scene load_steps=25 format=3 uid="uid://bd03o2lio4k6m"]
 
 [ext_resource type="Script" uid="uid://dt8os701xe3xf" path="res://scripts/game_manager.gd" id="1_oo155"]
 [ext_resource type="Script" uid="uid://dpd0wkimog5pm" path="res://scripts/global_effect_manager/global_effect_manager.gd" id="2_eaq8r"]
@@ -12,6 +12,168 @@
 [ext_resource type="Texture2D" uid="uid://db1rkwt4fb8q0" path="res://assets/computer_scene/change_administrator_209x59.png" id="9_dlmsr"]
 [ext_resource type="Texture2D" uid="uid://djv85jayq1q47" path="res://assets/computer_scene/settings_100x104.png" id="9_rscnb"]
 [ext_resource type="Texture2D" uid="uid://b5fwx5nx45dvy" path="res://assets/computer_scene/off_computer_100x103.png" id="11_d7j7a"]
+
+[sub_resource type="Animation" id="Animation_pc0jn"]
+resource_name = "button_up"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_c7a3q"]
+resource_name = "button_down"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 0.9)]
+}
+
+[sub_resource type="Animation" id="Animation_4vth2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yxe1x"]
+_data = {
+&"RESET": SubResource("Animation_4vth2"),
+&"button_down": SubResource("Animation_c7a3q"),
+&"button_up": SubResource("Animation_pc0jn")
+}
+
+[sub_resource type="Animation" id="Animation_30v7y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_aonbx"]
+resource_name = "button_down"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 0.9)]
+}
+
+[sub_resource type="Animation" id="Animation_lcbjr"]
+resource_name = "button_up"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lcbjr"]
+_data = {
+&"RESET": SubResource("Animation_30v7y"),
+&"button_down": SubResource("Animation_aonbx"),
+&"button_up": SubResource("Animation_lcbjr")
+}
+
+[sub_resource type="Animation" id="Animation_5xtl8"]
+resource_name = "button_down"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 0.9)]
+}
+
+[sub_resource type="Animation" id="Animation_cjvif"]
+resource_name = "button_up"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ry0e6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pc0jn"]
+_data = {
+&"RESET": SubResource("Animation_ry0e6"),
+&"button_down": SubResource("Animation_5xtl8"),
+&"button_up": SubResource("Animation_cjvif")
+}
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_oo155")
@@ -65,6 +227,7 @@ offset_left = 2110.0
 offset_top = 1400.0
 offset_right = 2210.0
 offset_bottom = 1500.0
+pivot_offset = Vector2(50, 50)
 
 [node name="TextureRect" type="TextureRect" parent="MainMenu/OpenSetting"]
 layout_mode = 1
@@ -81,12 +244,18 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_rscnb")
 
+[node name="SettingsAnim" type="AnimationPlayer" parent="MainMenu/OpenSetting"]
+libraries = {
+&"": SubResource("AnimationLibrary_yxe1x")
+}
+
 [node name="BeginGame" type="Button" parent="MainMenu"]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 1180.0
 offset_top = 1000.0
 offset_right = 1380.0
 offset_bottom = 1100.0
+pivot_offset = Vector2(100, 50)
 
 [node name="TextureRect" type="TextureRect" parent="MainMenu/BeginGame"]
 layout_mode = 1
@@ -97,12 +266,18 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_hqtnj")
 
+[node name="BeginGameAnim" type="AnimationPlayer" parent="MainMenu/BeginGame"]
+libraries = {
+&"": SubResource("AnimationLibrary_lcbjr")
+}
+
 [node name="ExitGame" type="Button" parent="MainMenu"]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 2310.0
 offset_top = 1400.0
 offset_right = 2410.0
 offset_bottom = 1500.0
+pivot_offset = Vector2(50, 50)
 
 [node name="TextureRect" type="TextureRect" parent="MainMenu/ExitGame"]
 layout_mode = 1
@@ -118,6 +293,11 @@ offset_bottom = 51.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("11_d7j7a")
+
+[node name="ExitGameAnim" type="AnimationPlayer" parent="MainMenu/ExitGame"]
+libraries = {
+&"": SubResource("AnimationLibrary_pc0jn")
+}
 
 [node name="ChangeCharacter" type="Button" parent="MainMenu"]
 self_modulate = Color(1, 1, 1, 0)
@@ -137,6 +317,12 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_dlmsr")
 
+[connection signal="button_down" from="MainMenu/OpenSetting" to="MainMenu" method="_on_open_setting_button_down"]
+[connection signal="button_up" from="MainMenu/OpenSetting" to="MainMenu" method="_on_open_setting_button_up"]
 [connection signal="pressed" from="MainMenu/OpenSetting" to="MainMenu" method="_on_open_setting_pressed"]
+[connection signal="button_down" from="MainMenu/BeginGame" to="MainMenu" method="_on_begin_game_button_down"]
+[connection signal="button_up" from="MainMenu/BeginGame" to="MainMenu" method="_on_begin_game_button_up"]
 [connection signal="pressed" from="MainMenu/BeginGame" to="MainMenu" method="_on_begin_game_pressed"]
+[connection signal="button_down" from="MainMenu/ExitGame" to="MainMenu" method="_on_exit_game_button_down"]
+[connection signal="button_up" from="MainMenu/ExitGame" to="MainMenu" method="_on_exit_game_button_up"]
 [connection signal="pressed" from="MainMenu/ExitGame" to="MainMenu" method="_on_exit_game_pressed"]

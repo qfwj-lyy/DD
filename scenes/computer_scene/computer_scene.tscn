@@ -1,10 +1,11 @@
-[gd_scene load_steps=27 format=3 uid="uid://ei0t0movgv01"]
+[gd_scene load_steps=52 format=3 uid="uid://ei0t0movgv01"]
 
 [ext_resource type="Script" uid="uid://cyxxmhvja0apb" path="res://scripts/computer_scene/computer_scene.gd" id="1_8g14y"]
 [ext_resource type="Texture2D" uid="uid://by5p2m3k3u3yo" path="res://assets/computer_scene/desktop_background.png" id="2_rw1u3"]
 [ext_resource type="Script" uid="uid://bjv7w1v3yn4qs" path="res://scripts/computer_scene/desktop_icon_manager.gd" id="3_cd3q4"]
 [ext_resource type="Texture2D" uid="uid://bm5phhix34ag2" path="res://assets/computer_scene/desktop_setting_icon.png" id="4_nbbnv"]
 [ext_resource type="Texture2D" uid="uid://cfg2ihodiec08" path="res://assets/computer_scene/desktop_browser_icon.png" id="5_47gfp"]
+[ext_resource type="Texture2D" uid="uid://1tduyx22qp3g" path="res://assets/computer_scene/desktop_icon_border.png" id="5_rw1u3"]
 [ext_resource type="Texture2D" uid="uid://boovs3btuf43l" path="res://assets/computer_scene/desktop_calendar_icon.png" id="6_en0pa"]
 [ext_resource type="Texture2D" uid="uid://b6bnp8q1xr1oj" path="res://assets/computer_scene/desktop_database_icon.png" id="7_ltark"]
 [ext_resource type="Texture2D" uid="uid://b7ghbl2nxc77v" path="res://assets/computer_scene/desktop_cmd_icon.png" id="8_ya4ev"]
@@ -23,6 +24,276 @@
 [ext_resource type="Texture2D" uid="uid://cpjpgw6ctfnai" path="res://assets/computer_scene/fire_107x56.png" id="21_ftseh"]
 [ext_resource type="Texture2D" uid="uid://hvrred57t74d" path="res://assets/computer_scene/close_56x57.png" id="22_w8dcv"]
 
+[sub_resource type="Animation" id="Animation_8g14y"]
+resource_name = "button_down"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 0.9)]
+}
+
+[sub_resource type="Animation" id="Animation_rw1u3"]
+resource_name = "button_up"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cd3q4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nbbnv"]
+_data = {
+&"RESET": SubResource("Animation_cd3q4"),
+&"button_down": SubResource("Animation_8g14y"),
+&"button_up": SubResource("Animation_rw1u3")
+}
+
+[sub_resource type="Animation" id="Animation_nbbnv"]
+resource_name = "button_down"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 0.9)]
+}
+
+[sub_resource type="Animation" id="Animation_47gfp"]
+resource_name = "button_up"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_en0pa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ltark"]
+_data = {
+&"RESET": SubResource("Animation_en0pa"),
+&"button_down": SubResource("Animation_nbbnv"),
+&"button_up": SubResource("Animation_47gfp")
+}
+
+[sub_resource type="Animation" id="Animation_ltark"]
+resource_name = "button_down"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 0.9)]
+}
+
+[sub_resource type="Animation" id="Animation_bv4nm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ya4ev"]
+resource_name = "button_up"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yw0uv"]
+_data = {
+&"RESET": SubResource("Animation_bv4nm"),
+&"button_down": SubResource("Animation_ltark"),
+&"button_up": SubResource("Animation_ya4ev")
+}
+
+[sub_resource type="Animation" id="Animation_yw0uv"]
+resource_name = "button_down"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 0.9)]
+}
+
+[sub_resource type="Animation" id="Animation_06as4"]
+resource_name = "button_up"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_d84jm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t7krb"]
+_data = {
+&"RESET": SubResource("Animation_d84jm"),
+&"button_down": SubResource("Animation_yw0uv"),
+&"button_up": SubResource("Animation_06as4")
+}
+
+[sub_resource type="Animation" id="Animation_kbgpp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_t7krb"]
+resource_name = "button_up"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 0.9)]
+}
+
+[sub_resource type="Animation" id="Animation_5yyiv"]
+resource_name = "button_down"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kbgpp"]
+_data = {
+&"RESET": SubResource("Animation_kbgpp"),
+&"button_down": SubResource("Animation_t7krb"),
+&"button_up": SubResource("Animation_5yyiv")
+}
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2j6ol"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ldib"]
@@ -30,6 +301,84 @@
 [sub_resource type="Theme" id="Theme_kvitc"]
 Window/styles/embedded_border = SubResource("StyleBoxTexture_2j6ol")
 Window/styles/embedded_unfocused_border = SubResource("StyleBoxTexture_8ldib")
+
+[sub_resource type="Animation" id="Animation_d88ux"]
+resource_name = "open"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.04, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_br20j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_j4xds"]
+resource_name = "close"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.5, 0.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j4xds"]
+_data = {
+&"RESET": SubResource("Animation_br20j"),
+&"close": SubResource("Animation_j4xds"),
+&"open": SubResource("Animation_d88ux")
+}
 
 [sub_resource type="Theme" id="Theme_dlmsr"]
 
@@ -52,6 +401,7 @@ texture = ExtResource("2_rw1u3")
 [node name="DesktopIconManager" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
+mouse_filter = 1
 script = ExtResource("3_cd3q4")
 
 [node name="OpenSetting" type="Button" parent="DesktopIconManager"]
@@ -60,6 +410,8 @@ offset_left = 90.0
 offset_top = 360.0
 offset_right = 290.0
 offset_bottom = 560.0
+pivot_offset = Vector2(100, 100)
+mouse_filter = 1
 text = "设置"
 icon = ExtResource("4_nbbnv")
 flat = true
@@ -67,12 +419,29 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
+[node name="SettingAnim" type="AnimationPlayer" parent="DesktopIconManager/OpenSetting"]
+libraries = {
+&"": SubResource("AnimationLibrary_nbbnv")
+}
+
+[node name="SettingBorder" type="TextureRect" parent="DesktopIconManager/OpenSetting"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_rw1u3")
+
 [node name="OpenBrowser" type="Button" parent="DesktopIconManager"]
 layout_mode = 0
 offset_left = 90.0
 offset_top = 60.0
 offset_right = 290.0
 offset_bottom = 260.0
+pivot_offset = Vector2(100, 100)
+mouse_filter = 1
 text = "浏览器"
 icon = ExtResource("5_47gfp")
 flat = true
@@ -80,12 +449,29 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
+[node name="BrowserAnim" type="AnimationPlayer" parent="DesktopIconManager/OpenBrowser"]
+libraries = {
+&"": SubResource("AnimationLibrary_ltark")
+}
+
+[node name="BrowserBorder" type="TextureRect" parent="DesktopIconManager/OpenBrowser"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_rw1u3")
+
 [node name="OpenCalendar" type="Button" parent="DesktopIconManager"]
 layout_mode = 0
 offset_left = 90.0
 offset_top = 660.0
 offset_right = 290.0
 offset_bottom = 860.0
+pivot_offset = Vector2(100, 100)
+mouse_filter = 1
 text = "日历"
 icon = ExtResource("6_en0pa")
 flat = true
@@ -93,12 +479,28 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
+[node name="CalenderAnim" type="AnimationPlayer" parent="DesktopIconManager/OpenCalendar"]
+libraries = {
+&"": SubResource("AnimationLibrary_yw0uv")
+}
+
+[node name="CalenderBorder" type="TextureRect" parent="DesktopIconManager/OpenCalendar"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_rw1u3")
+
 [node name="OpenDatabase" type="Button" parent="DesktopIconManager"]
 layout_mode = 0
 offset_left = 390.0
 offset_top = 660.0
 offset_right = 590.0
 offset_bottom = 860.0
+mouse_filter = 1
 text = " 数据库"
 icon = ExtResource("7_ltark")
 flat = true
@@ -112,6 +514,7 @@ offset_left = 390.0
 offset_top = 360.0
 offset_right = 590.0
 offset_bottom = 560.0
+mouse_filter = 1
 text = "控制台"
 icon = ExtResource("8_ya4ev")
 flat = true
@@ -125,6 +528,8 @@ offset_left = 390.0
 offset_top = 60.0
 offset_right = 590.0
 offset_bottom = 260.0
+pivot_offset = Vector2(100, 100)
+mouse_filter = 1
 text = "组织"
 icon = ExtResource("9_bv4nm")
 flat = true
@@ -132,13 +537,28 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
-[node name="StoreScene" type="Control" parent="." node_paths=PackedStringArray("store_cards")]
+[node name="CompanyAnim" type="AnimationPlayer" parent="DesktopIconManager/OpenCompany"]
+libraries = {
+&"": SubResource("AnimationLibrary_t7krb")
+}
+
+[node name="CompanyBorder" type="TextureRect" parent="DesktopIconManager/OpenCompany"]
 visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_rw1u3")
+
+[node name="StoreScene" type="Control" parent="." node_paths=PackedStringArray("store_cards")]
 layout_mode = 3
 anchors_preset = 0
 offset_top = 1000.0
 offset_right = 990.0
 offset_bottom = 1600.0
+mouse_filter = 1
 script = ExtResource("10_yw0uv")
 store_cards = NodePath("StoreCards")
 
@@ -149,6 +569,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="Card1" type="Panel" parent="StoreScene/StoreBackGround"]
 layout_mode = 0
@@ -156,6 +577,7 @@ offset_left = 40.0
 offset_top = 40.0
 offset_right = 190.0
 offset_bottom = 290.0
+mouse_filter = 1
 
 [node name="Card2" type="Panel" parent="StoreScene/StoreBackGround"]
 layout_mode = 0
@@ -163,6 +585,7 @@ offset_left = 230.0
 offset_top = 40.0
 offset_right = 380.0
 offset_bottom = 290.0
+mouse_filter = 1
 
 [node name="Card3" type="Panel" parent="StoreScene/StoreBackGround"]
 layout_mode = 0
@@ -170,6 +593,7 @@ offset_left = 420.0
 offset_top = 40.0
 offset_right = 570.0
 offset_bottom = 290.0
+mouse_filter = 1
 
 [node name="Card4" type="Panel" parent="StoreScene/StoreBackGround"]
 layout_mode = 0
@@ -177,6 +601,7 @@ offset_left = 610.0
 offset_top = 40.0
 offset_right = 760.0
 offset_bottom = 290.0
+mouse_filter = 1
 
 [node name="Card5" type="Panel" parent="StoreScene/StoreBackGround"]
 layout_mode = 0
@@ -184,6 +609,7 @@ offset_left = 800.0
 offset_top = 40.0
 offset_right = 950.0
 offset_bottom = 290.0
+mouse_filter = 1
 
 [node name="Description" type="Panel" parent="StoreScene"]
 layout_mode = 0
@@ -191,6 +617,7 @@ offset_left = 40.0
 offset_top = 345.0
 offset_right = 790.0
 offset_bottom = 545.0
+mouse_filter = 1
 
 [node name="RefreshCards" type="Button" parent="StoreScene"]
 layout_mode = 0
@@ -198,7 +625,14 @@ offset_left = 820.0
 offset_top = 445.0
 offset_right = 970.0
 offset_bottom = 545.0
+pivot_offset = Vector2(75, 50)
+mouse_filter = 1
 text = "刷新"
+
+[node name="RefreshAnim" type="AnimationPlayer" parent="StoreScene/RefreshCards"]
+libraries = {
+&"": SubResource("AnimationLibrary_kbgpp")
+}
 
 [node name="RefreshIcon" type="Panel" parent="StoreScene"]
 layout_mode = 0
@@ -206,6 +640,7 @@ offset_left = 820.0
 offset_top = 370.0
 offset_right = 870.0
 offset_bottom = 420.0
+mouse_filter = 1
 
 [node name="RefreshTime" type="Panel" parent="StoreScene"]
 layout_mode = 0
@@ -213,6 +648,7 @@ offset_left = 900.0
 offset_top = 370.0
 offset_right = 950.0
 offset_bottom = 420.0
+mouse_filter = 1
 
 [node name="StoreCards" type="Control" parent="StoreScene"]
 anchors_preset = 0
@@ -220,12 +656,14 @@ offset_left = 40.0
 offset_top = 40.0
 offset_right = 950.0
 offset_bottom = 290.0
+mouse_filter = 1
 
 [node name="PropertyManager" type="Panel" parent="." node_paths=PackedStringArray("money_label", "mood_label", "skill_label", "project_progress_bar", "bug_amount_bar", "global_buffs")]
 offset_left = 1874.0
 offset_top = 72.0
 offset_right = 2488.0
 offset_bottom = 382.0
+mouse_filter = 1
 script = ExtResource("11_06as4")
 money_label = NodePath("MoneyLabel")
 mood_label = NodePath("MoodLabel")
@@ -240,6 +678,7 @@ offset_left = 240.0
 offset_top = 50.0
 offset_right = 496.0
 offset_bottom = 104.0
+mouse_filter = 1
 
 [node name="BugAmountBar" type="ProgressBar" parent="PropertyManager"]
 layout_mode = 0
@@ -247,6 +686,7 @@ offset_left = 242.0
 offset_top = 118.0
 offset_right = 500.0
 offset_bottom = 172.0
+mouse_filter = 1
 
 [node name="ProjectProgressLabel" type="Label" parent="PropertyManager"]
 layout_mode = 0
@@ -306,10 +746,10 @@ script = ExtResource("12_d84jm")
 [node name="EachActivityCardUse" type="Node" parent="PropertyManager/BuffManager"]
 
 [node name="BrowserScene" type="Panel" parent="."]
-visible = false
 self_modulate = Color(1, 1, 1, 0)
 offset_right = 1000.0
 offset_bottom = 2950.0
+pivot_offset = Vector2(500, 400)
 theme = SubResource("Theme_kvitc")
 script = ExtResource("13_t7krb")
 
@@ -326,11 +766,13 @@ expand_mode = 1
 [node name="URLEdit(Flag)" type="LineEdit" parent="BrowserScene"]
 visible = false
 layout_mode = 0
+mouse_filter = 1
 flat = true
 
 [node name="Button(Flag)" type="Button" parent="BrowserScene"]
 visible = false
 layout_mode = 0
+mouse_filter = 1
 text = "某收藏的外包网址"
 
 [node name="MainScrollContainer" type="ScrollContainer" parent="BrowserScene"]
@@ -347,18 +789,21 @@ layout_mode = 2
 [node name="MainControl" type="Control" parent="BrowserScene/MainScrollContainer/MainVBox"]
 custom_minimum_size = Vector2(1000, 2850)
 layout_mode = 2
+mouse_filter = 1
 
 [node name="BackGround" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl"]
 custom_minimum_size = Vector2(1000, 2700)
 layout_mode = 0
 offset_right = 1000.0
 offset_bottom = 2700.0
+mouse_filter = 1
 
 [node name="ScrollProtect" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl"]
 layout_mode = 0
 offset_left = 970.0
 offset_right = 990.0
 offset_bottom = 2700.0
+mouse_filter = 1
 
 [node name="BrowserIcon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl"]
 layout_mode = 0
@@ -366,6 +811,7 @@ offset_left = 400.0
 offset_top = 30.0
 offset_right = 600.0
 offset_bottom = 230.0
+mouse_filter = 1
 
 [node name="SearchEdit" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl"]
 layout_mode = 0
@@ -373,12 +819,14 @@ offset_left = 150.0
 offset_top = 270.0
 offset_right = 750.0
 offset_bottom = 330.0
+mouse_filter = 1
 
 [node name="BigSearchIcon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/SearchEdit"]
 layout_mode = 0
 offset_left = 600.0
 offset_right = 700.0
 offset_bottom = 60.0
+mouse_filter = 1
 
 [node name="AddPanel" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl"]
 layout_mode = 0
@@ -386,6 +834,7 @@ offset_left = 100.0
 offset_top = 380.0
 offset_right = 850.0
 offset_bottom = 480.0
+mouse_filter = 1
 
 [node name="AddIcon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/AddPanel"]
 layout_mode = 0
@@ -393,6 +842,7 @@ offset_left = 10.0
 offset_top = 10.0
 offset_right = 90.0
 offset_bottom = 90.0
+mouse_filter = 1
 
 [node name="AddText" type="Label" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/AddPanel"]
 layout_mode = 0
@@ -400,6 +850,7 @@ offset_left = 120.0
 offset_top = 30.0
 offset_right = 320.0
 offset_bottom = 75.0
+mouse_filter = 1
 text = "添加快捷方式"
 vertical_alignment = 1
 
@@ -409,6 +860,7 @@ offset_left = 95.0
 offset_top = 530.0
 offset_right = 845.0
 offset_bottom = 2630.0
+mouse_filter = 1
 script = ExtResource("14_5yyiv")
 
 [node name="SupplierIcon0" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel"]
@@ -417,6 +869,7 @@ offset_left = 40.0
 offset_top = 40.0
 offset_right = 120.0
 offset_bottom = 120.0
+mouse_filter = 1
 script = ExtResource("15_kbgpp")
 
 [node name="Supplier0Name" type="Label" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0"]
@@ -425,6 +878,7 @@ offset_left = 120.0
 offset_top = 10.0
 offset_right = 320.0
 offset_bottom = 60.0
+mouse_filter = 1
 text = "供应商名称 "
 vertical_alignment = 1
 
@@ -434,6 +888,7 @@ offset_left = 565.0
 offset_top = 10.0
 offset_right = 665.0
 offset_bottom = 50.0
+mouse_filter = 1
 
 [node name="SupplierProject0" type="Button" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0"]
 layout_mode = 0
@@ -441,6 +896,7 @@ offset_left = 35.0
 offset_top = 130.0
 offset_right = 635.0
 offset_bottom = 280.0
+mouse_filter = 1
 script = ExtResource("16_d88ux")
 
 [node name="Supplier1Project0Icon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject0"]
@@ -449,6 +905,7 @@ offset_left = 30.0
 offset_top = 25.0
 offset_right = 130.0
 offset_bottom = 125.0
+mouse_filter = 1
 
 [node name="ProjectNameLabel" type="Label" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject0"]
 layout_mode = 0
@@ -466,6 +923,7 @@ offset_left = 35.0
 offset_top = 310.0
 offset_right = 635.0
 offset_bottom = 460.0
+mouse_filter = 1
 script = ExtResource("16_d88ux")
 
 [node name="SupplierProject1Icon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject1"]
@@ -474,6 +932,7 @@ offset_left = 30.0
 offset_top = 25.0
 offset_right = 130.0
 offset_bottom = 125.0
+mouse_filter = 1
 
 [node name="ProjectNameLabel" type="Label" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject1"]
 layout_mode = 0
@@ -491,6 +950,7 @@ offset_left = 35.0
 offset_top = 490.0
 offset_right = 635.0
 offset_bottom = 640.0
+mouse_filter = 1
 script = ExtResource("16_d88ux")
 
 [node name="Supplier1Project2Icon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject2"]
@@ -499,6 +959,7 @@ offset_left = 30.0
 offset_top = 25.0
 offset_right = 130.0
 offset_bottom = 125.0
+mouse_filter = 1
 
 [node name="ProjectNameLabel" type="Label" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject2"]
 layout_mode = 0
@@ -516,6 +977,7 @@ offset_left = 40.0
 offset_top = 720.0
 offset_right = 120.0
 offset_bottom = 800.0
+mouse_filter = 1
 script = ExtResource("15_kbgpp")
 
 [node name="Supplier1Name" type="Label" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1"]
@@ -533,6 +995,7 @@ offset_left = 565.0
 offset_top = 10.0
 offset_right = 665.0
 offset_bottom = 50.0
+mouse_filter = 1
 
 [node name="SupplierProject0" type="Button" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1"]
 layout_mode = 0
@@ -540,6 +1003,7 @@ offset_left = 35.0
 offset_top = 130.0
 offset_right = 635.0
 offset_bottom = 280.0
+mouse_filter = 1
 script = ExtResource("16_d88ux")
 
 [node name="Supplier1Project0Icon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject0"]
@@ -548,6 +1012,7 @@ offset_left = 30.0
 offset_top = 25.0
 offset_right = 130.0
 offset_bottom = 125.0
+mouse_filter = 1
 
 [node name="ProjectNameLabel" type="Label" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject0"]
 layout_mode = 0
@@ -565,6 +1030,7 @@ offset_left = 35.0
 offset_top = 310.0
 offset_right = 635.0
 offset_bottom = 460.0
+mouse_filter = 1
 script = ExtResource("16_d88ux")
 
 [node name="Supplier1Project1Icon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject1"]
@@ -573,6 +1039,7 @@ offset_left = 30.0
 offset_top = 25.0
 offset_right = 130.0
 offset_bottom = 125.0
+mouse_filter = 1
 
 [node name="ProjectNameLabel" type="Label" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject1"]
 layout_mode = 0
@@ -590,6 +1057,7 @@ offset_left = 35.0
 offset_top = 490.0
 offset_right = 635.0
 offset_bottom = 640.0
+mouse_filter = 1
 script = ExtResource("16_d88ux")
 
 [node name="Supplier1Project2Icon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject2"]
@@ -598,6 +1066,7 @@ offset_left = 30.0
 offset_top = 25.0
 offset_right = 130.0
 offset_bottom = 125.0
+mouse_filter = 1
 
 [node name="ProjectNameLabel" type="Label" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject2"]
 layout_mode = 0
@@ -615,6 +1084,7 @@ offset_left = 40.0
 offset_top = 1400.0
 offset_right = 120.0
 offset_bottom = 1480.0
+mouse_filter = 1
 script = ExtResource("15_kbgpp")
 
 [node name="Supplier1Name" type="Label" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2"]
@@ -632,6 +1102,7 @@ offset_left = 565.0
 offset_top = 10.0
 offset_right = 665.0
 offset_bottom = 50.0
+mouse_filter = 1
 
 [node name="SupplierProject0" type="Button" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2"]
 layout_mode = 0
@@ -639,6 +1110,7 @@ offset_left = 35.0
 offset_top = 130.0
 offset_right = 635.0
 offset_bottom = 280.0
+mouse_filter = 1
 script = ExtResource("16_d88ux")
 
 [node name="Supplier2Project0Icon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject0"]
@@ -647,6 +1119,7 @@ offset_left = 30.0
 offset_top = 25.0
 offset_right = 130.0
 offset_bottom = 125.0
+mouse_filter = 1
 
 [node name="ProjectNameLabel" type="Label" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject0"]
 layout_mode = 0
@@ -664,6 +1137,7 @@ offset_left = 35.0
 offset_top = 310.0
 offset_right = 635.0
 offset_bottom = 460.0
+mouse_filter = 1
 script = ExtResource("16_d88ux")
 
 [node name="Supplier2Project1Icon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject1"]
@@ -672,6 +1146,7 @@ offset_left = 30.0
 offset_top = 25.0
 offset_right = 130.0
 offset_bottom = 125.0
+mouse_filter = 1
 
 [node name="ProjectNameLabel" type="Label" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject1"]
 layout_mode = 0
@@ -689,6 +1164,7 @@ offset_left = 35.0
 offset_top = 490.0
 offset_right = 635.0
 offset_bottom = 640.0
+mouse_filter = 1
 script = ExtResource("16_d88ux")
 
 [node name="Supplier2Project2Icon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject2"]
@@ -697,6 +1173,7 @@ offset_left = 30.0
 offset_top = 25.0
 offset_right = 130.0
 offset_bottom = 125.0
+mouse_filter = 1
 
 [node name="ProjectNameLabel" type="Label" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject2"]
 layout_mode = 0
@@ -712,6 +1189,7 @@ vertical_alignment = 1
 layout_mode = 0
 offset_right = 1000.0
 offset_bottom = 90.0
+mouse_filter = 1
 
 [node name="Close" type="Panel" parent="BrowserScene/TabBar"]
 layout_mode = 0
@@ -719,18 +1197,21 @@ offset_left = 925.0
 offset_top = 25.0
 offset_right = 975.0
 offset_bottom = 75.0
+mouse_filter = 1
 
 [node name="Tab" type="Panel" parent="BrowserScene/TabBar"]
 layout_mode = 0
 offset_top = 50.0
 offset_right = 200.0
 offset_bottom = 90.0
+mouse_filter = 1
 
 [node name="URLBar" type="Panel" parent="BrowserScene"]
 layout_mode = 0
 offset_top = 90.0
 offset_right = 1000.0
 offset_bottom = 150.0
+mouse_filter = 1
 
 [node name="URL" type="Panel" parent="BrowserScene/URLBar"]
 layout_mode = 0
@@ -738,6 +1219,7 @@ offset_left = 50.0
 offset_top = 10.0
 offset_right = 950.0
 offset_bottom = 50.0
+mouse_filter = 1
 
 [node name="URLSearchIcon" type="Panel" parent="BrowserScene/URLBar"]
 layout_mode = 0
@@ -745,6 +1227,7 @@ offset_left = 55.0
 offset_top = 15.0
 offset_right = 85.0
 offset_bottom = 45.0
+mouse_filter = 1
 
 [node name="ExitBrowser(Flag)" type="Button" parent="BrowserScene"]
 layout_mode = 0
@@ -752,7 +1235,13 @@ offset_left = 911.0
 offset_top = 21.0
 offset_right = 983.0
 offset_bottom = 74.0
+mouse_filter = 1
 text = "退出"
+
+[node name="BrowserSelfAnim" type="AnimationPlayer" parent="BrowserScene"]
+libraries = {
+&"": SubResource("AnimationLibrary_j4xds")
+}
 
 [node name="CalendarScene" type="Panel" parent="." node_paths=PackedStringArray("computer_scene", "debug_hand", "activity_hand", "unused_hand")]
 visible = false
@@ -772,6 +1261,7 @@ layout_mode = 0
 offset_left = 360.0
 offset_top = -50.0
 offset_right = 560.0
+mouse_filter = 1
 
 [node name="ExecutePlanButton" type="Button" parent="CalendarScene"]
 layout_mode = 0
@@ -779,6 +1269,7 @@ offset_left = 660.0
 offset_top = 350.0
 offset_right = 860.0
 offset_bottom = 450.0
+mouse_filter = 1
 text = "执行计划"
 
 [node name="RoundTips" type="Panel" parent="CalendarScene"]
@@ -787,6 +1278,7 @@ offset_left = 60.0
 offset_top = 350.0
 offset_right = 560.0
 offset_bottom = 450.0
+mouse_filter = 1
 
 [node name="DebugHand" type="HBoxContainer" parent="CalendarScene"]
 layout_mode = 0
@@ -830,6 +1322,7 @@ self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 300.0
 offset_bottom = 50.0
+mouse_filter = 1
 
 [node name="Label" type="Label" parent="CompanyScene/ResumeLabel"]
 layout_mode = 1
@@ -848,6 +1341,7 @@ offset_left = 40.0
 offset_top = 80.0
 offset_right = 160.0
 offset_bottom = 240.0
+mouse_filter = 1
 
 [node name="Employee1" type="Panel" parent="CompanyScene"]
 layout_mode = 0
@@ -855,6 +1349,7 @@ offset_left = 200.0
 offset_top = 80.0
 offset_right = 320.0
 offset_bottom = 240.0
+mouse_filter = 1
 
 [node name="Employee2" type="Panel" parent="CompanyScene"]
 layout_mode = 0
@@ -862,6 +1357,7 @@ offset_left = 360.0
 offset_top = 80.0
 offset_right = 480.0
 offset_bottom = 240.0
+mouse_filter = 1
 
 [node name="Employee3" type="Panel" parent="CompanyScene"]
 layout_mode = 0
@@ -869,6 +1365,7 @@ offset_left = 520.0
 offset_top = 80.0
 offset_right = 640.0
 offset_bottom = 240.0
+mouse_filter = 1
 
 [node name="Employee4" type="Panel" parent="CompanyScene"]
 layout_mode = 0
@@ -876,6 +1373,7 @@ offset_left = 680.0
 offset_top = 80.0
 offset_right = 800.0
 offset_bottom = 240.0
+mouse_filter = 1
 
 [node name="RefreshEmployee" type="Button" parent="CompanyScene"]
 self_modulate = Color(1, 1, 1, 0)
@@ -884,6 +1382,7 @@ offset_left = 855.0
 offset_top = 137.0
 offset_right = 955.0
 offset_bottom = 187.0
+mouse_filter = 1
 text = "刷新"
 
 [node name="RefreshTexture" type="TextureRect" parent="CompanyScene/RefreshEmployee"]
@@ -918,6 +1417,7 @@ layout_mode = 0
 offset_top = 270.0
 offset_right = 300.0
 offset_bottom = 320.0
+mouse_filter = 1
 
 [node name="Label" type="Label" parent="CompanyScene/StaffLabel"]
 layout_mode = 1
@@ -936,6 +1436,7 @@ offset_left = 100.0
 offset_top = 350.0
 offset_right = 250.0
 offset_bottom = 550.0
+mouse_filter = 1
 
 [node name="Staff1" type="Panel" parent="CompanyScene"]
 layout_mode = 0
@@ -943,6 +1444,7 @@ offset_left = 345.0
 offset_top = 350.0
 offset_right = 495.0
 offset_bottom = 550.0
+mouse_filter = 1
 
 [node name="Staff2" type="Panel" parent="CompanyScene"]
 layout_mode = 0
@@ -950,6 +1452,7 @@ offset_left = 590.0
 offset_top = 350.0
 offset_right = 740.0
 offset_bottom = 550.0
+mouse_filter = 1
 
 [node name="FireStaff" type="Button" parent="CompanyScene"]
 self_modulate = Color(1, 1, 1, 0)
@@ -958,6 +1461,7 @@ offset_left = 855.0
 offset_top = 425.0
 offset_right = 955.0
 offset_bottom = 475.0
+mouse_filter = 1
 
 [node name="FireTexture" type="TextureRect" parent="CompanyScene/FireStaff"]
 layout_mode = 1
@@ -992,6 +1496,7 @@ offset_left = 50.0
 offset_top = 580.0
 offset_right = 950.0
 offset_bottom = 755.0
+mouse_filter = 1
 
 [node name="Label" type="Label" parent="CompanyScene/CompanyDescription"]
 layout_mode = 1
@@ -1011,6 +1516,7 @@ offset_left = 925.0
 offset_top = 25.0
 offset_right = 975.0
 offset_bottom = 75.0
+mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="CompanyScene/ExitCompany"]
 layout_mode = 1
@@ -1027,142 +1533,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("22_w8dcv")
 
-[node name="CharacterScene" type="Panel" parent="."]
-visible = false
-offset_right = 1000.0
-offset_bottom = 800.0
-
-[node name="CharacterPicture" type="Panel" parent="CharacterScene"]
-layout_mode = 0
-offset_right = 400.0
-offset_bottom = 800.0
-
-[node name="CharacterHead" type="Panel" parent="CharacterScene"]
-layout_mode = 0
-offset_left = 450.0
-offset_top = 75.0
-offset_right = 600.0
-offset_bottom = 225.0
-
-[node name="CharacterName" type="Panel" parent="CharacterScene"]
-layout_mode = 0
-offset_left = 650.0
-offset_top = 125.0
-offset_right = 850.0
-offset_bottom = 175.0
-
-[node name="Close" type="Panel" parent="CharacterScene"]
-layout_mode = 0
-offset_left = 925.0
-offset_top = 25.0
-offset_right = 975.0
-offset_bottom = 75.0
-
-[node name="Saving" type="Panel" parent="CharacterScene"]
-layout_mode = 0
-offset_left = 450.0
-offset_top = 275.0
-offset_right = 950.0
-offset_bottom = 375.0
-
-[node name="EmotionBuff" type="Panel" parent="CharacterScene"]
-layout_mode = 0
-offset_left = 450.0
-offset_top = 425.0
-offset_right = 950.0
-offset_bottom = 755.0
-
-[node name="BuffList" type="Panel" parent="CharacterScene"]
-layout_mode = 0
-offset_left = 600.0
-offset_top = 450.0
-offset_right = 900.0
-offset_bottom = 525.0
-
-[node name="BuffContent" type="Panel" parent="CharacterScene"]
-layout_mode = 0
-offset_left = 600.0
-offset_top = 540.0
-offset_right = 900.0
-offset_bottom = 720.0
-
-[node name="Emotion0Buff1" type="Panel" parent="CharacterScene"]
-layout_mode = 0
-offset_left = 480.0
-offset_top = 450.0
-offset_right = 500.0
-offset_bottom = 470.0
-
-[node name="Emotion0Buff2" type="Panel" parent="CharacterScene"]
-layout_mode = 0
-offset_left = 520.0
-offset_top = 450.0
-offset_right = 540.0
-offset_bottom = 470.0
-
-[node name="Emotion20Buff1" type="Panel" parent="CharacterScene"]
-layout_mode = 0
-offset_left = 480.0
-offset_top = 500.0
-offset_right = 500.0
-offset_bottom = 520.0
-
-[node name="Emotion50Buff1" type="Panel" parent="CharacterScene"]
-layout_mode = 0
-offset_left = 480.0
-offset_top = 550.0
-offset_right = 500.0
-offset_bottom = 570.0
-
-[node name="Emotion50Buff2" type="Panel" parent="CharacterScene"]
-layout_mode = 0
-offset_left = 520.0
-offset_top = 550.0
-offset_right = 540.0
-offset_bottom = 570.0
-
-[node name="Emotion60Buff1" type="Panel" parent="CharacterScene"]
-layout_mode = 0
-offset_left = 480.0
-offset_top = 600.0
-offset_right = 500.0
-offset_bottom = 620.0
-
-[node name="Emotion60Buff2" type="Panel" parent="CharacterScene"]
-layout_mode = 0
-offset_left = 520.0
-offset_top = 600.0
-offset_right = 540.0
-offset_bottom = 620.0
-
-[node name="Emotion90Buff1" type="Panel" parent="CharacterScene"]
-layout_mode = 0
-offset_left = 480.0
-offset_top = 650.0
-offset_right = 500.0
-offset_bottom = 670.0
-
-[node name="Emotion100Buff1" type="Panel" parent="CharacterScene"]
-layout_mode = 0
-offset_left = 480.0
-offset_top = 700.0
-offset_right = 500.0
-offset_bottom = 720.0
-
-[node name="Emotion100Buff2" type="Panel" parent="CharacterScene"]
-layout_mode = 0
-offset_left = 520.0
-offset_top = 700.0
-offset_right = 540.0
-offset_bottom = 720.0
-
-[node name="Emotion100Buff3" type="Panel" parent="CharacterScene"]
-layout_mode = 0
-offset_left = 560.0
-offset_top = 700.0
-offset_right = 580.0
-offset_bottom = 720.0
-
 [node name="DataBaseScene" type="Panel" parent="."]
 visible = false
 offset_right = 1000.0
@@ -1174,6 +1544,7 @@ offset_left = 925.0
 offset_top = 25.0
 offset_right = 975.0
 offset_bottom = 75.0
+mouse_filter = 1
 
 [node name="DataList" type="Panel" parent="DataBaseScene"]
 layout_mode = 0
@@ -1181,6 +1552,7 @@ offset_left = 50.0
 offset_top = 50.0
 offset_right = 250.0
 offset_bottom = 750.0
+mouse_filter = 1
 
 [node name="DataDescription" type="Panel" parent="DataBaseScene"]
 layout_mode = 0
@@ -1188,11 +1560,178 @@ offset_left = 300.0
 offset_top = 100.0
 offset_right = 950.0
 offset_bottom = 750.0
+mouse_filter = 1
 
+[node name="CharacterScene" type="Panel" parent="."]
+visible = false
+offset_right = 1000.0
+offset_bottom = 800.0
+mouse_filter = 1
+
+[node name="CharacterPicture" type="Panel" parent="CharacterScene"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 800.0
+mouse_filter = 1
+
+[node name="CharacterHead" type="Panel" parent="CharacterScene"]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 75.0
+offset_right = 600.0
+offset_bottom = 225.0
+mouse_filter = 1
+
+[node name="CharacterName" type="Panel" parent="CharacterScene"]
+layout_mode = 0
+offset_left = 650.0
+offset_top = 125.0
+offset_right = 850.0
+offset_bottom = 175.0
+mouse_filter = 1
+
+[node name="Close" type="Panel" parent="CharacterScene"]
+layout_mode = 0
+offset_left = 925.0
+offset_top = 25.0
+offset_right = 975.0
+offset_bottom = 75.0
+mouse_filter = 1
+
+[node name="Saving" type="Panel" parent="CharacterScene"]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 275.0
+offset_right = 950.0
+offset_bottom = 375.0
+mouse_filter = 1
+
+[node name="EmotionBuff" type="Panel" parent="CharacterScene"]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 425.0
+offset_right = 950.0
+offset_bottom = 755.0
+mouse_filter = 1
+
+[node name="BuffList" type="Panel" parent="CharacterScene"]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 450.0
+offset_right = 900.0
+offset_bottom = 525.0
+mouse_filter = 1
+
+[node name="BuffContent" type="Panel" parent="CharacterScene"]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 540.0
+offset_right = 900.0
+offset_bottom = 720.0
+mouse_filter = 1
+
+[node name="Emotion0Buff1" type="Panel" parent="CharacterScene"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 450.0
+offset_right = 500.0
+offset_bottom = 470.0
+mouse_filter = 1
+
+[node name="Emotion0Buff2" type="Panel" parent="CharacterScene"]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 450.0
+offset_right = 540.0
+offset_bottom = 470.0
+mouse_filter = 1
+
+[node name="Emotion20Buff1" type="Panel" parent="CharacterScene"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 500.0
+offset_right = 500.0
+offset_bottom = 520.0
+mouse_filter = 1
+
+[node name="Emotion50Buff1" type="Panel" parent="CharacterScene"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 550.0
+offset_right = 500.0
+offset_bottom = 570.0
+mouse_filter = 1
+
+[node name="Emotion50Buff2" type="Panel" parent="CharacterScene"]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 550.0
+offset_right = 540.0
+offset_bottom = 570.0
+mouse_filter = 1
+
+[node name="Emotion60Buff1" type="Panel" parent="CharacterScene"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 600.0
+offset_right = 500.0
+offset_bottom = 620.0
+mouse_filter = 1
+
+[node name="Emotion60Buff2" type="Panel" parent="CharacterScene"]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 600.0
+offset_right = 540.0
+offset_bottom = 620.0
+mouse_filter = 1
+
+[node name="Emotion90Buff1" type="Panel" parent="CharacterScene"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 650.0
+offset_right = 500.0
+offset_bottom = 670.0
+mouse_filter = 1
+
+[node name="Emotion100Buff1" type="Panel" parent="CharacterScene"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 700.0
+offset_right = 500.0
+offset_bottom = 720.0
+mouse_filter = 1
+
+[node name="Emotion100Buff2" type="Panel" parent="CharacterScene"]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 700.0
+offset_right = 540.0
+offset_bottom = 720.0
+mouse_filter = 1
+
+[node name="Emotion100Buff3" type="Panel" parent="CharacterScene"]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 700.0
+offset_right = 580.0
+offset_bottom = 720.0
+mouse_filter = 1
+
+[connection signal="button_down" from="DesktopIconManager/OpenSetting" to="DesktopIconManager" method="_on_open_setting_button_down"]
+[connection signal="button_up" from="DesktopIconManager/OpenSetting" to="DesktopIconManager" method="_on_open_setting_button_up"]
 [connection signal="pressed" from="DesktopIconManager/OpenSetting" to="DesktopIconManager" method="_on_open_setting_pressed"]
+[connection signal="button_down" from="DesktopIconManager/OpenBrowser" to="DesktopIconManager" method="_on_open_browser_button_down"]
+[connection signal="button_up" from="DesktopIconManager/OpenBrowser" to="DesktopIconManager" method="_on_open_browser_button_up"]
 [connection signal="pressed" from="DesktopIconManager/OpenBrowser" to="DesktopIconManager" method="_on_open_browser_pressed"]
+[connection signal="button_down" from="DesktopIconManager/OpenCalendar" to="DesktopIconManager" method="_on_open_calendar_button_down"]
+[connection signal="button_up" from="DesktopIconManager/OpenCalendar" to="DesktopIconManager" method="_on_open_calendar_button_up"]
 [connection signal="pressed" from="DesktopIconManager/OpenCalendar" to="DesktopIconManager" method="_on_open_calendar_pressed"]
+[connection signal="button_down" from="DesktopIconManager/OpenCompany" to="DesktopIconManager" method="_on_open_company_button_down"]
+[connection signal="button_up" from="DesktopIconManager/OpenCompany" to="DesktopIconManager" method="_on_open_company_button_up"]
 [connection signal="pressed" from="DesktopIconManager/OpenCompany" to="DesktopIconManager" method="_on_open_company_pressed"]
+[connection signal="button_down" from="StoreScene/RefreshCards" to="StoreScene" method="_on_refresh_cards_button_down"]
+[connection signal="button_up" from="StoreScene/RefreshCards" to="StoreScene" method="_on_refresh_cards_button_up"]
 [connection signal="pressed" from="StoreScene/RefreshCards" to="StoreScene" method="_on_refresh_cards_pressed"]
 [connection signal="text_submitted" from="BrowserScene/URLEdit(Flag)" to="BrowserScene" method="_on_url_edit_text_submitted"]
 [connection signal="pressed" from="BrowserScene/Button(Flag)" to="BrowserScene" method="_on_button_pressed"]
