@@ -42,7 +42,6 @@ calendar_scene = NodePath("CalendarScene")
 company_scene = NodePath("CompanyScene")
 
 [node name="ComputerBackground" type="TextureRect" parent="."]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -51,11 +50,8 @@ grow_vertical = 2
 texture = ExtResource("2_rw1u3")
 
 [node name="DesktopIconManager" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 160.0
-offset_bottom = 160.0
 script = ExtResource("3_cd3q4")
 
 [node name="OpenSetting" type="Button" parent="DesktopIconManager"]
@@ -226,7 +222,6 @@ offset_right = 950.0
 offset_bottom = 290.0
 
 [node name="PropertyManager" type="Panel" parent="." node_paths=PackedStringArray("money_label", "mood_label", "skill_label", "project_progress_bar", "bug_amount_bar", "global_buffs")]
-visible = false
 offset_left = 1874.0
 offset_top = 72.0
 offset_right = 2488.0

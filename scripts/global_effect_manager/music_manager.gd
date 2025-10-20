@@ -7,7 +7,7 @@ var has_music : bool = true
 
 # 默认的随机音乐播放器所使用的参数
 var music_names = [
-	
+	"a"
 ]
 var last_music_name : String
 
@@ -26,7 +26,7 @@ func update_volume(parameter = 0) -> void:
 			i.volume_linear = global_volume
 	
 	
-func play_music(music_name : String , from_position : float = 0 , volume_db : float = 1):
+func play_music(music_name : String , from_position : float = 0 , volume_db : float = 0):
 	var audio = AudioStreamPlayer.new()
 	audio.stream = load("res://assets/music/"+music_name+".mp3")
 	if not audio.stream:
@@ -58,7 +58,13 @@ func random_music_player():
 			last_music_name = random_name
 		await get_tree().create_timer(1).timeout
 		
+var current_volume : float
 func initialize() -> void:
-	play_music("a")
-	#random_music_player()
+	await get_tree().create_timer(1).timeout
+	var music = play_music("b")
+	music.volume_linear = 0
+	for i in 300:
+		await get_tree().create_timer(0.01).timeout
+		music.volume_linear = (1.0 / 299 * i) * global_volume
+	random_music_player()
 	pass
