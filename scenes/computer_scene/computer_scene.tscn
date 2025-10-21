@@ -1,20 +1,24 @@
-[gd_scene load_steps=52 format=3 uid="uid://ei0t0movgv01"]
+[gd_scene load_steps=103 format=3 uid="uid://ei0t0movgv01"]
 
 [ext_resource type="Script" uid="uid://cyxxmhvja0apb" path="res://scripts/computer_scene/computer_scene.gd" id="1_8g14y"]
 [ext_resource type="Texture2D" uid="uid://by5p2m3k3u3yo" path="res://assets/computer_scene/desktop_background.png" id="2_rw1u3"]
 [ext_resource type="Script" uid="uid://bjv7w1v3yn4qs" path="res://scripts/computer_scene/desktop_icon_manager.gd" id="3_cd3q4"]
 [ext_resource type="Texture2D" uid="uid://bm5phhix34ag2" path="res://assets/computer_scene/desktop_setting_icon.png" id="4_nbbnv"]
 [ext_resource type="Texture2D" uid="uid://cfg2ihodiec08" path="res://assets/computer_scene/desktop_browser_icon.png" id="5_47gfp"]
+[ext_resource type="Script" uid="uid://bv170kn7glfx6" path="res://scripts/animation/open_setting.gd" id="5_cd3q4"]
 [ext_resource type="Texture2D" uid="uid://1tduyx22qp3g" path="res://assets/computer_scene/desktop_icon_border.png" id="5_rw1u3"]
 [ext_resource type="Texture2D" uid="uid://boovs3btuf43l" path="res://assets/computer_scene/desktop_calendar_icon.png" id="6_en0pa"]
 [ext_resource type="Texture2D" uid="uid://b6bnp8q1xr1oj" path="res://assets/computer_scene/desktop_database_icon.png" id="7_ltark"]
+[ext_resource type="Script" uid="uid://boohjeqwx8the" path="res://scripts/animation/open_browser.gd" id="8_nbbnv"]
 [ext_resource type="Texture2D" uid="uid://b7ghbl2nxc77v" path="res://assets/computer_scene/desktop_cmd_icon.png" id="8_ya4ev"]
 [ext_resource type="Texture2D" uid="uid://be1flm85atjdq" path="res://assets/computer_scene/desktop_company_icon.png" id="9_bv4nm"]
+[ext_resource type="Script" uid="uid://2ghneceur7qi" path="res://scripts/animation/open_calendar.gd" id="10_47gfp"]
 [ext_resource type="Script" uid="uid://b227pdi84qmke" path="res://scripts/computer_scene/store_scene.gd" id="10_yw0uv"]
 [ext_resource type="Script" uid="uid://bm7s8ivf8kbmv" path="res://scripts/computer_scene/property_manager.gd" id="11_06as4"]
 [ext_resource type="Script" uid="uid://cannks0lt5d1e" path="res://scripts/computer_scene/buff_manager.gd" id="12_d84jm"]
 [ext_resource type="Script" uid="uid://ce08b43y0bjxs" path="res://scripts/computer_scene/browser_scene.gd" id="13_t7krb"]
 [ext_resource type="Script" uid="uid://cr6ujdk17odqk" path="res://scripts/computer_scene/project_panel.gd" id="14_5yyiv"]
+[ext_resource type="Script" uid="uid://k1rp05w660ru" path="res://scripts/animation/open_company.gd" id="14_en0pa"]
 [ext_resource type="Script" uid="uid://bx0dkmbs57kpc" path="res://scripts/computer_scene/supplier_icon.gd" id="15_kbgpp"]
 [ext_resource type="Script" uid="uid://bgfw7mjp2unqo" path="res://scripts/computer_scene/supplier_project.gd" id="16_d88ux"]
 [ext_resource type="Script" uid="uid://onqn7vb0nepd" path="res://scripts/computer_scene/calendar_scene.gd" id="17_br20j"]
@@ -22,7 +26,37 @@
 [ext_resource type="Texture2D" uid="uid://u3xflh36m6g6" path="res://assets/computer_scene/organization_background.png" id="19_ggfum"]
 [ext_resource type="Texture2D" uid="uid://cis0mhn2goxuh" path="res://assets/computer_scene/refresh_employee_111x60.png" id="20_onm7m"]
 [ext_resource type="Texture2D" uid="uid://cpjpgw6ctfnai" path="res://assets/computer_scene/fire_107x56.png" id="21_ftseh"]
+[ext_resource type="Texture2D" uid="uid://bk284atb01e0a" path="res://assets/computer_scene/600x150Border.png" id="22_bv4nm"]
 [ext_resource type="Texture2D" uid="uid://hvrred57t74d" path="res://assets/computer_scene/close_56x57.png" id="22_w8dcv"]
+[ext_resource type="Texture2D" uid="uid://5ntt2yd2muo3" path="res://assets/computer_scene/200x50Borderaseprite.png" id="23_ltark"]
+[ext_resource type="Script" uid="uid://bgomhe6q415mg" path="res://scripts/animation/calender_button.gd" id="23_ya4ev"]
+
+[sub_resource type="Animation" id="Animation_cd3q4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SettingBorder:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_8g14y"]
 resource_name = "button_down"
@@ -56,7 +90,72 @@ tracks/0/keys = {
 "values": [Vector2(0.9, 0.9), Vector2(1.2, 1.2), Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_cd3q4"]
+[sub_resource type="Animation" id="Animation_03edr"]
+resource_name = "hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SettingBorder:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_e3vis"]
+resource_name = "hover_over"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SettingBorder:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nbbnv"]
+_data = {
+&"RESET": SubResource("Animation_cd3q4"),
+&"button_down": SubResource("Animation_8g14y"),
+&"button_up": SubResource("Animation_rw1u3"),
+&"hover": SubResource("Animation_03edr"),
+&"hover_over": SubResource("Animation_e3vis")
+}
+
+[sub_resource type="Animation" id="Animation_en0pa"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -70,12 +169,17 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_nbbnv"]
-_data = {
-&"RESET": SubResource("Animation_cd3q4"),
-&"button_down": SubResource("Animation_8g14y"),
-&"button_up": SubResource("Animation_rw1u3")
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BrowserBorder:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_nbbnv"]
@@ -110,7 +214,72 @@ tracks/0/keys = {
 "values": [Vector2(0.9, 0.9), Vector2(1.2, 1.2), Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_en0pa"]
+[sub_resource type="Animation" id="Animation_267y6"]
+resource_name = "hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BrowserBorder:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_s6lbx"]
+resource_name = "hover_over"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BrowserBorder:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ltark"]
+_data = {
+&"RESET": SubResource("Animation_en0pa"),
+&"button_down": SubResource("Animation_nbbnv"),
+&"button_up": SubResource("Animation_47gfp"),
+&"hover": SubResource("Animation_267y6"),
+&"hover_over": SubResource("Animation_s6lbx")
+}
+
+[sub_resource type="Animation" id="Animation_bv4nm"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -124,12 +293,17 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ltark"]
-_data = {
-&"RESET": SubResource("Animation_en0pa"),
-&"button_down": SubResource("Animation_nbbnv"),
-&"button_up": SubResource("Animation_47gfp")
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CalenderBorder:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_ltark"]
@@ -148,21 +322,6 @@ tracks/0/keys = {
 "values": [Vector2(1, 1), Vector2(0.9, 0.9)]
 }
 
-[sub_resource type="Animation" id="Animation_bv4nm"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_ya4ev"]
 resource_name = "button_up"
 length = 0.2
@@ -179,11 +338,96 @@ tracks/0/keys = {
 "values": [Vector2(0.9, 0.9), Vector2(1.2, 1.2), Vector2(1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_p5mst"]
+resource_name = "hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CalenderBorder:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_sd8hy"]
+resource_name = "hover_over"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CalenderBorder:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yw0uv"]
 _data = {
 &"RESET": SubResource("Animation_bv4nm"),
 &"button_down": SubResource("Animation_ltark"),
-&"button_up": SubResource("Animation_ya4ev")
+&"button_up": SubResource("Animation_ya4ev"),
+&"hover": SubResource("Animation_p5mst"),
+&"hover_over": SubResource("Animation_sd8hy")
+}
+
+[sub_resource type="Animation" id="Animation_d84jm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CompanyBorder:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_yw0uv"]
@@ -218,8 +462,9 @@ tracks/0/keys = {
 "values": [Vector2(0.9, 0.9), Vector2(1.2, 1.2), Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_d84jm"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_6iqqy"]
+resource_name = "hover"
+length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -227,17 +472,59 @@ tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CompanyBorder:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_5b3er"]
+resource_name = "hover_over"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CompanyBorder:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(1.1, 1.1), Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t7krb"]
 _data = {
 &"RESET": SubResource("Animation_d84jm"),
 &"button_down": SubResource("Animation_yw0uv"),
-&"button_up": SubResource("Animation_06as4")
+&"button_up": SubResource("Animation_06as4"),
+&"hover": SubResource("Animation_6iqqy"),
+&"hover_over": SubResource("Animation_5b3er")
 }
 
 [sub_resource type="Animation" id="Animation_kbgpp"]
@@ -302,8 +589,107 @@ _data = {
 Window/styles/embedded_border = SubResource("StyleBoxTexture_2j6ol")
 Window/styles/embedded_unfocused_border = SubResource("StyleBoxTexture_8ldib")
 
-[sub_resource type="Animation" id="Animation_d88ux"]
-resource_name = "open"
+[sub_resource type="Animation" id="Animation_uxsg8"]
+resource_name = "hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ProjectBorder:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_jt5uo"]
+resource_name = "hover_over"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ProjectBorder:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_qfe3t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ProjectBorder:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8r4sb"]
+resource_name = "button_down"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 0.9)]
+}
+
+[sub_resource type="Animation" id="Animation_06uae"]
+resource_name = "button_up"
 length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -315,7 +701,16 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.04, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0.5, 0.5), Vector2(1.2, 1.2), Vector2(1, 1)]
+"values": [Vector2(0.9, 0.9), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8r4sb"]
+_data = {
+&"RESET": SubResource("Animation_qfe3t"),
+&"button_down": SubResource("Animation_8r4sb"),
+&"button_up": SubResource("Animation_06uae"),
+&"hover": SubResource("Animation_uxsg8"),
+&"hover_over": SubResource("Animation_jt5uo")
 }
 
 [sub_resource type="Animation" id="Animation_br20j"]
@@ -373,6 +768,22 @@ tracks/1/keys = {
 "values": [true, false]
 }
 
+[sub_resource type="Animation" id="Animation_d88ux"]
+resource_name = "open"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.04, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j4xds"]
 _data = {
 &"RESET": SubResource("Animation_br20j"),
@@ -381,6 +792,478 @@ _data = {
 }
 
 [sub_resource type="Theme" id="Theme_dlmsr"]
+
+[sub_resource type="Animation" id="Animation_li4rp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CalenderButtonBorder:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rv4hl"]
+resource_name = "buyyon_down"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 0.9)]
+}
+
+[sub_resource type="Animation" id="Animation_2uldg"]
+resource_name = "button_up"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.04, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vs8io"]
+resource_name = "hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CalenderButtonBorder:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_o32ln"]
+resource_name = "hover_over"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CalenderButtonBorder:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_li4rp"]
+_data = {
+&"RESET": SubResource("Animation_li4rp"),
+&"button_down": SubResource("Animation_rv4hl"),
+&"button_up": SubResource("Animation_2uldg"),
+&"hover": SubResource("Animation_vs8io"),
+&"hover_over": SubResource("Animation_o32ln")
+}
+
+[sub_resource type="Animation" id="Animation_si5nn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jqns5"]
+resource_name = "button_down"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 0.9)]
+}
+
+[sub_resource type="Animation" id="Animation_w8dcv"]
+resource_name = "button_up"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l2ol0"]
+_data = {
+&"RESET": SubResource("Animation_si5nn"),
+&"button_down": SubResource("Animation_jqns5"),
+&"button_up": SubResource("Animation_w8dcv")
+}
+
+[sub_resource type="Animation" id="Animation_ftseh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1060, 460)]
+}
+
+[sub_resource type="Animation" id="Animation_onm7m"]
+resource_name = "close"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1060, 460), Vector2(1060, 360), Vector2(1060, 1600)]
+}
+
+[sub_resource type="Animation" id="Animation_ggfum"]
+resource_name = "open"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1060, 1600), Vector2(1060, 360), Vector2(1060, 460)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ftseh"]
+_data = {
+&"RESET": SubResource("Animation_ftseh"),
+&"close": SubResource("Animation_onm7m"),
+&"open": SubResource("Animation_ggfum")
+}
+
+[sub_resource type="Animation" id="Animation_22qv2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5v3lk"]
+resource_name = "button_down"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 0.9)]
+}
+
+[sub_resource type="Animation" id="Animation_1r1dv"]
+resource_name = "button_up"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.04, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_22qv2"]
+_data = {
+&"RESET": SubResource("Animation_22qv2"),
+&"button_down": SubResource("Animation_5v3lk"),
+&"button_up": SubResource("Animation_1r1dv")
+}
+
+[sub_resource type="Animation" id="Animation_2xtf3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_a5lxw"]
+resource_name = "button_down"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 0.9)]
+}
+
+[sub_resource type="Animation" id="Animation_4d2qr"]
+resource_name = "button_up"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.04, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_03edr"]
+_data = {
+&"RESET": SubResource("Animation_2xtf3"),
+&"button_down": SubResource("Animation_a5lxw"),
+&"button_up": SubResource("Animation_4d2qr")
+}
+
+[sub_resource type="Animation" id="Animation_s0nu0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4l718"]
+resource_name = "button_down"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 0.9)]
+}
+
+[sub_resource type="Animation" id="Animation_ea52w"]
+resource_name = "button_up"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.04, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1r1dv"]
+_data = {
+&"RESET": SubResource("Animation_s0nu0"),
+&"button_down": SubResource("Animation_4l718"),
+&"button_up": SubResource("Animation_ea52w")
+}
+
+[sub_resource type="Animation" id="Animation_7ubm4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_f77dy"]
+resource_name = "close"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.5, 0.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_l2ol0"]
+resource_name = "open"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.04, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4l718"]
+_data = {
+&"RESET": SubResource("Animation_7ubm4"),
+&"close": SubResource("Animation_f77dy"),
+&"open": SubResource("Animation_l2ol0")
+}
 
 [node name="ComputerScene" type="CanvasLayer" node_paths=PackedStringArray("unused_hand", "debug_hand", "activity_hand", "calendar_scene", "company_scene")]
 script = ExtResource("1_8g14y")
@@ -418,6 +1301,7 @@ flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
+script = ExtResource("5_cd3q4")
 
 [node name="SettingAnim" type="AnimationPlayer" parent="DesktopIconManager/OpenSetting"]
 libraries = {
@@ -425,7 +1309,6 @@ libraries = {
 }
 
 [node name="SettingBorder" type="TextureRect" parent="DesktopIconManager/OpenSetting"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -448,6 +1331,7 @@ flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
+script = ExtResource("8_nbbnv")
 
 [node name="BrowserAnim" type="AnimationPlayer" parent="DesktopIconManager/OpenBrowser"]
 libraries = {
@@ -455,7 +1339,6 @@ libraries = {
 }
 
 [node name="BrowserBorder" type="TextureRect" parent="DesktopIconManager/OpenBrowser"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -478,6 +1361,7 @@ flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
+script = ExtResource("10_47gfp")
 
 [node name="CalenderAnim" type="AnimationPlayer" parent="DesktopIconManager/OpenCalendar"]
 libraries = {
@@ -485,7 +1369,6 @@ libraries = {
 }
 
 [node name="CalenderBorder" type="TextureRect" parent="DesktopIconManager/OpenCalendar"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -536,6 +1419,7 @@ flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
+script = ExtResource("14_en0pa")
 
 [node name="CompanyAnim" type="AnimationPlayer" parent="DesktopIconManager/OpenCompany"]
 libraries = {
@@ -543,7 +1427,6 @@ libraries = {
 }
 
 [node name="CompanyBorder" type="TextureRect" parent="DesktopIconManager/OpenCompany"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -890,14 +1773,17 @@ offset_right = 665.0
 offset_bottom = 50.0
 mouse_filter = 1
 
-[node name="SupplierProject0" type="Button" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0"]
+[node name="SupplierProject0" type="Button" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0" node_paths=PackedStringArray("project_border", "project_border_anim")]
 layout_mode = 0
 offset_left = 35.0
 offset_top = 130.0
 offset_right = 635.0
 offset_bottom = 280.0
+pivot_offset = Vector2(300, 75)
 mouse_filter = 1
 script = ExtResource("16_d88ux")
+project_border = NodePath("ProjectBorder")
+project_border_anim = NodePath("ProjectBorderAnim")
 
 [node name="Supplier1Project0Icon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject0"]
 layout_mode = 0
@@ -916,6 +1802,20 @@ offset_bottom = 100.0
 text = "项目名称"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ProjectBorder" type="TextureRect" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_bv4nm")
+
+[node name="ProjectBorderAnim" type="AnimationPlayer" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject0"]
+libraries = {
+&"": SubResource("AnimationLibrary_8r4sb")
+}
 
 [node name="SupplierProject1" type="Button" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0"]
 layout_mode = 0
@@ -1244,6 +2144,7 @@ libraries = {
 }
 
 [node name="CalendarScene" type="Panel" parent="." node_paths=PackedStringArray("computer_scene", "debug_hand", "activity_hand", "unused_hand")]
+self_modulate = Color(1, 1, 1, 0)
 offset_left = 1060.0
 offset_top = 460.0
 offset_right = 1980.0
@@ -1255,12 +2156,34 @@ debug_hand = NodePath("DebugHand")
 activity_hand = NodePath("ActivityHand")
 unused_hand = NodePath("UnusedHand")
 
+[node name="BackGround" type="Panel" parent="CalendarScene"]
+layout_mode = 0
+offset_right = 920.0
+offset_bottom = 1240.0
+mouse_filter = 1
+
 [node name="CalenderButton" type="Button" parent="CalendarScene"]
 layout_mode = 0
 offset_left = 360.0
 offset_top = -50.0
 offset_right = 560.0
+pivot_offset = Vector2(100, 25)
 mouse_filter = 1
+script = ExtResource("23_ya4ev")
+
+[node name="CalenderButtonAnim" type="AnimationPlayer" parent="CalendarScene/CalenderButton"]
+libraries = {
+&"": SubResource("AnimationLibrary_li4rp")
+}
+
+[node name="CalenderButtonBorder" type="TextureRect" parent="CalendarScene/CalenderButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("23_ltark")
 
 [node name="ExecutePlanButton" type="Button" parent="CalendarScene"]
 layout_mode = 0
@@ -1268,8 +2191,14 @@ offset_left = 660.0
 offset_top = 350.0
 offset_right = 860.0
 offset_bottom = 450.0
+pivot_offset = Vector2(100, 50)
 mouse_filter = 1
 text = "执行计划"
+
+[node name="ExecutePlanAnim" type="AnimationPlayer" parent="CalendarScene/ExecutePlanButton"]
+libraries = {
+&"": SubResource("AnimationLibrary_l2ol0")
+}
 
 [node name="RoundTips" type="Panel" parent="CalendarScene"]
 layout_mode = 0
@@ -1300,11 +2229,17 @@ offset_top = 780.0
 offset_right = 860.0
 offset_bottom = 1080.0
 
+[node name="CalenderSelfAnim" type="AnimationPlayer" parent="CalendarScene"]
+libraries = {
+&"": SubResource("AnimationLibrary_ftseh")
+}
+
 [node name="CompanyScene" type="Panel" parent="."]
-visible = false
 self_modulate = Color(1, 1, 1, 0)
 offset_right = 1000.0
 offset_bottom = 800.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(500, 400)
 script = ExtResource("18_j4xds")
 
 [node name="OrganizationBackground" type="TextureRect" parent="CompanyScene"]
@@ -1380,7 +2315,8 @@ layout_mode = 0
 offset_left = 855.0
 offset_top = 137.0
 offset_right = 955.0
-offset_bottom = 187.0
+offset_bottom = 190.0
+pivot_offset = Vector2(50, 26.5)
 mouse_filter = 1
 text = "刷新"
 
@@ -1398,6 +2334,7 @@ offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("20_onm7m")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="CompanyScene/RefreshEmployee"]
 layout_mode = 1
@@ -1409,6 +2346,11 @@ grow_vertical = 2
 text = "刷新"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="refreshAnim" type="AnimationPlayer" parent="CompanyScene/RefreshEmployee"]
+libraries = {
+&"": SubResource("AnimationLibrary_22qv2")
+}
 
 [node name="StaffLabel" type="Panel" parent="CompanyScene"]
 self_modulate = Color(1, 1, 1, 0)
@@ -1460,6 +2402,7 @@ offset_left = 855.0
 offset_top = 425.0
 offset_right = 955.0
 offset_bottom = 475.0
+pivot_offset = Vector2(50, 25)
 mouse_filter = 1
 
 [node name="FireTexture" type="TextureRect" parent="CompanyScene/FireStaff"]
@@ -1488,6 +2431,11 @@ text = "解雇"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="FireAnim" type="AnimationPlayer" parent="CompanyScene/FireStaff"]
+libraries = {
+&"": SubResource("AnimationLibrary_03edr")
+}
+
 [node name="CompanyDescription" type="Panel" parent="CompanyScene"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
@@ -1515,6 +2463,7 @@ offset_left = 925.0
 offset_top = 25.0
 offset_right = 975.0
 offset_bottom = 75.0
+pivot_offset = Vector2(25, 25)
 mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="CompanyScene/ExitCompany"]
@@ -1531,6 +2480,16 @@ offset_bottom = 28.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("22_w8dcv")
+
+[node name="ExitCompanyAnim" type="AnimationPlayer" parent="CompanyScene/ExitCompany"]
+libraries = {
+&"": SubResource("AnimationLibrary_1r1dv")
+}
+
+[node name="CompanySelfAnim" type="AnimationPlayer" parent="CompanyScene"]
+libraries = {
+&"": SubResource("AnimationLibrary_4l718")
+}
 
 [node name="DataBaseScene" type="Panel" parent="."]
 visible = false
@@ -1719,24 +2678,46 @@ mouse_filter = 1
 
 [connection signal="button_down" from="DesktopIconManager/OpenSetting" to="DesktopIconManager" method="_on_open_setting_button_down"]
 [connection signal="button_up" from="DesktopIconManager/OpenSetting" to="DesktopIconManager" method="_on_open_setting_button_up"]
+[connection signal="mouse_entered" from="DesktopIconManager/OpenSetting" to="DesktopIconManager/OpenSetting" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="DesktopIconManager/OpenSetting" to="DesktopIconManager/OpenSetting" method="_on_mouse_exited"]
 [connection signal="pressed" from="DesktopIconManager/OpenSetting" to="DesktopIconManager" method="_on_open_setting_pressed"]
 [connection signal="button_down" from="DesktopIconManager/OpenBrowser" to="DesktopIconManager" method="_on_open_browser_button_down"]
 [connection signal="button_up" from="DesktopIconManager/OpenBrowser" to="DesktopIconManager" method="_on_open_browser_button_up"]
+[connection signal="mouse_entered" from="DesktopIconManager/OpenBrowser" to="DesktopIconManager/OpenBrowser" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="DesktopIconManager/OpenBrowser" to="DesktopIconManager/OpenBrowser" method="_on_mouse_exited"]
 [connection signal="pressed" from="DesktopIconManager/OpenBrowser" to="DesktopIconManager" method="_on_open_browser_pressed"]
 [connection signal="button_down" from="DesktopIconManager/OpenCalendar" to="DesktopIconManager" method="_on_open_calendar_button_down"]
 [connection signal="button_up" from="DesktopIconManager/OpenCalendar" to="DesktopIconManager" method="_on_open_calendar_button_up"]
+[connection signal="mouse_entered" from="DesktopIconManager/OpenCalendar" to="DesktopIconManager/OpenCalendar" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="DesktopIconManager/OpenCalendar" to="DesktopIconManager/OpenCalendar" method="_on_mouse_exited"]
 [connection signal="pressed" from="DesktopIconManager/OpenCalendar" to="DesktopIconManager" method="_on_open_calendar_pressed"]
 [connection signal="button_down" from="DesktopIconManager/OpenCompany" to="DesktopIconManager" method="_on_open_company_button_down"]
 [connection signal="button_up" from="DesktopIconManager/OpenCompany" to="DesktopIconManager" method="_on_open_company_button_up"]
+[connection signal="mouse_entered" from="DesktopIconManager/OpenCompany" to="DesktopIconManager/OpenCompany" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="DesktopIconManager/OpenCompany" to="DesktopIconManager/OpenCompany" method="_on_mouse_exited"]
 [connection signal="pressed" from="DesktopIconManager/OpenCompany" to="DesktopIconManager" method="_on_open_company_pressed"]
 [connection signal="button_down" from="StoreScene/RefreshCards" to="StoreScene" method="_on_refresh_cards_button_down"]
 [connection signal="button_up" from="StoreScene/RefreshCards" to="StoreScene" method="_on_refresh_cards_button_up"]
 [connection signal="pressed" from="StoreScene/RefreshCards" to="StoreScene" method="_on_refresh_cards_pressed"]
 [connection signal="text_submitted" from="BrowserScene/URLEdit(Flag)" to="BrowserScene" method="_on_url_edit_text_submitted"]
 [connection signal="pressed" from="BrowserScene/Button(Flag)" to="BrowserScene" method="_on_button_pressed"]
+[connection signal="mouse_entered" from="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject0" to="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject0" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject0" to="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject0" method="_on_mouse_exited"]
 [connection signal="pressed" from="BrowserScene/ExitBrowser(Flag)" to="BrowserScene" method="_on_exit_browser_pressed"]
+[connection signal="button_down" from="CalendarScene/CalenderButton" to="CalendarScene" method="_on_calender_button_button_down"]
+[connection signal="button_up" from="CalendarScene/CalenderButton" to="CalendarScene" method="_on_calender_button_button_up"]
+[connection signal="mouse_entered" from="CalendarScene/CalenderButton" to="CalendarScene/CalenderButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CalendarScene/CalenderButton" to="CalendarScene/CalenderButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="CalendarScene/CalenderButton" to="CalendarScene" method="_on_calender_button_pressed"]
+[connection signal="button_down" from="CalendarScene/ExecutePlanButton" to="CalendarScene" method="_on_execute_plan_button_button_down"]
+[connection signal="button_up" from="CalendarScene/ExecutePlanButton" to="CalendarScene" method="_on_execute_plan_button_button_up"]
 [connection signal="pressed" from="CalendarScene/ExecutePlanButton" to="CalendarScene" method="_on_execute_plan_button_pressed"]
+[connection signal="button_down" from="CompanyScene/RefreshEmployee" to="CompanyScene" method="_on_refresh_employee_button_down"]
+[connection signal="button_up" from="CompanyScene/RefreshEmployee" to="CompanyScene" method="_on_refresh_employee_button_up"]
 [connection signal="pressed" from="CompanyScene/RefreshEmployee" to="CompanyScene" method="_on_refresh_employee_pressed"]
+[connection signal="button_down" from="CompanyScene/FireStaff" to="CompanyScene" method="_on_fire_staff_button_down"]
+[connection signal="button_up" from="CompanyScene/FireStaff" to="CompanyScene" method="_on_fire_staff_button_up"]
 [connection signal="pressed" from="CompanyScene/FireStaff" to="CompanyScene" method="_on_fire_staff_pressed"]
+[connection signal="button_down" from="CompanyScene/ExitCompany" to="CompanyScene" method="_on_exit_company_button_down"]
+[connection signal="button_up" from="CompanyScene/ExitCompany" to="CompanyScene" method="_on_exit_company_button_up"]
 [connection signal="pressed" from="CompanyScene/ExitCompany" to="CompanyScene" method="_on_exit_company_pressed"]

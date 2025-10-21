@@ -1,4 +1,5 @@
 extends Panel
+class_name Calender
 
 @export var computer_scene: ComputerScene
 @export var debug_hand: Node
@@ -7,7 +8,8 @@ extends Panel
 @onready var buff_manager: Node = $"../PropertyManager/BuffManager"
 
 func _ready() -> void:
-	visible = false
+	position.y = 1600 #这里我也不知道为什么，反正就是有个bug
+	#visible = false
 
 signal a_debug_card_used()
 signal a_activity_card_used()
@@ -139,10 +141,10 @@ func execute_plan():
 	#for card in activity_hand.get_children():
 		#card.execute()
 
-func _on_execute_plan_button_pressed() -> void:
-	pass
-	pass
-	execute_plan()
+#func _on_execute_plan_button_pressed() -> void:
+#	pass
+#	pass
+#	execute_plan()
 
 
 func _on_close_requested() -> void:
@@ -156,8 +158,41 @@ func get_hand_cards_amount() -> int:
 	
 	return n
 
+#region 日历开启与关闭
 
-func _on_calender_button_pressed() -> void:
-	pass
-	pass
-	visible = false
+@onready var calender_self_anim: AnimationPlayer = $CalenderSelfAnim
+var is_open : bool = false
+
+#func _on_calender_button_pressed() -> void:
+#	if is_open == true:
+#		calender_self_anim.play("close")
+#		is_open = false
+#	elif is_open == false :
+#		calender_self_anim.play("open")
+#		is_open = true
+
+#endregion
+
+@onready var execute_plan_anim: AnimationPlayer = $ExecutePlanButton/ExecutePlanAnim
+
+func _on_execute_plan_button_button_down() -> void:
+	execute_plan_anim.play("button_down")
+
+func _on_execute_plan_button_button_up() -> void:
+	execute_plan_anim.play("button_up")
+	execute_plan()
+
+@onready var calender_button_anim: AnimationPlayer = $CalenderButton/CalenderButtonAnim
+
+func _on_calender_button_button_down() -> void:
+	calender_button_anim.play("button_down")
+
+
+func _on_calender_button_button_up() -> void:
+	calender_button_anim.play("button_up")
+	if is_open == true:
+		calender_self_anim.play("close")
+		is_open = false
+	elif is_open == false :
+		calender_self_anim.play("open")
+		is_open = true

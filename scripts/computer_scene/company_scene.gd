@@ -62,25 +62,25 @@ func refresh_employees():
 		if employee_amount >= 5:
 			break
 
-func _on_fire_staff_pressed() -> void:
-	if selected_employee:
-		if G.M.current_scene.property_manager.use_money(selected_employee.severance_pay):
-			selected_employee.queue_free()
-			pass
-			pass
-		else:
-			print("没钱支付离职金")
-	else:
-		print("请先选中一个员工")
+#func _on_fire_staff_pressed() -> void:
+#	if selected_employee:
+#		if G.M.current_scene.property_manager.use_money(selected_employee.severance_pay):
+#			selected_employee.queue_free()
+#			pass
+#			pass
+#		else:
+#			print("没钱支付离职金")
+#	else:
+#		print("请先选中一个员工")
 
-func _on_exit_company_pressed() -> void:
-	visible = false
+#func _on_exit_company_pressed() -> void:
+#	visible = false
 
 
-func _on_refresh_employee_pressed() -> void:
-	pass
-	pass
-	refresh_employees()
+#func _on_refresh_employee_pressed() -> void:
+#	pass
+#	pass
+#	refresh_employees()
 
 
 func inspect_wage():
@@ -92,3 +92,54 @@ func inspect_wage():
 				if (G.M.current_scene.current_date - staff.joining_date) % staff.pay_interval_days == 0:
 					if not G.M.current_scene.property_manager.use_money(staff.wage):
 						staff.be_fired()
+
+
+@onready var company_self_anim: AnimationPlayer = $CompanySelfAnim
+
+#region 退出
+
+@onready var exit_company_anim: AnimationPlayer = $ExitCompany/ExitCompanyAnim
+
+func _on_exit_company_button_down() -> void:
+	exit_company_anim.play("button_down")
+
+
+func _on_exit_company_button_up() -> void:
+	exit_company_anim.play("button_up")
+	company_self_anim.play("close")
+
+#endregion
+
+#region 刷新
+
+@onready var refresh_anim: AnimationPlayer = $RefreshEmployee/refreshAnim
+
+func _on_refresh_employee_button_down() -> void:
+	refresh_anim.play("button_down")
+
+func _on_refresh_employee_button_up() -> void:
+	refresh_anim.play("button_up")
+	refresh_employees()
+
+#endregion
+
+#region 解雇
+
+@onready var fire_anim: AnimationPlayer = $FireStaff/FireAnim
+
+func _on_fire_staff_button_down() -> void:
+	fire_anim.play("button_down")
+
+func _on_fire_staff_button_up() -> void:
+	fire_anim.play("button_up")
+	if selected_employee:
+		if G.M.current_scene.property_manager.use_money(selected_employee.severance_pay):
+			selected_employee.queue_free()
+			pass
+			pass
+		else:
+			print("没钱支付离职金")
+	else:
+		print("请先选中一个员工")
+
+#endregion

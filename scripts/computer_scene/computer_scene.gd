@@ -7,7 +7,7 @@ class_name ComputerScene
 @export var unused_hand : Node
 @export var debug_hand: Node
 @export var activity_hand : Node
-@export var calendar_scene : Node
+@export var calendar_scene : Calender
 @export var company_scene : Node
 
 
