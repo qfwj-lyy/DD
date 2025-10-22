@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://ei0t0movgv01"]
+[gd_scene load_steps=105 format=3 uid="uid://ei0t0movgv01"]
 
 [ext_resource type="Script" uid="uid://cyxxmhvja0apb" path="res://scripts/computer_scene/computer_scene.gd" id="1_8g14y"]
 [ext_resource type="Texture2D" uid="uid://by5p2m3k3u3yo" path="res://assets/computer_scene/desktop_background.png" id="2_rw1u3"]
@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://hvrred57t74d" path="res://assets/computer_scene/close_56x57.png" id="22_w8dcv"]
 [ext_resource type="Texture2D" uid="uid://5ntt2yd2muo3" path="res://assets/computer_scene/200x50Borderaseprite.png" id="23_ltark"]
 [ext_resource type="Script" uid="uid://bgomhe6q415mg" path="res://scripts/animation/calender_button.gd" id="23_ya4ev"]
+[ext_resource type="Script" uid="uid://dkh4wj1hlvyoe" path="res://scripts/computer_scene/calender_execute_panel.gd" id="26_06as4"]
 [ext_resource type="Script" uid="uid://b7ucmjrb5s02j" path="res://scripts/computer_scene/dialogue_manager.gd" id="31_yw0uv"]
 
 [sub_resource type="Animation" id="Animation_cd3q4"]
@@ -2239,12 +2240,14 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="DebugHand" type="HBoxContainer" parent="CalendarScene"]
+[node name="DebugHand" type="Panel" parent="CalendarScene"]
 layout_mode = 0
 offset_left = 60.0
 offset_top = 60.0
 offset_right = 860.0
 offset_bottom = 310.0
+mouse_filter = 1
+script = ExtResource("26_06as4")
 
 [node name="ActivityPanel" type="Control" parent="CalendarScene"]
 anchors_preset = 0
@@ -2263,12 +2266,14 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="ActivityHand" type="HBoxContainer" parent="CalendarScene"]
+[node name="ActivityHand" type="Panel" parent="CalendarScene"]
 layout_mode = 0
 offset_left = 60.0
 offset_top = 490.0
 offset_right = 860.0
 offset_bottom = 740.0
+mouse_filter = 1
+script = ExtResource("26_06as4")
 
 [node name="UnusedPanel" type="Control" parent="CalendarScene"]
 anchors_preset = 0
@@ -2287,15 +2292,14 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="UnusedHand" type="HBoxContainer" parent="CalendarScene"]
+[node name="UnusedHand" type="Panel" parent="CalendarScene"]
 layout_mode = 0
 offset_left = 60.0
 offset_top = 780.0
 offset_right = 860.0
 offset_bottom = 1080.0
-
-[node name="ActivityHand" type="HBoxContainer" parent="CalendarScene/UnusedHand"]
-layout_mode = 2
+mouse_filter = 1
+script = ExtResource("26_06as4")
 
 [node name="CalenderSelfAnim" type="AnimationPlayer" parent="CalendarScene"]
 libraries = {
@@ -2823,6 +2827,12 @@ offset_bottom = 40.0
 [connection signal="button_down" from="CalendarScene/ExecutePlanButton" to="CalendarScene" method="_on_execute_plan_button_button_down"]
 [connection signal="button_up" from="CalendarScene/ExecutePlanButton" to="CalendarScene" method="_on_execute_plan_button_button_up"]
 [connection signal="pressed" from="CalendarScene/ExecutePlanButton" to="CalendarScene" method="_on_execute_plan_button_pressed"]
+[connection signal="child_entered_tree" from="CalendarScene/DebugHand" to="CalendarScene/DebugHand" method="_on_child_entered_tree"]
+[connection signal="child_exiting_tree" from="CalendarScene/DebugHand" to="CalendarScene/DebugHand" method="_on_child_exiting_tree"]
+[connection signal="child_entered_tree" from="CalendarScene/ActivityHand" to="CalendarScene/ActivityHand" method="_on_child_entered_tree"]
+[connection signal="child_exiting_tree" from="CalendarScene/ActivityHand" to="CalendarScene/ActivityHand" method="_on_child_exiting_tree"]
+[connection signal="child_entered_tree" from="CalendarScene/UnusedHand" to="CalendarScene/UnusedHand" method="_on_child_entered_tree"]
+[connection signal="child_exiting_tree" from="CalendarScene/UnusedHand" to="CalendarScene/UnusedHand" method="_on_child_exiting_tree"]
 [connection signal="button_down" from="CompanyScene/RefreshEmployee" to="CompanyScene" method="_on_refresh_employee_button_down"]
 [connection signal="button_up" from="CompanyScene/RefreshEmployee" to="CompanyScene" method="_on_refresh_employee_button_up"]
 [connection signal="pressed" from="CompanyScene/RefreshEmployee" to="CompanyScene" method="_on_refresh_employee_pressed"]

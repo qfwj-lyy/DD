@@ -229,6 +229,7 @@ script = ExtResource("4_q8mjp")
 [node name="MainMenu" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
+mouse_filter = 1
 script = ExtResource("5_eaq8r")
 
 [node name="AdministratorBackGround" type="TextureRect" parent="MainMenu"]
