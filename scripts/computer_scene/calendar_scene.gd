@@ -12,11 +12,13 @@ func _ready() -> void:
 	#visible = false
 
 signal a_debug_card_used()
-signal a_activity_card_used()
+signal an_activity_card_used()
 
 
 func execute_plan():
 	#region 时间结算架构
+	G.M.current_scene.mandatory_guide.set_small_input_area(0,0,0,0)
+
 	var debug_time_flag_array : Array[int] #按顺序存储玩家放置的所有debug卡的时间
 	var debug_current_card_flag : int = 0 #标识待执行debug卡
 	var activity_time_flag_array : Array[int] #按顺序存储玩家放置的所有activity卡的时间
@@ -50,6 +52,7 @@ func execute_plan():
 		card.queue_free()
 	for card in activity_hand.get_children():
 		card.queue_free()
+	G.M.current_scene.mandatory_guide.clear()
 	#endregion
 	
 	#for card in debug_hand.get_children():
@@ -62,6 +65,7 @@ func main_while(current_time,max_time,debug_time_flag_array,debug_current_card_f
 	
 	
 	while(current_time != max_time + 1):
+		print(current_time)
 		G.M.current_scene.time_goes_by(1)
 		#----------这里写员工计算工资相关方法----------
 		G.M.current_scene.company_scene.inspect_wage()
@@ -77,8 +81,9 @@ func main_while(current_time,max_time,debug_time_flag_array,debug_current_card_f
 			if current_time == debug_cal_time_sum :
 				if debug_hand.get_child(debug_current_card_flag) is Card:
 					emit_signal("a_debug_card_used")
+					print("准备执行")
 					await debug_hand.get_child(debug_current_card_flag).execute()
-					#print("执行")
+					print("执行")
 					debug_current_card_flag += 1
 		
 		#activity卡顺序执行
@@ -87,9 +92,10 @@ func main_while(current_time,max_time,debug_time_flag_array,debug_current_card_f
 			activity_cal_time_sum += cal_time
 			if current_time == activity_cal_time_sum :
 				if activity_hand.get_child(activity_current_card_flag) is Card:
-					emit_signal("a_activity_card_used")
+					emit_signal("an_activity_card_used")
+					print("准备执行")
 					await activity_hand.get_child(activity_current_card_flag).execute()
-					#print("执行")
+					print("执行")
 					activity_current_card_flag += 1
 		
 		current_time += 1
@@ -210,7 +216,11 @@ func _on_execute_plan_button_button_up() -> void:
 		G.play_sound("illegal_operation")
 		G.D.display_sentence("我必须先去浏览器里接个项目来工作")
 		return
-	
+	var has_card = debug_hand.get_child_count() + activity_hand.get_child_count()
+	if not has_card:
+		G.play_sound("illegal_operation")
+		G.D.display_sentence("我必须安排下日程")
+		return
 	execute_plan()
 	
 

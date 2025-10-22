@@ -48,6 +48,7 @@ var is_stop_income : bool = false #标记本回合是否停止固定收益
 #region add_property
 func add_money(n):
 	money_amount += n
+	G.play_sound("money")
 	pass
 	pass
 	money_label.text = "资金：" + str(money_amount)
@@ -139,6 +140,7 @@ func use_money(a) -> bool:
 	if money_amount >= a:
 		money_amount -= a
 		money_label.text = "资金：" + str(money_amount)
+		G.play_sound("money")
 		return true
 	else:
 		return false

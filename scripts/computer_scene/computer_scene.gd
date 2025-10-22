@@ -9,6 +9,7 @@ class_name ComputerScene
 @export var activity_hand : Node
 @export var calendar_scene : Calender
 @export var company_scene : Node
+@export var mandatory_guide : Node
 
 
 var current_date := 0

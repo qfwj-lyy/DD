@@ -16,4 +16,5 @@ description = "停服维护
 script = ExtResource("3_bfryf")
 duration = -9
 execution_time = 3
+description = "本回合剩余时间内，每单位时间bug-5，但固定收益变为0"
 metadata/_custom_type_script = "uid://dwhc1hbrg4em"

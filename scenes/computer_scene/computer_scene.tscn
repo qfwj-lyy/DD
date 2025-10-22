@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=3 uid="uid://ei0t0movgv01"]
+[gd_scene load_steps=106 format=3 uid="uid://ei0t0movgv01"]
 
 [ext_resource type="Script" uid="uid://cyxxmhvja0apb" path="res://scripts/computer_scene/computer_scene.gd" id="1_8g14y"]
 [ext_resource type="Texture2D" uid="uid://by5p2m3k3u3yo" path="res://assets/computer_scene/desktop_background.png" id="2_rw1u3"]
@@ -32,6 +32,7 @@
 [ext_resource type="Script" uid="uid://bgomhe6q415mg" path="res://scripts/animation/calender_button.gd" id="23_ya4ev"]
 [ext_resource type="Script" uid="uid://dkh4wj1hlvyoe" path="res://scripts/computer_scene/calender_execute_panel.gd" id="26_06as4"]
 [ext_resource type="Script" uid="uid://b7ucmjrb5s02j" path="res://scripts/computer_scene/dialogue_manager.gd" id="31_yw0uv"]
+[ext_resource type="Script" uid="uid://caey344n82p3a" path="res://scripts/computer_scene/mandatory_guide.gd" id="33_d84jm"]
 
 [sub_resource type="Animation" id="Animation_cd3q4"]
 length = 0.001
@@ -1267,13 +1268,14 @@ _data = {
 &"open": SubResource("Animation_l2ol0")
 }
 
-[node name="ComputerScene" type="CanvasLayer" node_paths=PackedStringArray("unused_hand", "debug_hand", "activity_hand", "calendar_scene", "company_scene")]
+[node name="ComputerScene" type="CanvasLayer" node_paths=PackedStringArray("unused_hand", "debug_hand", "activity_hand", "calendar_scene", "company_scene", "mandatory_guide")]
 script = ExtResource("1_8g14y")
 unused_hand = NodePath("CalendarScene/UnusedHand")
 debug_hand = NodePath("CalendarScene/DebugHand")
 activity_hand = NodePath("CalendarScene/ActivityHand")
 calendar_scene = NodePath("CalendarScene")
 company_scene = NodePath("CompanyScene")
+mandatory_guide = NodePath("MandatoryGuide")
 
 [node name="ComputerBackground" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -2782,13 +2784,20 @@ grow_vertical = 2
 autowrap_mode = 3
 text_overrun_behavior = 6
 
-[node name="MandatoryGuide" type="Control" parent="DialogueManager"]
+[node name="MandatoryGuide" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
+script = ExtResource("33_d84jm")
 
-[node name="Control" type="Control" parent="DialogueManager/MandatoryGuide"]
+[node name="FullScreenInputStop" type="Control" parent="MandatoryGuide"]
+visible = false
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 2560.0
+offset_bottom = 1600.0
+
+[node name="SmallInputArea" type="Control" parent="MandatoryGuide/FullScreenInputStop"]
+anchors_preset = 0
+mouse_filter = 1
 
 [connection signal="button_down" from="DesktopIconManager/OpenSetting" to="DesktopIconManager" method="_on_open_setting_button_down"]
 [connection signal="button_up" from="DesktopIconManager/OpenSetting" to="DesktopIconManager" method="_on_open_setting_button_up"]
@@ -2812,7 +2821,6 @@ offset_bottom = 40.0
 [connection signal="pressed" from="DesktopIconManager/OpenCompany" to="DesktopIconManager" method="_on_open_company_pressed"]
 [connection signal="button_down" from="StoreScene/RefreshCards" to="StoreScene" method="_on_refresh_cards_button_down"]
 [connection signal="button_up" from="StoreScene/RefreshCards" to="StoreScene" method="_on_refresh_cards_button_up"]
-[connection signal="pressed" from="StoreScene/RefreshCards" to="StoreScene" method="_on_refresh_cards_pressed"]
 [connection signal="pressed" from="PropertyManager/DeliverProject" to="PropertyManager" method="_on_deliver_project_pressed"]
 [connection signal="text_submitted" from="BrowserScene/URLEdit(Flag)" to="BrowserScene" method="_on_url_edit_text_submitted"]
 [connection signal="pressed" from="BrowserScene/Button(Flag)" to="BrowserScene" method="_on_button_pressed"]

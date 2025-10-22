@@ -45,14 +45,6 @@ func refresh_cards():
 		if card_amount >= 5:
 			break
 		
-func _on_refresh_cards_pressed() -> void:
-	# 需要花钱
-	if G.M.current_scene.property_manager.money_amount >= 3:
-		G.M.current_scene.property_manager.money_amount -= 3
-		refresh_cards()
-	else:
-		G.play_sound("illegal_operation")
-		G.D.display_sentence("刷新商店需要3资金")
 	
 func time_goes_by(t : int):
 	refresh_time_flag -= t
@@ -69,9 +61,8 @@ func _on_refresh_cards_button_down() -> void:
 func _on_refresh_cards_button_up() -> void:
 	refresh_anim.play("button_up")
 	# 需要花钱
-	if G.M.current_scene.property_manager.money_amount >= 3:
-		G.M.current_scene.property_manager.money_amount -= 3
+	if G.P.use_money(3):
 		refresh_cards()
 	else:
-		pass
-		pass
+		G.play_sound("illegal_operation")
+		G.D.display_sentence("刷新商店需要3资金")
