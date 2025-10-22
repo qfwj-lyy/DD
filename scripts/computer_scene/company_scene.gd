@@ -25,6 +25,7 @@ func get_staff(e : Employee):
 		e.reparent(staff_node)
 		e.position = Vector2(0 , 0)
 		e.joining_date = G.M.current_scene.current_date
+		current_staff_amount += 1
 		break
 	
 	
@@ -133,8 +134,9 @@ func _on_fire_staff_button_down() -> void:
 func _on_fire_staff_button_up() -> void:
 	fire_anim.play("button_up")
 	if selected_employee:
-		if G.M.current_scene.property_manager.use_money(selected_employee.severance_pay):
-			selected_employee.queue_free()
+		if G.P.money_amount >= selected_employee.severance_pay:
+			selected_employee.be_fired()
+			current_staff_amount -= 1
 			pass
 			pass
 		else:

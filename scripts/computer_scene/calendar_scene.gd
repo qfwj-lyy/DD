@@ -180,6 +180,7 @@ func _on_execute_plan_button_button_down() -> void:
 
 func _on_execute_plan_button_button_up() -> void:
 	execute_plan_anim.play("button_up")
+	
 	execute_plan()
 
 @onready var calender_button_anim: AnimationPlayer = $CalenderButton/CalenderButtonAnim

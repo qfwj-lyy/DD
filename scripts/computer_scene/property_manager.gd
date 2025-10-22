@@ -3,10 +3,15 @@ class_name PropertyManager
 
 var current_project : Project
 
+@export var deliver_project : Button
 var project_progress : float:
 	set(i):
 		project_progress = i
 		project_progress_bar.value = i
+		if i >= 100.0:
+			deliver_project.visible = true
+		else:
+			deliver_project.visible = false
 var bug_amount : float:
 	set(i):
 		bug_amount = i
@@ -21,6 +26,7 @@ var skill_amount : float
 var time_amount : float # 时空穿越所需要，目前没有需求
 
 var bug_rate : float
+var deposit_amount : float
 
 
 @export var money_label: Node
@@ -85,6 +91,10 @@ func add_bug_limit(n):
 	pass
 	pass
 	bug_amount_limit += n
+	
+func add_deposit_amount(n):
+	deposit_amount += n
+	
 #endregion
 
 #region set_property
@@ -120,6 +130,9 @@ func set_bug_rate(n):
 	bug_rate = n
 func set_bug_limit(n):
 	bug_amount_limit = n
+	
+func set_deposit_amount(n):
+	deposit_amount = n
 #endregion
 
 func use_money(a) -> bool:
@@ -133,3 +146,24 @@ func use_money(a) -> bool:
 func _ready() -> void:
 	visible = true
 	G.P = self
+
+
+func clear():
+	set_bug_amount(0)
+	set_bug_limit(100)
+	set_bug_rate(0)
+	set_current_project(null)
+	set_money(0)
+	set_mood(0)
+	set_project_progress(0)
+	set_skill(0)
+func _on_deliver_project_pressed() -> void:
+	for buff in buff_manager.each_project_delivery.get_children():
+		buff.execute()
+	var buffs = buff_manager.get_all_buffs()
+	for buff : Buff in buffs:
+		if buff.duration == -9999:
+			buff.die()
+	add_deposit_amount(current_project.deposit_reward)
+	clear()
+	

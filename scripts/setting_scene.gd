@@ -1,4 +1,4 @@
-extends Panel
+extends CanvasLayer
 
 var global_effect_manager : Node
 
@@ -36,23 +36,17 @@ func write_settings():
 	G.write_setting_data("has_music",music_check_button.button_pressed)
 	G.write_setting_data("has_sound",sound_check_button.button_pressed)
 	
-# 目前是：删除本setting场景，不改变current_scene
-func _on_return_button_pressed() -> void:
-	write_settings()
-	G.M.return_last_main_scene(true , false)
-	#if G.M.has_node(^"GameScene"):
-		#G.M.get_node(^"GameScene").discrete_UI.settings_button.visible = true
-		#queue_free()
-	#else:
-		#G.temporary_scene_over()
 #endregion
 
 
-func _on_full_screen_button_toggled(toggled_on: bool) -> void:
-	DisplayServer
-	
+func _on_full_screen_check_button_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		
+
+func _on_close_texture_gui_input(event: InputEvent) -> void:
+	if event.is_action_released("LeftMouseDown"):
+		write_settings()
+		queue_free()

@@ -9,23 +9,26 @@
 [ext_resource type="Texture2D" uid="uid://cvwyejayox0q1" path="res://assets/computer_scene/administrator_45x45.png" id="7_8ks4o"]
 [ext_resource type="Texture2D" uid="uid://hvrred57t74d" path="res://assets/computer_scene/close_56x57.png" id="8_30yl2"]
 
-[node name="SettingsScene" type="Panel"]
-offset_right = 1000.0
-offset_bottom = 800.0
+[node name="SettingsScene" type="CanvasLayer" node_paths=PackedStringArray("music_scroll_bar", "sound_scroll_bar", "music_check_button", "sound_check_button")]
 script = ExtResource("1_hlosk")
+music_scroll_bar = NodePath("Audio/AudioDetail/MusicScrollBar")
+sound_scroll_bar = NodePath("Audio/AudioDetail/SoundScrollBar")
+music_check_button = NodePath("Audio/AudioDetail/MusicCheckButton")
+sound_check_button = NodePath("Audio/AudioDetail/SoundCheckButton")
 
 [node name="SettingsBackground" type="TextureRect" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1560.0
+offset_bottom = -800.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 texture = ExtResource("2_84cth")
 
 [node name="CharacterHead" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
 offset_left = 50.0
 offset_top = 50.0
 offset_right = 150.0
@@ -43,7 +46,6 @@ expand_mode = 1
 
 [node name="CharacterName" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
 offset_left = 200.0
 offset_top = 80.0
 offset_right = 350.0
@@ -61,7 +63,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SettingsDescription" type="Panel" parent="."]
-layout_mode = 0
 offset_left = 400.0
 offset_top = 175.0
 offset_right = 900.0
@@ -82,7 +83,58 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_5j6q7")
 
-[node name="ScreenIcon" type="Panel" parent="."]
+[node name="MarkLine" type="Panel" parent="."]
+offset_left = 75.0
+offset_top = 195.0
+offset_right = 77.0
+offset_bottom = 245.0
+
+[node name="Close" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 925.0
+offset_top = 25.0
+offset_right = 975.0
+offset_bottom = 75.0
+
+[node name="CloseTexture" type="TextureRect" parent="Close"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -28.5
+offset_right = 28.0
+offset_bottom = 28.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_30yl2")
+
+[node name="Screen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ScreenName" type="Panel" parent="Screen"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 175.0
+offset_top = 210.0
+offset_right = 275.0
+offset_bottom = 230.0
+
+[node name="Label" type="Label" parent="Screen/ScreenName"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "画面"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScreenIcon" type="Panel" parent="Screen"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 100.0
@@ -90,7 +142,7 @@ offset_top = 200.0
 offset_right = 140.0
 offset_bottom = 240.0
 
-[node name="TextureRect" type="TextureRect" parent="ScreenIcon"]
+[node name="TextureRect" type="TextureRect" parent="Screen/ScreenIcon"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -105,26 +157,34 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_byo6x")
 
-[node name="ScreenName" type="Panel" parent="."]
-self_modulate = Color(1, 1, 1, 0)
+[node name="ScreenDetail" type="Control" parent="Screen"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FullScreenCheckButton" type="CheckButton" parent="Screen/ScreenDetail"]
 layout_mode = 0
-offset_left = 175.0
-offset_top = 210.0
-offset_right = 275.0
-offset_bottom = 230.0
+offset_left = 520.0
+offset_top = 200.0
+offset_right = 564.0
+offset_bottom = 224.0
+scale = Vector2(2, 2)
 
-[node name="Label" type="Label" parent="ScreenName"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "画面"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Label" type="Label" parent="Screen/ScreenDetail"]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 200.0
+offset_right = 494.0
+offset_bottom = 245.0
+text = "全屏"
 
-[node name="SoundIcon" type="Panel" parent="."]
+[node name="Audio" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SoundIcon" type="Panel" parent="Audio"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 100.0
@@ -132,7 +192,7 @@ offset_top = 280.0
 offset_right = 140.0
 offset_bottom = 320.0
 
-[node name="TextureRect" type="TextureRect" parent="SoundIcon"]
+[node name="TextureRect" type="TextureRect" parent="Audio/SoundIcon"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -147,7 +207,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_gfh8v")
 
-[node name="SoundName" type="Panel" parent="."]
+[node name="SoundName" type="Panel" parent="Audio"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 175.0
@@ -155,7 +215,7 @@ offset_top = 290.0
 offset_right = 275.0
 offset_bottom = 310.0
 
-[node name="Label" type="Label" parent="SoundName"]
+[node name="Label" type="Label" parent="Audio/SoundName"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -166,7 +226,64 @@ text = "声音"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AccountIcon" type="Panel" parent="."]
+[node name="AudioDetail" type="Control" parent="Audio"]
+anchors_preset = 0
+
+[node name="MusicScrollBar" type="HScrollBar" parent="Audio/AudioDetail"]
+layout_mode = 0
+offset_left = 650.0
+offset_top = 282.0
+offset_right = 750.0
+offset_bottom = 293.0
+scale = Vector2(2, 2)
+
+[node name="SoundScrollBar" type="HScrollBar" parent="Audio/AudioDetail"]
+layout_mode = 0
+offset_left = 650.0
+offset_top = 352.0
+offset_right = 750.0
+offset_bottom = 363.0
+scale = Vector2(2, 2)
+
+[node name="MusicCheckButton" type="CheckButton" parent="Audio/AudioDetail"]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 270.0
+offset_right = 564.0
+offset_bottom = 294.0
+scale = Vector2(2, 2)
+
+[node name="SoundCheckButton" type="CheckButton" parent="Audio/AudioDetail"]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 340.0
+offset_right = 564.0
+offset_bottom = 364.0
+scale = Vector2(2, 2)
+
+[node name="Label" type="Label" parent="Audio/AudioDetail"]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 270.0
+offset_right = 494.0
+offset_bottom = 315.0
+text = "音乐"
+
+[node name="Label2" type="Label" parent="Audio/AudioDetail"]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 340.0
+offset_right = 494.0
+offset_bottom = 385.0
+text = "音效"
+
+[node name="Account" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AccountIcon" type="Panel" parent="Account"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 100.0
@@ -174,7 +291,7 @@ offset_top = 360.0
 offset_right = 140.0
 offset_bottom = 400.0
 
-[node name="TextureRect" type="TextureRect" parent="AccountIcon"]
+[node name="TextureRect" type="TextureRect" parent="Account/AccountIcon"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -189,7 +306,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_8ks4o")
 
-[node name="AccountName" type="Panel" parent="."]
+[node name="AccountName" type="Panel" parent="Account"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 175.0
@@ -197,7 +314,7 @@ offset_top = 370.0
 offset_right = 275.0
 offset_bottom = 390.0
 
-[node name="Label" type="Label" parent="AccountName"]
+[node name="Label" type="Label" parent="Account/AccountName"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -208,32 +325,9 @@ text = "账号"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MarkLine" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 75.0
-offset_top = 195.0
-offset_right = 77.0
-offset_bottom = 245.0
-
-[node name="Close" type="Button" parent="."]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 925.0
-offset_top = 25.0
-offset_right = 975.0
-offset_bottom = 75.0
-
-[node name="TextureRect" type="TextureRect" parent="Close"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -28.0
-offset_top = -28.5
-offset_right = 28.0
-offset_bottom = 28.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("8_30yl2")
+[connection signal="gui_input" from="Close/CloseTexture" to="." method="_on_close_texture_gui_input"]
+[connection signal="toggled" from="Screen/ScreenDetail/FullScreenCheckButton" to="." method="_on_full_screen_check_button_toggled"]
+[connection signal="value_changed" from="Audio/AudioDetail/MusicScrollBar" to="." method="_on_music_scroll_bar_value_changed"]
+[connection signal="value_changed" from="Audio/AudioDetail/SoundScrollBar" to="." method="_on_sound_scroll_bar_value_changed"]
+[connection signal="toggled" from="Audio/AudioDetail/MusicCheckButton" to="." method="_on_music_check_button_toggled"]
+[connection signal="toggled" from="Audio/AudioDetail/SoundCheckButton" to="." method="_on_sound_check_button_toggled"]

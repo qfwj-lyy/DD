@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://qtwsbsyifyr6"]
+
+[ext_resource type="PackedScene" uid="uid://dhjv4wwlto6p1" path="res://scenes/computer_scene/employees/employee.tscn" id="1_m1krr"]
+[ext_resource type="Script" uid="uid://cb260f8732kag" path="res://scripts/computer_scene/buffs/property_buff.gd" id="2_xqqee"]
+
+[node name="AIBianChengXiaoNengShou" instance=ExtResource("1_m1krr")]
+joining_expenditure = 3
+severance_pay = 3
+wage = 5
+pay_interval_days = 4
+description = "ai编程小能手
+3入职，3离职，5/4
+增益：每单位时间项目进度+2
+减益：每单位时间bug+2"
+
+[node name="PropertyBuff" type="Node" parent="Buffs" index="0"]
+script = ExtResource("2_xqqee")
+project_progress = 2
+bug_amount = 2
+duration = -7
+execution_time = 3
+description = "增益：每单位时间项目进度+2
+减益：每单位时间bug+2"
+metadata/_custom_type_script = "uid://cb260f8732kag"

@@ -114,6 +114,8 @@ func return_last_main_scene(kill_current_scene : bool , change_M_scene_parameter
 	if kill_current_scene:
 		current_scene.queue_free()
 	
+func add_scene(_new_scene):
+	pass
 #endregion
 
 #region ComputerWindow的z_index管理

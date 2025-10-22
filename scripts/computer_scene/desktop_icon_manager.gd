@@ -34,18 +34,22 @@ func _on_open_setting_button_down() -> void:
 func _on_open_setting_button_up() -> void:
 	setting_anim.play("button_up")
 	var setting_scene = load("res://scenes/setting_scene.tscn").instantiate()
-	G.M.change_main_scene(setting_scene , false , false , true)
-
+	G.M.add_child(setting_scene)
 #region 浏览器动画
 
 @onready var browser_self_anim: AnimationPlayer = $"../BrowserScene/BrowserSelfAnim"
+
 func _on_open_browser_button_down() -> void:
 	browser_anim.play("button_down")
-
+var _is_browser_first_open := true
 func _on_open_browser_button_up() -> void:
 	browser_anim.play("button_up")
 	browser_self_anim.play("open")
 	computer_scene.browser_scene.visible = true
+	if _is_browser_first_open:
+		_is_browser_first_open = false
+		G.D.display_dialogue_segment("wan_jia_chu_ci_da_kai_liu_lan_qi")
+		
 
 #endregion
 
@@ -68,10 +72,12 @@ func _on_open_calendar_button_up() -> void:
 
 func _on_open_company_button_down() -> void:
 	company_anim.play("button_down")
-
-
+var _is_company_first_open := true
 func _on_open_company_button_up() -> void:
 	company_anim.play("button_up")
 	company_self_anim.play("open")
 	computer_scene.company_scene.visible = true
+	if _is_company_first_open:
+		_is_company_first_open = false
+		G.D.display_dialogue_segment("wan_jia_chu_ci_da_kai_zu_zhi")
 #endregion

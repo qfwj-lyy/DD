@@ -226,18 +226,24 @@ script = ExtResource("3_ternb")
 [node name="SoundManager" type="Node" parent="GlobalEffectManager"]
 script = ExtResource("4_q8mjp")
 
-[node name="MainMenu" type="CanvasLayer" parent="."]
+[node name="MainMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("5_eaq8r")
 
 [node name="AdministratorBackGround" type="TextureRect" parent="MainMenu"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 2560.0
+offset_bottom = 1600.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_8ldib")
 
 [node name="CharacterPicture" type="TextureRect" parent="MainMenu"]
+layout_mode = 0
 offset_left = 1080.0
 offset_top = 200.0
 offset_right = 1480.0
@@ -246,6 +252,7 @@ texture = ExtResource("7_kvitc")
 
 [node name="CharacterName" type="Panel" parent="MainMenu"]
 self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 1080.0
 offset_top = 700.0
 offset_right = 1480.0
@@ -276,10 +283,11 @@ vertical_alignment = 1
 
 [node name="OpenSetting" type="Button" parent="MainMenu"]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 2110.0
-offset_top = 1400.0
-offset_right = 2210.0
-offset_bottom = 1500.0
+layout_mode = 0
+offset_left = 1930.0
+offset_top = 1250.0
+offset_right = 2029.9999
+offset_bottom = 1350.0
 pivot_offset = Vector2(50, 50)
 mouse_filter = 1
 
@@ -305,6 +313,7 @@ libraries = {
 
 [node name="BeginGame" type="Button" parent="MainMenu"]
 self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 1180.0
 offset_top = 1000.0
 offset_right = 1380.0
@@ -345,10 +354,11 @@ shape = SubResource("RectangleShape2D_lcbjr")
 
 [node name="ExitGame" type="Button" parent="MainMenu"]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 2310.0
-offset_top = 1400.0
-offset_right = 2410.0
-offset_bottom = 1500.0
+layout_mode = 0
+offset_left = 2100.0
+offset_top = 1250.0
+offset_right = 2200.0
+offset_bottom = 1350.0
 pivot_offset = Vector2(50, 50)
 mouse_filter = 1
 
@@ -374,6 +384,7 @@ libraries = {
 
 [node name="ChangeCharacter" type="Button" parent="MainMenu"]
 self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 1180.0
 offset_top = 1180.0
 offset_right = 1380.0
@@ -404,14 +415,15 @@ text = "不是您?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Camera2D" type="Camera2D" parent="MainMenu"]
+position = Vector2(1280, 800)
+zoom = Vector2(1.2, 1.2)
+
 [connection signal="button_down" from="MainMenu/OpenSetting" to="MainMenu" method="_on_open_setting_button_down"]
 [connection signal="button_up" from="MainMenu/OpenSetting" to="MainMenu" method="_on_open_setting_button_up"]
-[connection signal="pressed" from="MainMenu/OpenSetting" to="MainMenu" method="_on_open_setting_pressed"]
 [connection signal="button_down" from="MainMenu/BeginGame" to="MainMenu" method="_on_begin_game_button_down"]
 [connection signal="button_up" from="MainMenu/BeginGame" to="MainMenu" method="_on_begin_game_button_up"]
-[connection signal="pressed" from="MainMenu/BeginGame" to="MainMenu" method="_on_begin_game_pressed"]
 [connection signal="mouse_entered" from="MainMenu/BeginGame/Area2D" to="MainMenu/BeginGame" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="MainMenu/BeginGame/Area2D" to="MainMenu/BeginGame" method="_on_area_2d_mouse_exited"]
 [connection signal="button_down" from="MainMenu/ExitGame" to="MainMenu" method="_on_exit_game_button_down"]
 [connection signal="button_up" from="MainMenu/ExitGame" to="MainMenu" method="_on_exit_game_button_up"]
-[connection signal="pressed" from="MainMenu/ExitGame" to="MainMenu" method="_on_exit_game_pressed"]

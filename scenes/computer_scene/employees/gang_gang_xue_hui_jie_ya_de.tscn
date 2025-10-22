@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cikt7tqjuyiuh"]
+
+[ext_resource type="PackedScene" uid="uid://dhjv4wwlto6p1" path="res://scenes/computer_scene/employees/employee.tscn" id="1_6tx78"]
+[ext_resource type="Script" uid="uid://cb260f8732kag" path="res://scripts/computer_scene/buffs/property_buff.gd" id="2_inxyr"]
+
+[node name="GangGangXueHuiJieYaDe" instance=ExtResource("1_6tx78")]
+wage = 1
+pay_interval_days = 5
+description = "刚刚学会解压的大二学生
+0入职，0离职，1/5
+增益：每回合开始时项目进度+1
+减益：每回合开始时bug+10"
+
+[node name="PropertyBuff" type="Node" parent="Buffs" index="0"]
+script = ExtResource("2_inxyr")
+project_progress = 1
+bug_amount = 10
+duration = -7
+execution_time = 1
+description = "增益：每回合开始时项目进度+1
+减益：每回合开始时bug+10"
+metadata/_custom_type_script = "uid://cb260f8732kag"
