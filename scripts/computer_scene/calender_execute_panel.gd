@@ -26,15 +26,24 @@ func _on_child_exiting_tree(node: Node) -> void:
 func reset_all_position():
 	for i in range(card_count) :
 		var current_card : Card = get_child(i)
-		current_card.position.x = i * self_width / card_count
-		current_card.global_position.y = self.global_position.y
+		slide_to(current_card ,Vector2( global_position.x + i * self_width / card_count , self.global_position.y))
+		#current_card.position.x = i * self_width / card_count
+		#current_card.global_position.y = self.global_position.y
 
 func reset_card_position(card : Card) :
-	card.position.x = (card_count-1) * card_width
-	card.global_position.y = self.global_position.y
+	slide_to(card , Vector2(self.global_position.x + (card_count-1) * card_width , self.global_position.y) )
+	#card.position.x = (card_count-1) * card_width
+	#card.global_position.y = self.global_position.y
 
 func leave_reset():
 	for i in range(card_count) :
 		var current_card : Card = get_child(i)
-		current_card.position.x = i * card_width
-		current_card.global_position.y = self.global_position.y
+		slide_to(current_card , Vector2(self.global_position.x + i * card_width , self.global_position.y))
+		#current_card.position.x = i * card_width
+		#current_card.global_position.y = self.global_position.y
+
+func slide_to(target : Card , end_position : Vector2) :
+	var tween := target.create_tween()
+	tween.tween_property(target,"global_position",end_position,0.2)\
+	.set_trans(Tween.TRANS_QUAD)\
+	.set_ease(Tween.EASE_OUT)

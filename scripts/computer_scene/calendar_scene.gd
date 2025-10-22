@@ -42,7 +42,7 @@ func execute_plan():
 	# 按单位时间推进日程安排
 	await main_while(current_time,max_time,debug_time_flag_array,debug_current_card_flag,activity_time_flag_array,activity_current_card_flag)
 	
-	await custom_delay(1.0)
+	await custom_delay(0.5)
 	#print("删掉")
 	#await custom_delay(1.0)
 	#------清除所有刚刚使用的牌
