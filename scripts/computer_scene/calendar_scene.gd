@@ -13,6 +13,8 @@ func _ready() -> void:
 
 signal a_debug_card_used()
 signal a_activity_card_used()
+
+
 func execute_plan():
 	#region 时间结算架构
 	var debug_time_flag_array : Array[int] #按顺序存储玩家放置的所有debug卡的时间
@@ -36,8 +38,30 @@ func execute_plan():
 	var current_time : int = 0
 	
 	
+	#日历的核心while现在单独写成一个函数，并在所有动画结束后返回信号，详情见main_while()
 	# 按单位时间推进日程安排
-	while(current_time != max_time):
+	await main_while(current_time,max_time,debug_time_flag_array,debug_current_card_flag,activity_time_flag_array,activity_current_card_flag)
+	
+	await custom_delay(1.0)
+	#print("删掉")
+	#await custom_delay(1.0)
+	#------清除所有刚刚使用的牌
+	for card in debug_hand.get_children():
+		card.queue_free()
+	for card in activity_hand.get_children():
+		card.queue_free()
+	#endregion
+	
+	#for card in debug_hand.get_children():
+		#card.execute()
+	#for card in activity_hand.get_children():
+		#card.execute()
+
+signal card_execute_over
+func main_while(current_time,max_time,debug_time_flag_array,debug_current_card_flag,activity_time_flag_array,activity_current_card_flag) -> Signal: #日历的核心while逻辑
+	
+	
+	while(current_time != max_time + 1):
 		G.M.current_scene.time_goes_by(1)
 		#----------这里写员工计算工资相关方法----------
 		G.M.current_scene.company_scene.inspect_wage()
@@ -53,7 +77,8 @@ func execute_plan():
 			if current_time == debug_cal_time_sum :
 				if debug_hand.get_child(debug_current_card_flag) is Card:
 					emit_signal("a_debug_card_used")
-					debug_hand.get_child(debug_current_card_flag).execute()
+					await debug_hand.get_child(debug_current_card_flag).execute()
+					#print("执行")
 					debug_current_card_flag += 1
 		
 		#activity卡顺序执行
@@ -63,7 +88,8 @@ func execute_plan():
 			if current_time == activity_cal_time_sum :
 				if activity_hand.get_child(activity_current_card_flag) is Card:
 					emit_signal("a_activity_card_used")
-					activity_hand.get_child(activity_current_card_flag).execute()
+					await activity_hand.get_child(activity_current_card_flag).execute()
+					#print("执行")
 					activity_current_card_flag += 1
 		
 		current_time += 1
@@ -127,19 +153,22 @@ func execute_plan():
 			for buff in buffs:
 				if buff.duration == -9:
 					buff.die()
-
-			
-	#------清除所有刚刚使用的牌
-	for card in debug_hand.get_children():
-		card.queue_free()
-	for card in activity_hand.get_children():
-		card.queue_free()
-	#endregion
 	
-	#for card in debug_hand.get_children():
-		#card.execute()
-	#for card in activity_hand.get_children():
-		#card.execute()
+	
+	#if debug_current_card_flag  > 0 and debug_hand.get_child(debug_current_card_flag - 1) is Card:
+	#	await debug_hand.get_child(debug_current_card_flag - 1).execute_over
+	#if activity_current_card_flag > 0 and activity_hand.get_child(activity_current_card_flag - 1) is Card:
+	#	await activity_hand.get_child(activity_current_card_flag - 1).execute_over
+	
+	
+	card_execute_over.emit()
+	return card_execute_over
+
+signal delay_over
+func custom_delay(delay_time : float) -> Signal:
+	await get_tree().create_timer(delay_time).timeout
+	delay_over.emit()
+	return delay_over
 
 #func _on_execute_plan_button_pressed() -> void:
 #	pass

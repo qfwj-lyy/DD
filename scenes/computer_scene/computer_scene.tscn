@@ -589,62 +589,6 @@ _data = {
 Window/styles/embedded_border = SubResource("StyleBoxTexture_2j6ol")
 Window/styles/embedded_unfocused_border = SubResource("StyleBoxTexture_8ldib")
 
-[sub_resource type="Animation" id="Animation_uxsg8"]
-resource_name = "hover"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ProjectBorder:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
-}
-
-[sub_resource type="Animation" id="Animation_jt5uo"]
-resource_name = "hover_over"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1.1, 1.1), Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ProjectBorder:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.1),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
 [sub_resource type="Animation" id="Animation_qfe3t"]
 length = 0.001
 tracks/0/type = "value"
@@ -702,6 +646,62 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0.9, 0.9), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_uxsg8"]
+resource_name = "hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ProjectBorder:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_jt5uo"]
+resource_name = "hover_over"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ProjectBorder:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8r4sb"]
@@ -1289,10 +1289,10 @@ script = ExtResource("3_cd3q4")
 
 [node name="OpenSetting" type="Button" parent="DesktopIconManager"]
 layout_mode = 0
-offset_left = 90.0
-offset_top = 360.0
-offset_right = 290.0
-offset_bottom = 560.0
+offset_left = 80.0
+offset_top = 760.0
+offset_right = 280.0
+offset_bottom = 960.0
 pivot_offset = Vector2(100, 100)
 mouse_filter = 1
 text = "设置"
@@ -1319,10 +1319,10 @@ texture = ExtResource("5_rw1u3")
 
 [node name="OpenBrowser" type="Button" parent="DesktopIconManager"]
 layout_mode = 0
-offset_left = 90.0
-offset_top = 60.0
-offset_right = 290.0
-offset_bottom = 260.0
+offset_left = 80.0
+offset_top = 40.0
+offset_right = 280.0
+offset_bottom = 240.0
 pivot_offset = Vector2(100, 100)
 mouse_filter = 1
 text = "浏览器"
@@ -1349,10 +1349,10 @@ texture = ExtResource("5_rw1u3")
 
 [node name="OpenCalendar" type="Button" parent="DesktopIconManager"]
 layout_mode = 0
-offset_left = 90.0
-offset_top = 660.0
-offset_right = 290.0
-offset_bottom = 860.0
+offset_left = 80.0
+offset_top = 520.0
+offset_right = 280.0
+offset_bottom = 720.0
 pivot_offset = Vector2(100, 100)
 mouse_filter = 1
 text = "日历"
@@ -1378,6 +1378,7 @@ grow_vertical = 2
 texture = ExtResource("5_rw1u3")
 
 [node name="OpenDatabase" type="Button" parent="DesktopIconManager"]
+visible = false
 layout_mode = 0
 offset_left = 390.0
 offset_top = 660.0
@@ -1392,6 +1393,7 @@ vertical_icon_alignment = 0
 expand_icon = true
 
 [node name="OpenCmd" type="Button" parent="DesktopIconManager"]
+visible = false
 layout_mode = 0
 offset_left = 390.0
 offset_top = 360.0
@@ -1407,10 +1409,10 @@ expand_icon = true
 
 [node name="OpenCompany" type="Button" parent="DesktopIconManager"]
 layout_mode = 0
-offset_left = 390.0
-offset_top = 60.0
-offset_right = 590.0
-offset_bottom = 260.0
+offset_left = 80.0
+offset_top = 280.0
+offset_right = 280.0
+offset_bottom = 480.0
 pivot_offset = Vector2(100, 100)
 mouse_filter = 1
 text = "组织"
@@ -2149,6 +2151,7 @@ offset_left = 1060.0
 offset_top = 460.0
 offset_right = 1980.0
 offset_bottom = 1600.0
+mouse_filter = 1
 theme = SubResource("Theme_dlmsr")
 script = ExtResource("17_br20j")
 computer_scene = NodePath("..")
@@ -2208,12 +2211,46 @@ offset_right = 560.0
 offset_bottom = 450.0
 mouse_filter = 1
 
+[node name="DebugPanel" type="Control" parent="CalendarScene"]
+anchors_preset = 0
+offset_left = 60.0
+offset_top = 60.0
+offset_right = 60.0
+offset_bottom = 310.0
+
+[node name="Panel" type="Panel" parent="CalendarScene/DebugPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 800.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
 [node name="DebugHand" type="HBoxContainer" parent="CalendarScene"]
 layout_mode = 0
 offset_left = 60.0
 offset_top = 60.0
 offset_right = 860.0
 offset_bottom = 310.0
+
+[node name="ActivityPanel" type="Control" parent="CalendarScene"]
+anchors_preset = 0
+offset_left = 60.0
+offset_top = 490.0
+offset_right = 60.0
+offset_bottom = 740.0
+
+[node name="Panel" type="Panel" parent="CalendarScene/ActivityPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 800.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
 
 [node name="ActivityHand" type="HBoxContainer" parent="CalendarScene"]
 layout_mode = 0
@@ -2222,12 +2259,32 @@ offset_top = 490.0
 offset_right = 860.0
 offset_bottom = 740.0
 
+[node name="UnusedPanel" type="Control" parent="CalendarScene"]
+anchors_preset = 0
+offset_left = 60.0
+offset_top = 780.0
+offset_right = 60.0
+offset_bottom = 1080.0
+
+[node name="Panel" type="Panel" parent="CalendarScene/UnusedPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 800.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
 [node name="UnusedHand" type="HBoxContainer" parent="CalendarScene"]
 layout_mode = 0
 offset_left = 60.0
 offset_top = 780.0
 offset_right = 860.0
 offset_bottom = 1080.0
+
+[node name="ActivityHand" type="HBoxContainer" parent="CalendarScene/UnusedHand"]
+layout_mode = 2
 
 [node name="CalenderSelfAnim" type="AnimationPlayer" parent="CalendarScene"]
 libraries = {

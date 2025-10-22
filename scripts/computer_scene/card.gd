@@ -22,7 +22,9 @@ var condition := Condition.at_store
 
 var property : PropertyManager = G.M.current_scene.property_manager
 
-func execute():
+signal execute_over
+
+func execute() -> Signal :
 	property.add_mood(mood)
 	property.add_time(time)
 	property.add_project_progress(progress)
@@ -33,6 +35,14 @@ func execute():
 	
 	for buff : Buff in buffs.get_children():
 		buff.reparent_to_buff_manager()
+	
+	if time != 0:
+		for i in range(time):
+			card_anim.play("execute")
+			await card_anim.animation_finished
+	
+	execute_over.emit()
+	return execute_over
 
 func execute_effect():
 	pass
