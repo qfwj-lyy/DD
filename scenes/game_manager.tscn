@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bd03o2lio4k6m"]
+[gd_scene load_steps=37 format=3 uid="uid://bd03o2lio4k6m"]
 
 [ext_resource type="Script" uid="uid://dt8os701xe3xf" path="res://scripts/game_manager.gd" id="1_oo155"]
 [ext_resource type="Script" uid="uid://dpd0wkimog5pm" path="res://scripts/global_effect_manager/global_effect_manager.gd" id="2_eaq8r"]
@@ -9,11 +9,14 @@
 [ext_resource type="Texture2D" uid="uid://nx4unpp8nprg" path="res://assets/computer_scene/character_head_400x400.png" id="7_kvitc"]
 [ext_resource type="Texture2D" uid="uid://bbvg7lu78tosc" path="res://assets/computer_scene/log_in_207x107.png" id="8_hqtnj"]
 [ext_resource type="Texture2D" uid="uid://cnk510ftwgxbi" path="res://assets/computer_scene/Administrator_name_407x107.png" id="8_uiwhc"]
+[ext_resource type="Script" uid="uid://c0h3d2lbotvjd" path="res://scripts/animation/game_manager_open_setting.gd" id="9_5xtl8"]
 [ext_resource type="Texture2D" uid="uid://db1rkwt4fb8q0" path="res://assets/computer_scene/change_administrator_209x59.png" id="9_dlmsr"]
 [ext_resource type="Texture2D" uid="uid://djv85jayq1q47" path="res://assets/computer_scene/settings_100x104.png" id="9_rscnb"]
+[ext_resource type="Texture2D" uid="uid://bau2kurmdj1xj" path="res://assets/computer_scene/100x100Border.png" id="10_5xtl8"]
 [ext_resource type="Script" uid="uid://bksgimwlvl43f" path="res://scripts/animation/game_manager_begin_game.gd" id="10_30v7y"]
 [ext_resource type="Texture2D" uid="uid://b5fwx5nx45dvy" path="res://assets/computer_scene/off_computer_100x103.png" id="11_d7j7a"]
 [ext_resource type="Texture2D" uid="uid://djxlhgnydv5yy" path="res://assets/computer_scene/200x100Border.png" id="11_lcbjr"]
+[ext_resource type="Script" uid="uid://d0q6onb5fb4c8" path="res://scripts/animation/game_manager_exit_game.gd" id="14_cjvif"]
 
 [sub_resource type="Animation" id="Animation_4vth2"]
 length = 0.001
@@ -28,6 +31,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Border:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_c7a3q"]
@@ -62,11 +77,69 @@ tracks/0/keys = {
 "values": [Vector2(0.9, 0.9), Vector2(1.2, 1.2), Vector2(1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_wcunu"]
+resource_name = "hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Border:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_2j6ol"]
+resource_name = "hover_over"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Border:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yxe1x"]
 _data = {
 &"RESET": SubResource("Animation_4vth2"),
 &"button_down": SubResource("Animation_c7a3q"),
-&"button_up": SubResource("Animation_pc0jn")
+&"button_up": SubResource("Animation_pc0jn"),
+&"hover": SubResource("Animation_wcunu"),
+&"hover_over": SubResource("Animation_2j6ol")
 }
 
 [sub_resource type="Animation" id="Animation_30v7y"]
@@ -174,6 +247,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Border:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_5xtl8"]
 resource_name = "button_down"
@@ -207,11 +292,69 @@ tracks/0/keys = {
 "values": [Vector2(0.9, 0.9), Vector2(1.2, 1.2), Vector2(1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_8ldib"]
+resource_name = "hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Border:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_kvitc"]
+resource_name = "hover_over"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Border:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pc0jn"]
 _data = {
 &"RESET": SubResource("Animation_ry0e6"),
 &"button_down": SubResource("Animation_5xtl8"),
-&"button_up": SubResource("Animation_cjvif")
+&"button_up": SubResource("Animation_cjvif"),
+&"hover": SubResource("Animation_8ldib"),
+&"hover_over": SubResource("Animation_kvitc")
 }
 
 [node name="GameManager" type="Node"]
@@ -291,6 +434,7 @@ offset_right = 2029.9999
 offset_bottom = 1350.0
 pivot_offset = Vector2(50, 50)
 mouse_filter = 1
+script = ExtResource("9_5xtl8")
 
 [node name="TextureRect" type="TextureRect" parent="MainMenu/OpenSetting"]
 layout_mode = 1
@@ -311,6 +455,15 @@ texture = ExtResource("9_rscnb")
 libraries = {
 &"": SubResource("AnimationLibrary_yxe1x")
 }
+
+[node name="Border" type="TextureRect" parent="MainMenu/OpenSetting"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_5xtl8")
 
 [node name="BeginGame" type="Button" parent="MainMenu"]
 self_modulate = Color(1, 1, 1, 0)
@@ -337,21 +490,18 @@ libraries = {
 &"": SubResource("AnimationLibrary_lcbjr")
 }
 
-[node name="BorderRect" type="TextureRect" parent="MainMenu/BeginGame"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("11_lcbjr")
-
 [node name="Area2D" type="Area2D" parent="MainMenu/BeginGame"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainMenu/BeginGame/Area2D"]
 position = Vector2(99.5, 50.5)
 shape = SubResource("RectangleShape2D_lcbjr")
+
+[node name="BorderRect" type="TextureRect" parent="MainMenu/BeginGame"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("11_lcbjr")
 
 [node name="ExitGame" type="Button" parent="MainMenu"]
 self_modulate = Color(1, 1, 1, 0)
@@ -362,6 +512,7 @@ offset_right = 2200.0
 offset_bottom = 1350.0
 pivot_offset = Vector2(50, 50)
 mouse_filter = 1
+script = ExtResource("14_cjvif")
 
 [node name="TextureRect" type="TextureRect" parent="MainMenu/ExitGame"]
 layout_mode = 1
@@ -382,6 +533,15 @@ texture = ExtResource("11_d7j7a")
 libraries = {
 &"": SubResource("AnimationLibrary_pc0jn")
 }
+
+[node name="Border" type="TextureRect" parent="MainMenu/ExitGame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_5xtl8")
 
 [node name="ChangeCharacter" type="Button" parent="MainMenu"]
 self_modulate = Color(1, 1, 1, 0)
@@ -422,9 +582,13 @@ zoom = Vector2(1.2, 1.2)
 
 [connection signal="button_down" from="MainMenu/OpenSetting" to="MainMenu" method="_on_open_setting_button_down"]
 [connection signal="button_up" from="MainMenu/OpenSetting" to="MainMenu" method="_on_open_setting_button_up"]
+[connection signal="mouse_entered" from="MainMenu/OpenSetting" to="MainMenu/OpenSetting" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MainMenu/OpenSetting" to="MainMenu/OpenSetting" method="_on_mouse_exited"]
 [connection signal="button_down" from="MainMenu/BeginGame" to="MainMenu" method="_on_begin_game_button_down"]
 [connection signal="button_up" from="MainMenu/BeginGame" to="MainMenu" method="_on_begin_game_button_up"]
 [connection signal="mouse_entered" from="MainMenu/BeginGame/Area2D" to="MainMenu/BeginGame" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="MainMenu/BeginGame/Area2D" to="MainMenu/BeginGame" method="_on_area_2d_mouse_exited"]
 [connection signal="button_down" from="MainMenu/ExitGame" to="MainMenu" method="_on_exit_game_button_down"]
 [connection signal="button_up" from="MainMenu/ExitGame" to="MainMenu" method="_on_exit_game_button_up"]
+[connection signal="mouse_entered" from="MainMenu/ExitGame" to="MainMenu/ExitGame" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MainMenu/ExitGame" to="MainMenu/ExitGame" method="_on_mouse_exited"]
