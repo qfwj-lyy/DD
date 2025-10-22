@@ -63,16 +63,6 @@ func refresh_employees():
 		if employee_amount >= 5:
 			break
 
-#func _on_fire_staff_pressed() -> void:
-#	if selected_employee:
-#		if G.M.current_scene.property_manager.use_money(selected_employee.severance_pay):
-#			selected_employee.queue_free()
-#			pass
-#			pass
-#		else:
-#			print("没钱支付离职金")
-#	else:
-#		print("请先选中一个员工")
 
 #func _on_exit_company_pressed() -> void:
 #	visible = false
@@ -140,8 +130,10 @@ func _on_fire_staff_button_up() -> void:
 			pass
 			pass
 		else:
-			print("没钱支付离职金")
+			G.play_sound("illegal_operation")
+			G.D.display_sentence("没钱支付离职金")
 	else:
-		print("请先选中一个员工")
+		G.play_sound("illegal_operation")
+		G.D.display_sentence("请先选中一个员工")
 
 #endregion

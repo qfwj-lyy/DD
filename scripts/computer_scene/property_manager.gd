@@ -19,7 +19,7 @@ var bug_amount : float:
 var bug_amount_limit : float:
 	set(i):
 		bug_amount_limit = i
-		bug_amount_bar.max = i
+		bug_amount_bar.max_value = i
 var money_amount : float
 var mood_amount : float
 var skill_amount : float

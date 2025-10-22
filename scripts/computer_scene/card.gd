@@ -25,6 +25,7 @@ var property : PropertyManager = G.M.current_scene.property_manager
 signal execute_over
 
 func execute() -> Signal :
+	G.play_sound("execute", 10 ,0)
 	property.add_mood(mood)
 	property.add_time(time)
 	property.add_project_progress(progress)
@@ -53,15 +54,15 @@ func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("LeftMouseDown"):
 		if condition == Condition.at_store:
 			if G.M.current_scene.calendar_scene.get_hand_cards_amount() >= 8:
-				print("卡片超出手牌上限")
+				G.play_sound("illegal_operation")
+				G.D.display_sentence("手牌数量超出手牌上限了")
 				return
 			if property.use_money(money):
 				reparent(G.M.current_scene.unused_hand)
 				condition = Condition.at_unused_hand
 			else:
-				print("没钱呢")
-				pass
-				pass
+				G.play_sound("illegal_operation")
+				G.D.display_sentence("钱不够")
 				return
 				
 		elif condition == Condition.at_unused_hand:

@@ -58,6 +58,16 @@ func display_dialogue_segment(ds_name : String):
 	dialogue_segment = ds
 	display_next_scene()
 
+func display_sentence(s : String):
+	var d_segment = DialogueSegment.new()
+	var d_scene = DialogueScene.new()
+	d_scene.text = s
+	d_segment.dialogue_scenes.append(d_scene)
+	clear()
+	visible = true
+	dialogue_segment = d_segment
+	display_next_scene()
+
 func clear():
 	visible = false
 	dialogue_segment = null
