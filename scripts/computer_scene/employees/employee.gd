@@ -47,18 +47,17 @@ func _ready() -> void:
 func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("LeftMouseDown"):
 		if condition == Condition.at_store:
-			print("点击到商店里的应聘者")
 			if G.M.current_scene.company_scene.current_staff_amount >= G.M.current_scene.company_scene.staff_amount_limit:
-				print("员工数量达到上限")
+				G.play_sound("illegal_operation")
+				G.D.display_sentence("员工数量达到上限啦！")
 				return
 			if property.use_money(joining_expenditure):
 				G.M.current_scene.company_scene.get_staff(self)
 				condition = Condition.at_company
 				execute()
 			else:
-				print("没钱呢")
-				pass
-				pass
+				G.play_sound("illegal_operation")
+				G.D.display_sentence("没有足够的资金招募该员工")
 				return
 				
 		elif condition == Condition.at_company:
@@ -67,5 +66,6 @@ func _on_gui_input(event: InputEvent) -> void:
 func be_fired():
 	G.M.current_scene.property_manager.add_money( - severance_pay)
 	for buff : Buff in self_buffs:
-		buff.die()
+		if is_instance_valid(buff):
+			buff.die()
 	queue_free()
