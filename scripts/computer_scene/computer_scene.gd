@@ -1,8 +1,8 @@
 extends CanvasLayer
 class_name ComputerScene
 
-@onready var store_scene: Control = $StoreScene
-@onready var property_manager: Node = $PropertyManager
+
+var property_manager : PropertyManager
 @onready var browser_scene: Node = $BrowserScene
 @export var unused_hand : Node
 @export var debug_hand: Node
@@ -10,7 +10,7 @@ class_name ComputerScene
 @export var calendar_scene : Calender
 @export var company_scene : Node
 @export var mandatory_guide : Node
-
+@export var store_scene : Node
 
 var current_date := 0
 
@@ -26,13 +26,16 @@ func choose_project(p_node : Node):
 		pass
 		pass
 		return
-	var p = p_node.displayed_project
-	property_manager.set_current_project(p)
-	property_manager.set_money(p.initial_money)
-	property_manager.set_mood(p.initial_mood)
-	property_manager.set_skill(p.initial_skill)
-	property_manager.set_project_progress(p.initial_progress)
-	property_manager.set_bug_amount(p.initial_bug_amount)
+	var p : Project = p_node.displayed_project
+	G.P.set_current_project(p)
+	G.P.set_money(p.initial_money)
+	G.P.set_mood(p.initial_mood)
+	G.P.set_skill(p.initial_skill)
+	G.P.set_project_progress(p.initial_progress)
+	G.P.set_bug_amount(p.initial_bug_amount)
+	G.P.set_bug_limit(p.bug_amount_limit)
+	G.P.set_bug_rate(p.initial_bug_rate)
+	
 	
 	for buff_resource in p.initial_buffs:
 		var buff_node = buff_resource.instantiate()

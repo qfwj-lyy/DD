@@ -20,11 +20,12 @@ enum Condition{
 }
 var condition := Condition.at_store
 
-var property : PropertyManager = G.M.current_scene.property_manager
+var property : PropertyManager = G.P
 
 signal execute_over
 
 func execute() -> Signal :
+	print("execute开头")
 	G.play_sound("execute", 10 ,0)
 	property.add_mood(mood)
 	property.add_time(time)
@@ -33,9 +34,11 @@ func execute() -> Signal :
 	property.add_skill(skill)
 	
 	execute_effect()
+	print("execute中间")
 	
 	for buff : Buff in buffs.get_children():
 		buff.reparent_to_buff_manager()
+	print("execute时间前")
 	
 	if time != 0:
 		for i in range(time):
@@ -43,6 +46,7 @@ func execute() -> Signal :
 			await card_anim.animation_finished
 	
 	execute_over.emit()
+	print("execute末尾")
 	return execute_over
 
 func execute_effect():

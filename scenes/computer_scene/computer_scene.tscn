@@ -1295,7 +1295,7 @@ _data = {
 &"open": SubResource("Animation_l2ol0")
 }
 
-[node name="ComputerScene" type="CanvasLayer" node_paths=PackedStringArray("unused_hand", "debug_hand", "activity_hand", "calendar_scene", "company_scene", "mandatory_guide")]
+[node name="ComputerScene" type="CanvasLayer" node_paths=PackedStringArray("unused_hand", "debug_hand", "activity_hand", "calendar_scene", "company_scene", "mandatory_guide", "store_scene")]
 script = ExtResource("1_8g14y")
 unused_hand = NodePath("CalendarScene/UnusedHand")
 debug_hand = NodePath("CalendarScene/DebugHand")
@@ -1303,6 +1303,7 @@ activity_hand = NodePath("CalendarScene/ActivityHand")
 calendar_scene = NodePath("CalendarScene")
 company_scene = NodePath("CompanyScene")
 mandatory_guide = NodePath("MandatoryGuide")
+store_scene = NodePath("StoreScene")
 
 [node name="ComputerBackground" type="TextureRect" parent="."]
 anchors_preset = 15

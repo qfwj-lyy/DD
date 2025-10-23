@@ -17,12 +17,7 @@ func load_card(card_name : String):
 	
 func _ready() -> void:
 	visible = true
-	await get_tree().create_timer(1).timeout
 	
-	store_content = load("res://data/store_content/normal_store_content.tres")
-	store_card_content = store_content.normal_cards
-	
-	refresh_cards()
 	
 var can_get_ai_and_party := false
 func refresh_cards():

@@ -126,6 +126,7 @@ func add_project_progress(n):
 func add_bug_amount(n):
 	pass
 	pass
+	print("add",n)
 	bug_amount += n
 	
 func add_bug_rate(n):
@@ -172,6 +173,7 @@ func set_bug_amount(n):
 	pass
 	pass
 	bug_amount = n
+	print("set",n)
 func set_current_project(p : Project):
 	current_project = p
 	
@@ -198,8 +200,14 @@ func use_money(a) -> bool:
 func _ready() -> void:
 	visible = true
 	G.P = self
+	get_parent().property_manager = self
 	mood_buffs = load("res://scenes/computer_scene/mood_buffs.tscn").instantiate()
 	add_child(mood_buffs)
+	G.M.current_scene.store_scene.store_content = load("res://data/store_content/normal_store_content.tres")
+	G.M.current_scene.store_scene.store_card_content = G.M.current_scene.store_scene.store_content.normal_cards
+	G.M.current_scene.store_scene.refresh_cards()
+	
+	
 	
 func clear():
 	set_bug_amount(0)
