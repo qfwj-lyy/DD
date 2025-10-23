@@ -6,9 +6,9 @@
 
 [node name="ZuZhiJuHui" instance=ExtResource("1_ag7il")]
 script = ExtResource("2_g2u1g")
-money = 5
+money = 4
 mood = -1
-time = 3
+time = 2
 description = "组织聚会
 5/-1/3
 本回合剩余时间内，每单位时间心情-1，技术+3"

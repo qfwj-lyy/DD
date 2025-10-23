@@ -4,12 +4,12 @@
 [ext_resource type="Script" uid="uid://kmirxldvrtyi" path="res://scripts/computer_scene/buffs/duan_dian_tiao_shi.gd" id="2_wd5er"]
 
 [node name="DuanDianTiaoShi" instance=ExtResource("1_6t2uy")]
-money = 2
+money = 3
 mood = -3
-time = 2
+time = 1
 description = "断点调试
 2/-3/2
-本回合的剩余时间内，每单位时间bug-3"
+本回合的剩余时间内，每单位时间bug-2"
 
 [node name="Buff" type="Node" parent="Buffs" index="0"]
 script = ExtResource("2_wd5er")

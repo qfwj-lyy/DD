@@ -3,5 +3,5 @@ extends Buff
 var property : PropertyManager = G.M.current_scene.property_manager
 
 func execute():
-	property.add_money(-1)
+	property.add_money(-2)
 	

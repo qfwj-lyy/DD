@@ -5,9 +5,9 @@
 
 [node name="HuaYaSuiQian" instance=ExtResource("1_8scpl")]
 script = ExtResource("2_prebo")
-money = 10
+money = 8
 mood = 10
-time = 1
+time = 2
 description = "花压岁钱
 10/10/1
 无额外效果"

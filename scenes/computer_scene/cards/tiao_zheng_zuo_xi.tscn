@@ -7,7 +7,7 @@
 [node name="TiaoZhengZuoXi" instance=ExtResource("1_ywn3v")]
 script = ExtResource("2_y40ya")
 mood = -2
-time = 4
+time = 3
 description = "调整作息
 0/-2/4
 本回合剩余时间内，每单位时间心情+2"

@@ -6,7 +6,7 @@
 [node name="HeCha" instance=ExtResource("1_vpya1")]
 script = ExtResource("2_8i1sj")
 money = 2
-mood = 5
+mood = 4
 time = 1
 description = "喝茶
 2/5/1

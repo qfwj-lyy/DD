@@ -6,7 +6,7 @@
 
 [node name="aiTiaoZhengXiangMuKuangJia(Once)" instance=ExtResource("1_ut06m")]
 script = ExtResource("2_e44sg")
-money = 10
+money = 15
 time = 3
 description = "ai调整项目框架
 10/0/3
