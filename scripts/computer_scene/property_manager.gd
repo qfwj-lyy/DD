@@ -234,6 +234,6 @@ func project_fail():
 	for buff : Buff in buffs:
 		if buff.duration == -9999:
 			buff.die()
-	add_deposit_amount(-current_project.deposit_reward)
+	add_deposit_amount(-current_project.initial_money)
 	deliver_project.display_failure()
 	clear()

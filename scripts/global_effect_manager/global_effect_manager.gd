@@ -4,4 +4,4 @@ extends Node
 @onready var sound_manager: Node = $SoundManager
 
 func _ready() -> void:
-	print(name)
+	pass

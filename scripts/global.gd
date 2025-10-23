@@ -9,6 +9,8 @@ func play_music(music_name : String , volume_db : float = 0 , from_position : fl
 	M.music_manager.play_music(music_name , from_position , volume_db)
 func play_sound(sound_name : String , volume_db : float = 0 , from_position : float = 0 ):
 	M.sound_manager.play_sound(sound_name , from_position , volume_db)
+func kill_sound(sound_name : String):
+	M.sound_manager.kill_sound(sound_name)
 #endregion
 
 #region settings文件的读写

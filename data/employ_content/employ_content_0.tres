@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EmployeeContent" load_steps=12 format=3 uid="uid://bm2lhl1gtp0vw"]
+[gd_resource type="Resource" script_class="EmployeeContent" load_steps=14 format=3 uid="uid://bm2lhl1gtp0vw"]
 
 [ext_resource type="Script" uid="uid://b41ouhg7qr7rj" path="res://scripts/computer_scene/resource_type/employee_parameter.gd" id="1_7nt4r"]
 [ext_resource type="Script" uid="uid://cpmkl03aq3xjo" path="res://scripts/computer_scene/resource_type/employee_content.gd" id="2_0r3h3"]
@@ -57,7 +57,19 @@ name = "mou_jian_li_zhi_xie_jing_tong"
 weight = 1
 metadata/_custom_type_script = "uid://b41ouhg7qr7rj"
 
+[sub_resource type="Resource" id="Resource_p7mlp"]
+script = ExtResource("1_7nt4r")
+name = "ka_fei_xu_ming_ji_ma_nong"
+weight = 1
+metadata/_custom_type_script = "uid://b41ouhg7qr7rj"
+
+[sub_resource type="Resource" id="Resource_cjiws"]
+script = ExtResource("1_7nt4r")
+name = "xia_wu_cha_zu_dui_fa_qi_ren"
+weight = 1
+metadata/_custom_type_script = "uid://b41ouhg7qr7rj"
+
 [resource]
 script = ExtResource("2_0r3h3")
-normal_employees = Array[ExtResource("1_7nt4r")]([SubResource("Resource_tnivv"), SubResource("Resource_7nt4r"), SubResource("Resource_0r3h3"), SubResource("Resource_8fd7h"), SubResource("Resource_4fsi1"), SubResource("Resource_nhfre"), SubResource("Resource_vvaqs"), SubResource("Resource_r5jny"), SubResource("Resource_n20iu")])
+normal_employees = Array[ExtResource("1_7nt4r")]([SubResource("Resource_tnivv"), SubResource("Resource_7nt4r"), SubResource("Resource_0r3h3"), SubResource("Resource_8fd7h"), SubResource("Resource_4fsi1"), SubResource("Resource_nhfre"), SubResource("Resource_vvaqs"), SubResource("Resource_r5jny"), SubResource("Resource_n20iu"), SubResource("Resource_p7mlp"), SubResource("Resource_cjiws")])
 metadata/_custom_type_script = "uid://cpmkl03aq3xjo"

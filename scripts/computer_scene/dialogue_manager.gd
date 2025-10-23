@@ -25,6 +25,7 @@ func display_next_scene() ->void:
 	
 	if typer and typer.is_running():
 		typer.kill()
+		G.kill_sound("typing")
 		text_label.text = dialogue_scene.text
 		index += 1
 		return
@@ -33,7 +34,9 @@ func display_next_scene() ->void:
 	#character_name_Label.text = dialogue_scene.character_name
 	
 	typer = get_tree().create_tween()
+	typer.connect("finished", G.kill_sound.bind("typing"))
 	text_label.text = ""
+	G.play_sound("typing" , 0 , randf_range(0 , 7))
 	for character in dialogue_scene.text :
 		typer.tween_callback(_append_character.bind(character)).set_delay(0.05)
 	typer.tween_callback(func(): index += 1)

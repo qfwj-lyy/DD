@@ -57,3 +57,15 @@ func play_sound(sound_name : String , from_position : float = 0 , volume_db : fl
 	last_time = Time.get_ticks_msec()
 	last_sound = sound_name
 	
+	
+func get_all_sound_nodes():
+	return get_children()
+	
+func kill_sound(sound_name : String):
+	var s_s = load("res://assets/sounds/"+ sound_name +".mp3")
+	for s_n:AudioStreamPlayer in get_all_sound_nodes():
+		if s_n.stream == s_s:
+			s_n.queue_free()
+			print("kill_sound成功")
+			return
+	print("kill_sound失败")

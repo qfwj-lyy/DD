@@ -110,7 +110,11 @@ func _on_refresh_employee_button_down() -> void:
 
 func _on_refresh_employee_button_up() -> void:
 	refresh_anim.play("button_up")
-	refresh_employees()
+	if G.P.use_money(3):
+		refresh_employees()
+	else:
+		G.play_sound("illegal_operation")
+		G.D.display_sentence("需要3资金来刷新人才市场")
 
 #endregion
 
