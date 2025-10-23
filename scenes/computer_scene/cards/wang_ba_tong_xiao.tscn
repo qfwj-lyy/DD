@@ -11,7 +11,7 @@ mood = 10
 time = 1
 description = "网吧通宵
 5/10/1
-本回合剩余时间内，每单位时间心情-1"
+本回合剩余时间内，每单位时间心情-3"
 
 [node name="Buff" type="Node" parent="Buffs" index="0"]
 script = ExtResource("3_goicj")

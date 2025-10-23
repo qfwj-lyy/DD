@@ -5,7 +5,7 @@
 
 [node name="WARNINGYouHua" instance=ExtResource("1_wivd0")]
 script = ExtResource("2_wivd0")
-money = 5
+money = 4
 mood = -2
 time = 2
 description = "warning优化

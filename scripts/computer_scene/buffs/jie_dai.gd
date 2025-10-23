@@ -2,4 +2,4 @@ extends Buff
 
 
 func execute():
-	G.P.add_money(-1)
+	G.P.add_money(-2)

@@ -6,8 +6,8 @@
 [node name="KeFuTiaoJie" instance=ExtResource("1_w4724")]
 script = ExtResource("2_w4724")
 money = 8
-mood = 5
-time = 3
+mood = -4
+time = 2
 description = "客服调节
 8/-5/3
 bug上限增加10%（向下取整）"

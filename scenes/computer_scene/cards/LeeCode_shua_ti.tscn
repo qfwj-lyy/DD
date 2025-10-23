@@ -6,7 +6,7 @@
 [node name="LeeCodeShuaTi" instance=ExtResource("1_yrhj3")]
 script = ExtResource("2_b3dmv")
 mood = -5
-time = 3
+time = 2
 skill = 6
 description = "LeeCode刷题
 0/-5/3

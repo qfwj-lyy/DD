@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dubitep1ioo2t" path="res://scenes/computer_scene/cards/debug_card.tscn" id="1_0dalp"]
 
 [node name="LianXiHelloWorld" instance=ExtResource("1_0dalp")]
-mood = -1
+mood = -2
 time = 1
 skill = 3
 description = "练习Hello World

@@ -6,9 +6,9 @@
 [node name="WaiBaoChengXu" instance=ExtResource("1_413x0")]
 script = ExtResource("2_epian")
 money = 10
-mood = 2
-time = 2
-progress = 8
+mood = 1
+time = 3
+progress = 5
 bug = -5
 description = "外包程序
 10/2/2

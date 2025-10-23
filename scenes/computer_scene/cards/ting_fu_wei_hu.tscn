@@ -10,11 +10,11 @@ mood = -5
 time = 3
 description = "停服维护
 0/-5/3
-本回合剩余时间内，每单位时间bug-5，但固定收益变为0"
+本回合剩余时间内，每单位时间bug-4，但固定收益变为0"
 
 [node name="Buff" type="Node" parent="Buffs" index="0"]
 script = ExtResource("3_bfryf")
 duration = -9
 execution_time = 3
-description = "本回合剩余时间内，每单位时间bug-5，但固定收益变为0"
+description = "本回合剩余时间内，每单位时间bug-4，但固定收益变为0"
 metadata/_custom_type_script = "uid://dwhc1hbrg4em"

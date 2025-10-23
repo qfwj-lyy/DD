@@ -6,7 +6,7 @@
 
 [node name="DuiJiuDangGe" instance=ExtResource("1_qeri0")]
 script = ExtResource("2_qeri0")
-money = 3
+money = 4
 mood = 10
 time = 1
 description = "对酒当歌

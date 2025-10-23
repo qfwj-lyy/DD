@@ -5,7 +5,7 @@
 
 [node name="QuanXiangMuAIShenCha" instance=ExtResource("1_ijm56")]
 script = ExtResource("2_ijm56")
-money = 10
+money = 8
 time = 1
 description = "全项目ai审查
 10/0/1

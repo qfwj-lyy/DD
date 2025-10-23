@@ -2,4 +2,4 @@ extends Buff
 
 
 func execute():
-	G.P.add_bug_amount(-3)
+	G.P.add_bug_amount(-2)
