@@ -36,11 +36,13 @@ func execute():
 func execute_effect():
 	pass
 
+@onready var border: TextureRect = $Border
 
 #region 测试用
 @onready var label: Label = $Label
 func _ready() -> void:
 	label.text = description
+	border.visible = false
 #endregion
 
 
@@ -48,6 +50,7 @@ func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("LeftMouseDown"):
 		if condition == Condition.at_store:
 			print("点击到商店里的应聘者")
+			
 			if G.M.current_scene.company_scene.current_staff_amount >= G.M.current_scene.company_scene.staff_amount_limit:
 				print("员工数量达到上限")
 				return
@@ -63,9 +66,25 @@ func _on_gui_input(event: InputEvent) -> void:
 				
 		elif condition == Condition.at_company:
 			G.M.current_scene.company_scene.select_employee(self)
+			animation_player.play("down")
+			if chosen_employee and chosen_employee != self:
+				chosen_employee.animation_player.play("back")
+			chosen_employee = self
 
 func be_fired():
 	G.M.current_scene.property_manager.add_money( - severance_pay)
 	for buff : Buff in self_buffs:
 		buff.die()
 	queue_free()
+
+static var chosen_employee : Employee
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+func _on_mouse_entered() -> void:
+	if chosen_employee != self :
+		animation_player.play("hover")
+
+
+func _on_mouse_exited() -> void:
+	if chosen_employee != self :
+		animation_player.play("hover_over_without_chosen")
