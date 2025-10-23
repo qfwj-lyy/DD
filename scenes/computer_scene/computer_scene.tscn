@@ -1758,17 +1758,16 @@ layout_mode = 2
 mouse_filter = 1
 
 [node name="BackGround" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl"]
-custom_minimum_size = Vector2(1000, 2700)
 layout_mode = 0
 offset_right = 1000.0
-offset_bottom = 2700.0
+offset_bottom = 2850.0
 mouse_filter = 1
 
 [node name="ScrollProtect" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl"]
 layout_mode = 0
 offset_left = 970.0
 offset_right = 990.0
-offset_bottom = 2700.0
+offset_bottom = 2850.0
 mouse_filter = 1
 
 [node name="BrowserIcon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl"]
@@ -1900,14 +1899,17 @@ libraries = {
 &"": SubResource("AnimationLibrary_8r4sb")
 }
 
-[node name="SupplierProject1" type="Button" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0"]
+[node name="SupplierProject1" type="Button" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0" node_paths=PackedStringArray("project_border", "project_border_anim")]
 layout_mode = 0
 offset_left = 35.0
 offset_top = 310.0
 offset_right = 635.0
 offset_bottom = 460.0
+pivot_offset = Vector2(300, 75)
 mouse_filter = 1
 script = ExtResource("16_d88ux")
+project_border = NodePath("ProjectBorder")
+project_border_anim = NodePath("ProjectBorderAnim")
 
 [node name="SupplierProject1Icon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject1"]
 layout_mode = 0
@@ -1927,14 +1929,31 @@ text = "项目名称"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SupplierProject2" type="Button" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0"]
+[node name="ProjectBorder" type="TextureRect" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_bv4nm")
+
+[node name="ProjectBorderAnim" type="AnimationPlayer" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject1"]
+libraries = {
+&"": SubResource("AnimationLibrary_8r4sb")
+}
+
+[node name="SupplierProject2" type="Button" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0" node_paths=PackedStringArray("project_border", "project_border_anim")]
 layout_mode = 0
 offset_left = 35.0
 offset_top = 490.0
 offset_right = 635.0
 offset_bottom = 640.0
+pivot_offset = Vector2(300, 75)
 mouse_filter = 1
 script = ExtResource("16_d88ux")
+project_border = NodePath("ProjectBorder")
+project_border_anim = NodePath("ProjectBorderAnim")
 
 [node name="Supplier1Project2Icon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject2"]
 layout_mode = 0
@@ -1953,6 +1972,20 @@ offset_bottom = 100.0
 text = "项目名称"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ProjectBorder" type="TextureRect" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_bv4nm")
+
+[node name="ProjectBorderAnim" type="AnimationPlayer" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject2"]
+libraries = {
+&"": SubResource("AnimationLibrary_8r4sb")
+}
 
 [node name="SupplierIcon1" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel"]
 layout_mode = 0
@@ -1980,14 +2013,17 @@ offset_right = 665.0
 offset_bottom = 50.0
 mouse_filter = 1
 
-[node name="SupplierProject0" type="Button" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1"]
+[node name="SupplierProject0" type="Button" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1" node_paths=PackedStringArray("project_border", "project_border_anim")]
 layout_mode = 0
 offset_left = 35.0
 offset_top = 130.0
 offset_right = 635.0
 offset_bottom = 280.0
+pivot_offset = Vector2(300, 75)
 mouse_filter = 1
 script = ExtResource("16_d88ux")
+project_border = NodePath("ProjectBorder")
+project_border_anim = NodePath("ProjectBorderAnim")
 
 [node name="Supplier1Project0Icon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject0"]
 layout_mode = 0
@@ -2007,14 +2043,31 @@ text = "项目名称"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SupplierProject1" type="Button" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1"]
+[node name="ProjectBorder" type="TextureRect" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_bv4nm")
+
+[node name="ProjectBorderAnim" type="AnimationPlayer" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject0"]
+libraries = {
+&"": SubResource("AnimationLibrary_8r4sb")
+}
+
+[node name="SupplierProject1" type="Button" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1" node_paths=PackedStringArray("project_border", "project_border_anim")]
 layout_mode = 0
 offset_left = 35.0
 offset_top = 310.0
 offset_right = 635.0
 offset_bottom = 460.0
+pivot_offset = Vector2(300, 75)
 mouse_filter = 1
 script = ExtResource("16_d88ux")
+project_border = NodePath("ProjectBorder")
+project_border_anim = NodePath("ProjectBorderAnim")
 
 [node name="Supplier1Project1Icon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject1"]
 layout_mode = 0
@@ -2034,14 +2087,31 @@ text = "项目名称"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SupplierProject2" type="Button" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1"]
+[node name="ProjectBorder" type="TextureRect" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_bv4nm")
+
+[node name="ProjectBorderAnim" type="AnimationPlayer" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject1"]
+libraries = {
+&"": SubResource("AnimationLibrary_8r4sb")
+}
+
+[node name="SupplierProject2" type="Button" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1" node_paths=PackedStringArray("project_border", "project_border_anim")]
 layout_mode = 0
 offset_left = 35.0
 offset_top = 490.0
 offset_right = 635.0
 offset_bottom = 640.0
+pivot_offset = Vector2(300, 75)
 mouse_filter = 1
 script = ExtResource("16_d88ux")
+project_border = NodePath("ProjectBorder")
+project_border_anim = NodePath("ProjectBorderAnim")
 
 [node name="Supplier1Project2Icon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject2"]
 layout_mode = 0
@@ -2060,6 +2130,20 @@ offset_bottom = 100.0
 text = "项目名称"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ProjectBorder" type="TextureRect" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_bv4nm")
+
+[node name="ProjectBorderAnim" type="AnimationPlayer" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject2"]
+libraries = {
+&"": SubResource("AnimationLibrary_8r4sb")
+}
 
 [node name="SupplierIcon2" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel"]
 layout_mode = 0
@@ -2087,14 +2171,17 @@ offset_right = 665.0
 offset_bottom = 50.0
 mouse_filter = 1
 
-[node name="SupplierProject0" type="Button" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2"]
+[node name="SupplierProject0" type="Button" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2" node_paths=PackedStringArray("project_border", "project_border_anim")]
 layout_mode = 0
 offset_left = 35.0
 offset_top = 130.0
 offset_right = 635.0
 offset_bottom = 280.0
+pivot_offset = Vector2(300, 75)
 mouse_filter = 1
 script = ExtResource("16_d88ux")
+project_border = NodePath("ProjectBorder")
+project_border_anim = NodePath("ProjectBorderAnim")
 
 [node name="Supplier2Project0Icon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject0"]
 layout_mode = 0
@@ -2114,14 +2201,31 @@ text = "项目名称"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SupplierProject1" type="Button" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2"]
+[node name="ProjectBorder" type="TextureRect" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_bv4nm")
+
+[node name="ProjectBorderAnim" type="AnimationPlayer" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject0"]
+libraries = {
+&"": SubResource("AnimationLibrary_8r4sb")
+}
+
+[node name="SupplierProject1" type="Button" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2" node_paths=PackedStringArray("project_border", "project_border_anim")]
 layout_mode = 0
 offset_left = 35.0
 offset_top = 310.0
 offset_right = 635.0
 offset_bottom = 460.0
+pivot_offset = Vector2(300, 75)
 mouse_filter = 1
 script = ExtResource("16_d88ux")
+project_border = NodePath("ProjectBorder")
+project_border_anim = NodePath("ProjectBorderAnim")
 
 [node name="Supplier2Project1Icon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject1"]
 layout_mode = 0
@@ -2141,14 +2245,31 @@ text = "项目名称"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SupplierProject2" type="Button" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2"]
+[node name="ProjectBorder" type="TextureRect" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_bv4nm")
+
+[node name="ProjectBorderAnim" type="AnimationPlayer" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject1"]
+libraries = {
+&"": SubResource("AnimationLibrary_8r4sb")
+}
+
+[node name="SupplierProject2" type="Button" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2" node_paths=PackedStringArray("project_border", "project_border_anim")]
 layout_mode = 0
 offset_left = 35.0
 offset_top = 490.0
 offset_right = 635.0
 offset_bottom = 640.0
+pivot_offset = Vector2(300, 75)
 mouse_filter = 1
 script = ExtResource("16_d88ux")
+project_border = NodePath("ProjectBorder")
+project_border_anim = NodePath("ProjectBorderAnim")
 
 [node name="Supplier2Project2Icon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject2"]
 layout_mode = 0
@@ -2167,6 +2288,20 @@ offset_bottom = 100.0
 text = "项目名称"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ProjectBorder" type="TextureRect" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_bv4nm")
+
+[node name="ProjectBorderAnim" type="AnimationPlayer" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject2"]
+libraries = {
+&"": SubResource("AnimationLibrary_8r4sb")
+}
 
 [node name="TabBar" type="Panel" parent="BrowserScene"]
 layout_mode = 0
@@ -2893,6 +3028,22 @@ mouse_filter = 1
 [connection signal="pressed" from="BrowserScene/Button(Flag)" to="BrowserScene" method="_on_button_pressed"]
 [connection signal="mouse_entered" from="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject0" to="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject0" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject0" to="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject0" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject1" to="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject1" to="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject2" to="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject2" to="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject0" to="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject0" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject0" to="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject0" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject1" to="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject1" to="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject2" to="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject2" to="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject0" to="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject0" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject0" to="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject0" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject1" to="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject1" to="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject2" to="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject2" to="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject2" method="_on_mouse_exited"]
 [connection signal="pressed" from="BrowserScene/ExitBrowser(Flag)" to="BrowserScene" method="_on_exit_browser_pressed"]
 [connection signal="button_down" from="CalendarScene/CalenderButton" to="CalendarScene" method="_on_calender_button_button_down"]
 [connection signal="button_up" from="CalendarScene/CalenderButton" to="CalendarScene" method="_on_calender_button_button_up"]
