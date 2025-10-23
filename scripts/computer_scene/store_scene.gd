@@ -24,6 +24,7 @@ func _ready() -> void:
 	
 	refresh_cards()
 	
+var can_get_ai_and_party := false
 func refresh_cards():
 	for c in store_cards.get_children():
 		c.free()
@@ -34,13 +35,20 @@ func refresh_cards():
 			weight_sum += c.weight
 		var rand_weight_position = randi_range(1 , weight_sum)
 		var current_weight_sum := 0
+		var need_updating_rand := false
 		for c : StoreCardParameter in store_card_content:
 			current_weight_sum += c.weight
 			if current_weight_sum >= rand_weight_position:
+				if not can_get_ai_and_party:
+					if c.is_ai_or_party:
+						need_updating_rand = true
+						break
 				load_card(c.name)
 				if c.is_unique:
 					store_card_content.erase(c)
 				break
+		if need_updating_rand:
+			continue
 		card_amount += 1
 		if card_amount >= 5:
 			break

@@ -3,20 +3,22 @@ class_name PropertyManager
 
 var current_project : Project
 
-@export var deliver_project : Button
+@export var deliver_project_button : Button
 var project_progress : float:
 	set(i):
 		project_progress = i
 		project_progress_bar.value = i
 		if i >= 100.0:
-			deliver_project.visible = true
+			deliver_project_button.visible = true
 		else:
-			deliver_project.visible = false
+			deliver_project_button.visible = false
 var bug_amount : float:
 	set(i):
 		bug_amount = i
 		bug_amount_bar.value = i
-var bug_amount_limit : float:
+		if bug_amount > bug_amount_limit:
+			project_fail()
+var bug_amount_limit : float = 99999.0:
 	set(i):
 		bug_amount_limit = i
 		bug_amount_bar.max_value = i
@@ -27,7 +29,7 @@ var time_amount : float # 时空穿越所需要，目前没有需求
 
 var bug_rate : float
 var deposit_amount : float
-
+var hand_card_amount_limit : int = 5
 
 @export var money_label: Node
 @export var mood_label: Node
@@ -35,7 +37,9 @@ var deposit_amount : float
 @export var project_progress_bar: Node
 @export var bug_amount_bar: Node
 @export var global_buffs: Node
+@export var deliver_project : Node
 
+var mood_buffs : Node
 #----------还没有bug_rate对应的label----------
 
 @onready var buff_manager: Node = $BuffManager
@@ -43,7 +47,47 @@ var deposit_amount : float
 var is_stop_bug_growth : bool = false #标记本回合是否停止增长bug
 var is_stop_income : bool = false #标记本回合是否停止固定收益
 
-
+func inspect_mood_buffs():
+	if mood_amount >= 20:
+		if mood_buffs.mood_20_buff:
+			mood_buffs.mood_20_buff.reparent_to_buff_manager()
+			mood_buffs.mood_20_buff = null
+	else:
+		if not mood_buffs.mood_20_buff:
+			var bf = buff_manager.buff_name_to_buff("Mood20Buff")
+			bf.die()
+	if mood_amount >= 50:
+		if mood_buffs.mood_50_buff:
+			mood_buffs.mood_50_buff.reparent_to_buff_manager()
+			mood_buffs.mood_50_buff = null
+	else:
+		if not mood_buffs.mood_50_buff:
+			var bf = buff_manager.buff_name_to_buff("Mood50Buff")
+			bf.die()
+	if mood_amount >= 60:
+		if mood_buffs.mood_60_buff:
+			mood_buffs.mood_60_buff.reparent_to_buff_manager()
+			mood_buffs.mood_60_buff = null
+	else:
+		if not mood_buffs.mood_60_buff:
+			var bf = buff_manager.buff_name_to_buff("Mood60Buff")
+			bf.die()
+	if mood_amount >= 90:
+		if mood_buffs.mood_90_buff:
+			mood_buffs.mood_90_buff.reparent_to_buff_manager()
+			mood_buffs.mood_90_buff = null
+	else:
+		if not mood_buffs.mood_90_buff:
+			var bf = buff_manager.buff_name_to_buff("Mood90Buff")
+			bf.die()
+	if mood_amount >= 100:
+		if mood_buffs.mood_100_buff:
+			mood_buffs.mood_100_buff.reparent_to_buff_manager()
+			mood_buffs.mood_100_buff = null
+	else:
+		if not mood_buffs.mood_100_buff:
+			var bf = buff_manager.buff_name_to_buff("Mood100Buff")
+			bf.die()
 
 #region add_property
 func add_money(n):
@@ -59,6 +103,7 @@ func add_mood(n):
 	mood_amount += n
 	pass
 	pass
+	inspect_mood_buffs()
 	mood_label.text = "心情：" + str(mood_amount)
 func add_skill(n):
 	skill_amount += n
@@ -96,6 +141,8 @@ func add_bug_limit(n):
 func add_deposit_amount(n):
 	deposit_amount += n
 	
+func add_hand_card_amount_limit(n):
+	hand_card_amount_limit += n
 #endregion
 
 #region set_property
@@ -110,6 +157,7 @@ func set_mood(n):
 	mood_amount = n
 	pass
 	pass
+	inspect_mood_buffs()
 	mood_label.text = "心情：" + str(mood_amount)
 func set_skill(n):
 	skill_amount = n
@@ -134,6 +182,8 @@ func set_bug_limit(n):
 	
 func set_deposit_amount(n):
 	deposit_amount = n
+func set_hand_card_amount_limit(n):
+	hand_card_amount_limit = n
 #endregion
 
 func use_money(a) -> bool:
@@ -148,8 +198,9 @@ func use_money(a) -> bool:
 func _ready() -> void:
 	visible = true
 	G.P = self
-
-
+	mood_buffs = load("res://scenes/computer_scene/mood_buffs.tscn").instantiate()
+	add_child(mood_buffs)
+	
 func clear():
 	set_bug_amount(0)
 	set_bug_limit(100)
@@ -159,7 +210,13 @@ func clear():
 	set_mood(0)
 	set_project_progress(0)
 	set_skill(0)
-func _on_deliver_project_pressed() -> void:
+	
+
+func _on_deliver_project_button_pressed() -> void:
+	if project_progress < 99.99:
+		G.play_sound("illegal_operation")
+		G.D.display_sentence("项目未完成无法提交")
+		return
 	for buff in buff_manager.each_project_delivery.get_children():
 		buff.execute()
 	var buffs = buff_manager.get_all_buffs()
@@ -167,5 +224,16 @@ func _on_deliver_project_pressed() -> void:
 		if buff.duration == -9999:
 			buff.die()
 	add_deposit_amount(current_project.deposit_reward)
+	deliver_project.display()
 	clear()
-	
+
+func project_fail():
+	for buff in buff_manager.each_project_delivery.get_children():
+		buff.execute()
+	var buffs = buff_manager.get_all_buffs()
+	for buff : Buff in buffs:
+		if buff.duration == -9999:
+			buff.die()
+	add_deposit_amount(-current_project.deposit_reward)
+	deliver_project.display_failure()
+	clear()

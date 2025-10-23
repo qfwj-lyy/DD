@@ -16,3 +16,10 @@ func get_all_buffs() -> Array[Buff]:
 		for buff : Buff in buff_type.get_children():
 			buffs.append(buff)
 	return buffs
+
+func buff_name_to_buff(buff_name : String) -> Buff:
+	var bs = get_all_buffs()
+	for b in bs:
+		if b.name == buff_name:
+			return b
+	return null

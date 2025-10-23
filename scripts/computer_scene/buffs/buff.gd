@@ -19,9 +19,8 @@ enum ExecutionTime {
 
 @export_multiline var description : String
 
-var buff_manager = G.M.current_scene.property_manager.buff_manager
+var buff_manager = G.P.buff_manager
 
-# 当进入场景树时，即生效某效果
 func _enter_tree() -> void:
 	pass
 	

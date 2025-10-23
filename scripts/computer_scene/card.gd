@@ -53,7 +53,7 @@ func execute_effect():
 func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("LeftMouseDown"):
 		if condition == Condition.at_store:
-			if G.M.current_scene.calendar_scene.get_hand_cards_amount() >= 8:
+			if G.M.current_scene.calendar_scene.get_hand_cards_amount() >= G.P.hand_card_amount_limit:
 				G.play_sound("illegal_operation")
 				G.D.display_sentence("手牌数量超出手牌上限了")
 				return

@@ -75,6 +75,7 @@ script = ExtResource("1_qcdww")
 name = "bu_shu_da_mo_xing"
 weight = 4
 is_unique = true
+is_ai_or_party = true
 metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
 
 [sub_resource type="Resource" id="Resource_devvp"]
@@ -82,12 +83,14 @@ script = ExtResource("1_qcdww")
 name = "ai_dai_ma_shen_cha_zhi_du"
 weight = 4
 is_unique = true
+is_ai_or_party = true
 metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
 
 [sub_resource type="Resource" id="Resource_1jqjm"]
 script = ExtResource("1_qcdww")
 name = "quan_xiang_mu_AI_shen_cha"
 weight = 6
+is_ai_or_party = true
 metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
 
 [sub_resource type="Resource" id="Resource_hrnwn"]
@@ -95,6 +98,7 @@ script = ExtResource("1_qcdww")
 name = "AI_tiao_zheng_xiang_mu"
 weight = 4
 is_unique = true
+is_ai_or_party = true
 metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
 
 [sub_resource type="Resource" id="Resource_coqgs"]
@@ -167,18 +171,21 @@ metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
 script = ExtResource("1_qcdww")
 name = "wang_ba_tong_xiao"
 weight = 6
+is_ai_or_party = true
 metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
 
 [sub_resource type="Resource" id="Resource_bfuxx"]
 script = ExtResource("1_qcdww")
 name = "gao_ge_meng_jin"
 weight = 4
+is_ai_or_party = true
 metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
 
 [sub_resource type="Resource" id="Resource_d6wm6"]
 script = ExtResource("1_qcdww")
 name = "hua_ya_sui_qian"
 weight = 6
+is_ai_or_party = true
 metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
 
 [sub_resource type="Resource" id="Resource_eixsl"]
@@ -186,12 +193,14 @@ script = ExtResource("1_qcdww")
 name = "kou_kou_xiang_chuan"
 weight = 2
 is_unique = true
+is_ai_or_party = true
 metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
 
 [sub_resource type="Resource" id="Resource_78aep"]
 script = ExtResource("1_qcdww")
 name = "dui_jiu_dang_ge"
 weight = 6
+is_ai_or_party = true
 metadata/_custom_type_script = "uid://cwlvl1e5xlg4d"
 
 [resource]
