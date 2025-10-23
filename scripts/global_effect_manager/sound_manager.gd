@@ -66,6 +66,5 @@ func kill_sound(sound_name : String):
 	for s_n:AudioStreamPlayer in get_all_sound_nodes():
 		if s_n.stream == s_s:
 			s_n.queue_free()
-			print("kill_sound成功")
 			return
-	print("kill_sound失败")
+	print("warning：kill_sound() fail")

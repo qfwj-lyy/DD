@@ -61,11 +61,11 @@ func execute_plan():
 		#card.execute()
 
 signal card_execute_over
-func main_while(current_time,max_time,debug_time_flag_array,debug_current_card_flag,activity_time_flag_array,activity_current_card_flag) -> Signal: #日历的核心while逻辑
+func main_while(current_time,max_time,debug_time_flag_array,debug_current_card_flag,activity_time_flag_array,activity_current_card_flag) -> int: #日历的核心while逻辑
 	
 	
 	while(current_time != max_time + 1):
-		print(current_time)
+		
 		G.M.current_scene.time_goes_by(1)
 		#----------这里写员工计算工资相关方法----------
 		G.M.current_scene.company_scene.inspect_wage()
@@ -81,9 +81,7 @@ func main_while(current_time,max_time,debug_time_flag_array,debug_current_card_f
 			if current_time == debug_cal_time_sum :
 				if debug_hand.get_child(debug_current_card_flag) is Card:
 					emit_signal("a_debug_card_used")
-					print("准备执行d")
 					await debug_hand.get_child(debug_current_card_flag).execute()
-					print("执行d")
 					debug_current_card_flag += 1
 		
 		#activity卡顺序执行
@@ -93,9 +91,7 @@ func main_while(current_time,max_time,debug_time_flag_array,debug_current_card_f
 			if current_time == activity_cal_time_sum :
 				if activity_hand.get_child(activity_current_card_flag) is Card:
 					emit_signal("an_activity_card_used")
-					print("准备执行d")
 					await activity_hand.get_child(activity_current_card_flag).execute()
-					print("执行d")
 					activity_current_card_flag += 1
 		
 		current_time += 1
@@ -135,7 +131,7 @@ func main_while(current_time,max_time,debug_time_flag_array,debug_current_card_f
 				buff.die()
 
 		#----------回合结束
-		if current_time == max_time :
+		if current_time == max_time + 1:
 			#region 回合结束时固定增长bug
 			
 			if !G.M.current_scene.property_manager.is_stop_bug_growth:
@@ -168,7 +164,7 @@ func main_while(current_time,max_time,debug_time_flag_array,debug_current_card_f
 	
 	
 	card_execute_over.emit()
-	return card_execute_over
+	return 1
 
 signal delay_over
 func custom_delay(delay_time : float) -> Signal:

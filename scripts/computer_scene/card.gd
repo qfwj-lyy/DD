@@ -25,7 +25,6 @@ var property : PropertyManager = G.P
 signal execute_over
 
 func execute() :
-	print("execute开头")
 	G.play_sound("execute", 10 ,0)
 	property.add_mood(mood)
 	property.add_time(time)
@@ -34,11 +33,10 @@ func execute() :
 	property.add_skill(skill)
 	
 	execute_effect()
-	print("execute中间")
 	
 	for buff : Buff in buffs.get_children():
 		buff.reparent_to_buff_manager()
-	print("execute时间前")
+	
 	
 	if time != 0:
 		for i in range(time):
@@ -46,7 +44,6 @@ func execute() :
 			await card_anim.animation_finished
 	
 	execute_over.emit()
-	print("execute末尾")
 	return 1
 
 func execute_effect():
