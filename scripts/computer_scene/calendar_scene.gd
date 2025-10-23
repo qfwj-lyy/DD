@@ -81,9 +81,9 @@ func main_while(current_time,max_time,debug_time_flag_array,debug_current_card_f
 			if current_time == debug_cal_time_sum :
 				if debug_hand.get_child(debug_current_card_flag) is Card:
 					emit_signal("a_debug_card_used")
-					print("准备执行")
+					print("准备执行d")
 					await debug_hand.get_child(debug_current_card_flag).execute()
-					print("执行")
+					print("执行d")
 					debug_current_card_flag += 1
 		
 		#activity卡顺序执行
@@ -93,9 +93,9 @@ func main_while(current_time,max_time,debug_time_flag_array,debug_current_card_f
 			if current_time == activity_cal_time_sum :
 				if activity_hand.get_child(activity_current_card_flag) is Card:
 					emit_signal("an_activity_card_used")
-					print("准备执行")
+					print("准备执行d")
 					await activity_hand.get_child(activity_current_card_flag).execute()
-					print("执行")
+					print("执行d")
 					activity_current_card_flag += 1
 		
 		current_time += 1

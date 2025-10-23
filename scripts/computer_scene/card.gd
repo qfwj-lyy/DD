@@ -24,7 +24,7 @@ var property : PropertyManager = G.P
 
 signal execute_over
 
-func execute() -> Signal :
+func execute() :
 	print("execute开头")
 	G.play_sound("execute", 10 ,0)
 	property.add_mood(mood)
@@ -47,7 +47,7 @@ func execute() -> Signal :
 	
 	execute_over.emit()
 	print("execute末尾")
-	return execute_over
+	return 1
 
 func execute_effect():
 	pass
