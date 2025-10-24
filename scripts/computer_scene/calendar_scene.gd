@@ -135,7 +135,7 @@ func main_while(current_time,max_time,debug_time_flag_array,debug_current_card_f
 			#region 回合结束时固定增长bug
 			
 			if !G.M.current_scene.property_manager.is_stop_bug_growth:
-				G.M.current_scene.property_manager.add_bug_amount(G.P.project_progress * G.P.bug_rate * 0.01)
+				G.M.current_scene.property_manager.add_bug_amount(G.P.project_progress * G.P.bug_rate * 0.01 * 0.5)
 				var project_stage_correction = ceil(G.P.project_progress / 20)
 				var bug_rate_correction = ceil(G.P.project_progress / G.P.skill_amount) * project_stage_correction 
 				G.M.current_scene.property_manager.add_bug_rate(bug_rate_correction)
