@@ -50,7 +50,6 @@ func _on_open_browser_button_up() -> void:
 		_is_browser_first_open = false
 		G.D.display_dialogue_segment("wan_jia_chu_ci_da_kai_liu_lan_qi")
 		
-
 #endregion
 
 #region 日历
@@ -63,6 +62,7 @@ func _on_open_calendar_button_up() -> void:
 	calender_anim.play("button_up")
 	calender_self_anim.play("open")
 	computer_scene.calendar_scene.is_open = true
+	G.D.display_sentence("接下来干点啥好呢")
 	#computer_scene.calendar_scene.visible = true #这里需要优化一下
 
 #endregion

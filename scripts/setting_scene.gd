@@ -6,6 +6,7 @@ var global_effect_manager : Node
 @export var sound_scroll_bar : HScrollBar
 @export var music_check_button : CheckButton
 @export var sound_check_button : CheckButton
+@onready var full_screen_check_button: CheckButton = $Screen/ScreenDetail/FullScreenCheckButton
 
 
 # 读取目前内存的设置状态，以修正初始显示
@@ -14,6 +15,7 @@ func _read_global_effect_manager() -> void:
 	sound_scroll_bar.value = global_effect_manager.sound_manager.global_volume * 100
 	music_check_button.set_pressed_no_signal(global_effect_manager.music_manager.has_music)
 	sound_check_button.set_pressed_no_signal(global_effect_manager.sound_manager.has_sound)
+	full_screen_check_button.set_pressed_no_signal(global_effect_manager.screen_manager.is_full_screen)
 	
 func _ready() -> void:
 	global_effect_manager = G.M.global_effect_manager
@@ -35,16 +37,13 @@ func write_settings():
 	G.write_setting_data("sound_volume",sound_scroll_bar.value / 100)
 	G.write_setting_data("has_music",music_check_button.button_pressed)
 	G.write_setting_data("has_sound",sound_check_button.button_pressed)
-	
+	G.write_setting_data("is_full_screen",full_screen_check_button.button_pressed)
+
 #endregion
 
 
 func _on_full_screen_check_button_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-	else:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-		
+	global_effect_manager.screen_manager.is_full_screen = toggled_on
 
 func _on_close_texture_gui_input(event: InputEvent) -> void:
 	if event.is_action_released("LeftMouseDown"):

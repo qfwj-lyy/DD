@@ -52,6 +52,7 @@ func _on_gui_input(event: InputEvent) -> void:
 				G.D.display_sentence("员工数量达到上限啦！")
 				return
 			if property.use_money(joining_expenditure):
+				G.D.display_sentence("面相这么好，技术肯定不会差")
 				G.M.current_scene.company_scene.get_staff(self)
 				condition = Condition.at_company
 				execute()
@@ -64,7 +65,7 @@ func _on_gui_input(event: InputEvent) -> void:
 			G.M.current_scene.company_scene.select_employee(self)
 
 func be_fired():
-	G.M.current_scene.property_manager.add_money( - severance_pay)
+	G.P.add_money( - severance_pay)
 	for buff : Buff in self_buffs:
 		if is_instance_valid(buff):
 			buff.die()

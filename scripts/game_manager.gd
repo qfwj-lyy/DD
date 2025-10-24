@@ -4,6 +4,7 @@ class_name GameManager
 @onready var global_effect_manager: Node = $GlobalEffectManager
 @onready var music_manager: Node = $GlobalEffectManager/MusicManager
 @onready var sound_manager: Node = $GlobalEffectManager/SoundManager
+@onready var screen_manager: Node = $GlobalEffectManager/ScreenManager
 
 
 var previous_scene
@@ -16,20 +17,21 @@ func inspect_data_file() -> void:
 		"has_music" : true ,
 		"has_sound" : true ,
 		"music_volume" : 0.3 , 
-		"sound_volume" : 0.3  
+		"sound_volume" : 0.3 ,
+		"is_full_screen" : true
 	}
 	# 首先确保文件存在，不存在则手动生成
 	var file = FileAccess.open(G.SETTINGS_PATH,FileAccess.READ)
-	if not file:
-		file = FileAccess.open(G.SETTINGS_PATH,FileAccess.WRITE)
-		var string = JSON.stringify(standard_data_dictionary)
-		file.store_string(string)
-		file.close()
+	
+	file = FileAccess.open(G.SETTINGS_PATH,FileAccess.WRITE)
+	var string = JSON.stringify(standard_data_dictionary)
+	file.store_string(string)
+	file.close()
 	# 有文件存在，则检查参数是否存在
-	for key in standard_data_dictionary:
-		if G.read_setting_data(key) == null:
-			printerr("设置数据文件损坏，自动修复1项")
-			G.write_setting_data(key , standard_data_dictionary[key])
+	#for key in standard_data_dictionary:
+		#if G.read_setting_data(key) == null:
+			#printerr("设置数据文件损坏，自动修复1项")
+			#G.write_setting_data(key , standard_data_dictionary[key])
 	
 # 读取文件并将内存数据初始化
 func read_data_file_and_initialize() -> void:
@@ -37,6 +39,7 @@ func read_data_file_and_initialize() -> void:
 	sound_manager.global_volume = G.read_setting_data("sound_volume")
 	music_manager.has_music = G.read_setting_data("has_music")
 	sound_manager.has_sound = G.read_setting_data("has_sound")
+	screen_manager.is_full_screen = G.read_setting_data("is_full_screen")
 	
 # 递归处理所有节点
 func scale_all_nodes(node: Node):

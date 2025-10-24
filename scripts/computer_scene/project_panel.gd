@@ -1,5 +1,6 @@
 extends Panel
 
+
 func _ready() -> void:
 	var p = load("res://data/projects/quan_min_da_fei_ji_you_xi_kai_fa.tres")
 	set_mandatory_project(p)

@@ -1,10 +1,11 @@
-[gd_scene load_steps=37 format=3 uid="uid://bd03o2lio4k6m"]
+[gd_scene load_steps=38 format=3 uid="uid://bd03o2lio4k6m"]
 
 [ext_resource type="Script" uid="uid://dt8os701xe3xf" path="res://scripts/game_manager.gd" id="1_oo155"]
 [ext_resource type="Script" uid="uid://dpd0wkimog5pm" path="res://scripts/global_effect_manager/global_effect_manager.gd" id="2_eaq8r"]
 [ext_resource type="Script" uid="uid://8752cp1jpjry" path="res://scripts/global_effect_manager/music_manager.gd" id="3_ternb"]
 [ext_resource type="Script" uid="uid://dxorshs2ji7b3" path="res://scripts/global_effect_manager/sound_manager.gd" id="4_q8mjp"]
 [ext_resource type="Script" uid="uid://dftjfdxfckpq4" path="res://scripts/main_menu/main_menu.gd" id="5_eaq8r"]
+[ext_resource type="Script" uid="uid://cdyxcu0weebeo" path="res://scripts/global_effect_manager/screen_manager.gd" id="5_pc0jn"]
 [ext_resource type="Texture2D" uid="uid://td7noav2d2ej" path="res://assets/computer_scene/Administrator_background.png" id="6_8ldib"]
 [ext_resource type="Texture2D" uid="uid://nx4unpp8nprg" path="res://assets/computer_scene/character_head_400x400.png" id="7_kvitc"]
 [ext_resource type="Texture2D" uid="uid://bbvg7lu78tosc" path="res://assets/computer_scene/log_in_207x107.png" id="8_hqtnj"]
@@ -368,6 +369,9 @@ script = ExtResource("3_ternb")
 
 [node name="SoundManager" type="Node" parent="GlobalEffectManager"]
 script = ExtResource("4_q8mjp")
+
+[node name="ScreenManager" type="Node" parent="GlobalEffectManager"]
+script = ExtResource("5_pc0jn")
 
 [node name="MainMenu" type="Control" parent="."]
 layout_mode = 3

@@ -23,7 +23,9 @@ func write_setting_data(setting : String, condition) -> void:
 	var dictionary_datas = JSON.parse_string(string)
 	
 	if not dictionary_datas:
-		printerr("读取文件损坏！error in G")
+		printerr("数据文件损坏! error in G")
+		print("尝试自动修复")
+		M.inspect_data_file()
 		return
 	dictionary_datas[setting] = condition
 	string = JSON.stringify(dictionary_datas)
@@ -39,10 +41,17 @@ func read_setting_data(setting : String):
 
 	if dictionary_datas == null:
 		printerr("数据文件损坏! error in G")
+		print("尝试自动修复")
+		M.inspect_data_file()
+		
+		
 		return null
 	if dictionary_datas.has(setting):
 		return dictionary_datas[setting]
 	else:
 		printerr("数据文件损坏! error in G")
+		print("尝试自动修复")
+		M.inspect_data_file()
+		
 		return null
 #endregion
