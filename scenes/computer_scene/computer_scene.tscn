@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=3 uid="uid://ei0t0movgv01"]
+[gd_scene load_steps=113 format=3 uid="uid://ei0t0movgv01"]
 
 [ext_resource type="Script" uid="uid://cyxxmhvja0apb" path="res://scripts/computer_scene/computer_scene.gd" id="1_8g14y"]
 [ext_resource type="Texture2D" uid="uid://by5p2m3k3u3yo" path="res://assets/computer_scene/desktop_background.png" id="2_rw1u3"]
@@ -21,9 +21,15 @@
 [ext_resource type="Script" uid="uid://k1rp05w660ru" path="res://scripts/animation/open_company.gd" id="14_en0pa"]
 [ext_resource type="Script" uid="uid://bx0dkmbs57kpc" path="res://scripts/computer_scene/supplier_icon.gd" id="15_kbgpp"]
 [ext_resource type="Script" uid="uid://bgfw7mjp2unqo" path="res://scripts/computer_scene/supplier_project.gd" id="16_d88ux"]
+[ext_resource type="Texture2D" uid="uid://c31k0pwy6oaic" path="res://assets/computer_scene/back_ground.png" id="16_t7krb"]
+[ext_resource type="Texture2D" uid="uid://65xu0h7rq8ti" path="res://assets/computer_scene/162x258store_card.png" id="17_5yyiv"]
 [ext_resource type="Script" uid="uid://onqn7vb0nepd" path="res://scripts/computer_scene/calendar_scene.gd" id="17_br20j"]
 [ext_resource type="Script" uid="uid://do0jk8ds61vr8" path="res://scripts/computer_scene/company_scene.gd" id="18_j4xds"]
+[ext_resource type="Texture2D" uid="uid://wnbdycj8uwhl" path="res://assets/computer_scene/763x199card_description.png" id="18_kbgpp"]
+[ext_resource type="Texture2D" uid="uid://dshtuducfgqdi" path="res://assets/computer_scene/70x70refresh_icon.png" id="19_br20j"]
 [ext_resource type="Texture2D" uid="uid://u3xflh36m6g6" path="res://assets/computer_scene/organization_background.png" id="19_ggfum"]
+[ext_resource type="Texture2D" uid="uid://c52u3kaoqh0fu" path="res://assets/computer_scene/165x88refresh.png" id="19_j4xds"]
+[ext_resource type="Texture2D" uid="uid://d2r6ukgmdob80" path="res://assets/computer_scene/72x72refresh_time.png" id="20_j4xds"]
 [ext_resource type="Texture2D" uid="uid://cis0mhn2goxuh" path="res://assets/computer_scene/refresh_employee_111x60.png" id="20_onm7m"]
 [ext_resource type="Texture2D" uid="uid://cpjpgw6ctfnai" path="res://assets/computer_scene/fire_107x56.png" id="21_ftseh"]
 [ext_resource type="Texture2D" uid="uid://bk284atb01e0a" path="res://assets/computer_scene/600x150Border.png" id="22_bv4nm"]
@@ -1514,7 +1520,6 @@ grow_vertical = 2
 texture = ExtResource("5_rw1u3")
 
 [node name="StoreScene" type="Control" parent="." node_paths=PackedStringArray("store_cards")]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_top = 1000.0
@@ -1525,6 +1530,7 @@ script = ExtResource("10_yw0uv")
 store_cards = NodePath("StoreCards")
 
 [node name="StoreBackGround" type="Panel" parent="StoreScene"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1533,7 +1539,18 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
+[node name="BackGroundRect" type="TextureRect" parent="StoreScene/StoreBackGround"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_t7krb")
+expand_mode = 1
+
 [node name="Card1" type="Panel" parent="StoreScene/StoreBackGround"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 40.0
 offset_top = 40.0
@@ -1541,7 +1558,18 @@ offset_right = 190.0
 offset_bottom = 290.0
 mouse_filter = 1
 
+[node name="CardBackGround" type="TextureRect" parent="StoreScene/StoreBackGround/Card1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_5yyiv")
+expand_mode = 1
+
 [node name="Card2" type="Panel" parent="StoreScene/StoreBackGround"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 230.0
 offset_top = 40.0
@@ -1549,7 +1577,18 @@ offset_right = 380.0
 offset_bottom = 290.0
 mouse_filter = 1
 
+[node name="CardBackGround" type="TextureRect" parent="StoreScene/StoreBackGround/Card2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_5yyiv")
+expand_mode = 1
+
 [node name="Card3" type="Panel" parent="StoreScene/StoreBackGround"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 420.0
 offset_top = 40.0
@@ -1557,7 +1596,18 @@ offset_right = 570.0
 offset_bottom = 290.0
 mouse_filter = 1
 
+[node name="CardBackGround" type="TextureRect" parent="StoreScene/StoreBackGround/Card3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_5yyiv")
+expand_mode = 1
+
 [node name="Card4" type="Panel" parent="StoreScene/StoreBackGround"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 610.0
 offset_top = 40.0
@@ -1565,7 +1615,18 @@ offset_right = 760.0
 offset_bottom = 290.0
 mouse_filter = 1
 
+[node name="CardBackGround" type="TextureRect" parent="StoreScene/StoreBackGround/Card4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_5yyiv")
+expand_mode = 1
+
 [node name="Card5" type="Panel" parent="StoreScene/StoreBackGround"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 800.0
 offset_top = 40.0
@@ -1573,7 +1634,18 @@ offset_right = 950.0
 offset_bottom = 290.0
 mouse_filter = 1
 
+[node name="CardBackGround" type="TextureRect" parent="StoreScene/StoreBackGround/Card5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_5yyiv")
+expand_mode = 1
+
 [node name="Description" type="Panel" parent="StoreScene"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 40.0
 offset_top = 345.0
@@ -1581,7 +1653,18 @@ offset_right = 790.0
 offset_bottom = 545.0
 mouse_filter = 1
 
+[node name="DescriptionBackground" type="TextureRect" parent="StoreScene/Description"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("18_kbgpp")
+expand_mode = 1
+
 [node name="RefreshCards" type="Button" parent="StoreScene"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 820.0
 offset_top = 445.0
@@ -1596,7 +1679,29 @@ libraries = {
 &"": SubResource("AnimationLibrary_kbgpp")
 }
 
+[node name="RefreshButtonRect" type="TextureRect" parent="StoreScene/RefreshCards"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_j4xds")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="StoreScene/RefreshCards"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "刷新"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="RefreshIcon" type="Panel" parent="StoreScene"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 820.0
 offset_top = 370.0
@@ -1604,13 +1709,34 @@ offset_right = 870.0
 offset_bottom = 420.0
 mouse_filter = 1
 
+[node name="RefreshIconRect" type="TextureRect" parent="StoreScene/RefreshIcon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_br20j")
+expand_mode = 1
+
 [node name="RefreshTime" type="Panel" parent="StoreScene"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 900.0
 offset_top = 370.0
 offset_right = 950.0
 offset_bottom = 420.0
 mouse_filter = 1
+
+[node name="RefreshTimeBackground" type="TextureRect" parent="StoreScene/RefreshTime"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20_j4xds")
+expand_mode = 1
 
 [node name="StoreCards" type="Control" parent="StoreScene"]
 anchors_preset = 0

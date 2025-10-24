@@ -36,17 +36,21 @@ func execute():
 func execute_effect():
 	pass
 
+@onready var border: TextureRect = $Border
 
 #region 测试用
 @onready var label: Label = $Label
 func _ready() -> void:
 	label.text = description
+	border.visible = false
 #endregion
 
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("LeftMouseDown"):
 		if condition == Condition.at_store:
+			print("点击到商店里的应聘者")
+			
 			if G.M.current_scene.company_scene.current_staff_amount >= G.M.current_scene.company_scene.staff_amount_limit:
 				G.play_sound("illegal_operation")
 				G.D.display_sentence("员工数量达到上限啦！")
@@ -63,6 +67,10 @@ func _on_gui_input(event: InputEvent) -> void:
 				
 		elif condition == Condition.at_company:
 			G.M.current_scene.company_scene.select_employee(self)
+			animation_player.play("down")
+			if chosen_employee and chosen_employee != self:
+				chosen_employee.animation_player.play("back")
+			chosen_employee = self
 
 func be_fired():
 	G.P.add_money( - severance_pay)
@@ -70,3 +78,15 @@ func be_fired():
 		if is_instance_valid(buff):
 			buff.die()
 	queue_free()
+
+static var chosen_employee : Employee
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+func _on_mouse_entered() -> void:
+	if chosen_employee != self :
+		animation_player.play("hover")
+
+
+func _on_mouse_exited() -> void:
+	if chosen_employee != self :
+		animation_player.play("hover_over_without_chosen")
