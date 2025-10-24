@@ -33,8 +33,6 @@ func _ready() -> void:
 	card.condition = Card.Condition.at_unused_hand
 	unused_hand.add_child(card)
 	
-	await get_tree().create_timer(0.2).timeout
-	unused_hand.reset_all_position()
 	
 	G.D.display_sentence("我应该去网上接个项目做...浏览器在哪里来着？")
 

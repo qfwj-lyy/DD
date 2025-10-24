@@ -1,6 +1,7 @@
-[gd_scene load_steps=38 format=3 uid="uid://bd03o2lio4k6m"]
+[gd_scene load_steps=39 format=3 uid="uid://bd03o2lio4k6m"]
 
 [ext_resource type="Script" uid="uid://dt8os701xe3xf" path="res://scripts/game_manager.gd" id="1_oo155"]
+[ext_resource type="Script" uid="uid://4675l7n8wrsf" path="res://scripts/test_mode_scene.gd" id="2_c7a3q"]
 [ext_resource type="Script" uid="uid://dpd0wkimog5pm" path="res://scripts/global_effect_manager/global_effect_manager.gd" id="2_eaq8r"]
 [ext_resource type="Script" uid="uid://8752cp1jpjry" path="res://scripts/global_effect_manager/music_manager.gd" id="3_ternb"]
 [ext_resource type="Script" uid="uid://dxorshs2ji7b3" path="res://scripts/global_effect_manager/sound_manager.gd" id="4_q8mjp"]
@@ -361,6 +362,35 @@ _data = {
 [node name="GameManager" type="Node"]
 script = ExtResource("1_oo155")
 
+[node name="TestModeScene" type="Panel" parent="."]
+offset_left = 753.0
+offset_top = 470.0
+offset_right = 1721.0
+offset_bottom = 1142.0
+script = ExtResource("2_c7a3q")
+
+[node name="ParameterEdit" type="TextEdit" parent="TestModeScene"]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 182.0
+offset_right = 918.0
+offset_bottom = 463.0
+
+[node name="CommandEdit" type="TextEdit" parent="TestModeScene"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 150.0
+offset_right = 447.0
+offset_bottom = 472.0
+
+[node name="ExecuteButton" type="Button" parent="TestModeScene"]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 531.0
+offset_right = 537.0
+offset_bottom = 584.0
+text = "执行"
+
 [node name="GlobalEffectManager" type="Node" parent="."]
 script = ExtResource("2_eaq8r")
 
@@ -374,6 +404,7 @@ script = ExtResource("4_q8mjp")
 script = ExtResource("5_pc0jn")
 
 [node name="MainMenu" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 1
@@ -584,6 +615,9 @@ vertical_alignment = 1
 position = Vector2(1280, 800)
 zoom = Vector2(1.2, 1.2)
 
+[connection signal="text_changed" from="TestModeScene/ParameterEdit" to="TestModeScene" method="_on_parameter_edit_text_changed"]
+[connection signal="text_changed" from="TestModeScene/CommandEdit" to="TestModeScene" method="_on_command_edit_text_changed"]
+[connection signal="pressed" from="TestModeScene/ExecuteButton" to="TestModeScene" method="_on_execute_button_pressed"]
 [connection signal="button_down" from="MainMenu/OpenSetting" to="MainMenu" method="_on_open_setting_button_down"]
 [connection signal="button_up" from="MainMenu/OpenSetting" to="MainMenu" method="_on_open_setting_button_up"]
 [connection signal="mouse_entered" from="MainMenu/OpenSetting" to="MainMenu/OpenSetting" method="_on_mouse_entered"]

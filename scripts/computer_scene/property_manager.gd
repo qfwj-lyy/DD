@@ -9,7 +9,10 @@ var project_progress : float:
 		project_progress = i
 		project_progress_bar.value = i
 		if i >= 100.0:
-			deliver_project_button.visible = true
+			if current_project:
+				deliver_project_button.visible = true
+			else:
+				deliver_project_button.visible = false
 		else:
 			deliver_project_button.visible = false
 var bug_amount : float:
@@ -126,7 +129,6 @@ func add_project_progress(n):
 func add_bug_amount(n):
 	pass
 	pass
-	print("add",n)
 	bug_amount += n
 	
 func add_bug_rate(n):
@@ -173,7 +175,6 @@ func set_bug_amount(n):
 	pass
 	pass
 	bug_amount = n
-	print("set",n)
 func set_current_project(p : Project):
 	current_project = p
 	
@@ -225,6 +226,7 @@ func _on_deliver_project_button_pressed() -> void:
 		G.play_sound("illegal_operation")
 		G.D.display_sentence("项目未完成无法提交")
 		return
+	G.play_sound("win_4_piano")
 	for buff in buff_manager.each_project_delivery.get_children():
 		buff.execute()
 	var buffs = buff_manager.get_all_buffs()
@@ -236,6 +238,7 @@ func _on_deliver_project_button_pressed() -> void:
 	clear()
 
 func project_fail():
+	G.play_sound("close_computer")
 	for buff in buff_manager.each_project_delivery.get_children():
 		buff.execute()
 	var buffs = buff_manager.get_all_buffs()

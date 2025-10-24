@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_u25i4")
-project_name = "《全面打飞机》游戏开发"
+project_name = "《全民打飞机》游戏开发"
 initial_progress = 60.0
 initial_bug_amount = 10.0
 bug_amount_limit = 250.0

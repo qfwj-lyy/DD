@@ -63,8 +63,9 @@ func initialize() -> void:
 	await get_tree().create_timer(1).timeout
 	var music = play_music("b")
 	music.volume_linear = 0
-	for i in 300:
+	for i in 350:
 		await get_tree().create_timer(0.01).timeout
-		music.volume_linear = (1.0 / 299 * i) * global_volume
+		if has_music:
+			music.volume_linear = (1.0 / 349 * i) * global_volume
 	random_music_player()
-	pass
+	

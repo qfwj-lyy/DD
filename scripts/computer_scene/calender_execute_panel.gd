@@ -10,11 +10,10 @@ func _ready() -> void:
 
 func _on_child_entered_tree(node: Node) -> void:
 	card_count += 1
-	if card_width * card_count > self_width:
-		call_deferred("reset_all_position")
+	if card_width * card_count >= self_width:
+		reset_all_position()
 	else:
-		call_deferred("reset_card_position",node)
-
+		reset_card_position(node)
 
 func _on_child_exiting_tree(node: Node) -> void:
 	card_count -= 1

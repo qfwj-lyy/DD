@@ -78,10 +78,10 @@ func _ready() -> void:
 	G.M = self
 	inspect_data_file()
 	read_data_file_and_initialize()
+	G.play_sound("open_computer")
+	
 	music_manager.initialize()
 	
-	
-	G.play_sound("open_computer")
 	#var root_node = get_tree().root.get_child(1)
 	#scale_all_nodes(root_node)
 	#print("所有节点已按2倍比例缩放")
