@@ -5,9 +5,11 @@
 [node name="ProjectDetailScene" type="Control" node_paths=PackedStringArray("project_name_label", "initial_progress_label", "initial_bug_amount_label", "bug_amount_limit_label", "initial_money_label", "initial_mood_label", "initial_skill_label", "description_label")]
 custom_minimum_size = Vector2(980, 360)
 layout_mode = 3
-anchors_preset = 0
-offset_right = 980.0
-offset_bottom = 359.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_rvwmx")
 project_name_label = NodePath("ProjectButton/ProjectNameLabel")
 initial_progress_label = NodePath("ProjectButton/InitialProgressLabel")
@@ -23,6 +25,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 861.0
+offset_top = 531.0
+offset_right = -733.0
+offset_bottom = -545.0
 grow_horizontal = 2
 grow_vertical = 2
 

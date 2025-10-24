@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=3 uid="uid://ei0t0movgv01"]
+[gd_scene load_steps=114 format=3 uid="uid://ei0t0movgv01"]
 
 [ext_resource type="Script" uid="uid://cyxxmhvja0apb" path="res://scripts/computer_scene/computer_scene.gd" id="1_8g14y"]
 [ext_resource type="Texture2D" uid="uid://by5p2m3k3u3yo" path="res://assets/computer_scene/desktop_background.png" id="2_rw1u3"]
@@ -2891,7 +2891,7 @@ offset_right = 950.0
 offset_bottom = 755.0
 mouse_filter = 1
 
-[node name="Label" type="Label" parent="CompanyScene/CompanyDescription"]
+[node name="CompanyDescriptionLabel" type="Label" parent="CompanyScene/CompanyDescription"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

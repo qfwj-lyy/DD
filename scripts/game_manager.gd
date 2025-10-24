@@ -22,17 +22,23 @@ func inspect_data_file() -> void:
 	}
 	# 首先确保文件存在，不存在则手动生成
 	var file = FileAccess.open(G.SETTINGS_PATH,FileAccess.READ)
-	
-	file = FileAccess.open(G.SETTINGS_PATH,FileAccess.WRITE)
-	var string = JSON.stringify(standard_data_dictionary)
-	file.store_string(string)
-	file.close()
-	# 有文件存在，则检查参数是否存在
-	#for key in standard_data_dictionary:
-		#if G.read_setting_data(key) == null:
-			#printerr("设置数据文件损坏，自动修复1项")
-			#G.write_setting_data(key , standard_data_dictionary[key])
-	
+	if not file:
+		file = FileAccess.open(G.SETTINGS_PATH,FileAccess.WRITE)
+		var string = JSON.stringify(standard_data_dictionary)
+		file.store_string(string)
+		file.close()
+		print("data文件缺失，已初始化data文件")
+		return
+	# 有文件存在，则检查参数是否存在，不存在就初始化文件
+	for key in standard_data_dictionary:
+		if G.read_setting_data(key) == null:
+			file = FileAccess.open(G.SETTINGS_PATH,FileAccess.WRITE)
+			var string = JSON.stringify(standard_data_dictionary)
+			file.store_string(string)
+			file.close()
+			print("data文件损坏，已经强制初始化data文件")
+			return
+		
 # 读取文件并将内存数据初始化
 func read_data_file_and_initialize() -> void:
 	music_manager.global_volume = G.read_setting_data("music_volume")

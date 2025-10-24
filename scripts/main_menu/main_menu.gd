@@ -26,6 +26,8 @@ func _on_begin_game_button_down() -> void:
 
 func _on_begin_game_button_up() -> void:
 	begin_game_anim.play("button_up")
+	if G.M.has_node("SettingScene"):
+		G.M.get_node("SettingScene").close()
 	var computer_scene = load("res://scenes/computer_scene/computer_scene.tscn").instantiate()
 	G.M.change_main_scene(computer_scene , true , true , true)
 

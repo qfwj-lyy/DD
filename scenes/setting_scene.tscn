@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cvwyejayox0q1" path="res://assets/computer_scene/administrator_45x45.png" id="7_8ks4o"]
 [ext_resource type="Texture2D" uid="uid://hvrred57t74d" path="res://assets/computer_scene/close_56x57.png" id="8_30yl2"]
 
-[node name="SettingsScene" type="CanvasLayer" node_paths=PackedStringArray("music_scroll_bar", "sound_scroll_bar", "music_check_button", "sound_check_button")]
+[node name="SettingScene" type="CanvasLayer" node_paths=PackedStringArray("music_scroll_bar", "sound_scroll_bar", "music_check_button", "sound_check_button")]
 script = ExtResource("1_hlosk")
 music_scroll_bar = NodePath("Audio/AudioDetail/MusicScrollBar")
 sound_scroll_bar = NodePath("Audio/AudioDetail/SoundScrollBar")

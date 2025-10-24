@@ -62,6 +62,9 @@ func display_dialogue_segment(ds_name : String):
 	display_next_scene()
 
 func display_sentence(s : String):
+	if typer and typer.is_running():
+		typer.kill()
+		G.kill_sound("typing")
 	var d_segment = DialogueSegment.new()
 	var d_scene = DialogueScene.new()
 	d_scene.text = s

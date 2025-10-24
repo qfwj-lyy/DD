@@ -5,10 +5,18 @@
 [sub_resource type="GDScript" id="GDScript_d84jm"]
 script/source = "extends Buff
 
+
+func _ready() -> void:
+	connect(\"reparented_to_buff_manager\",display_sentence)
+func display_sentence():
+	G.D.display_sentence(\"心情值突破20，获得心情20buff：增加1手牌上限\")
+	
+	
 func execute():
 	G.P.add_hand_card_amount_limit(1)
 	
 func die():
+	G.D.display_sentence(\"失去心情20buff：增加1手牌上限\")
 	G.P.add_hand_card_amount_limit(-1)
 	reparent(G.P.mood_buffs)
 	G.P.mood_buffs.mood_20_buff = self
@@ -17,10 +25,16 @@ func die():
 [sub_resource type="GDScript" id="GDScript_t7krb"]
 script/source = "extends Buff
 
+func _ready() -> void:
+	connect(\"reparented_to_buff_manager\",display_sentence)
+func display_sentence():
+	G.D.display_sentence(\"心情值突破50，获得心情50buff：增加2手牌上限\")
+	
 func execute():
 	G.P.add_hand_card_amount_limit(2)
-	
+
 func die():
+	G.D.display_sentence(\"失去心情50buff：增加2手牌上限\")
 	G.P.add_hand_card_amount_limit(-2)
 	reparent(G.P.mood_buffs)
 	G.P.mood_buffs.mood_50_buff = self
@@ -29,10 +43,16 @@ func die():
 [sub_resource type="GDScript" id="GDScript_kbgpp"]
 script/source = "extends Buff
 
+func _ready() -> void:
+	connect(\"reparented_to_buff_manager\",display_sentence)
+func display_sentence():
+	G.D.display_sentence(\"心情值突破60，获得心情60buff：商店可以刷出稀有卡片\")
+	
 func execute():
 	G.M.current_scene.store_scene.can_get_ai_and_party = true
-	
+
 func die():
+	G.D.display_sentence(\"失去心情60buff：商店可以刷出稀有卡片\")
 	G.M.current_scene.store_scene.can_get_ai_and_party = false
 	reparent(G.P.mood_buffs)
 	G.P.mood_buffs.mood_60_buff = self
@@ -41,10 +61,16 @@ func die():
 [sub_resource type="GDScript" id="GDScript_5yyiv"]
 script/source = "extends Buff
 
+func _ready() -> void:
+	connect(\"reparented_to_buff_manager\",display_sentence)
+func display_sentence():
+	G.D.display_sentence(\"心情值突破90，获得心情90buff：bug数每单位时间-1\")
+	
 func execute():
 	G.P.add_bug_amount(-1)
-	
+
 func die():
+	G.D.display_sentence(\"失去心情90buff：bug数每单位时间-1\")
 	reparent(G.P.mood_buffs)
 	G.P.mood_buffs.mood_90_buff = self
 "
@@ -52,7 +78,13 @@ func die():
 [sub_resource type="GDScript" id="GDScript_d88ux"]
 script/source = "extends PropertyBuff
 
+func _ready() -> void:
+	connect(\"reparented_to_buff_manager\",display_sentence)
+func display_sentence():
+	G.D.display_sentence(\"心情值突破100，获得心情100buff：项目进度每回合+3\")
+	
 func die():
+	G.D.display_sentence(\"失去心情100buff：项目进度每回合+3\")
 	reparent(G.P.mood_buffs)
 	G.P.mood_buffs.mood_100_buff = self
 "
@@ -75,12 +107,14 @@ metadata/_custom_type_script = "uid://dwhc1hbrg4em"
 [node name="Mood60Buff" type="Node" parent="."]
 script = SubResource("GDScript_kbgpp")
 duration = -8
+description = "心情60buff：商店可以刷出稀有卡片"
 metadata/_custom_type_script = "uid://dwhc1hbrg4em"
 
 [node name="Mood90Buff" type="Node" parent="."]
 script = SubResource("GDScript_5yyiv")
 duration = -8
 execution_time = 3
+description = "心情90buff：bug数每单位时间-1"
 metadata/_custom_type_script = "uid://dwhc1hbrg4em"
 
 [node name="Mood100Buff" type="Node" parent="."]
@@ -88,4 +122,5 @@ script = SubResource("GDScript_d88ux")
 project_progress = 3
 duration = -8
 execution_time = 2
+description = "心情100buff：项目进度每回合+3"
 metadata/_custom_type_script = "uid://cb260f8732kag"

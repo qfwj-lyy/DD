@@ -45,7 +45,12 @@ func write_settings():
 func _on_full_screen_check_button_toggled(toggled_on: bool) -> void:
 	global_effect_manager.screen_manager.is_full_screen = toggled_on
 
+
+func close():
+	if G.M.has_node("ComputerScene"):
+		G.D.display_sentence("已经保存设置")
+	write_settings()
+	queue_free()
 func _on_close_texture_gui_input(event: InputEvent) -> void:
 	if event.is_action_released("LeftMouseDown"):
-		write_settings()
-		queue_free()
+		close()

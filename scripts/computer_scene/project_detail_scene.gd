@@ -12,10 +12,7 @@ var displayed_project
 
 var property_manager = G.M.current_scene.property_manager
 
-signal click_project(p)
 
-func _ready() -> void:
-	connect("click_project" , G.M.current_scene.choose_project )
 
 func set_project_information(project : Project):
 	displayed_project = project
@@ -29,4 +26,27 @@ func set_project_information(project : Project):
 	description_label.text = project.description
 
 func _on_project_button_pressed() -> void:
-	emit_signal("click_project" , self)
+	choose_project()
+
+func choose_project():
+	if G.P.current_project:
+		printerr("in project_detail_scene choose_project()")
+		return
+	
+	var p : Project = displayed_project
+	G.P.set_current_project(p)
+	G.P.set_money(p.initial_money)
+	G.P.set_mood(p.initial_mood)
+	G.P.set_skill(p.initial_skill)
+	G.P.set_project_progress(p.initial_progress)
+	G.P.set_bug_amount(p.initial_bug_amount)
+	G.P.set_bug_limit(p.bug_amount_limit)
+	G.P.set_bug_rate(p.initial_bug_rate)
+	
+	G.D.display_sentence("接下来就是把项目进度推到100了，好好干，以后年薪百万不是梦啊")
+	for buff_resource in p.initial_buffs:
+		var buff_node = buff_resource.instantiate()
+		add_child(buff_node)
+		buff_node.reparent_to_buff_manager()
+		
+	queue_free()

@@ -29,6 +29,10 @@ func _on_button_up():
 	open_project_detail()
 
 func open_project_detail():
+	if G.P.current_project:
+		G.play_sound("illegal_operation")
+		G.D.display_sentence("我还是不要同时做多个项目吧")
+		return
 	var project_detail_scene = load("res://scenes/computer_scene/browser_scene/project_detail_scene.tscn").instantiate()
 	project_detail_scene.set_project_information(project)
 	G.M.current_scene.add_child(project_detail_scene)

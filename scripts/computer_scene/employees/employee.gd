@@ -45,26 +45,27 @@ func _ready() -> void:
 	border.visible = false
 #endregion
 
-
+var last_click_time : int
 func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("LeftMouseDown"):
 		if condition == Condition.at_store:
-			print("点击到商店里的应聘者")
-			
-			if G.M.current_scene.company_scene.current_staff_amount >= G.M.current_scene.company_scene.staff_amount_limit:
-				G.play_sound("illegal_operation")
-				G.D.display_sentence("员工数量达到上限啦！")
-				return
-			if property.use_money(joining_expenditure):
-				G.D.display_sentence("面相这么好，技术肯定不会差")
-				G.M.current_scene.company_scene.get_staff(self)
-				condition = Condition.at_company
-				execute()
+			if Time.get_ticks_msec() - last_click_time <= 300:
+				if G.M.current_scene.company_scene.current_staff_amount >= G.M.current_scene.company_scene.staff_amount_limit:
+					G.play_sound("illegal_operation")
+					G.D.display_sentence("员工数量达到上限啦！")
+					return
+				if property.use_money(joining_expenditure):
+					G.D.display_sentence("面相这么好，技术肯定不会差")
+					G.M.current_scene.company_scene.get_staff(self)
+					condition = Condition.at_company
+					execute()
+				else:
+					G.play_sound("illegal_operation")
+					G.D.display_sentence("没有足够的资金招募该员工")
+					return
 			else:
-				G.play_sound("illegal_operation")
-				G.D.display_sentence("没有足够的资金招募该员工")
-				return
-				
+				G.M.current_scene.company_scene.select_employee(self)
+				last_click_time = Time.get_ticks_msec()
 		elif condition == Condition.at_company:
 			G.M.current_scene.company_scene.select_employee(self)
 			animation_player.play("down")

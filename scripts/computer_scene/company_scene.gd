@@ -7,6 +7,7 @@ var selected_employee : Employee
 var employee_content : EmployeeContent
 
 
+@onready var company_description_label: Label = $CompanyDescription/CompanyDescriptionLabel
 
 
 func _ready() -> void:
@@ -16,6 +17,7 @@ func _ready() -> void:
 	
 func select_employee(e : Employee):
 	selected_employee = e
+	company_description_label.text = e.description
 
 func get_staff(e : Employee):
 	for i in 3:
@@ -128,6 +130,10 @@ func _on_fire_staff_button_down() -> void:
 func _on_fire_staff_button_up() -> void:
 	fire_anim.play("button_up")
 	if selected_employee:
+		if selected_employee.condition == Employee.Condition.at_store:
+			G.play_sound("illegal_operation")
+			G.D.display_sentence("不能开除还没有入职的员工")
+			return
 		if G.P.money_amount >= selected_employee.severance_pay:
 			selected_employee.be_fired()
 			current_staff_amount -= 1

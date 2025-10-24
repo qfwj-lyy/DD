@@ -21,8 +21,6 @@ enum ExecutionTime {
 
 var buff_manager = G.P.buff_manager
 
-func _enter_tree() -> void:
-	pass
 	
 func time_goes_by(_time : int):
 	pass
@@ -30,6 +28,7 @@ func time_goes_by(_time : int):
 func execute():
 	pass
 
+signal reparented_to_buff_manager()
 func reparent_to_buff_manager():
 	match execution_time:
 		ExecutionTime.once:
@@ -45,7 +44,7 @@ func reparent_to_buff_manager():
 			reparent(buff_manager.each_time)
 		ExecutionTime.each_project_delivery:
 			reparent(buff_manager.each_project_delivery)
-		
+	emit_signal("reparented_to_buff_manager")
 			
 func die():
 	queue_free()
