@@ -79,5 +79,5 @@ func _on_open_company_button_up() -> void:
 	computer_scene.company_scene.visible = true
 	if _is_company_first_open:
 		_is_company_first_open = false
-		G.D.display_sentence("哎，让我来看看人才市场。现在公司刚起步，感觉应该招点不要入职金的实习生（单击人才查看详情，双击人才以招募）")
+		G.D.display_sentence("哎，让我来看看人才市场。现在公司刚起步，感觉应该招点不要入职金的实习生（双击人才以招募）")
 #endregion

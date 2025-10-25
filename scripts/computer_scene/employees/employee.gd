@@ -86,7 +86,8 @@ static var chosen_employee : Employee
 func _on_mouse_entered() -> void:
 	if chosen_employee != self :
 		animation_player.play("hover")
-
+	
+	G.M.current_scene.company_scene.show_employee_description(description)
 
 func _on_mouse_exited() -> void:
 	if chosen_employee != self :

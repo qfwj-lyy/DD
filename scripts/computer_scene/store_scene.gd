@@ -6,7 +6,7 @@ var store_content : StoreContent
 var store_card_content : Array
 @export var store_cards : Node
 var refresh_time_flag := 3
-
+@export var description_label : Node
 
 func load_card(card_name : String):
 	var path = "res://scenes/computer_scene/cards/" + card_name + ".tscn"
@@ -69,3 +69,7 @@ func _on_refresh_cards_button_up() -> void:
 	else:
 		G.play_sound("illegal_operation")
 		G.D.display_sentence("刷新商店需要3资金")
+
+func show_card_description(d : String):
+	description_label.text = d
+	

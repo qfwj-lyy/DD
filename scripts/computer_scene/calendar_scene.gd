@@ -6,6 +6,7 @@ class_name Calender
 @export var activity_hand: Node
 @export var unused_hand: Node
 @onready var buff_manager: Node = $"../PropertyManager/BuffManager"
+@export var round_tips_label: Label
 
 func _ready() -> void:
 	position.y = 1600 #这里我也不知道为什么，反正就是有个bug
@@ -234,3 +235,26 @@ func _on_calender_button_button_up() -> void:
 	elif is_open == false :
 		calender_self_anim.play("open")
 		is_open = true
+
+func clear():
+	for i in debug_hand.get_children():
+		if i is Card:
+			i.queue_free()
+	for i in activity_hand.get_children():
+		if i is Card:
+			i.queue_free()
+	for i in unused_hand.get_children():
+		if i is Card:
+			i.queue_free()
+
+func show_card_description(d : String):
+	var new_text : String = ""
+	for word in d:
+		if word == '\n':
+			new_text += "  "
+		elif word == "\r":
+			new_text += "  "
+		else:
+			new_text += word
+	round_tips_label.text = new_text
+	

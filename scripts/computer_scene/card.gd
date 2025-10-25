@@ -95,6 +95,10 @@ func _on_area_2d_mouse_entered() -> void:
 	card_anim.play("hover")
 	border.visible = true
 	
+	if condition == Condition.at_store:
+		G.M.current_scene.store_scene.show_card_description(description)
+	else:
+		G.M.current_scene.calendar_scene.show_card_description(description)
 
 func _on_area_2d_mouse_exited() -> void:
 	mouse_in = false

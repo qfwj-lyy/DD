@@ -30,3 +30,18 @@ func _on_execute_button_pressed() -> void:
 	match command:
 		"add_project_progress":
 			G.P.add_project_progress(int(parameter))
+		"add_bug_amount":
+			G.P.add_bug_amount(int(parameter))
+		"add_bug_limit":
+			G.P.add_bug_limit(int(parameter))
+		"add_bug_rate":
+			G.P.add_bug_rate(int(parameter))
+		"add_deposit_amount":
+			G.P.add_deposit_amount(int(parameter))
+		"add_hand_card_amount_limit":
+			G.P.add_hand_card_amount_limit(int(parameter))
+		"add_money":
+			G.P.add_money(int(parameter))
+		_:
+			printerr("错误！未知命令")
+			G.play_sound("illegal_operation")

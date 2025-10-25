@@ -1519,7 +1519,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_rw1u3")
 
-[node name="StoreScene" type="Control" parent="." node_paths=PackedStringArray("store_cards")]
+[node name="StoreScene" type="Control" parent="." node_paths=PackedStringArray("store_cards", "description_label")]
 layout_mode = 3
 anchors_preset = 0
 offset_top = 1000.0
@@ -1528,6 +1528,7 @@ offset_bottom = 1600.0
 mouse_filter = 1
 script = ExtResource("10_yw0uv")
 store_cards = NodePath("StoreCards")
+description_label = NodePath("Description/DescriptionLabel")
 
 [node name="StoreBackGround" type="Panel" parent="StoreScene"]
 self_modulate = Color(1, 1, 1, 0)
@@ -1662,6 +1663,15 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("18_kbgpp")
 expand_mode = 1
+
+[node name="DescriptionLabel" type="Label" parent="StoreScene/Description"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 5.0
+offset_right = 737.0
+offset_bottom = 198.0
+autowrap_mode = 3
+text_overrun_behavior = 6
 
 [node name="RefreshCards" type="Button" parent="StoreScene"]
 self_modulate = Color(1, 1, 1, 0)
@@ -2531,7 +2541,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_j4xds")
 }
 
-[node name="CalendarScene" type="Panel" parent="." node_paths=PackedStringArray("computer_scene", "debug_hand", "activity_hand", "unused_hand")]
+[node name="CalendarScene" type="Panel" parent="." node_paths=PackedStringArray("computer_scene", "debug_hand", "activity_hand", "unused_hand", "round_tips_label")]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 1060.0
 offset_top = 460.0
@@ -2544,6 +2554,7 @@ computer_scene = NodePath("..")
 debug_hand = NodePath("DebugHand")
 activity_hand = NodePath("ActivityHand")
 unused_hand = NodePath("UnusedHand")
+round_tips_label = NodePath("RoundTipsLabel")
 
 [node name="BackGround" type="Panel" parent="CalendarScene"]
 layout_mode = 0
@@ -2589,13 +2600,14 @@ libraries = {
 &"": SubResource("AnimationLibrary_l2ol0")
 }
 
-[node name="RoundTips" type="Panel" parent="CalendarScene"]
+[node name="RoundTipsLabel" type="Label" parent="CalendarScene"]
 layout_mode = 0
 offset_left = 60.0
 offset_top = 350.0
 offset_right = 560.0
 offset_bottom = 450.0
 mouse_filter = 1
+autowrap_mode = 3
 
 [node name="DebugPanel" type="Control" parent="CalendarScene"]
 anchors_preset = 0

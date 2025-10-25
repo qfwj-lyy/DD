@@ -17,7 +17,9 @@ func _ready() -> void:
 	
 func select_employee(e : Employee):
 	selected_employee = e
-	company_description_label.text = e.description
+	
+func show_employee_description(description : String):
+	company_description_label.text = description
 
 func get_staff(e : Employee):
 	for i in 3:

@@ -219,7 +219,7 @@ func clear():
 	set_mood(0)
 	set_project_progress(0)
 	set_skill(0)
-	
+	G.M.current_scene.calendar_scene.clear()
 
 func _on_deliver_project_button_pressed() -> void:
 	if project_progress < 99.99:
