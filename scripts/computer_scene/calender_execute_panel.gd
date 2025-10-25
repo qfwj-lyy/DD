@@ -15,7 +15,7 @@ func _on_child_entered_tree(node: Node) -> void:
 	else:
 		reset_card_position(node)
 
-func _on_child_exiting_tree(node: Node) -> void:
+func _on_child_exiting_tree(_node: Node) -> void:
 	card_count -= 1
 	if card_width * card_count > self_width:
 		call_deferred("reset_all_position")
