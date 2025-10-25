@@ -1,6 +1,7 @@
 extends Control
 
 var displayed_project
+var project_button
 @export var project_name_label: Node
 @export var initial_progress_label: Node
 @export var initial_bug_amount_label: Node
@@ -9,9 +10,6 @@ var displayed_project
 @export var initial_mood_label: Node
 @export var initial_skill_label: Node
 @export var description_label: Node
-
-var property_manager = G.M.current_scene.property_manager
-
 
 
 func set_project_information(project : Project):
@@ -32,6 +30,7 @@ func choose_project():
 	if G.P.current_project:
 		printerr("in project_detail_scene choose_project()")
 		return
+	project_button.clear()
 	
 	var p : Project = displayed_project
 	G.P.set_current_project(p)
@@ -49,4 +48,5 @@ func choose_project():
 		add_child(buff_node)
 		buff_node.reparent_to_buff_manager()
 		
+	
 	queue_free()

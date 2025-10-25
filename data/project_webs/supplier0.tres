@@ -3,11 +3,10 @@
 [ext_resource type="Script" uid="uid://7a2lp0yd04fg" path="res://scripts/computer_scene/resource_type/project.gd" id="1_vsdse"]
 [ext_resource type="Resource" uid="uid://cep0p7gioxyo2" path="res://data/projects/you_zhi_shui_tie.tres" id="2_6m30p"]
 [ext_resource type="Script" uid="uid://bedn2oce7kx6i" path="res://scripts/computer_scene/project_supplier.gd" id="2_muo6e"]
-[ext_resource type="Resource" uid="uid://lepcg7lbfqtl" path="res://data/projects/quan_min_da_fei_ji_you_xi_kai_fa.tres" id="3_rppll"]
 [ext_resource type="Resource" uid="uid://cec338wvnmf6a" path="res://data/projects/dai_xie_da_yi_cheng_xu_she_ji.tres" id="4_cj7tb"]
+[ext_resource type="Resource" uid="uid://xe2bp2vnh360" path="res://data/projects/ge_ren_bo_ke_wei_tuo.tres" id="5_rppll"]
 
 [resource]
 script = ExtResource("2_muo6e")
-projects = Array[ExtResource("1_vsdse")]([ExtResource("2_6m30p"), ExtResource("3_rppll"), ExtResource("4_cj7tb")])
-description = "测试用供应商"
+projects = Array[ExtResource("1_vsdse")]([ExtResource("2_6m30p"), ExtResource("4_cj7tb"), ExtResource("5_rppll")])
 metadata/_custom_type_script = "uid://bedn2oce7kx6i"

@@ -129,6 +129,7 @@ func _on_refresh_employee_button_up() -> void:
 func _on_fire_staff_button_down() -> void:
 	fire_anim.play("button_down")
 
+signal a_staff_was_dismissed(staff: Employee)
 func _on_fire_staff_button_up() -> void:
 	fire_anim.play("button_up")
 	if selected_employee:
@@ -138,6 +139,7 @@ func _on_fire_staff_button_up() -> void:
 			return
 		if G.P.money_amount >= selected_employee.severance_pay:
 			selected_employee.be_fired()
+			emit_signal("a_staff_was_dismissed")
 			current_staff_amount -= 1
 			pass
 			pass

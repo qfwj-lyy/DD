@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://durq7b2smhfjl"]
+
+[ext_resource type="PackedScene" uid="uid://cnv0vfvik148k" path="res://scenes/computer_scene/buffs/buff.tscn" id="1_kyq6x"]
+
+[sub_resource type="GDScript" id="GDScript_y2rdr"]
+script/source = "extends Buff
+
+func _enter_tree() -> void:
+	G.M.current_scene.company_scene.connect(\"a_staff_was_dismissed\" , get_wage_money)
+	
+func get_wage_money(e : Employee):
+	if e.joining_expenditure == 0:
+		G.P.add_money(e.wage)
+"
+
+[node name="WaiBaoBuffWaiBaoBuTie" instance=ExtResource("1_kyq6x")]
+script = SubResource("GDScript_y2rdr")
+description = "外包补贴：每解雇一个实习生，获得其工资数的资金"

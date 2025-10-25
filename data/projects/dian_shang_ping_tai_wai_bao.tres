@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Project" load_steps=3 format=3 uid="uid://brat6svpd1id2"]
+
+[ext_resource type="Script" uid="uid://7a2lp0yd04fg" path="res://scripts/computer_scene/resource_type/project.gd" id="1_hukgo"]
+[ext_resource type="PackedScene" uid="uid://cvgfq5xk3litx" path="res://scenes/computer_scene/buffs/ren_zhong_dao_yuan.tscn" id="1_m0ao6"]
+
+[resource]
+script = ExtResource("1_hukgo")
+project_name = "电商平台外包"
+initial_progress = 20.0
+bug_amount_limit = 200.0
+initial_bug_rate = 40.0
+initial_money = 30.0
+initial_mood = 20.0
+initial_skill = 20.0
+deposit_reward = 60.0
+description = "初始buff：
+①任重道远：每回合开始时给bug增长率添加一个范围在-10%到+10%的修正"
+initial_buffs = Array[Resource]([ExtResource("1_m0ao6")])
+metadata/_custom_type_script = "uid://7a2lp0yd04fg"

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Project" load_steps=3 format=3 uid="uid://b25ewo3yqck1s"]
+
+[ext_resource type="PackedScene" uid="uid://durq7b2smhfjl" path="res://scenes/computer_scene/buffs/wai_bao_buff_wai_bao_bu_tie.tscn" id="1_7vx60"]
+[ext_resource type="Script" uid="uid://7a2lp0yd04fg" path="res://scripts/computer_scene/resource_type/project.gd" id="1_ejfah"]
+
+[resource]
+script = ExtResource("1_ejfah")
+project_name = "外包平台外包"
+initial_progress = 60.0
+initial_bug_amount = 100.0
+bug_amount_limit = 200.0
+initial_bug_rate = 20.0
+initial_money = 10.0
+initial_mood = 20.0
+initial_skill = 40.0
+deposit_reward = 80.0
+description = "初始buff：
+①外包补贴：每解雇一个实习生，获得其工资数的资金"
+initial_buffs = Array[Resource]([ExtResource("1_7vx60")])
+metadata/_custom_type_script = "uid://7a2lp0yd04fg"

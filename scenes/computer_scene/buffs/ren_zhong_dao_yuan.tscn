@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvgfq5xk3litx"]
+
+[ext_resource type="PackedScene" uid="uid://cnv0vfvik148k" path="res://scenes/computer_scene/buffs/buff.tscn" id="1_bublx"]
+
+[sub_resource type="GDScript" id="GDScript_8se8p"]
+script/source = "extends Buff
+
+#region 本buff被多个地方引用了，包括双王之战project，电商平台外包project
+func execute():
+	G.P.add_bug_rate(randi_range(-10 , 10))
+"
+
+[node name="RenZhongDaoYuan" instance=ExtResource("1_bublx")]
+script = SubResource("GDScript_8se8p")
+duration = -9999
+execution_time = 1
+description = "任重道远：每回合开始时给bug增长率添加一个范围在-10%到+10%的修正"

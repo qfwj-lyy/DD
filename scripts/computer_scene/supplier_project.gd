@@ -26,7 +26,8 @@ func _on_button_down():
 func _on_button_up():
 	if project_border_anim :
 		project_border_anim.play("button_up")
-	open_project_detail()
+	if project:
+		open_project_detail()
 
 func open_project_detail():
 	if G.P.current_project:
@@ -35,6 +36,7 @@ func open_project_detail():
 		return
 	var project_detail_scene = load("res://scenes/computer_scene/browser_scene/project_detail_scene.tscn").instantiate()
 	project_detail_scene.set_project_information(project)
+	project_detail_scene.project_button = self
 	G.M.current_scene.add_child(project_detail_scene)
 
 func set_project(p : Project):

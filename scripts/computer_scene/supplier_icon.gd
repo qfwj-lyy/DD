@@ -12,7 +12,7 @@ func set_mandatory_project(p : Project):
 	
 var display_project_limit := 3
 func browse_supplier(ps : ProjectSupplier):
-	var s = ps.duplicate(true)
+	var s = ps
 	var display_project_amount := 0
 	while(1):
 		var p
