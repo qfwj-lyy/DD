@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://beamy6viw6kku"]
+
+[ext_resource type="PackedScene" uid="uid://dhjv4wwlto6p1" path="res://scenes/computer_scene/employees/employee.tscn" id="1_depv1"]
+
+[sub_resource type="GDScript" id="GDScript_l72nb"]
+script/source = "extends Buff
+
+func execute():
+	G.P.add_hand_card_amount_limit(2)
+"
+
+[sub_resource type="GDScript" id="GDScript_xedrc"]
+script/source = "extends Buff
+
+func execute():
+	G.P.add_project_progress(int(G.P.project_progress * 0.1))
+"
+
+[sub_resource type="GDScript" id="GDScript_lsl7l"]
+script/source = "extends Buff
+
+func execute():
+	G.P.add_bug_amount(-int(G.P.bug_amount * 0.1))
+"
+
+[node name="KanShangQuXiangLaoTou" instance=ExtResource("1_depv1")]
+joining_expenditure = 10
+severance_pay = 10
+wage = 10
+pay_interval_days = 3
+description = "看上去像老头的30岁青年
+10入职资金，10离职资金，工资：10资金/3时间
+增益：手牌上限+2
+增益：每回合开始时获得当前项目进度*10%的项目进度（向下取整）
+增益：每回合开始时减少当前bug数*10%的bug（向下取整）"
+
+[node name="Buff" type="Node" parent="Buffs" index="0"]
+script = SubResource("GDScript_l72nb")
+duration = -7
+description = "增益：手牌上限+2"
+metadata/_custom_type_script = "uid://dwhc1hbrg4em"
+
+[node name="Buff2" type="Node" parent="Buffs" index="1"]
+script = SubResource("GDScript_xedrc")
+duration = -7
+execution_time = 1
+description = "增益：每回合开始时获得当前项目进度*10%的项目进度（向下取整）"
+metadata/_custom_type_script = "uid://dwhc1hbrg4em"
+
+[node name="Buff3" type="Node" parent="Buffs" index="2"]
+script = SubResource("GDScript_lsl7l")
+duration = -7
+execution_time = 1
+description = "增益：每回合开始时减少当前bug数*10%的bug（向下取整）"
+metadata/_custom_type_script = "uid://dwhc1hbrg4em"

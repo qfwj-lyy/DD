@@ -9,7 +9,7 @@ severance_pay = 8
 wage = 8
 pay_interval_days = 3
 description = "acm男娘
-5入职，8离职，8/3
+5入职资金，8离职资金，工资：8资金/3时间
 增益：每单位时间项目进度+3
 增益：每单位时间bug-2"
 

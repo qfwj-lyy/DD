@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Project" load_steps=2 format=3 uid="uid://cec338wvnmf6a"]
+[gd_resource type="Resource" script_class="Project" load_steps=3 format=3 uid="uid://cec338wvnmf6a"]
 
+[ext_resource type="PackedScene" uid="uid://cl1itbavd67ce" path="res://scenes/computer_scene/buffs/dai_xie_da_yi_cheng_xu_she_ji_buff.tscn" id="1_cog5i"]
 [ext_resource type="Script" uid="uid://7a2lp0yd04fg" path="res://scripts/computer_scene/resource_type/project.gd" id="1_xeq2i"]
 
 [resource]
@@ -15,4 +16,5 @@ initial_skill = 100.0
 deposit_reward = 20.0
 description = "初始buff：
 ①期末作业：项目需要在100单位时间内交付"
+initial_buffs = Array[Resource]([ExtResource("1_cog5i")])
 metadata/_custom_type_script = "uid://7a2lp0yd04fg"

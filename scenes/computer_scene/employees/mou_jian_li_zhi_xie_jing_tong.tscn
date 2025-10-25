@@ -9,7 +9,7 @@ severance_pay = 10
 wage = 10
 pay_interval_days = 3
 description = "某简历只写精通C++的大叔
-15入职，10离职，10/3
+15入职资金，10离职资金，工资：10资金/3时间
 增益：每单位时间项目进度+5"
 
 [node name="PropertyBuff" type="Node" parent="Buffs" index="0"]

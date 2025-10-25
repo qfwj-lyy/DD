@@ -8,5 +8,5 @@ severance_pay = 6
 wage = -3
 pay_interval_days = 5
 description = "找实习的富二代
--3入职，6离职，-3/5
-无效果"
+-3入职资金，6离职资金，工资：-3资金/5时间
+无特殊效果"

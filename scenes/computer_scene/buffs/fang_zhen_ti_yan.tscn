@@ -1,10 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://ckpbf0m7memhf"]
 
 [ext_resource type="PackedScene" uid="uid://cnv0vfvik148k" path="res://scenes/computer_scene/buffs/buff.tscn" id="1_djnck"]
-[ext_resource type="Script" uid="uid://ct7j7c4n1f426" path="res://scripts/computer_scene/buffs/fang_zhen_ti_yan.gd" id="2_8b5i2"]
+
+[sub_resource type="GDScript" id="GDScript_nupbg"]
+script/source = "extends Buff
+
+func execute():
+	if G.P.bug_amount < G.P.bug_amount_limit * 0.8:
+		G.P.current_project.deposit_reward *= 1.5
+		
+"
 
 [node name="FangZhenTiYan" instance=ExtResource("1_djnck")]
-script = ExtResource("2_8b5i2")
+script = SubResource("GDScript_nupbg")
 duration = -9999
 execution_time = 4
 description = "仿真体验：交付时bug数若低于bug上限的80%，获得额外50%的存款"

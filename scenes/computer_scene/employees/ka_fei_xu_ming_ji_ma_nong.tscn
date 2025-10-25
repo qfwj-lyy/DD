@@ -16,7 +16,7 @@ severance_pay = 5
 wage = 5
 pay_interval_days = 3
 description = "咖啡续命级码农
-5入职，5离职，5/3
+5入职资金，5离职资金，工资：5资金/3时间
 增益：每回合开始时给bug增长率一个-5%~0%的修正"
 
 [node name="Buff" type="Node" parent="Buffs" index="0"]

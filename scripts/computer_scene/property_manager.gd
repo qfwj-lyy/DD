@@ -28,11 +28,15 @@ var bug_amount_limit : float = 99999.0:
 var money_amount : float
 var mood_amount : float
 var skill_amount : float
-var time_amount : float # 时空穿越所需要，目前没有需求
+
+
 
 var bug_rate : float
 var deposit_amount : float
 var hand_card_amount_limit : int = 5
+
+var overall_time_amount : float # 时空穿越所需要，目前没有需求
+var round_time_amount : float = 1.0#已经使用
 
 @export var money_label: Node
 @export var mood_label: Node
@@ -115,10 +119,12 @@ func add_skill(n):
 	skill_label.text = "技术：" + str(skill_amount)
 # 已弃用函数
 func add_time(t : int):
-	time_amount += t
+	overall_time_amount += t
 	pass
 	pass
 	pass
+func add_round_time_amount(n : int):
+	round_time_amount += n
 signal project_progress_added(_n)
 func add_project_progress(n):
 	pass

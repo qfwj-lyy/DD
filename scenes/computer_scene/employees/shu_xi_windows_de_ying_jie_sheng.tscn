@@ -8,7 +8,7 @@ joining_expenditure = 4
 wage = 4
 pay_interval_days = 4
 description = "熟悉windows的应届生
-4入职，0离职，4/4
+4入职资金，0离职资金，工资：4资金/4时间
 增益：每单位时间项目进度+1
 减益：每单位时间bug+2"
 

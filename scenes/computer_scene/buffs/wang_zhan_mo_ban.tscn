@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwyep28wj65qm"]
+
+[ext_resource type="PackedScene" uid="uid://cnv0vfvik148k" path="res://scenes/computer_scene/buffs/buff.tscn" id="1_qa7p8"]
+
+[sub_resource type="GDScript" id="GDScript_kmubx"]
+script/source = "extends Buff
+
+func execute():
+	var card = load(\"res://scenes/computer_scene/cards/wang_zhan_mo_ban.tscn\").instantiate()
+	card.condition = Card.Condition.at_unused_hand
+	G.M.current_scene.unused_hand.add_child(card)
+"
+
+[node name="WangZhanMoBan" instance=ExtResource("1_qa7p8")]
+script = SubResource("GDScript_kmubx")
+duration = -9999
+description = "[项目buff]网站模板：游戏开始时获得一张\"网站模板\"Debug卡，数值为0/0/0，效果为消耗所有资金，获得等量项目进度"

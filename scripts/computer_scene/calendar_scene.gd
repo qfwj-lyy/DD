@@ -54,6 +54,8 @@ func execute_plan():
 	for card in activity_hand.get_children():
 		card.queue_free()
 	G.M.current_scene.mandatory_guide.clear()
+	
+	G.P.add_round_time_amount(1)
 	#endregion
 	
 	#for card in debug_hand.get_children():

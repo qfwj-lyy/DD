@@ -9,7 +9,7 @@ severance_pay = 3
 wage = 5
 pay_interval_days = 4
 description = "ai编程小能手
-3入职，3离职，5/4
+3入职资金，3离职资金，工资：5资金/4时间
 增益：每单位时间项目进度+2
 减益：每单位时间bug+2"
 

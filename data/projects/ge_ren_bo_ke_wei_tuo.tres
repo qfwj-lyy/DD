@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Project" load_steps=2 format=3 uid="uid://xe2bp2vnh360"]
+[gd_resource type="Resource" script_class="Project" load_steps=3 format=3 uid="uid://xe2bp2vnh360"]
 
+[ext_resource type="PackedScene" uid="uid://dwyep28wj65qm" path="res://scenes/computer_scene/buffs/wang_zhan_mo_ban.tscn" id="1_80t00"]
 [ext_resource type="Script" uid="uid://7a2lp0yd04fg" path="res://scripts/computer_scene/resource_type/project.gd" id="1_qq8a6"]
 
 [resource]
@@ -12,6 +13,6 @@ initial_mood = 80.0
 initial_skill = 60.0
 deposit_reward = 20.0
 description = "初始buff：
-①网站模板：游戏开始时获得一张\"网站模板\"Debug卡，数值为0/0/0，效果为消耗所有资金，获得等量初始进度（这个假如初始用的话，就让一个项目有两个教程的作用，即0初始进度或者0初始资金）"
-initial_buffs = Array[Resource]([null])
+①网站模板：游戏开始时获得一张\"网站模板\"Debug卡，数值为0/0/0，效果为消耗所有资金，获得等量项目进度"
+initial_buffs = Array[Resource]([ExtResource("1_80t00")])
 metadata/_custom_type_script = "uid://7a2lp0yd04fg"

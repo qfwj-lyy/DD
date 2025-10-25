@@ -8,7 +8,7 @@ joining_expenditure = 5
 severance_pay = 2
 pay_interval_days = 5
 description = "两年半实习生（是的，中分头背带裤）
-5入职，2离职，0/5（哇是520，我们黑子没救了）
+5入职资金，2离职资金，工资：0资金/5时间（哇是520，我们黑子没救了）
 增益：资金+10"
 
 [node name="PropertyBuff" type="Node" parent="Buffs" index="0"]
