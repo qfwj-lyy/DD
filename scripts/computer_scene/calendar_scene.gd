@@ -107,7 +107,7 @@ func main_while(current_time,max_time,debug_time_flag_array,debug_current_card_f
 		if !G.M.current_scene.property_manager.is_stop_income:
 			var bug_income_correction : float = ceil(G.P.bug_amount / G.P.bug_amount_limit * 5) * 0.5
 			if bug_income_correction == 0:
-				var income : int = G.P.project_progress * G.P.skill_amount / 1000
+				var income : int = int(G.P.project_progress * G.P.skill_amount / 1000)
 				if income <= 1:
 					G.M.current_scene.property_manager.add_money(1)
 				else :
