@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=3 uid="uid://ei0t0movgv01"]
+[gd_scene load_steps=130 format=3 uid="uid://ei0t0movgv01"]
 
 [ext_resource type="Script" uid="uid://cyxxmhvja0apb" path="res://scripts/computer_scene/computer_scene.gd" id="1_8g14y"]
 [ext_resource type="Texture2D" uid="uid://by5p2m3k3u3yo" path="res://assets/computer_scene/desktop_background.png" id="2_rw1u3"]
@@ -48,6 +48,13 @@
 [ext_resource type="Script" uid="uid://b7ucmjrb5s02j" path="res://scripts/computer_scene/dialogue_manager.gd" id="31_yw0uv"]
 [ext_resource type="Texture2D" uid="uid://b4b0vk44f3ar1" path="res://assets/computer_scene/property_open_icon.png" id="32_ea52w"]
 [ext_resource type="Script" uid="uid://caey344n82p3a" path="res://scripts/computer_scene/mandatory_guide.gd" id="33_d84jm"]
+[ext_resource type="Texture2D" uid="uid://celmymumt6ovo" path="res://assets/computer_scene/920x1244Background.png" id="36_1r1dv"]
+[ext_resource type="Texture2D" uid="uid://b136vg6mmdkjr" path="res://assets/computer_scene/201x51calender_button.png" id="38_l2ol0"]
+[ext_resource type="Texture2D" uid="uid://dklxc416ki78t" path="res://assets/computer_scene/205x105execute_button.png" id="39_s0nu0"]
+[ext_resource type="Texture2D" uid="uid://7o3vusli8esq" path="res://assets/computer_scene/512x126description.png" id="40_1r1dv"]
+[ext_resource type="Texture2D" uid="uid://cxca7xmweougk" path="res://assets/computer_scene/807x257debug_hand.png" id="40_f77dy"]
+[ext_resource type="Texture2D" uid="uid://e5kp6eu1mvi3" path="res://assets/computer_scene/807x257activity_hand.png" id="43_5v3lk"]
+[ext_resource type="Texture2D" uid="uid://c4ouwfgpr433p" path="res://assets/computer_scene/807x307unused_hand.png" id="44_22qv2"]
 
 [sub_resource type="Animation" id="Animation_cd3q4"]
 length = 0.001
@@ -3020,10 +3027,21 @@ unused_hand = NodePath("UnusedHand")
 round_tips_label = NodePath("RoundTipsLabel")
 
 [node name="BackGround" type="Panel" parent="CalendarScene"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 920.0
 offset_bottom = 1240.0
 mouse_filter = 1
+
+[node name="BackgroundRect" type="TextureRect" parent="CalendarScene/BackGround"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("36_1r1dv")
+expand_mode = 1
 
 [node name="CalenderButton" type="Button" parent="CalendarScene"]
 layout_mode = 0
@@ -3038,6 +3056,16 @@ script = ExtResource("23_ya4ev")
 libraries = {
 &"": SubResource("AnimationLibrary_li4rp")
 }
+
+[node name="ButtonRect" type="TextureRect" parent="CalendarScene/CalenderButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(100.5, 25.5)
+texture = ExtResource("38_l2ol0")
 
 [node name="CalenderButtonBorder" type="TextureRect" parent="CalendarScene/CalenderButton"]
 layout_mode = 1
@@ -3063,6 +3091,34 @@ libraries = {
 &"": SubResource("AnimationLibrary_l2ol0")
 }
 
+[node name="ExecuteRect" type="TextureRect" parent="CalendarScene/ExecutePlanButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("39_s0nu0")
+
+[node name="Label" type="Label" parent="CalendarScene/ExecutePlanButton/ExecuteRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "执行计划"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DescriptionRect" type="TextureRect" parent="CalendarScene"]
+layout_mode = 1
+offset_left = 60.0
+offset_top = 350.0
+offset_right = 572.0
+offset_bottom = 476.0
+texture = ExtResource("40_1r1dv")
+
 [node name="RoundTipsLabel" type="Label" parent="CalendarScene"]
 layout_mode = 0
 offset_left = 60.0
@@ -3080,6 +3136,7 @@ offset_right = 60.0
 offset_bottom = 310.0
 
 [node name="Panel" type="Panel" parent="CalendarScene/DebugPanel"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -3089,7 +3146,17 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
+[node name="DebugRect" type="TextureRect" parent="CalendarScene"]
+layout_mode = 1
+offset_left = 60.0
+offset_top = 60.0
+offset_right = 860.0
+offset_bottom = 310.0
+texture = ExtResource("40_f77dy")
+expand_mode = 1
+
 [node name="DebugHand" type="Panel" parent="CalendarScene"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 60.0
 offset_top = 60.0
@@ -3106,6 +3173,7 @@ offset_right = 60.0
 offset_bottom = 740.0
 
 [node name="Panel" type="Panel" parent="CalendarScene/ActivityPanel"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -3115,7 +3183,17 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
+[node name="ActivityRect" type="TextureRect" parent="CalendarScene"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 490.0
+offset_right = 860.0
+offset_bottom = 740.0
+texture = ExtResource("43_5v3lk")
+expand_mode = 1
+
 [node name="ActivityHand" type="Panel" parent="CalendarScene"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 60.0
 offset_top = 490.0
@@ -3132,6 +3210,7 @@ offset_right = 60.0
 offset_bottom = 1080.0
 
 [node name="Panel" type="Panel" parent="CalendarScene/UnusedPanel"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -3141,12 +3220,27 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
+[node name="UnusedRect" type="TextureRect" parent="CalendarScene"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 60.0
+offset_top = 750.0
+offset_right = -60.0
+offset_bottom = -90.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("44_22qv2")
+expand_mode = 1
+
 [node name="UnusedHand" type="Panel" parent="CalendarScene"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 60.0
-offset_top = 780.0
+offset_top = 750.0
 offset_right = 860.0
-offset_bottom = 1080.0
+offset_bottom = 1050.0
 mouse_filter = 1
 script = ExtResource("26_06as4")
 
