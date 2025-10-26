@@ -49,6 +49,7 @@ func play_sound(sound_name : String , from_position : float = 0 , volume_db : fl
 		var linear = audio.volume_linear
 		linear = global_volume * linear
 		audio.volume_linear = linear
+	audio.connect("finished" , audio.queue_free)
 	add_child(audio)
 	audio.play(from_position)
 	

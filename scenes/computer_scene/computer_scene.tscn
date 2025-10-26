@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=3 uid="uid://ei0t0movgv01"]
+[gd_scene load_steps=133 format=3 uid="uid://ei0t0movgv01"]
 
 [ext_resource type="Script" uid="uid://cyxxmhvja0apb" path="res://scripts/computer_scene/computer_scene.gd" id="1_8g14y"]
 [ext_resource type="Texture2D" uid="uid://by5p2m3k3u3yo" path="res://assets/computer_scene/desktop_background.png" id="2_rw1u3"]
@@ -3121,11 +3121,13 @@ texture = ExtResource("40_1r1dv")
 
 [node name="RoundTipsLabel" type="Label" parent="CalendarScene"]
 layout_mode = 0
-offset_left = 60.0
-offset_top = 350.0
-offset_right = 560.0
-offset_bottom = 450.0
+offset_left = 80.0
+offset_top = 365.0
+offset_right = 550.0
+offset_bottom = 465.0
 mouse_filter = 1
+theme_override_colors/font_color = Color(1, 0.35286877, 0.50801134, 1)
+text = "测试测试测试测试测试测试测试测试测试测试"
 autowrap_mode = 3
 
 [node name="DebugPanel" type="Control" parent="CalendarScene"]

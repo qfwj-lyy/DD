@@ -39,7 +39,12 @@ func erase_buff_icon(node: Node):
 	if node is Buff:
 		for BAI in buff_and_icon_list:
 			if BAI[0] == node:
+				#if is_instance_valid(BAI[1]):
+					#if is_instance_valid(BAI[1].buff_description):
+						#BAI[1].buff_description.queue_free()
+					#if is_instance_valid(BAI[1]):
 				BAI[1].buff_description.queue_free()
 				BAI[1].queue_free()
-				break
-		print("something in BuffManager _on_child_ex")
+				buff_and_icon_list.erase(BAI)
+				return
+		print("can not find buff icon that should be queue_free() in BuffManager _on_child_ex")
