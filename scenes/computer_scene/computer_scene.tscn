@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=3 uid="uid://ei0t0movgv01"]
+[gd_scene load_steps=133 format=3 uid="uid://ei0t0movgv01"]
 
 [ext_resource type="Script" uid="uid://cyxxmhvja0apb" path="res://scripts/computer_scene/computer_scene.gd" id="1_8g14y"]
 [ext_resource type="Texture2D" uid="uid://by5p2m3k3u3yo" path="res://assets/computer_scene/desktop_background.png" id="2_rw1u3"]
@@ -20,8 +20,8 @@
 [ext_resource type="Script" uid="uid://cr6ujdk17odqk" path="res://scripts/computer_scene/project_panel.gd" id="14_5yyiv"]
 [ext_resource type="Script" uid="uid://k1rp05w660ru" path="res://scripts/animation/open_company.gd" id="14_en0pa"]
 [ext_resource type="Script" uid="uid://bx0dkmbs57kpc" path="res://scripts/computer_scene/supplier_icon.gd" id="15_kbgpp"]
+[ext_resource type="Texture2D" uid="uid://d1dq0u5e6adys" path="res://assets/computer_scene/new_store_background.png" id="16_a5lxw"]
 [ext_resource type="Script" uid="uid://bgfw7mjp2unqo" path="res://scripts/computer_scene/supplier_project.gd" id="16_d88ux"]
-[ext_resource type="Texture2D" uid="uid://c31k0pwy6oaic" path="res://assets/computer_scene/back_ground.png" id="16_t7krb"]
 [ext_resource type="Texture2D" uid="uid://65xu0h7rq8ti" path="res://assets/computer_scene/162x258store_card.png" id="17_5yyiv"]
 [ext_resource type="Script" uid="uid://onqn7vb0nepd" path="res://scripts/computer_scene/calendar_scene.gd" id="17_br20j"]
 [ext_resource type="Script" uid="uid://do0jk8ds61vr8" path="res://scripts/computer_scene/company_scene.gd" id="18_j4xds"]
@@ -1816,7 +1816,6 @@ grow_vertical = 2
 texture = ExtResource("5_rw1u3")
 
 [node name="StoreScene" type="Control" parent="." node_paths=PackedStringArray("store_cards", "description_label")]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_top = 1000.0
@@ -1844,7 +1843,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("16_t7krb")
+texture = ExtResource("16_a5lxw")
 expand_mode = 1
 
 [node name="Card1" type="Panel" parent="StoreScene/StoreBackGround"]
