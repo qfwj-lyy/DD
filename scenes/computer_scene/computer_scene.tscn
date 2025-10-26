@@ -1,4 +1,4 @@
-[gd_scene load_steps=123 format=3 uid="uid://ei0t0movgv01"]
+[gd_scene load_steps=126 format=3 uid="uid://ei0t0movgv01"]
 
 [ext_resource type="Script" uid="uid://cyxxmhvja0apb" path="res://scripts/computer_scene/computer_scene.gd" id="1_8g14y"]
 [ext_resource type="Texture2D" uid="uid://by5p2m3k3u3yo" path="res://assets/computer_scene/desktop_background.png" id="2_rw1u3"]
@@ -35,15 +35,18 @@
 [ext_resource type="Texture2D" uid="uid://bk284atb01e0a" path="res://assets/computer_scene/600x150Border.png" id="22_bv4nm"]
 [ext_resource type="Texture2D" uid="uid://hvrred57t74d" path="res://assets/computer_scene/close_56x57.png" id="22_w8dcv"]
 [ext_resource type="Script" uid="uid://c8vcijj8q63ia" path="res://scripts/computer_scene/property_two_bars.gd" id="23_ftseh"]
+[ext_resource type="Texture2D" uid="uid://d35j0grt01ei1" path="res://assets/computer_scene/x2property_manager_background.png" id="23_l2ol0"]
 [ext_resource type="Texture2D" uid="uid://5ntt2yd2muo3" path="res://assets/computer_scene/200x50Borderaseprite.png" id="23_ltark"]
 [ext_resource type="Script" uid="uid://bgomhe6q415mg" path="res://scripts/animation/calender_button.gd" id="23_ya4ev"]
 [ext_resource type="Texture2D" uid="uid://cqwqi0sgb3w0v" path="res://assets/computer_scene/coin.png" id="24_ggfum"]
-[ext_resource type="Texture2D" uid="uid://crn86ir408gcd" path="res://icon.svg" id="25_jqns5"]
 [ext_resource type="Texture2D" uid="uid://sotc46kt53f3" path="res://assets/computer_scene/bug.png" id="25_onm7m"]
 [ext_resource type="Script" uid="uid://vfyiauygdp7c" path="res://scripts/computer_scene/buff_execute_time_manager.gd" id="25_si5nn"]
 [ext_resource type="Script" uid="uid://dkh4wj1hlvyoe" path="res://scripts/computer_scene/calender_execute_panel.gd" id="26_06as4"]
+[ext_resource type="Texture2D" uid="uid://dn15d3dlfgdiq" path="res://assets/computer_scene/buff_background.png" id="26_7ubm4"]
 [ext_resource type="Script" uid="uid://bhn5ooiof1qnc" path="res://scripts/computer_scene/buff_icon.gd" id="26_si5nn"]
+[ext_resource type="Texture2D" uid="uid://dhhr0nhgyfwvh" path="res://assets/computer_scene/buff_icon.png" id="28_4l718"]
 [ext_resource type="Script" uid="uid://b7ucmjrb5s02j" path="res://scripts/computer_scene/dialogue_manager.gd" id="31_yw0uv"]
+[ext_resource type="Texture2D" uid="uid://b4b0vk44f3ar1" path="res://assets/computer_scene/property_open_icon.png" id="32_ea52w"]
 [ext_resource type="Script" uid="uid://caey344n82p3a" path="res://scripts/computer_scene/mandatory_guide.gd" id="33_d84jm"]
 
 [sub_resource type="Animation" id="Animation_cd3q4"]
@@ -2043,11 +2046,12 @@ offset_right = 950.0
 offset_bottom = 290.0
 mouse_filter = 1
 
-[node name="PropertyManager" type="Panel" parent="." node_paths=PackedStringArray("deliver_project_button", "money_label", "mood_label", "skill_label", "project_progress_bar", "bug_amount_bar", "deliver_project")]
-offset_left = 1758.0
-offset_top = 3.0
-offset_right = 2558.0
-offset_bottom = 503.0
+[node name="PropertyManager" type="Control" parent="." node_paths=PackedStringArray("deliver_project_button", "money_label", "mood_label", "skill_label", "project_progress_bar", "bug_amount_bar", "deliver_project")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1760.0
+offset_right = 2560.0
+offset_bottom = 500.0
 mouse_filter = 1
 script = ExtResource("11_06as4")
 deliver_project_button = NodePath("DeliverProjectButton")
@@ -2058,123 +2062,137 @@ project_progress_bar = NodePath("ProjectProgressBar")
 bug_amount_bar = NodePath("BugAmountBar")
 deliver_project = NodePath("DeliverProject")
 
+[node name="Background" type="TextureRect" parent="PropertyManager"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("23_l2ol0")
+expand_mode = 1
+
 [node name="ProjectProgressBar" type="ProgressBar" parent="PropertyManager"]
 layout_mode = 0
-offset_left = 186.0
-offset_top = 56.0
-offset_right = 442.0
-offset_bottom = 110.0
+offset_left = 59.0
+offset_top = 245.0
+offset_right = 494.0
+offset_bottom = 259.0
 mouse_filter = 1
 show_percentage = false
 script = ExtResource("23_ftseh")
 
 [node name="ValueLabel" type="Label" parent="PropertyManager/ProjectProgressBar"]
 layout_mode = 0
-offset_left = 271.0
-offset_top = 4.0
-offset_right = 311.0
-offset_bottom = 49.0
+offset_left = 438.0
+offset_top = -9.0
+offset_right = 488.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0.42352942, 0.38431373, 0.38431373, 1)
+theme_override_font_sizes/font_size = 20
 
 [node name="BugAmountBar" type="ProgressBar" parent="PropertyManager"]
 layout_mode = 0
-offset_left = 186.0
-offset_top = 142.0
-offset_right = 444.0
-offset_bottom = 196.0
+offset_left = 59.0
+offset_top = 356.0
+offset_right = 494.0
+offset_bottom = 370.0
 mouse_filter = 1
 show_percentage = false
 script = ExtResource("23_ftseh")
 
 [node name="ValueLabel" type="Label" parent="PropertyManager/BugAmountBar"]
 layout_mode = 0
-offset_left = 271.0
-offset_right = 311.0
-offset_bottom = 45.0
-
-[node name="ProjectProgressLabel" type="Label" parent="PropertyManager"]
-layout_mode = 0
-offset_left = 32.0
-offset_top = 54.0
-offset_right = 160.0
-offset_bottom = 100.0
-text = "项目进度"
-
-[node name="BugAmountLabel" type="Label" parent="PropertyManager"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 141.0
-offset_right = 164.0
-offset_bottom = 187.0
-text = "bug数量"
+offset_left = 438.0
+offset_top = -9.0
+offset_right = 488.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0.42352942, 0.38431373, 0.38431373, 1)
+theme_override_font_sizes/font_size = 20
 
 [node name="DeliverProjectButton" type="Button" parent="PropertyManager"]
-visible = false
 layout_mode = 0
-offset_left = 113.0
-offset_top = 230.0
-offset_right = 281.0
-offset_bottom = 283.0
+offset_left = 231.0
+offset_top = 427.0
+offset_right = 399.0
+offset_bottom = 480.0
 text = "交付项目"
 
 [node name="LabelProperty" type="Control" parent="PropertyManager"]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 620.0
+offset_top = 300.0
+offset_right = 770.0
+offset_bottom = 450.0
 
 [node name="SkillLabel" type="Label" parent="PropertyManager/LabelProperty"]
 layout_mode = 0
-offset_left = 576.0
-offset_top = 380.0
-offset_right = 672.0
-offset_bottom = 426.0
+offset_top = 100.0
+offset_right = 96.0
+offset_bottom = 145.0
+theme_override_colors/font_color = Color(0.42352942, 0.38431373, 0.38431373, 1)
 text = "技术："
 
 [node name="MoodLabel" type="Label" parent="PropertyManager/LabelProperty"]
 layout_mode = 0
-offset_left = 577.0
-offset_top = 326.0
-offset_right = 673.0
-offset_bottom = 372.0
+offset_top = 50.0
+offset_right = 96.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0.42352942, 0.38431373, 0.38431373, 1)
 text = "心情："
 
 [node name="MoneyLabel" type="Label" parent="PropertyManager/LabelProperty"]
 layout_mode = 0
-offset_left = 579.0
-offset_top = 273.0
-offset_right = 675.0
-offset_bottom = 319.0
+offset_right = 96.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(0.42352942, 0.38431373, 0.38431373, 1)
 text = "资金："
 
 [node name="DepositLabel" type="Label" parent="PropertyManager/LabelProperty"]
+visible = false
 layout_mode = 0
-offset_left = 577.0
-offset_top = 431.0
-offset_right = 673.0
-offset_bottom = 476.0
+offset_top = 150.0
+offset_right = 96.0
+offset_bottom = 195.0
 text = "存款："
 
 [node name="BuffManager" type="Control" parent="PropertyManager" node_paths=PackedStringArray("buff_icon", "buff_icons")]
 anchors_preset = 0
+offset_left = 620.0
+offset_top = 130.0
+offset_right = 765.0
+offset_bottom = 260.0
 script = ExtResource("12_d84jm")
 buff_icon = NodePath("BuffIcon")
-buff_icons = NodePath("BuffIcons")
+buff_icons = NodePath("ScrollContainer/BuffIcons")
 
 [node name="BuffIcon" type="TextureRect" parent="PropertyManager/BuffManager" node_paths=PackedStringArray("buff_description", "description_label")]
 visible = false
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 0
-texture = ExtResource("25_jqns5")
+texture = ExtResource("26_7ubm4")
 expand_mode = 1
 script = ExtResource("26_si5nn")
 buff_description = NodePath("BuffDescription")
 description_label = NodePath("BuffDescription/BuffDescriptionLabel")
 
+[node name="TextureRect" type="TextureRect" parent="PropertyManager/BuffManager/BuffIcon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("28_4l718")
+expand_mode = 1
+
 [node name="BuffDescription" type="Panel" parent="PropertyManager/BuffManager/BuffIcon"]
 layout_mode = 0
-offset_left = -200.0
-offset_top = 100.0
-offset_right = 100.0
-offset_bottom = 500.0
+offset_left = -250.0
+offset_top = 50.0
+offset_right = 50.0
+offset_bottom = 450.0
+mouse_filter = 2
 
 [node name="BuffDescriptionLabel" type="Label" parent="PropertyManager/BuffManager/BuffIcon/BuffDescription"]
 layout_mode = 1
@@ -2183,16 +2201,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.42352942, 0.38431373, 0.38431373, 1)
+text = "测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试 "
 autowrap_mode = 3
 text_overrun_behavior = 6
-
-[node name="BuffIcons" type="GridContainer" parent="PropertyManager/BuffManager"]
-layout_mode = 0
-offset_left = 571.0
-offset_top = 37.0
-offset_right = 796.0
-offset_bottom = 262.0
-columns = 4
 
 [node name="Once" type="Node" parent="PropertyManager/BuffManager"]
 script = ExtResource("25_si5nn")
@@ -2208,6 +2220,18 @@ script = ExtResource("25_si5nn")
 
 [node name="EachProjectDelivery" type="Node" parent="PropertyManager/BuffManager"]
 script = ExtResource("25_si5nn")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PropertyManager/BuffManager"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BuffIcons" type="GridContainer" parent="PropertyManager/BuffManager/ScrollContainer"]
+layout_mode = 2
+columns = 3
 
 [node name="DeliverProject" type="Control" parent="PropertyManager"]
 visible = false
@@ -2321,6 +2345,14 @@ texture = ExtResource("25_onm7m")
 libraries = {
 &"": SubResource("AnimationLibrary_088rt")
 }
+
+[node name="OpenIcon" type="TextureRect" parent="PropertyManager"]
+layout_mode = 0
+offset_left = 720.0
+offset_right = 800.0
+offset_bottom = 80.0
+texture = ExtResource("32_ea52w")
+expand_mode = 1
 
 [node name="BrowserScene" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0)

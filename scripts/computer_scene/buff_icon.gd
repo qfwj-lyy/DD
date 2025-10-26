@@ -1,9 +1,10 @@
 extends TextureRect
 
 @export var buff_description : Node
-@export var description_label : Node
+@export var description_label : Label
 func set_description(d : String):
 	description_label.text = d
+	buff_description.reparent(G.P)
 	show()
 func _ready() -> void:
 	buff_description.hide()

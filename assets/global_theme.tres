@@ -1,5 +1,14 @@
-[gd_resource type="Theme" format=3 uid="uid://b37u1iu62n14s"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://b37u1iu62n14s"]
+
+[ext_resource type="Texture2D" uid="uid://86omukcfsfb" path="res://assets/computer_scene/property_progress_icon.png" id="1_g5th0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_plf80"]
+texture = ExtResource("1_g5th0")
+texture_margin_right = 49.0
+expand_margin_left = 49.0
 
 [resource]
 Button/font_sizes/font_size = 32
 Label/font_sizes/font_size = 32
+ProgressBar/styles/background = null
+ProgressBar/styles/fill = SubResource("StyleBoxTexture_plf80")

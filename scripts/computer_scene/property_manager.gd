@@ -1,4 +1,4 @@
-extends Panel
+extends Control
 class_name PropertyManager
 
 var current_project : Project
@@ -31,9 +31,14 @@ var money_amount : float:
 		G.play_sound("money")
 		money_amount = i
 		money_label.text = "资金：" + str(int(i))
-var mood_amount : float
-var skill_amount : float
-
+var mood_amount : float:
+	set(i):
+		mood_amount = i
+		mood_label.text = "心情：" + str(int(i))
+var skill_amount : float:
+	set(i):
+		skill_amount = i
+		skill_label.text = "技术：" + str(int(i))
 
 
 var bug_rate : float
@@ -111,18 +116,13 @@ func add_mood(n):
 	pass
 	pass
 	inspect_mood_buffs()
-	mood_label.text = "心情：" + str(mood_amount)
 func add_skill(n):
 	skill_amount += n
-	pass
-	pass
-	skill_label.text = "技术：" + str(skill_amount)
 # 已弃用函数
 func add_time(t : int):
 	overall_time_amount += t
 	pass
-	pass
-	pass
+
 func add_round_time_amount(n : int):
 	round_time_amount += n
 signal project_progress_added(_n)
@@ -161,15 +161,9 @@ func set_mood(n):
 	if is_stop_mood_increase and n > mood_amount:
 		return
 	mood_amount = n
-	pass
-	pass
 	inspect_mood_buffs()
-	mood_label.text = "心情：" + str(mood_amount)
 func set_skill(n):
 	skill_amount = n
-	pass
-	pass
-	skill_label.text = "技术：" + str(skill_amount)
 func set_project_progress(n):
 	pass
 	pass

@@ -10,9 +10,10 @@ extends Control
 
 func get_all_buffs() -> Array[Buff]:
 	var buffs : Array[Buff]
-	for buff_type in get_children():
-		for buff : Buff in buff_type.get_children():
-			buffs.append(buff)
+	for i in get_children():
+		for j in i.get_children():
+			if j is Buff:
+				buffs.append(j)
 	return buffs
 
 func buff_name_to_buff(buff_name : String) -> Buff:
@@ -29,14 +30,16 @@ var buff_and_icon_list := []
 func add_buff_icon(node: Node):
 	if node is Buff:
 		var icon_node = buff_icon.duplicate()
-		icon_node.set_description(node.description)
 		buff_icons.add_child(icon_node)
+		icon_node.set_description(node.description)
+		
 		var buff_and_icon = [node, icon_node]
 		buff_and_icon_list.append(buff_and_icon)
 func erase_buff_icon(node: Node):
 	if node is Buff:
 		for BAI in buff_and_icon_list:
 			if BAI[0] == node:
+				BAI[1].buff_description.queue_free()
 				BAI[1].queue_free()
 				break
-		printerr("error in BuffManager _on_child_ex")
+		print("something in BuffManager _on_child_ex")
