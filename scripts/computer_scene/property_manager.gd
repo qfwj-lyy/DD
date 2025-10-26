@@ -48,7 +48,6 @@ var round_time_amount : float = 1.0#已经使用
 @export var skill_label: Node
 @export var project_progress_bar: Node
 @export var bug_amount_bar: Node
-@export var global_buffs: Node
 @export var deliver_project : Node
 
 var mood_buffs : Node

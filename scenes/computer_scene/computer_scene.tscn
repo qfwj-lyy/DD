@@ -1,4 +1,4 @@
-[gd_scene load_steps=120 format=3 uid="uid://ei0t0movgv01"]
+[gd_scene load_steps=123 format=3 uid="uid://ei0t0movgv01"]
 
 [ext_resource type="Script" uid="uid://cyxxmhvja0apb" path="res://scripts/computer_scene/computer_scene.gd" id="1_8g14y"]
 [ext_resource type="Texture2D" uid="uid://by5p2m3k3u3yo" path="res://assets/computer_scene/desktop_background.png" id="2_rw1u3"]
@@ -38,8 +38,11 @@
 [ext_resource type="Texture2D" uid="uid://5ntt2yd2muo3" path="res://assets/computer_scene/200x50Borderaseprite.png" id="23_ltark"]
 [ext_resource type="Script" uid="uid://bgomhe6q415mg" path="res://scripts/animation/calender_button.gd" id="23_ya4ev"]
 [ext_resource type="Texture2D" uid="uid://cqwqi0sgb3w0v" path="res://assets/computer_scene/coin.png" id="24_ggfum"]
+[ext_resource type="Texture2D" uid="uid://crn86ir408gcd" path="res://icon.svg" id="25_jqns5"]
 [ext_resource type="Texture2D" uid="uid://sotc46kt53f3" path="res://assets/computer_scene/bug.png" id="25_onm7m"]
+[ext_resource type="Script" uid="uid://vfyiauygdp7c" path="res://scripts/computer_scene/buff_execute_time_manager.gd" id="25_si5nn"]
 [ext_resource type="Script" uid="uid://dkh4wj1hlvyoe" path="res://scripts/computer_scene/calender_execute_panel.gd" id="26_06as4"]
+[ext_resource type="Script" uid="uid://bhn5ooiof1qnc" path="res://scripts/computer_scene/buff_icon.gd" id="26_si5nn"]
 [ext_resource type="Script" uid="uid://b7ucmjrb5s02j" path="res://scripts/computer_scene/dialogue_manager.gd" id="31_yw0uv"]
 [ext_resource type="Script" uid="uid://caey344n82p3a" path="res://scripts/computer_scene/mandatory_guide.gd" id="33_d84jm"]
 
@@ -2040,28 +2043,27 @@ offset_right = 950.0
 offset_bottom = 290.0
 mouse_filter = 1
 
-[node name="PropertyManager" type="Panel" parent="." node_paths=PackedStringArray("deliver_project_button", "money_label", "mood_label", "skill_label", "project_progress_bar", "bug_amount_bar", "global_buffs", "deliver_project")]
-offset_left = 1874.0
-offset_top = 72.0
-offset_right = 2488.0
-offset_bottom = 382.0
+[node name="PropertyManager" type="Panel" parent="." node_paths=PackedStringArray("deliver_project_button", "money_label", "mood_label", "skill_label", "project_progress_bar", "bug_amount_bar", "deliver_project")]
+offset_left = 1758.0
+offset_top = 3.0
+offset_right = 2558.0
+offset_bottom = 503.0
 mouse_filter = 1
 script = ExtResource("11_06as4")
 deliver_project_button = NodePath("DeliverProjectButton")
-money_label = NodePath("MoneyLabel")
-mood_label = NodePath("MoodLabel")
-skill_label = NodePath("SkillLabel")
+money_label = NodePath("LabelProperty/MoneyLabel")
+mood_label = NodePath("LabelProperty/MoodLabel")
+skill_label = NodePath("LabelProperty/SkillLabel")
 project_progress_bar = NodePath("ProjectProgressBar")
 bug_amount_bar = NodePath("BugAmountBar")
-global_buffs = NodePath("BuffManager")
 deliver_project = NodePath("DeliverProject")
 
 [node name="ProjectProgressBar" type="ProgressBar" parent="PropertyManager"]
 layout_mode = 0
-offset_left = 240.0
-offset_top = 50.0
-offset_right = 496.0
-offset_bottom = 104.0
+offset_left = 186.0
+offset_top = 56.0
+offset_right = 442.0
+offset_bottom = 110.0
 mouse_filter = 1
 show_percentage = false
 script = ExtResource("23_ftseh")
@@ -2075,10 +2077,10 @@ offset_bottom = 49.0
 
 [node name="BugAmountBar" type="ProgressBar" parent="PropertyManager"]
 layout_mode = 0
-offset_left = 242.0
-offset_top = 118.0
-offset_right = 500.0
-offset_bottom = 172.0
+offset_left = 186.0
+offset_top = 142.0
+offset_right = 444.0
+offset_bottom = 196.0
 mouse_filter = 1
 show_percentage = false
 script = ExtResource("23_ftseh")
@@ -2091,71 +2093,124 @@ offset_bottom = 45.0
 
 [node name="ProjectProgressLabel" type="Label" parent="PropertyManager"]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 50.0
-offset_right = 192.0
-offset_bottom = 96.0
+offset_left = 32.0
+offset_top = 54.0
+offset_right = 160.0
+offset_bottom = 100.0
 text = "项目进度"
 
 [node name="BugAmountLabel" type="Label" parent="PropertyManager"]
 layout_mode = 0
-offset_left = 66.0
-offset_top = 122.0
-offset_right = 194.0
-offset_bottom = 168.0
+offset_left = 36.0
+offset_top = 141.0
+offset_right = 164.0
+offset_bottom = 187.0
 text = "bug数量"
-
-[node name="MoneyLabel" type="Label" parent="PropertyManager"]
-layout_mode = 0
-offset_left = 80.0
-offset_top = 232.0
-offset_right = 176.0
-offset_bottom = 278.0
-text = "资金："
-
-[node name="MoodLabel" type="Label" parent="PropertyManager"]
-layout_mode = 0
-offset_left = 240.0
-offset_top = 232.0
-offset_right = 336.0
-offset_bottom = 278.0
-text = "心情："
-
-[node name="SkillLabel" type="Label" parent="PropertyManager"]
-layout_mode = 0
-offset_left = 402.0
-offset_top = 236.0
-offset_right = 498.0
-offset_bottom = 282.0
-text = "技术："
 
 [node name="DeliverProjectButton" type="Button" parent="PropertyManager"]
 visible = false
 layout_mode = 0
-offset_left = 216.0
-offset_top = 179.0
-offset_right = 384.0
-offset_bottom = 232.0
+offset_left = 113.0
+offset_top = 230.0
+offset_right = 281.0
+offset_bottom = 283.0
 text = "交付项目"
 
-[node name="BuffManager" type="Node" parent="PropertyManager"]
+[node name="LabelProperty" type="Control" parent="PropertyManager"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SkillLabel" type="Label" parent="PropertyManager/LabelProperty"]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 380.0
+offset_right = 672.0
+offset_bottom = 426.0
+text = "技术："
+
+[node name="MoodLabel" type="Label" parent="PropertyManager/LabelProperty"]
+layout_mode = 0
+offset_left = 577.0
+offset_top = 326.0
+offset_right = 673.0
+offset_bottom = 372.0
+text = "心情："
+
+[node name="MoneyLabel" type="Label" parent="PropertyManager/LabelProperty"]
+layout_mode = 0
+offset_left = 579.0
+offset_top = 273.0
+offset_right = 675.0
+offset_bottom = 319.0
+text = "资金："
+
+[node name="DepositLabel" type="Label" parent="PropertyManager/LabelProperty"]
+layout_mode = 0
+offset_left = 577.0
+offset_top = 431.0
+offset_right = 673.0
+offset_bottom = 476.0
+text = "存款："
+
+[node name="BuffManager" type="Control" parent="PropertyManager" node_paths=PackedStringArray("buff_icon", "buff_icons")]
+anchors_preset = 0
 script = ExtResource("12_d84jm")
+buff_icon = NodePath("BuffIcon")
+buff_icons = NodePath("BuffIcons")
+
+[node name="BuffIcon" type="TextureRect" parent="PropertyManager/BuffManager" node_paths=PackedStringArray("buff_description", "description_label")]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+texture = ExtResource("25_jqns5")
+expand_mode = 1
+script = ExtResource("26_si5nn")
+buff_description = NodePath("BuffDescription")
+description_label = NodePath("BuffDescription/BuffDescriptionLabel")
+
+[node name="BuffDescription" type="Panel" parent="PropertyManager/BuffManager/BuffIcon"]
+layout_mode = 0
+offset_left = -200.0
+offset_top = 100.0
+offset_right = 100.0
+offset_bottom = 500.0
+
+[node name="BuffDescriptionLabel" type="Label" parent="PropertyManager/BuffManager/BuffIcon/BuffDescription"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+autowrap_mode = 3
+text_overrun_behavior = 6
+
+[node name="BuffIcons" type="GridContainer" parent="PropertyManager/BuffManager"]
+layout_mode = 0
+offset_left = 571.0
+offset_top = 37.0
+offset_right = 796.0
+offset_bottom = 262.0
+columns = 4
 
 [node name="Once" type="Node" parent="PropertyManager/BuffManager"]
+script = ExtResource("25_si5nn")
 
 [node name="EachTime" type="Node" parent="PropertyManager/BuffManager"]
+script = ExtResource("25_si5nn")
 
 [node name="EachRoundBegin" type="Node" parent="PropertyManager/BuffManager"]
+script = ExtResource("25_si5nn")
 
 [node name="EachRoundOver" type="Node" parent="PropertyManager/BuffManager"]
+script = ExtResource("25_si5nn")
 
 [node name="EachProjectDelivery" type="Node" parent="PropertyManager/BuffManager"]
-
-[node name="EachDebugCardUse" type="Node" parent="PropertyManager/BuffManager"]
-
-[node name="EachActivityCardUse" type="Node" parent="PropertyManager/BuffManager"]
+script = ExtResource("25_si5nn")
 
 [node name="DeliverProject" type="Control" parent="PropertyManager"]
+visible = false
 anchors_preset = 0
 script = SubResource("GDScript_d84jm")
 
@@ -3584,6 +3639,8 @@ mouse_filter = 2
 [connection signal="changed" from="PropertyManager/BugAmountBar" to="PropertyManager/BugAmountBar" method="_on_changed"]
 [connection signal="value_changed" from="PropertyManager/BugAmountBar" to="PropertyManager/BugAmountBar" method="_on_value_changed"]
 [connection signal="pressed" from="PropertyManager/DeliverProjectButton" to="PropertyManager" method="_on_deliver_project_button_pressed"]
+[connection signal="mouse_entered" from="PropertyManager/BuffManager/BuffIcon" to="PropertyManager/BuffManager/BuffIcon" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PropertyManager/BuffManager/BuffIcon" to="PropertyManager/BuffManager/BuffIcon" method="_on_mouse_exited"]
 [connection signal="text_submitted" from="BrowserScene/URLEdit(Flag)" to="BrowserScene" method="_on_url_edit_text_submitted"]
 [connection signal="pressed" from="BrowserScene/Button(Flag)" to="BrowserScene" method="_on_button_pressed"]
 [connection signal="mouse_entered" from="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject0" to="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject0" method="_on_mouse_entered"]
