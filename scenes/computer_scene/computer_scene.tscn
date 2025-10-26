@@ -1966,6 +1966,7 @@ offset_left = 100.0
 offset_top = 5.0
 offset_right = 737.0
 offset_bottom = 198.0
+theme_override_colors/font_color = Color(0.5058824, 0.45882353, 0.40784314, 1)
 autowrap_mode = 3
 text_overrun_behavior = 6
 
@@ -2117,6 +2118,7 @@ theme_override_colors/font_color = Color(0.42352942, 0.38431373, 0.38431373, 1)
 theme_override_font_sizes/font_size = 20
 
 [node name="DeliverProjectButton" type="Button" parent="PropertyManager"]
+visible = false
 layout_mode = 0
 offset_left = 231.0
 offset_top = 427.0
@@ -3125,8 +3127,7 @@ offset_top = 365.0
 offset_right = 550.0
 offset_bottom = 465.0
 mouse_filter = 1
-theme_override_colors/font_color = Color(1, 0.35286877, 0.50801134, 1)
-text = "测试测试测试测试测试测试测试测试测试测试"
+theme_override_colors/font_color = Color(0.5058824, 0.45882353, 0.40784314, 1)
 autowrap_mode = 3
 
 [node name="DebugPanel" type="Control" parent="CalendarScene"]
@@ -3281,6 +3282,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.5058824, 0.45882353, 0.40784314, 1)
 text = "简历"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -3383,6 +3385,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.5058824, 0.45882353, 0.40784314, 1)
 text = "雇员"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -3468,6 +3471,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.5058824, 0.45882353, 0.40784314, 1)
 text = "描述"
 horizontal_alignment = 1
 vertical_alignment = 1

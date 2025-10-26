@@ -60,7 +60,7 @@ func random_music_player():
 		
 var current_volume : float
 func initialize() -> void:
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(3).timeout
 	var music = play_music("b")
 	music.volume_linear = 0
 	for i in 350:

@@ -190,8 +190,6 @@ func set_hand_card_amount_limit(n):
 func use_money(a) -> bool:
 	if money_amount >= a:
 		money_amount -= a
-		money_label.text = "资金：" + str(money_amount)
-		G.play_sound("money")
 		return true
 	else:
 		return false
@@ -224,7 +222,7 @@ func _on_deliver_project_button_pressed() -> void:
 		G.play_sound("illegal_operation")
 		G.D.display_sentence("项目未完成无法提交")
 		return
-	G.play_sound("win_4_piano")
+	G.play_sound("applause_from_many_people")
 	for buff in buff_manager.each_project_delivery.get_children():
 		buff.execute()
 	var buffs = buff_manager.get_all_buffs()
