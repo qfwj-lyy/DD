@@ -211,7 +211,7 @@ func _on_execute_plan_button_button_down() -> void:
 
 func _on_execute_plan_button_button_up() -> void:
 	execute_plan_anim.play("button_up")
-	if not G.P.current_project:
+	if not G.P.has_project:
 		G.play_sound("illegal_operation")
 		G.D.display_sentence("我必须先去浏览器里接个项目来工作")
 		return

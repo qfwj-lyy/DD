@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbu5ks3o4f45g"]
+
+[ext_resource type="PackedScene" uid="uid://cnv0vfvik148k" path="res://scenes/computer_scene/buffs/buff.tscn" id="1_qricg"]
+
+[sub_resource type="GDScript" id="GDScript_ids63"]
+script/source = "extends Buff
+
+func execute():
+	if G.P.round_time_amount >= 151:
+		G.P.project_fail()
+	
+	
+"
+
+[node name="BiSaiDeadline" instance=ExtResource("1_qricg")]
+script = SubResource("GDScript_ids63")
+duration = -9999
+execution_time = 1
+description = "比赛ddl：项目需要在150单位时间内交付"

@@ -30,7 +30,7 @@ func _on_button_up():
 		open_project_detail()
 
 func open_project_detail():
-	if G.P.current_project:
+	if G.P.has_project:
 		G.play_sound("illegal_operation")
 		G.D.display_sentence("我还是不要同时做多个项目吧")
 		return

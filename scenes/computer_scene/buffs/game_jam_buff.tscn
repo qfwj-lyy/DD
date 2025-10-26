@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvk7i4pi4p0ew"]
+
+[ext_resource type="PackedScene" uid="uid://cnv0vfvik148k" path="res://scenes/computer_scene/buffs/buff.tscn" id="1_4ando"]
+
+[sub_resource type="GDScript" id="GDScript_xb2um"]
+script/source = "extends Buff
+
+func execute():
+	if G.P.round_time_amount >= 22:
+		G.P.project_fail()
+		
+"
+
+[node name="GameJamBuff" instance=ExtResource("1_4ando")]
+script = SubResource("GDScript_xb2um")
+duration = -9999
+execution_time = 1
+description = "gamejam：项目需要在21单位时间内交付"

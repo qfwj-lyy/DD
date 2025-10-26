@@ -10,7 +10,7 @@ var project_button
 @export var initial_mood_label: Node
 @export var initial_skill_label: Node
 @export var description_label: Node
-
+@export var deposit_reward_label : Node
 
 func set_project_information(project : Project):
 	displayed_project = project
@@ -21,13 +21,14 @@ func set_project_information(project : Project):
 	initial_money_label.text = "初始资金：" + str(project.initial_money)
 	initial_mood_label.text = "参与意向：" + str(project.initial_mood)
 	initial_skill_label.text = "项目内容熟练度：" + str(project.initial_skill)
+	deposit_reward_label.text = "项目总收入：" + str(project.deposit_reward)
 	description_label.text = project.description
 
 func _on_project_button_pressed() -> void:
 	choose_project()
 
 func choose_project():
-	if G.P.current_project:
+	if G.P.has_project:
 		printerr("in project_detail_scene choose_project()")
 		return
 	project_button.clear()

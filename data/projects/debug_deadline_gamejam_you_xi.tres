@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Project" load_steps=3 format=3 uid="uid://cpsyhe6lfotma"]
+
+[ext_resource type="PackedScene" uid="uid://cvk7i4pi4p0ew" path="res://scenes/computer_scene/buffs/game_jam_buff.tscn" id="1_4gfi2"]
+[ext_resource type="Script" uid="uid://7a2lp0yd04fg" path="res://scripts/computer_scene/resource_type/project.gd" id="1_bh1d1"]
+
+[resource]
+script = ExtResource("1_bh1d1")
+project_name = "《Debug Deadline》gamejam游戏开发"
+initial_bug_amount = 1008.0
+bug_amount_limit = 1030.0
+initial_bug_rate = -100.0
+initial_mood = 100.0
+initial_skill = 100.0
+deposit_reward = 100.0
+description = "初始buff：
+①gamejam：项目需要在21单位时间内交付"
+initial_buffs = Array[Resource]([ExtResource("1_4gfi2")])
+metadata/_custom_type_script = "uid://7a2lp0yd04fg"

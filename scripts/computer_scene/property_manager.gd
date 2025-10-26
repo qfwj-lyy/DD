@@ -2,6 +2,7 @@ extends Panel
 class_name PropertyManager
 
 var current_project : Project
+var has_project := false
 
 @export var deliver_project_button : Button
 var project_progress : float:
@@ -25,7 +26,11 @@ var bug_amount_limit : float = 99999.0:
 	set(i):
 		bug_amount_limit = i
 		bug_amount_bar.max_value = i
-var money_amount : float
+var money_amount : float:
+	set(i):
+		G.play_sound("money")
+		money_amount = i
+		money_label.text = "资金：" + str(int(i))
 var mood_amount : float
 var skill_amount : float
 
@@ -99,10 +104,6 @@ func inspect_mood_buffs():
 #region add_property
 func add_money(n):
 	money_amount += n
-	G.play_sound("money")
-	pass
-	pass
-	money_label.text = "资金：" + str(money_amount)
 var is_stop_mood_increase := false
 func add_mood(n):
 	if is_stop_mood_increase and n > 0:
@@ -157,9 +158,6 @@ func add_hand_card_amount_limit(n):
 #region set_property
 func set_money(n):
 	money_amount = n
-	pass
-	pass
-	money_label.text = "资金：" + str(money_amount)
 func set_mood(n):
 	if is_stop_mood_increase and n > mood_amount:
 		return
@@ -183,6 +181,7 @@ func set_bug_amount(n):
 	bug_amount = n
 func set_current_project(p : Project):
 	current_project = p
+	G.P.has_project = true
 	
 func set_bug_rate(n):
 	bug_rate = n
@@ -220,11 +219,11 @@ func clear():
 	set_bug_amount(0)
 	set_bug_limit(100)
 	set_bug_rate(0)
-	set_current_project(null)
 	set_money(0)
 	set_mood(0)
 	set_project_progress(0)
 	set_skill(0)
+	has_project = false
 	G.M.current_scene.calendar_scene.clear()
 
 func _on_deliver_project_button_pressed() -> void:
