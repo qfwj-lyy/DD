@@ -10,7 +10,7 @@ money = 4
 mood = 10
 time = 1
 description = "对酒当歌
-3/10/1
+资金3/心情10/时间1
 本回合结束时bug增长率+5%"
 
 [node name="Buff" type="Node" parent="Buffs" index="0"]

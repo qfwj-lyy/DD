@@ -8,7 +8,7 @@ money = 3
 mood = -3
 time = 1
 description = "断点调试
-2/-3/2
+资金2/心情-3/时间2
 本回合的剩余时间内，每单位时间bug-2"
 
 [node name="Buff" type="Node" parent="Buffs" index="0"]

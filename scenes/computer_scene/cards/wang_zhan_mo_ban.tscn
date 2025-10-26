@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://xqa1ge5cb875"]
 
-[ext_resource type="PackedScene" uid="uid://cl4ah171acyxi" path="res://scenes/computer_scene/cards/card.tscn" id="1_0lr4k"]
+[ext_resource type="PackedScene" uid="uid://dubitep1ioo2t" path="res://scenes/computer_scene/cards/debug_card.tscn" id="1_0lr4k"]
 
 [sub_resource type="GDScript" id="GDScript_2ja3a"]
 script/source = "extends Buff
@@ -13,11 +13,11 @@ func execute():
 
 [node name="WangZhanMoBan" instance=ExtResource("1_0lr4k")]
 description = "网站模板
-0/0/0
+资金0/心情0/时间0
 效果：消耗所有资金，获得等量初始进度"
 
 [node name="Buff" type="Node" parent="Buffs" index="0"]
 script = SubResource("GDScript_2ja3a")
 duration = 1
-description = "效果：消耗所有资金，获得等量项目进度"
+description = "效果：消耗所有资金，获得等量初始进度"
 metadata/_custom_type_script = "uid://dwhc1hbrg4em"

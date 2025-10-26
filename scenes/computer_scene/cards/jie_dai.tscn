@@ -9,7 +9,7 @@ script = ExtResource("2_mbdop")
 mood = -1
 time = 2
 description = "借贷
-0/-1/1
+资金0/心情-1/时间1
 获得10资金，本回合剩余时间内每单位时间资金-2"
 
 [node name="Buff" type="Node" parent="Buffs" index="0"]

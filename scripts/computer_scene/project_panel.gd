@@ -1,10 +1,11 @@
 extends Panel
 
-
+var current_web : ProjectWeb
 func _ready() -> void:
 	var p = load("res://data/projects/quan_min_da_fei_ji_you_xi_kai_fa.tres")
 	set_mandatory_project(p)
-	browse_web("project_web_0")
+	current_web = load("res://data/project_webs/project_web_0" + ".tres")
+	browse_current_web()
 
 func clear():
 	for supplier in get_children():
@@ -15,9 +16,8 @@ func set_mandatory_project(p : Project):
 	
 
 #var mandatory_projects := []
-func browse_web(web_name : String):
+func browse_current_web():
 	clear()
-	var web : ProjectWeb = load("res://data/project_webs/" + web_name + ".tres")
 	#var array = Array()
 	#array.resize( web.suppliers.size() )
 	#array.fill(false)
@@ -48,4 +48,4 @@ func browse_web(web_name : String):
 	for i in 3:
 		var s_name := "SupplierIcon"
 		s_name += str(i)
-		get_node(s_name).browse_supplier(web.suppliers[i])
+		get_node(s_name).browse_supplier(current_web.suppliers[i])

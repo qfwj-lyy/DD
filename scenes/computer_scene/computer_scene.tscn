@@ -3025,7 +3025,7 @@ computer_scene = NodePath("..")
 debug_hand = NodePath("DebugHand")
 activity_hand = NodePath("ActivityHand")
 unused_hand = NodePath("UnusedHand")
-round_tips_label = NodePath("RoundTipsLabel")
+round_tips_label = NodePath("ScrollContainer/RoundTipsLabel")
 
 [node name="BackGround" type="Panel" parent="CalendarScene"]
 self_modulate = Color(1, 1, 1, 0)
@@ -3119,16 +3119,6 @@ offset_top = 350.0
 offset_right = 572.0
 offset_bottom = 476.0
 texture = ExtResource("40_1r1dv")
-
-[node name="RoundTipsLabel" type="Label" parent="CalendarScene"]
-layout_mode = 0
-offset_left = 80.0
-offset_top = 365.0
-offset_right = 550.0
-offset_bottom = 465.0
-mouse_filter = 1
-theme_override_colors/font_color = Color(0.5058824, 0.45882353, 0.40784314, 1)
-autowrap_mode = 3
 
 [node name="DebugPanel" type="Control" parent="CalendarScene"]
 anchors_preset = 0
@@ -3250,6 +3240,20 @@ script = ExtResource("26_06as4")
 libraries = {
 &"": SubResource("AnimationLibrary_ftseh")
 }
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CalendarScene"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 365.0
+offset_right = 555.0
+offset_bottom = 465.0
+
+[node name="RoundTipsLabel" type="Label" parent="CalendarScene/ScrollContainer"]
+custom_minimum_size = Vector2(470, 10)
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.5058824, 0.45882353, 0.40784314, 1)
+autowrap_mode = 3
 
 [node name="CompanyScene" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0)

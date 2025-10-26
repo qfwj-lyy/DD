@@ -8,7 +8,7 @@
 mood = -10
 time = 1
 description = "加班
-0/-10/1
+资金0/心情-10/时间1
 本回合剩余时间内，心情不会增加，每推进1项目进度，资金+2"
 
 [node name="Buff" type="Node" parent="Buffs" index="0"]

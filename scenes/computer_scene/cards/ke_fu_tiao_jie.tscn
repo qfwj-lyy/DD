@@ -9,5 +9,5 @@ money = 8
 mood = -4
 time = 2
 description = "客服调节
-8/-5/3
+资金8/心情-5/时间3
 bug上限增加10%（向下取整）"

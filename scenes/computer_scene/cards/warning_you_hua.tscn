@@ -9,5 +9,5 @@ money = 4
 mood = -2
 time = 2
 description = "warning优化
-5/-2/2
+资金5/心情-2/时间2
 本回合结束时，bug固定增长变为0"

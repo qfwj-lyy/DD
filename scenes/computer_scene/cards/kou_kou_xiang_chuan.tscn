@@ -9,7 +9,7 @@ script = ExtResource("2_xmho3")
 money = 10
 time = 1
 description = "口口相传
-10/0/1
+资金10/心情0/时间1
 本轮游戏的剩余时间内，每单位时间心情+1"
 
 [node name="Buff" type="Node" parent="Buffs" index="0"]

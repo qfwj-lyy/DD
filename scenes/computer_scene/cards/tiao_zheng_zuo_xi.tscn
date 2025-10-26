@@ -9,7 +9,7 @@ script = ExtResource("2_y40ya")
 mood = -2
 time = 3
 description = "调整作息
-0/-2/4
+资金0/心情-2/时间4
 本回合剩余时间内，每单位时间心情+2"
 
 [node name="Buff" type="Node" parent="Buffs" index="0"]

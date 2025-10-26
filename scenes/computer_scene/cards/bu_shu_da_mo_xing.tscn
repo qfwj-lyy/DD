@@ -7,7 +7,7 @@
 money = 10
 time = 2
 description = "部署大模型（仅一张）
-10/0/1
+资金10/心情0/时间1
 本轮游戏的剩余时间内，每出一张debug卡，项目进度+2"
 
 [node name="BuShuDaMoXingBuff" type="Node" parent="Buffs" index="0"]

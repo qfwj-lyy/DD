@@ -10,7 +10,7 @@ money = 5
 mood = 4
 time = 1
 description = "高歌猛进
-5/4/1
+资金5/心情4/时间1
 本回合剩余时间内，每单位时间心情+2"
 
 [node name="Buff" type="Node" parent="Buffs" index="0"]

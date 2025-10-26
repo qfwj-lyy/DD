@@ -9,7 +9,7 @@ script = ExtResource("2_o5hq7")
 mood = -5
 time = 3
 description = "停服维护
-0/-5/3
+资金0/心情-5/时间3
 本回合剩余时间内，每单位时间bug-4，但固定收益变为0"
 
 [node name="Buff" type="Node" parent="Buffs" index="0"]

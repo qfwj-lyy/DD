@@ -9,7 +9,7 @@ script = ExtResource("2_e44sg")
 money = 15
 time = 3
 description = "ai调整项目框架
-10/0/3
+资金10/心情0/时间3
 本轮游戏的剩余时间内，每回合开始时项目进度+3"
 
 [node name="Buff" type="Node" parent="Buffs" index="0"]

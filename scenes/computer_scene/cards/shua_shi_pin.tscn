@@ -10,7 +10,7 @@ money = 3
 mood = 10
 time = 2
 description = "刷视频
-1/10/1
+资金1/心情10/时间1
 本回合剩余时间内，每单位时间心情-2"
 
 [node name="Buff" type="Node" parent="Buffs" index="0"]

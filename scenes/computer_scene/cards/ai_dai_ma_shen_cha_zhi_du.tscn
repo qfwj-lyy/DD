@@ -6,7 +6,7 @@
 [node name="AIDaiMaShenChaZhiDu" instance=ExtResource("1_5wyj2")]
 money = 5
 description = "ai代码审查制度（仅一张）
-5/0/0
+资金5/心情0/时间0
 本轮游戏的剩余时间内，每出一张debug卡，bug-2"
 
 [node name="AIDaiMaShenChaZhiDu" type="Node" parent="Buffs" index="0"]

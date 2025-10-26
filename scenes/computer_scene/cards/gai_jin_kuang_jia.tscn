@@ -10,7 +10,7 @@ money = 6
 mood = -3
 time = 3
 description = "改进框架
-5/-3/3
+资金5/心情-3/时间3
 本轮游戏的剩余时间内，每回合开始时项目进度+2"
 
 [node name="Buff" type="Node" parent="Buffs" index="0"]
