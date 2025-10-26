@@ -260,3 +260,11 @@ func show_card_description(d : String):
 			new_text += word
 	round_tips_label.text = new_text
 	
+
+@onready var button_rect: TextureRect = $CalenderButton/ButtonRect
+
+func _process(_delta: float) -> void:
+	if is_open:
+		button_rect.rotation_degrees = 180.0
+	if !is_open :
+		button_rect.rotation_degrees = 0.0
