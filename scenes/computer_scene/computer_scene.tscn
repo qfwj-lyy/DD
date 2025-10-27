@@ -3031,9 +3031,9 @@ mouse_filter = 1
 [node name="ExitBrowser(Flag)" type="Button" parent="BrowserScene"]
 layout_mode = 0
 offset_left = 911.0
-offset_top = 21.0
+offset_top = 22.0
 offset_right = 983.0
-offset_bottom = 74.0
+offset_bottom = 75.0
 mouse_filter = 1
 text = "退出"
 
@@ -3043,6 +3043,7 @@ libraries = {
 }
 
 [node name="CalendarScene" type="Panel" parent="." node_paths=PackedStringArray("debug_hand", "activity_hand", "unused_hand", "round_tips_label")]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 1060.0
