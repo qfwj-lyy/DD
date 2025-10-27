@@ -11,6 +11,7 @@ var property_manager : PropertyManager
 @export var company_scene : Node
 @export var mandatory_guide : Node
 @export var store_scene : Node
+@export var character_scene : Node
 
 var current_date := 0
 

@@ -7,6 +7,7 @@ class_name DialogueManager
 #@export var left_avater : TextureRect
 #@export var right_avater : TextureRect
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $NextSceneInputRegion/OpenCharacter/AnimatedSprite2D
 
 var dialogue_segment : DialogueSegment
 
@@ -25,9 +26,12 @@ func display_next_scene() ->void:
 	
 	if typer and typer.is_running():
 		typer.kill()
-		G.kill_sound("typing")
 		text_label.text = dialogue_scene.text
 		index += 1
+		
+		G.kill_sound("typing")
+		animated_sprite_2d.stop()
+		
 		return
 	
 	
@@ -35,8 +39,11 @@ func display_next_scene() ->void:
 	
 	typer = get_tree().create_tween()
 	typer.connect("finished", G.kill_sound.bind("typing"))
-	text_label.text = ""
+	typer.connect("finished", animated_sprite_2d.stop)
 	G.play_sound("typing" , 0 , randf_range(0 , 7))
+	animated_sprite_2d.play("default")
+	
+	text_label.text = ""
 	for character in dialogue_scene.text :
 		typer.tween_callback(_append_character.bind(character)).set_delay(0.05)
 	typer.tween_callback(func(): index += 1)
@@ -63,8 +70,9 @@ func display_dialogue_segment(ds_name : String):
 
 func display_sentence(s : String):
 	if typer and typer.is_running():
-		typer.kill()
 		G.kill_sound("typing")
+		typer.kill()
+		animated_sprite_2d.stop()
 	var d_segment = DialogueSegment.new()
 	var d_scene = DialogueScene.new()
 	d_scene.text = s
@@ -79,7 +87,11 @@ func clear():
 	dialogue_segment = null
 	text_label.text = ""
 	index = 0
+	if typer and typer.is_running():
+		G.kill_sound("typing")
+		typer.kill()
 	typer = null
+	animated_sprite_2d.stop()
 
 func _on_next_scene_input_region_gui_input(event: InputEvent) -> void:
 	if event.is_action_released("LeftMouseDown"):
@@ -87,4 +99,8 @@ func _on_next_scene_input_region_gui_input(event: InputEvent) -> void:
 
 func _ready() -> void:
 	G.D = self
+
+
+func _on_open_character_pressed() -> void:
+	G.M.current_scene.character_scene.show()
 	
