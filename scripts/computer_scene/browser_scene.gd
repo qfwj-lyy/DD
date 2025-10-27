@@ -25,25 +25,28 @@ func set_mandatory_project(p : Project):
 func _on_close_requested() -> void:
 	visible = false
 
-var is_first_scroll := true
+
+#region 窗口大小与位置的鼠标拖动设置，以及z_index管理
 func _physics_process(_delta: float) -> void:
-	if is_first_scroll:
-		if main_scroll_container.scroll_vertical >= 300:
-			is_first_scroll = false
-			var button = G.M.current_scene.browser_scene.supplier_project_0
-			G.M.current_scene.mandatory_guide.set_small_input_area(button.size.x , button.size.y , button.global_position.x , button.global_position.y )
-			G.D.display_sentence("好，那就打个飞机")
-	
 	match window_operation_status:
 		"move":
 			var relative_mouse_position = get_relative_mouse_position(false , false)
 			global_position += relative_mouse_position
 	
-
-#region 窗口大小与位置的鼠标拖动设置，以及z_index管理
 var window_operation_status : String
 var mp : Vector2 # mouse_position
+var is_first_scroll := true
 func _on_gui_input(event: InputEvent) -> void:
+	if is_first_scroll:
+		if event is InputEventMouseButton:
+			if event.button_index == MouseButton.MOUSE_BUTTON_WHEEL_DOWN:
+				if main_scroll_container.scroll_vertical >= 300:
+					is_first_scroll = false
+					G.M.current_scene.mandatory_guide.pause()
+					await get_tree().create_timer(0.2).timeout
+					var button = G.M.current_scene.browser_scene.supplier_project_0
+					G.M.current_scene.mandatory_guide.set_small_input_area(button.size.x , button.size.y , button.global_position.x , button.global_position.y )
+					G.D.display_sentence("好，那就打个飞机")
 	if event.is_action_pressed("LeftMouseDown"):
 		G.M.computer_window_max_z_index += 1
 		z_index = G.M.computer_window_max_z_index

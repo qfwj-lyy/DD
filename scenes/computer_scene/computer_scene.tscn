@@ -1655,6 +1655,8 @@ func _input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 			
 func clear():
+	for point in small_input_area.get_children():
+		point.queue_free()
 	small_input_area.size = Vector2.ZERO
 	small_input_area.position = Vector2.ZERO
 	is_open = false
@@ -1687,7 +1689,6 @@ grow_vertical = 2
 texture = ExtResource("2_rw1u3")
 
 [node name="DesktopIconManager" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 mouse_filter = 1
 script = ExtResource("3_cd3q4")
@@ -1843,7 +1844,6 @@ grow_vertical = 2
 texture = ExtResource("5_rw1u3")
 
 [node name="StoreScene" type="Control" parent="." node_paths=PackedStringArray("store_cards", "description_label")]
-visible = false
 anchors_preset = 0
 offset_top = 1000.0
 offset_right = 990.0
@@ -2081,7 +2081,6 @@ offset_bottom = 290.0
 mouse_filter = 1
 
 [node name="PropertyManager" type="Control" parent="." node_paths=PackedStringArray("deliver_project_button", "money_label", "mood_label", "skill_label", "project_progress_bar", "bug_amount_bar", "deliver_project")]
-visible = false
 anchors_preset = 0
 offset_left = 1760.0
 offset_right = 2560.0
@@ -3044,7 +3043,6 @@ libraries = {
 }
 
 [node name="CalendarScene" type="Panel" parent="." node_paths=PackedStringArray("debug_hand", "activity_hand", "unused_hand", "round_tips_label")]
-visible = false
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 1060.0
@@ -3581,6 +3579,7 @@ offset_bottom = 750.0
 mouse_filter = 1
 
 [node name="CharacterScene" type="Panel" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 1000.0
 offset_bottom = 800.0
@@ -3737,16 +3736,25 @@ sprite_frames = SubResource("SpriteFrames_s6lbx")
 centered = false
 
 [node name="MandatoryGuide" type="Control" parent="."]
+z_index = 4096
 anchors_preset = 0
 mouse_filter = 2
 script = ExtResource("33_d84jm")
 
 [node name="FullScreenInputStop" type="Control" parent="MandatoryGuide"]
-visible = false
 layout_mode = 1
 anchors_preset = 0
 mouse_filter = 2
 script = SubResource("GDScript_t7krb")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="MandatoryGuide/FullScreenInputStop"]
+visible = false
+amount = 4
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+color = Color(1, 1, 0, 1)
 
 [node name="SmallInputArea" type="Control" parent="MandatoryGuide/FullScreenInputStop"]
 anchors_preset = 0

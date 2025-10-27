@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bcy5o23ro4f5y" path="res://scripts/computer_scene/project_detail_scene.gd" id="1_rvwmx"]
 
 [node name="ProjectDetailScene" type="Control" node_paths=PackedStringArray("project_name_label", "initial_progress_label", "initial_bug_amount_label", "bug_amount_limit_label", "initial_money_label", "initial_mood_label", "initial_skill_label", "description_label", "deposit_reward_label")]
+z_index = 4096
 custom_minimum_size = Vector2(980, 360)
 layout_mode = 3
 anchors_preset = 15

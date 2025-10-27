@@ -35,6 +35,7 @@ func _on_open_setting_button_up() -> void:
 	setting_anim.play("button_up")
 	var setting_scene = load("res://scenes/setting_scene.tscn").instantiate()
 	G.M.add_child(setting_scene)
+	G.M.set_top_window(setting_scene)
 #region 浏览器动画
 
 @onready var browser_self_anim: AnimationPlayer = $"../BrowserScene/BrowserSelfAnim"
@@ -46,6 +47,7 @@ func _on_open_browser_button_up() -> void:
 	browser_anim.play("button_up")
 	browser_self_anim.play("open")
 	computer_scene.browser_scene.visible = true
+	G.M.set_top_window(G.M.current_scene.browser_scene)
 	if _is_browser_first_open:
 		_is_browser_first_open = false
 		G.D.display_dialogue_segment("wan_jia_chu_ci_da_kai_liu_lan_qi")
@@ -77,6 +79,7 @@ func _on_open_company_button_up() -> void:
 	company_anim.play("button_up")
 	company_self_anim.play("open")
 	computer_scene.company_scene.visible = true
+	G.M.set_top_window(G.M.current_scene.company_scene)
 	if _is_company_first_open:
 		_is_company_first_open = false
 		G.D.display_sentence("哎，让我来看看人才市场。现在公司刚起步，感觉应该招点不要入职金的实习生（双击人才以招募）")

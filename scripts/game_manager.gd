@@ -130,3 +130,6 @@ func add_scene(_new_scene):
 
 #region ComputerWindow的z_index管理
 var computer_window_max_z_index := 1 # 1-9999
+func set_top_window(node : Node):
+	node.z_index = computer_window_max_z_index
+	computer_window_max_z_index += 1
