@@ -1640,7 +1640,13 @@ func clear():
 	is_open = false
 "
 
-[node name="ComputerScene" type="CanvasLayer" node_paths=PackedStringArray("unused_hand", "debug_hand", "activity_hand", "calendar_scene", "company_scene", "mandatory_guide", "store_scene")]
+[node name="ComputerScene" type="Control" node_paths=PackedStringArray("unused_hand", "debug_hand", "activity_hand", "calendar_scene", "company_scene", "mandatory_guide", "store_scene")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_8g14y")
 unused_hand = NodePath("CalendarScene/UnusedHand")
 debug_hand = NodePath("CalendarScene/DebugHand")
@@ -1651,6 +1657,7 @@ mandatory_guide = NodePath("MandatoryGuide")
 store_scene = NodePath("StoreScene")
 
 [node name="ComputerBackground" type="TextureRect" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1660,7 +1667,6 @@ texture = ExtResource("2_rw1u3")
 
 [node name="DesktopIconManager" type="Control" parent="."]
 visible = false
-layout_mode = 3
 anchors_preset = 0
 mouse_filter = 1
 script = ExtResource("3_cd3q4")
@@ -1816,7 +1822,6 @@ grow_vertical = 2
 texture = ExtResource("5_rw1u3")
 
 [node name="StoreScene" type="Control" parent="." node_paths=PackedStringArray("store_cards", "description_label")]
-layout_mode = 3
 anchors_preset = 0
 offset_top = 1000.0
 offset_right = 990.0
@@ -2054,7 +2059,6 @@ offset_bottom = 290.0
 mouse_filter = 1
 
 [node name="PropertyManager" type="Control" parent="." node_paths=PackedStringArray("deliver_project_button", "money_label", "mood_label", "skill_label", "project_progress_bar", "bug_amount_bar", "deliver_project")]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 1760.0
 offset_right = 2560.0
@@ -2364,6 +2368,7 @@ expand_mode = 1
 
 [node name="BrowserScene" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_right = 1000.0
 offset_bottom = 2950.0
 pivot_offset = Vector2(500, 400)
@@ -2378,6 +2383,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 expand_mode = 1
 
 [node name="URLEdit(Flag)" type="LineEdit" parent="BrowserScene"]
@@ -2958,7 +2964,7 @@ libraries = {
 layout_mode = 0
 offset_right = 1000.0
 offset_bottom = 90.0
-mouse_filter = 1
+mouse_filter = 2
 
 [node name="Close" type="Panel" parent="BrowserScene/TabBar"]
 layout_mode = 0
@@ -3014,6 +3020,7 @@ libraries = {
 
 [node name="CalendarScene" type="Panel" parent="." node_paths=PackedStringArray("computer_scene", "debug_hand", "activity_hand", "unused_hand", "round_tips_label")]
 self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 1060.0
 offset_top = 460.0
 offset_right = 1980.0
@@ -3021,7 +3028,7 @@ offset_bottom = 1600.0
 mouse_filter = 1
 theme = SubResource("Theme_dlmsr")
 script = ExtResource("17_br20j")
-computer_scene = NodePath("..")
+computer_scene = NodePath("")
 debug_hand = NodePath("DebugHand")
 activity_hand = NodePath("ActivityHand")
 unused_hand = NodePath("UnusedHand")
@@ -3257,6 +3264,7 @@ autowrap_mode = 3
 
 [node name="CompanyScene" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_right = 1000.0
 offset_bottom = 800.0
 scale = Vector2(0.5, 0.5)
@@ -3517,6 +3525,7 @@ libraries = {
 
 [node name="DataBaseScene" type="Panel" parent="."]
 visible = false
+layout_mode = 0
 offset_right = 1000.0
 offset_bottom = 800.0
 
@@ -3546,6 +3555,7 @@ mouse_filter = 1
 
 [node name="CharacterScene" type="Panel" parent="."]
 visible = false
+layout_mode = 0
 offset_right = 1000.0
 offset_bottom = 800.0
 mouse_filter = 1
@@ -3701,7 +3711,6 @@ offset_bottom = 720.0
 mouse_filter = 1
 
 [node name="DialogueManager" type="Control" parent="." node_paths=PackedStringArray("text_label")]
-layout_mode = 3
 anchors_preset = 0
 script = ExtResource("31_yw0uv")
 text_label = NodePath("NextSceneInputRegion/TextLabel")
@@ -3735,7 +3744,6 @@ autowrap_mode = 3
 text_overrun_behavior = 6
 
 [node name="MandatoryGuide" type="Control" parent="."]
-layout_mode = 3
 anchors_preset = 0
 mouse_filter = 2
 script = ExtResource("33_d84jm")
@@ -3776,6 +3784,7 @@ mouse_filter = 2
 [connection signal="pressed" from="PropertyManager/DeliverProjectButton" to="PropertyManager" method="_on_deliver_project_button_pressed"]
 [connection signal="mouse_entered" from="PropertyManager/BuffManager/BuffIcon" to="PropertyManager/BuffManager/BuffIcon" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="PropertyManager/BuffManager/BuffIcon" to="PropertyManager/BuffManager/BuffIcon" method="_on_mouse_exited"]
+[connection signal="gui_input" from="BrowserScene" to="BrowserScene" method="_on_gui_input"]
 [connection signal="text_submitted" from="BrowserScene/URLEdit(Flag)" to="BrowserScene" method="_on_url_edit_text_submitted"]
 [connection signal="pressed" from="BrowserScene/Button(Flag)" to="BrowserScene" method="_on_button_pressed"]
 [connection signal="mouse_entered" from="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject0" to="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject0" method="_on_mouse_entered"]
@@ -3811,6 +3820,7 @@ mouse_filter = 2
 [connection signal="child_exiting_tree" from="CalendarScene/ActivityHand" to="CalendarScene/ActivityHand" method="_on_child_exiting_tree"]
 [connection signal="child_entered_tree" from="CalendarScene/UnusedHand" to="CalendarScene/UnusedHand" method="_on_child_entered_tree"]
 [connection signal="child_exiting_tree" from="CalendarScene/UnusedHand" to="CalendarScene/UnusedHand" method="_on_child_exiting_tree"]
+[connection signal="gui_input" from="CompanyScene" to="CompanyScene" method="_on_gui_input"]
 [connection signal="button_down" from="CompanyScene/RefreshEmployee" to="CompanyScene" method="_on_refresh_employee_button_down"]
 [connection signal="button_up" from="CompanyScene/RefreshEmployee" to="CompanyScene" method="_on_refresh_employee_button_up"]
 [connection signal="pressed" from="CompanyScene/RefreshEmployee" to="CompanyScene" method="_on_refresh_employee_pressed"]

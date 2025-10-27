@@ -15,22 +15,22 @@ func _on_gui_input(event: InputEvent) -> void:
 			return
 		elif(mp.x >= margin and mp.x <= size.x - margin and mp.y >= margin and mp.y <= 30 + margin):
 			window_operation_status = "move"
-		elif(mp.x >= margin and mp.x <= size.x - margin and mp.y <= margin):
-			window_operation_status = "up"
-		elif(mp.x >= margin and mp.x <= size.x - margin):
-			window_operation_status = "down"
-		elif(mp.x <= margin and mp.y >= margin and mp.y <= size.y - margin):
-			window_operation_status = "left"
-		elif(mp.x >= size.x - margin and mp.y >= margin and mp.y <= size.y - margin):
-			window_operation_status = "right"
-		elif(mp.x <= margin and mp.y <= margin):
-			window_operation_status = "top left"
-		elif(mp.y <= margin):
-			window_operation_status = "top right"
-		elif(mp.x <= margin):
-			window_operation_status = "bottom left"
-		else:
-			window_operation_status = "bottom right"
+		#elif(mp.x >= margin and mp.x <= size.x - margin and mp.y <= margin):
+			#window_operation_status = "up"
+		#elif(mp.x >= margin and mp.x <= size.x - margin):
+			#window_operation_status = "down"
+		#elif(mp.x <= margin and mp.y >= margin and mp.y <= size.y - margin):
+			#window_operation_status = "left"
+		#elif(mp.x >= size.x - margin and mp.y >= margin and mp.y <= size.y - margin):
+			#window_operation_status = "right"
+		#elif(mp.x <= margin and mp.y <= margin):
+			#window_operation_status = "top left"
+		#elif(mp.y <= margin):
+			#window_operation_status = "top right"
+		#elif(mp.x <= margin):
+			#window_operation_status = "bottom left"
+		#else:
+			#window_operation_status = "bottom right"
 		#be_clicked()
 func get_relative_mouse_position(set_mp_x : bool , set_mp_y : bool):
 	var new_mp = get_local_mouse_position()
@@ -48,34 +48,34 @@ func _physics_process(_delta: float) -> void:
 		"move":
 			var relative_mouse_position = get_relative_mouse_position(false , false)
 			global_position += relative_mouse_position
-		"up":
-			var relative_mouse_position = get_relative_mouse_position(false , false)
-			global_position.y += relative_mouse_position.y
-			size.y -= relative_mouse_position.y
-		"down":
-			var relative_mouse_position = get_relative_mouse_position(true , true)
-			size.y += relative_mouse_position.y
-		"left":
-			var relative_mouse_position = get_relative_mouse_position(false , false)
-			global_position.x += relative_mouse_position.x
-			size.x -= relative_mouse_position.x
-		"right":
-			var relative_mouse_position = get_relative_mouse_position(true , true)
-			size.x += relative_mouse_position.x
-		"top left":
-			var relative_mouse_position = get_relative_mouse_position(false , false)
-			global_position += relative_mouse_position
-			size -= relative_mouse_position
-		"top right":
-			var relative_mouse_position = get_relative_mouse_position(true , false)
-			global_position.y += relative_mouse_position.y
-			size.x += relative_mouse_position.x
-			size.y -= relative_mouse_position.y
-		"bottom left":
-			var relative_mouse_position = get_relative_mouse_position(false , true)
-			global_position.x += relative_mouse_position.x
-			size.x -= relative_mouse_position.x
-			size.y += relative_mouse_position.y
-		"bottom right":
-			var relative_mouse_position = get_relative_mouse_position(true , true)
-			size += relative_mouse_position
+		#"up":
+			#var relative_mouse_position = get_relative_mouse_position(false , false)
+			#global_position.y += relative_mouse_position.y
+			#size.y -= relative_mouse_position.y
+		#"down":
+			#var relative_mouse_position = get_relative_mouse_position(true , true)
+			#size.y += relative_mouse_position.y
+		#"left":
+			#var relative_mouse_position = get_relative_mouse_position(false , false)
+			#global_position.x += relative_mouse_position.x
+			#size.x -= relative_mouse_position.x
+		#"right":
+			#var relative_mouse_position = get_relative_mouse_position(true , true)
+			#size.x += relative_mouse_position.x
+		#"top left":
+			#var relative_mouse_position = get_relative_mouse_position(false , false)
+			#global_position += relative_mouse_position
+			#size -= relative_mouse_position
+		#"top right":
+			#var relative_mouse_position = get_relative_mouse_position(true , false)
+			#global_position.y += relative_mouse_position.y
+			#size.x += relative_mouse_position.x
+			#size.y -= relative_mouse_position.y
+		#"bottom left":
+			#var relative_mouse_position = get_relative_mouse_position(false , true)
+			#global_position.x += relative_mouse_position.x
+			#size.x -= relative_mouse_position.x
+			#size.y += relative_mouse_position.y
+		#"bottom right":
+			#var relative_mouse_position = get_relative_mouse_position(true , true)
+			#size += relative_mouse_position
