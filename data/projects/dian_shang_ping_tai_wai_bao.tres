@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Project" load_steps=3 format=3 uid="uid://brat6svpd1id2"]
+[gd_resource type="Resource" script_class="Project" load_steps=4 format=3 uid="uid://brat6svpd1id2"]
 
 [ext_resource type="Script" uid="uid://7a2lp0yd04fg" path="res://scripts/computer_scene/resource_type/project.gd" id="1_hukgo"]
 [ext_resource type="PackedScene" uid="uid://cvgfq5xk3litx" path="res://scenes/computer_scene/buffs/ren_zhong_dao_yuan.tscn" id="1_m0ao6"]
+[ext_resource type="Texture2D" uid="uid://ce3yx76ayswfg" path="res://assets/projects/gou_wu_ping_tai.png" id="1_tia8s"]
 
 [resource]
 script = ExtResource("1_hukgo")
@@ -16,4 +17,5 @@ deposit_reward = 60.0
 description = "初始buff：
 ①任重道远：每回合开始时给bug增长率添加一个范围在-10%到+10%的修正"
 initial_buffs = Array[Resource]([ExtResource("1_m0ao6")])
+icon = ExtResource("1_tia8s")
 metadata/_custom_type_script = "uid://7a2lp0yd04fg"

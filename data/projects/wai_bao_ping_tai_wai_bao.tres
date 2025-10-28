@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Project" load_steps=3 format=3 uid="uid://b25ewo3yqck1s"]
+[gd_resource type="Resource" script_class="Project" load_steps=4 format=3 uid="uid://b25ewo3yqck1s"]
 
 [ext_resource type="PackedScene" uid="uid://durq7b2smhfjl" path="res://scenes/computer_scene/buffs/wai_bao_buff_wai_bao_bu_tie.tscn" id="1_7vx60"]
 [ext_resource type="Script" uid="uid://7a2lp0yd04fg" path="res://scripts/computer_scene/resource_type/project.gd" id="1_ejfah"]
+[ext_resource type="Texture2D" uid="uid://besybp0uf0q7n" path="res://assets/projects/wai_bao.png" id="1_o3bl0"]
 
 [resource]
 script = ExtResource("1_ejfah")
@@ -17,4 +18,5 @@ deposit_reward = 80.0
 description = "初始buff：
 ①外包补贴：每解雇一个实习生，获得其工资数的资金"
 initial_buffs = Array[Resource]([ExtResource("1_7vx60")])
+icon = ExtResource("1_o3bl0")
 metadata/_custom_type_script = "uid://7a2lp0yd04fg"
