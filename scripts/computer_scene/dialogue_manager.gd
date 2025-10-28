@@ -23,6 +23,7 @@ func display_next_scene() ->void:
 		bubble.hide()
 		return
 	if index >= len(dialogue_segment.dialogue_scenes):
+		bubble.hide()
 		clear()
 		return
 	
@@ -106,6 +107,6 @@ func _ready() -> void:
 	G.D = self
 
 
-func _on_open_character_pressed() -> void:
-	G.M.current_scene.character_scene.show()
-	
+func _on_open_character_gui_input(event: InputEvent) -> void:
+	if event.is_action_released("LeftMouseDown"):
+		G.M.current_scene.character_scene.show()

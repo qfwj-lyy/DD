@@ -8,8 +8,9 @@ func _ready() -> void:
 	browse_current_web()
 
 func clear():
-	for supplier in get_children():
-		supplier.clear()
+	for i in get_children():
+		if i is Panel:
+			i.clear()
 
 func set_mandatory_project(p : Project):
 	get_node("SupplierIcon0").set_mandatory_project(p)

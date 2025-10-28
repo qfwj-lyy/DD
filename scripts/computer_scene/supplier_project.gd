@@ -8,12 +8,15 @@ var project : Project
 
 @export var project_border_anim: AnimationPlayer
 
+var project_icon : TextureRect
+
 func _ready() -> void:
 	#connect("pressed" , _on_pressed)
 	connect("button_down" , _on_button_down )
 	connect("button_up" , _on_button_up)
 	if project_border :
 		project_border.visible = false
+	project_icon = $Icon
 
 	
 #func _on_pressed():
@@ -42,11 +45,12 @@ func open_project_detail():
 func set_project(p : Project):
 	project_name_label.text = p.project_name
 	project = p
+	project_icon.texture = p.icon
 
 func clear():
 	project_name_label.text = ""
 	project = null
-	
+	project_icon.texture = null
 
 
 
