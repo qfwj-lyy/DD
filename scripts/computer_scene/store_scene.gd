@@ -73,3 +73,8 @@ func _on_refresh_cards_button_up() -> void:
 func show_card_description(d : String):
 	description_label.text = d
 	
+
+
+func _on_gui_input(event: InputEvent) -> void:
+	if event.is_action_pressed("LeftMouseDown"):
+		G.M.set_top_window(self)

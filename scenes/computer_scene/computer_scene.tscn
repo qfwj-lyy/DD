@@ -3456,7 +3456,7 @@ self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 920.0
 offset_bottom = 1240.0
-mouse_filter = 1
+mouse_filter = 2
 
 [node name="BackgroundRect" type="TextureRect" parent="CalendarScene/BackGround"]
 layout_mode = 1
@@ -3465,6 +3465,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("36_1r1dv")
 expand_mode = 1
 
@@ -3718,7 +3719,7 @@ text = "简历"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Employee0" type="Panel" parent="CompanyScene"]
+[node name="Employee0" type="PanelContainer" parent="CompanyScene"]
 layout_mode = 0
 offset_left = 40.0
 offset_top = 80.0
@@ -3726,7 +3727,7 @@ offset_right = 160.0
 offset_bottom = 240.0
 mouse_filter = 1
 
-[node name="Employee1" type="Panel" parent="CompanyScene"]
+[node name="Employee1" type="PanelContainer" parent="CompanyScene"]
 layout_mode = 0
 offset_left = 200.0
 offset_top = 80.0
@@ -3734,7 +3735,7 @@ offset_right = 320.0
 offset_bottom = 240.0
 mouse_filter = 1
 
-[node name="Employee2" type="Panel" parent="CompanyScene"]
+[node name="Employee2" type="PanelContainer" parent="CompanyScene"]
 layout_mode = 0
 offset_left = 360.0
 offset_top = 80.0
@@ -3742,7 +3743,7 @@ offset_right = 480.0
 offset_bottom = 240.0
 mouse_filter = 1
 
-[node name="Employee3" type="Panel" parent="CompanyScene"]
+[node name="Employee3" type="PanelContainer" parent="CompanyScene"]
 layout_mode = 0
 offset_left = 520.0
 offset_top = 80.0
@@ -3750,7 +3751,7 @@ offset_right = 640.0
 offset_bottom = 240.0
 mouse_filter = 1
 
-[node name="Employee4" type="Panel" parent="CompanyScene"]
+[node name="Employee4" type="PanelContainer" parent="CompanyScene"]
 layout_mode = 0
 offset_left = 680.0
 offset_top = 80.0
@@ -3821,7 +3822,7 @@ text = "雇员"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Staff0" type="Panel" parent="CompanyScene"]
+[node name="Staff0" type="PanelContainer" parent="CompanyScene"]
 layout_mode = 0
 offset_left = 100.0
 offset_top = 350.0
@@ -3829,7 +3830,7 @@ offset_right = 250.0
 offset_bottom = 550.0
 mouse_filter = 1
 
-[node name="Staff1" type="Panel" parent="CompanyScene"]
+[node name="Staff1" type="PanelContainer" parent="CompanyScene"]
 layout_mode = 0
 offset_left = 345.0
 offset_top = 350.0
@@ -3837,7 +3838,7 @@ offset_right = 495.0
 offset_bottom = 550.0
 mouse_filter = 1
 
-[node name="Staff2" type="Panel" parent="CompanyScene"]
+[node name="Staff2" type="PanelContainer" parent="CompanyScene"]
 layout_mode = 0
 offset_left = 590.0
 offset_top = 350.0
@@ -4087,17 +4088,6 @@ script = ExtResource("31_yw0uv")
 text_label = NodePath("NextSceneInputRegion/TextLabel")
 guide_talk_animation = NodePath("NextSceneInputRegion/GuideTalkAnimation")
 
-[node name="Panel" type="Panel" parent="DialogueManager"]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Texture" type="TextureRect" parent="DialogueManager/Panel"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="NextSceneInputRegion" type="Control" parent="DialogueManager"]
 anchors_preset = 0
 offset_left = 1960.0
@@ -4139,7 +4129,6 @@ animation = &"talk_without_hand"
 script = ExtResource("136_of4mo")
 
 [node name="MandatoryGuide" type="Control" parent="."]
-z_index = 4096
 anchors_preset = 0
 mouse_filter = 2
 script = ExtResource("33_d84jm")
@@ -4179,8 +4168,10 @@ mouse_filter = 2
 [connection signal="button_up" from="DesktopIconManager/OpenCompany" to="DesktopIconManager" method="_on_open_company_button_up"]
 [connection signal="mouse_entered" from="DesktopIconManager/OpenCompany" to="DesktopIconManager/OpenCompany" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="DesktopIconManager/OpenCompany" to="DesktopIconManager/OpenCompany" method="_on_mouse_exited"]
+[connection signal="gui_input" from="StoreScene" to="StoreScene" method="_on_gui_input"]
 [connection signal="button_down" from="StoreScene/RefreshCards" to="StoreScene" method="_on_refresh_cards_button_down"]
 [connection signal="button_up" from="StoreScene/RefreshCards" to="StoreScene" method="_on_refresh_cards_button_up"]
+[connection signal="gui_input" from="PropertyManager" to="PropertyManager" method="_on_gui_input"]
 [connection signal="changed" from="PropertyManager/ProjectProgressBar" to="PropertyManager/ProjectProgressBar" method="_on_changed"]
 [connection signal="value_changed" from="PropertyManager/ProjectProgressBar" to="PropertyManager/ProjectProgressBar" method="_on_value_changed"]
 [connection signal="changed" from="PropertyManager/BugAmountBar" to="PropertyManager/BugAmountBar" method="_on_changed"]
@@ -4210,6 +4201,7 @@ mouse_filter = 2
 [connection signal="mouse_entered" from="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject2" to="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject2" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject2" to="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject2" method="_on_mouse_exited"]
 [connection signal="pressed" from="BrowserScene/ExitBrowser(Flag)" to="BrowserScene" method="_on_exit_browser_pressed"]
+[connection signal="gui_input" from="CalendarScene" to="CalendarScene" method="_on_gui_input"]
 [connection signal="button_down" from="CalendarScene/CalenderButton" to="CalendarScene" method="_on_calender_button_button_down"]
 [connection signal="button_up" from="CalendarScene/CalenderButton" to="CalendarScene" method="_on_calender_button_button_up"]
 [connection signal="mouse_entered" from="CalendarScene/CalenderButton" to="CalendarScene/CalenderButton" method="_on_mouse_entered"]

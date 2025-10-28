@@ -14,13 +14,13 @@ func set_small_input_area(area_size_x , area_size_y , area_position_x , area_pos
 	small_input_area.size = Vector2(area_size_x , area_size_y)
 	small_input_area.position = Vector2(area_position_x , area_position_y)
 	
-	set_particles(area_size_x , area_size_y)
+	set_particles()
 	
 func clear():
 	full_screen_input_stop.clear()
 	#full_screen_input_stop.visible = false
 
-func set_particles(size_x ,size_y):
+func set_particles():
 	var p := Vector2.ZERO
 	var condition := 0
 	const GAP := 20

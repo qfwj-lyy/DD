@@ -16,8 +16,9 @@ var property_manager : PropertyManager
 var current_date := 0
 
 func _ready() -> void:
-	visible = true
+	show()
 	
+	#region add four initial cards
 	var card : Card = load("res://scenes/computer_scene/cards/duan_dian_tiao_shi.tscn").instantiate()
 	card.condition = Card.Condition.at_unused_hand
 	unused_hand.add_child(card)
@@ -33,10 +34,12 @@ func _ready() -> void:
 	card = load("res://scenes/computer_scene/cards/xian_zhi.tscn").instantiate()
 	card.condition = Card.Condition.at_unused_hand
 	unused_hand.add_child(card)
-	
+	#endregion
 	
 	G.D.display_sentence("我应该去网上接个项目做...浏览器在哪里来着？")
-
+	
+	mandatory_guide.reparent(G.M)
+	
 func time_goes_by(n : int):
 	current_date += n
 	

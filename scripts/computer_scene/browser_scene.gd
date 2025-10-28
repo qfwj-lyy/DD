@@ -48,8 +48,7 @@ func _on_gui_input(event: InputEvent) -> void:
 					G.M.current_scene.mandatory_guide.set_small_input_area(button.size.x , button.size.y , button.global_position.x , button.global_position.y )
 					G.D.display_sentence("好，那就打个飞机")
 	if event.is_action_pressed("LeftMouseDown"):
-		G.M.computer_window_max_z_index += 1
-		z_index = G.M.computer_window_max_z_index
+		G.M.set_top_window(self)
 		mp = get_local_mouse_position()
 		if(mp.y >= 50):
 			return

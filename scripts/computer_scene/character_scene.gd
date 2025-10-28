@@ -15,8 +15,7 @@ var window_operation_status : String
 var mp : Vector2 # mouse_position
 func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("LeftMouseDown"):
-		G.M.computer_window_max_z_index += 1
-		z_index = G.M.computer_window_max_z_index
+		G.M.set_top_window(self)
 		mp = get_local_mouse_position()
 		if(mp.y >= 50):
 			return

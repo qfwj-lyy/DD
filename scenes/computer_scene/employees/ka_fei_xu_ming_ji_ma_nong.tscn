@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bej78e1d4u22p"]
 
 [ext_resource type="PackedScene" uid="uid://dhjv4wwlto6p1" path="res://scenes/computer_scene/employees/employee.tscn" id="1_b7bos"]
-[ext_resource type="Texture2D" uid="uid://byxeqaids0n51" path="res://assets/computer_scene/employee_level3.png" id="2_ci45s"]
+[ext_resource type="Texture2D" uid="uid://ns7c2dorqyol" path="res://assets/employees/通用_202510280325_54488.png" id="2_ci45s"]
 
 [sub_resource type="GDScript" id="GDScript_ci45s"]
 script/source = "extends Buff

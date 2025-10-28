@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dhjv4wwlto6p1" path="res://scenes/computer_scene/employees/employee.tscn" id="1_722y8"]
 [ext_resource type="Script" uid="uid://cb260f8732kag" path="res://scripts/computer_scene/buffs/property_buff.gd" id="2_kmytk"]
-[ext_resource type="Texture2D" uid="uid://byxeqaids0n51" path="res://assets/computer_scene/employee_level3.png" id="3_kmytk"]
+[ext_resource type="Texture2D" uid="uid://dsxh4c0ig821c" path="res://assets/employees/沧桑_202510280326_43751.png" id="3_kmytk"]
 
 [node name="MouJianLiZhiXieJingTong" instance=ExtResource("1_722y8")]
 joining_expenditure = 15

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dhjv4wwlto6p1" path="res://scenes/computer_scene/employees/employee.tscn" id="1_tehbb"]
 [ext_resource type="Script" uid="uid://dn2stl4mavyhl" path="res://scripts/computer_scene/buffs/xia_wu_cha_zu_dui_fa_qi_ren0.gd" id="2_ch5xl"]
 [ext_resource type="Script" uid="uid://3f5vcc7fab5j" path="res://scripts/computer_scene/buffs/xia_wu_cha_zu_dui_fa_qi_ren1.gd" id="3_q8oml"]
-[ext_resource type="Texture2D" uid="uid://df6ddocu607hh" path="res://assets/computer_scene/employee_level1.png" id="4_ch5xl"]
+[ext_resource type="Texture2D" uid="uid://bnlptc2m1b7nn" path="res://assets/employees/通用_202510280326_34169.png" id="4_ch5xl"]
 
 [node name="XiaWuChaZuDuiFaQiRen" instance=ExtResource("1_tehbb")]
 wage = 2

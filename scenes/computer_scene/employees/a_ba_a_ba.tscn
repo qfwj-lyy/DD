@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dhjv4wwlto6p1" path="res://scenes/computer_scene/employees/employee.tscn" id="1_rhdjy"]
 [ext_resource type="Script" uid="uid://cb260f8732kag" path="res://scripts/computer_scene/buffs/property_buff.gd" id="2_fbriy"]
-[ext_resource type="Texture2D" uid="uid://df6ddocu607hh" path="res://assets/computer_scene/employee_level1.png" id="3_fbriy"]
+[ext_resource type="Texture2D" uid="uid://bnlptc2m1b7nn" path="res://assets/employees/通用_202510280326_34169.png" id="3_fbriy"]
 
 [node name="ABaABa" instance=ExtResource("1_rhdjy")]
 wage = 5

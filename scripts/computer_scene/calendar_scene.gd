@@ -1,7 +1,7 @@
 extends Panel
 class_name Calender
 
-@export var computer_scene: ComputerScene
+
 @export var debug_hand: Node
 @export var activity_hand: Node
 @export var unused_hand: Node
@@ -18,7 +18,7 @@ signal an_activity_card_used()
 
 func execute_plan():
 	#region 时间结算架构
-	G.M.current_scene.mandatory_guide.set_small_input_area(0,0,0,0)
+	G.M.current_scene.mandatory_guide.pause()
 
 	var debug_time_flag_array : Array[int] #按顺序存储玩家放置的所有debug卡的时间
 	var debug_current_card_flag : int = 0 #标识待执行debug卡
@@ -268,3 +268,8 @@ func _process(_delta: float) -> void:
 		button_rect.rotation_degrees = 180.0
 	if !is_open :
 		button_rect.rotation_degrees = 0.0
+
+
+func _on_gui_input(event: InputEvent) -> void:
+	if event.is_action_pressed("LeftMouseDown"):
+		G.M.set_top_window(self)

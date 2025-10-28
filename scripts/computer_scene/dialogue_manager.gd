@@ -64,7 +64,7 @@ func display_next_scene() ->void:
 func display_dialogue_segment(ds_name : String):
 	clear()
 	var ds = load("res://data/dialogue_segment/"+ds_name+".tres")
-	visible = true
+	#visible = true
 	dialogue_segment = ds
 	display_next_scene()
 
@@ -78,12 +78,12 @@ func display_sentence(s : String):
 	d_scene.text = s
 	d_segment.dialogue_scenes.append(d_scene)
 	clear()
-	visible = true
+	#visible = true
 	dialogue_segment = d_segment
 	display_next_scene()
 
 func clear():
-	visible = false
+	#visible = false
 	dialogue_segment = null
 	text_label.text = ""
 	index = 0
@@ -96,6 +96,7 @@ func clear():
 func _on_next_scene_input_region_gui_input(event: InputEvent) -> void:
 	if event.is_action_released("LeftMouseDown"):
 		display_next_scene()
+		G.M.set_top_window(self)
 
 func _ready() -> void:
 	G.D = self

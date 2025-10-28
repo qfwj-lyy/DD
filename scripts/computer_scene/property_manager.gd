@@ -244,3 +244,8 @@ func project_fail():
 	add_deposit_amount(-current_project.initial_money)
 	deliver_project.display_failure()
 	clear()
+
+
+func _on_gui_input(event: InputEvent) -> void:
+	if event.is_action_pressed("LeftMouseDown"):
+		G.M.set_top_window(self)

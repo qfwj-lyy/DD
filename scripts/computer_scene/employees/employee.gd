@@ -38,12 +38,9 @@ func execute_effect():
 
 @onready var border: TextureRect = $Border
 
-#region 测试用
-@onready var label: Label = $Label
 func _ready() -> void:
-	label.text = description
 	border.visible = false
-#endregion
+
 
 var last_click_time : int
 func _on_gui_input(event: InputEvent) -> void:
