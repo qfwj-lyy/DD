@@ -1,5 +1,4 @@
-
-[gd_scene load_steps=220 format=3 uid="uid://ei0t0movgv01"]
+[gd_scene load_steps=233 format=3 uid="uid://ei0t0movgv01"]
 
 [ext_resource type="Script" uid="uid://cyxxmhvja0apb" path="res://scripts/computer_scene/computer_scene.gd" id="1_8g14y"]
 [ext_resource type="Texture2D" uid="uid://by5p2m3k3u3yo" path="res://assets/computer_scene/desktop_background.png" id="2_rw1u3"]
@@ -49,13 +48,25 @@
 [ext_resource type="Script" uid="uid://b7ucmjrb5s02j" path="res://scripts/computer_scene/dialogue_manager.gd" id="31_yw0uv"]
 [ext_resource type="Texture2D" uid="uid://b4b0vk44f3ar1" path="res://assets/computer_scene/property_open_icon.png" id="32_ea52w"]
 [ext_resource type="Script" uid="uid://caey344n82p3a" path="res://scripts/computer_scene/mandatory_guide.gd" id="33_d84jm"]
+[ext_resource type="Texture2D" uid="uid://c5uljms1weaxw" path="res://assets/computer_scene/browser_background.png" id="34_xn70r"]
+[ext_resource type="Texture2D" uid="uid://d1esm5sdlkoxx" path="res://assets/computer_scene/browser_icon.png" id="35_2dtym"]
 [ext_resource type="Texture2D" uid="uid://celmymumt6ovo" path="res://assets/computer_scene/920x1244Background.png" id="36_1r1dv"]
+[ext_resource type="Texture2D" uid="uid://dctrf1pukfdep" path="res://assets/computer_scene/search_main.png" id="36_7pvpy"]
+[ext_resource type="Texture2D" uid="uid://2mt42yumqcoj" path="res://assets/computer_scene/search_icon.png" id="37_h4wol"]
+[ext_resource type="Texture2D" uid="uid://bch243r18xg4s" path="res://assets/computer_scene/add_fast.png" id="38_h4wol"]
+[ext_resource type="Texture2D" uid="uid://spm6gv1kibvg" path="res://assets/computer_scene/browser_head.png" id="38_jfr3w"]
 [ext_resource type="Texture2D" uid="uid://b136vg6mmdkjr" path="res://assets/computer_scene/201x51calender_button.png" id="38_l2ol0"]
 [ext_resource type="Texture2D" uid="uid://dklxc416ki78t" path="res://assets/computer_scene/205x105execute_button.png" id="39_s0nu0"]
 [ext_resource type="Texture2D" uid="uid://7o3vusli8esq" path="res://assets/computer_scene/512x126description.png" id="40_1r1dv"]
+[ext_resource type="Texture2D" uid="uid://bxj07artg4bm4" path="res://assets/computer_scene/project_background.png" id="40_dpp0a"]
 [ext_resource type="Texture2D" uid="uid://cxca7xmweougk" path="res://assets/computer_scene/807x257debug_hand.png" id="40_f77dy"]
+[ext_resource type="Texture2D" uid="uid://dii1cix83wttn" path="res://assets/computer_scene/supplier_icon.png" id="41_ljjva"]
+[ext_resource type="Texture2D" uid="uid://cbs5ivy46skhb" path="res://assets/computer_scene/new_message.png" id="42_py3d8"]
 [ext_resource type="Texture2D" uid="uid://e5kp6eu1mvi3" path="res://assets/computer_scene/807x257activity_hand.png" id="43_5v3lk"]
 [ext_resource type="Texture2D" uid="uid://c4ouwfgpr433p" path="res://assets/computer_scene/807x307unused_hand.png" id="44_22qv2"]
+[ext_resource type="Texture2D" uid="uid://c658f2hmqlk8f" path="res://assets/computer_scene/project_detail_background.png" id="45_dl40x"]
+[ext_resource type="Texture2D" uid="uid://v67lklxvuy5d" path="res://assets/cards/level1_icon.png" id="46_ce60k"]
+[ext_resource type="Texture2D" uid="uid://ccdqt2enwrh1n" path="res://assets/cards/level2_icon.png" id="47_dl40x"]
 [ext_resource type="Script" uid="uid://dt7dyvs8vqgvb" path="res://scripts/computer_scene/character_scene.gd" id="54_03edr"]
 [ext_resource type="Texture2D" uid="uid://h842kys17hka" path="res://assets/computer_scene/character_background.png" id="55_o5h8y"]
 [ext_resource type="Texture2D" uid="uid://cxdpru8huc6w0" path="res://assets/animation_frame/guide_talk_with_hand/frame_00020.png" id="56_2f0w7"]
@@ -2804,6 +2815,18 @@ pivot_offset = Vector2(500, 400)
 theme = SubResource("Theme_kvitc")
 script = ExtResource("13_t7krb")
 
+[node name="BrowserBackground" type="TextureRect" parent="BrowserScene"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 150.0
+offset_bottom = -2150.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("34_xn70r")
+expand_mode = 1
+
 [node name="TextureRect(Flag)" type="TextureRect" parent="BrowserScene"]
 visible = false
 layout_mode = 1
@@ -2832,7 +2855,7 @@ custom_minimum_size = Vector2(1000, 650)
 layout_mode = 0
 offset_top = 150.0
 offset_right = 1000.0
-offset_bottom = 800.0
+offset_bottom = 3150.0
 
 [node name="MainVBox" type="VBoxContainer" parent="BrowserScene/MainScrollContainer"]
 custom_minimum_size = Vector2(1000, 800)
@@ -2844,12 +2867,14 @@ layout_mode = 2
 mouse_filter = 1
 
 [node name="BackGround" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 1000.0
 offset_bottom = 2850.0
 mouse_filter = 1
 
 [node name="ScrollProtect" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 970.0
 offset_right = 990.0
@@ -2857,6 +2882,7 @@ offset_bottom = 2850.0
 mouse_filter = 1
 
 [node name="BrowserIcon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 400.0
 offset_top = 30.0
@@ -2864,7 +2890,19 @@ offset_right = 600.0
 offset_bottom = 230.0
 mouse_filter = 1
 
+[node name="TextureRect" type="TextureRect" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/BrowserIcon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(191, 154)
+texture = ExtResource("35_2dtym")
+
 [node name="SearchEdit" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 150.0
 offset_top = 270.0
@@ -2872,14 +2910,36 @@ offset_right = 750.0
 offset_bottom = 330.0
 mouse_filter = 1
 
+[node name="TextureRect" type="TextureRect" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/SearchEdit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("36_7pvpy")
+expand_mode = 1
+
 [node name="BigSearchIcon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/SearchEdit"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 600.0
 offset_right = 700.0
 offset_bottom = 60.0
 mouse_filter = 1
 
+[node name="TextureRect" type="TextureRect" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/SearchEdit/BigSearchIcon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("37_h4wol")
+expand_mode = 1
+
 [node name="AddPanel" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 100.0
 offset_top = 380.0
@@ -2888,6 +2948,7 @@ offset_bottom = 480.0
 mouse_filter = 1
 
 [node name="AddIcon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/AddPanel"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 10.0
 offset_top = 10.0
@@ -2896,6 +2957,7 @@ offset_bottom = 90.0
 mouse_filter = 1
 
 [node name="AddText" type="Label" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/AddPanel"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 120.0
 offset_top = 30.0
@@ -2905,7 +2967,18 @@ mouse_filter = 1
 text = "添加快捷方式"
 vertical_alignment = 1
 
+[node name="TextureRect" type="TextureRect" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/AddPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("38_h4wol")
+expand_mode = 1
+
 [node name="ProjectPanel" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 95.0
 offset_top = 530.0
@@ -2914,7 +2987,18 @@ offset_bottom = 2630.0
 mouse_filter = 1
 script = ExtResource("14_5yyiv")
 
+[node name="ProjectBackground" type="TextureRect" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("40_dpp0a")
+expand_mode = 1
+
 [node name="SupplierIcon0" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 40.0
 offset_top = 40.0
@@ -2923,6 +3007,24 @@ offset_bottom = 120.0
 mouse_filter = 1
 script = ExtResource("15_kbgpp")
 
+[node name="TextureRect" type="TextureRect" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("41_ljjva")
+
+[node name="TextureRect2" type="TextureRect" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0"]
+layout_mode = 1
+offset_left = 120.0
+offset_top = 10.0
+offset_right = 320.0
+offset_bottom = 60.0
+texture = ExtResource("42_py3d8")
+expand_mode = 1
+
 [node name="Supplier0Name" type="Label" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0"]
 layout_mode = 0
 offset_left = 120.0
@@ -2930,16 +3032,9 @@ offset_top = 10.0
 offset_right = 320.0
 offset_bottom = 60.0
 mouse_filter = 1
-text = "供应商名称 "
+text = "新消息通知 "
+horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="RefreshSupplier0" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0"]
-layout_mode = 0
-offset_left = 565.0
-offset_top = 10.0
-offset_right = 665.0
-offset_bottom = 50.0
-mouse_filter = 1
 
 [node name="SupplierProject0" type="Button" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0" node_paths=PackedStringArray("project_border", "project_border_anim")]
 layout_mode = 0
@@ -2952,6 +3047,16 @@ mouse_filter = 1
 script = ExtResource("16_d88ux")
 project_border = NodePath("ProjectBorder")
 project_border_anim = NodePath("ProjectBorderAnim")
+
+[node name="ProjectBackground" type="TextureRect" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("45_dl40x")
+expand_mode = 1
 
 [node name="Supplier1Project0Icon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject0"]
 layout_mode = 0
@@ -2997,6 +3102,16 @@ script = ExtResource("16_d88ux")
 project_border = NodePath("ProjectBorder")
 project_border_anim = NodePath("ProjectBorderAnim")
 
+[node name="ProjectBackground" type="TextureRect" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("45_dl40x")
+expand_mode = 1
+
 [node name="SupplierProject1Icon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject1"]
 layout_mode = 0
 offset_left = 30.0
@@ -3041,6 +3156,16 @@ script = ExtResource("16_d88ux")
 project_border = NodePath("ProjectBorder")
 project_border_anim = NodePath("ProjectBorderAnim")
 
+[node name="ProjectBackground" type="TextureRect" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("45_dl40x")
+expand_mode = 1
+
 [node name="Supplier1Project2Icon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject2"]
 layout_mode = 0
 offset_left = 30.0
@@ -3074,6 +3199,7 @@ libraries = {
 }
 
 [node name="SupplierIcon1" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 40.0
 offset_top = 720.0
@@ -3083,6 +3209,7 @@ mouse_filter = 1
 script = ExtResource("15_kbgpp")
 
 [node name="Supplier1Name" type="Label" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 120.0
 offset_top = 10.0
@@ -3090,14 +3217,6 @@ offset_right = 320.0
 offset_bottom = 60.0
 text = "供应商名称"
 vertical_alignment = 1
-
-[node name="RefreshSupplier1" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1"]
-layout_mode = 0
-offset_left = 565.0
-offset_top = 10.0
-offset_right = 665.0
-offset_bottom = 50.0
-mouse_filter = 1
 
 [node name="SupplierProject0" type="Button" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1" node_paths=PackedStringArray("project_border", "project_border_anim")]
 layout_mode = 0
@@ -3110,6 +3229,16 @@ mouse_filter = 1
 script = ExtResource("16_d88ux")
 project_border = NodePath("ProjectBorder")
 project_border_anim = NodePath("ProjectBorderAnim")
+
+[node name="ProjectBackground" type="TextureRect" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("45_dl40x")
+expand_mode = 1
 
 [node name="Supplier1Project0Icon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject0"]
 layout_mode = 0
@@ -3155,6 +3284,16 @@ script = ExtResource("16_d88ux")
 project_border = NodePath("ProjectBorder")
 project_border_anim = NodePath("ProjectBorderAnim")
 
+[node name="ProjectBackground" type="TextureRect" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("45_dl40x")
+expand_mode = 1
+
 [node name="Supplier1Project1Icon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject1"]
 layout_mode = 0
 offset_left = 30.0
@@ -3199,6 +3338,16 @@ script = ExtResource("16_d88ux")
 project_border = NodePath("ProjectBorder")
 project_border_anim = NodePath("ProjectBorderAnim")
 
+[node name="ProjectBackground" type="TextureRect" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("45_dl40x")
+expand_mode = 1
+
 [node name="Supplier1Project2Icon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject2"]
 layout_mode = 0
 offset_left = 30.0
@@ -3231,7 +3380,14 @@ libraries = {
 &"": SubResource("AnimationLibrary_8r4sb")
 }
 
+[node name="TextureRect" type="TextureRect" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("46_ce60k")
+
 [node name="SupplierIcon2" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 40.0
 offset_top = 1400.0
@@ -3241,6 +3397,7 @@ mouse_filter = 1
 script = ExtResource("15_kbgpp")
 
 [node name="Supplier1Name" type="Label" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 120.0
 offset_top = 10.0
@@ -3248,14 +3405,6 @@ offset_right = 320.0
 offset_bottom = 60.0
 text = "供应商名称"
 vertical_alignment = 1
-
-[node name="RefreshSupplier1" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2"]
-layout_mode = 0
-offset_left = 565.0
-offset_top = 10.0
-offset_right = 665.0
-offset_bottom = 50.0
-mouse_filter = 1
 
 [node name="SupplierProject0" type="Button" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2" node_paths=PackedStringArray("project_border", "project_border_anim")]
 layout_mode = 0
@@ -3268,6 +3417,16 @@ mouse_filter = 1
 script = ExtResource("16_d88ux")
 project_border = NodePath("ProjectBorder")
 project_border_anim = NodePath("ProjectBorderAnim")
+
+[node name="ProjectBackground" type="TextureRect" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("45_dl40x")
+expand_mode = 1
 
 [node name="Supplier2Project0Icon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject0"]
 layout_mode = 0
@@ -3313,6 +3472,16 @@ script = ExtResource("16_d88ux")
 project_border = NodePath("ProjectBorder")
 project_border_anim = NodePath("ProjectBorderAnim")
 
+[node name="ProjectBackground" type="TextureRect" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("45_dl40x")
+expand_mode = 1
+
 [node name="Supplier2Project1Icon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject1"]
 layout_mode = 0
 offset_left = 30.0
@@ -3357,6 +3526,16 @@ script = ExtResource("16_d88ux")
 project_border = NodePath("ProjectBorder")
 project_border_anim = NodePath("ProjectBorderAnim")
 
+[node name="ProjectBackground" type="TextureRect" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("45_dl40x")
+expand_mode = 1
+
 [node name="Supplier2Project2Icon" type="Panel" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject2"]
 layout_mode = 0
 offset_left = 30.0
@@ -3389,7 +3568,20 @@ libraries = {
 &"": SubResource("AnimationLibrary_8r4sb")
 }
 
+[node name="TextureRect" type="TextureRect" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("47_dl40x")
+
+[node name="HeadRect" type="TextureRect" parent="BrowserScene"]
+layout_mode = 0
+offset_right = 1000.0
+offset_bottom = 150.0
+texture = ExtResource("38_jfr3w")
+
 [node name="TabBar" type="Panel" parent="BrowserScene"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 1000.0
 offset_bottom = 90.0
@@ -3404,6 +3596,7 @@ offset_bottom = 75.0
 mouse_filter = 1
 
 [node name="Tab" type="Panel" parent="BrowserScene/TabBar"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_top = 50.0
 offset_right = 200.0
@@ -3411,6 +3604,7 @@ offset_bottom = 90.0
 mouse_filter = 1
 
 [node name="URLBar" type="Panel" parent="BrowserScene"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_top = 90.0
 offset_right = 1000.0
@@ -3418,6 +3612,7 @@ offset_bottom = 150.0
 mouse_filter = 1
 
 [node name="URL" type="Panel" parent="BrowserScene/URLBar"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 50.0
 offset_top = 10.0
@@ -3426,6 +3621,7 @@ offset_bottom = 50.0
 mouse_filter = 1
 
 [node name="URLSearchIcon" type="Panel" parent="BrowserScene/URLBar"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 55.0
 offset_top = 15.0
@@ -3434,13 +3630,22 @@ offset_bottom = 45.0
 mouse_filter = 1
 
 [node name="ExitBrowser(Flag)" type="Button" parent="BrowserScene"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 911.0
-offset_top = 22.0
-offset_right = 983.0
+offset_left = 925.0
+offset_top = 25.0
+offset_right = 975.0
 offset_bottom = 75.0
 mouse_filter = 1
-text = "退出"
+
+[node name="TextureRect" type="TextureRect" parent="BrowserScene/ExitBrowser(Flag)"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_w8dcv")
 
 [node name="BrowserSelfAnim" type="AnimationPlayer" parent="BrowserScene"]
 libraries = {
@@ -3986,6 +4191,7 @@ offset_bottom = 750.0
 mouse_filter = 1
 
 [node name="CharacterScene" type="Panel" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 1000.0
 offset_bottom = 800.0
