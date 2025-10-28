@@ -1,6 +1,6 @@
 extends Panel
 
-
+var s : ProjectSupplier
 
 func _ready() -> void:
 	pass
@@ -12,7 +12,7 @@ func set_mandatory_project(p : Project):
 	
 var display_project_limit := 3
 func browse_supplier(ps : ProjectSupplier):
-	var s = ps
+	s = ps
 	var display_project_amount := 0
 	while(1):
 		var p
@@ -33,7 +33,7 @@ func browse_supplier(ps : ProjectSupplier):
 					break
 		
 		var p_node = get_node("SupplierProject" + str(display_project_amount))
-		p_node.set_project(p)
+		p_node.set_project(p , s.project_level)
 		
 		display_project_amount += 1
 		if s.projects.size() <= 0:

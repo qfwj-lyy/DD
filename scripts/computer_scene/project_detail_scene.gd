@@ -11,11 +11,11 @@ var project_button
 @export var initial_skill_label: Node
 @export var description_label: Node
 @export var deposit_reward_label : Node
-@export var accept_task_icon : Node
-@export var reject_task_icon : Node
+@export var accept_task_icon : TextureRect
+@export var reject_task_icon : TextureRect
 @export var project_icon : TextureRect
 
-func set_project_information(project : Project):
+func set_project_information(project : Project , level):
 	displayed_project = project
 	project_icon.texture = project.icon
 	project_name_label.text = "项目名称：" + project.project_name
@@ -27,7 +27,14 @@ func set_project_information(project : Project):
 	initial_skill_label.text = "项目内容熟练度：" + str(int(project.initial_skill))
 	deposit_reward_label.text = "项目总收入：" + str(int(project.deposit_reward))
 	description_label.text = project.description
-
+	match level:
+		"LOW":
+			pass
+		"MID":
+			pass
+		"HIGH":
+			pass
+	
 func _on_project_button_pressed() -> void:
 	choose_project()
 
@@ -58,3 +65,8 @@ func choose_project():
 		
 	
 	queue_free()
+
+
+func _on_reject_task_icon_gui_input(event: InputEvent) -> void:
+	if event.is_action_released("LeftMouseDown"):
+		queue_free()

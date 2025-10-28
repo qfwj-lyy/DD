@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bcy5o23ro4f5y" path="res://scripts/computer_scene/project_detail_scene.gd" id="1_rvwmx"]
 
-[node name="ProjectDetailScene" type="Control" node_paths=PackedStringArray("project_name_label", "initial_progress_label", "initial_bug_amount_label", "bug_amount_limit_label", "initial_money_label", "initial_mood_label", "initial_skill_label", "description_label", "deposit_reward_label")]
+[node name="ProjectDetailScene" type="Control" node_paths=PackedStringArray("project_name_label", "initial_progress_label", "initial_bug_amount_label", "bug_amount_limit_label", "initial_money_label", "initial_mood_label", "initial_skill_label", "description_label", "deposit_reward_label", "accept_task_icon", "reject_task_icon", "project_icon")]
 z_index = 4096
 custom_minimum_size = Vector2(980, 360)
 layout_mode = 3
@@ -25,6 +25,9 @@ initial_mood_label = NodePath("InitialMoodLabel")
 initial_skill_label = NodePath("InitialSkillLabel")
 description_label = NodePath("DescriptionPanel/DescriptionLabel")
 deposit_reward_label = NodePath("DescriptionPanel/DepositRewardLabel")
+accept_task_icon = NodePath("AcceptTaskIcon")
+reject_task_icon = NodePath("RejectTaskIcon")
+project_icon = NodePath("ProjectIcon")
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 1
@@ -89,7 +92,7 @@ offset_right = 1324.0
 offset_bottom = 735.0
 text = "项目内容熟练度"
 
-[node name="AcceptTaskIcon" type="Panel" parent="."]
+[node name="AcceptTaskIcon" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -101,14 +104,14 @@ offset_bottom = -375.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RejectTaskIcon" type="Panel" parent="."]
+[node name="RejectTaskIcon" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 1400.0
 offset_top = 550.0
 offset_right = 1450.0
 offset_bottom = 600.0
 
-[node name="ProjectIcon" type="Panel" parent="."]
+[node name="ProjectIcon" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 840.0
 offset_top = 540.0
@@ -152,3 +155,5 @@ offset_left = 1060.0
 offset_top = 540.0
 offset_right = 1070.0
 offset_bottom = 890.0
+
+[connection signal="gui_input" from="RejectTaskIcon" to="." method="_on_reject_task_icon_gui_input"]

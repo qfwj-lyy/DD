@@ -1,4 +1,4 @@
-[gd_scene load_steps=234 format=3 uid="uid://ei0t0movgv01"]
+[gd_scene load_steps=235 format=3 uid="uid://ei0t0movgv01"]
 
 [ext_resource type="Script" uid="uid://cyxxmhvja0apb" path="res://scripts/computer_scene/computer_scene.gd" id="1_8g14y"]
 [ext_resource type="Texture2D" uid="uid://by5p2m3k3u3yo" path="res://assets/computer_scene/desktop_background.png" id="2_rw1u3"]
@@ -3062,6 +3062,7 @@ offset_left = 30.0
 offset_top = 25.0
 offset_right = 130.0
 offset_bottom = 125.0
+expand_mode = 1
 
 [node name="ProjectNameLabel" type="Label" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject0"]
 layout_mode = 0
@@ -3115,6 +3116,7 @@ offset_left = 30.0
 offset_top = 25.0
 offset_right = 130.0
 offset_bottom = 125.0
+expand_mode = 1
 
 [node name="ProjectNameLabel" type="Label" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject1"]
 layout_mode = 0
@@ -3168,6 +3170,7 @@ offset_left = 30.0
 offset_top = 25.0
 offset_right = 130.0
 offset_bottom = 125.0
+expand_mode = 1
 
 [node name="ProjectNameLabel" type="Label" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon0/SupplierProject2"]
 layout_mode = 0
@@ -3241,6 +3244,7 @@ offset_left = 30.0
 offset_top = 25.0
 offset_right = 130.0
 offset_bottom = 125.0
+expand_mode = 1
 
 [node name="ProjectNameLabel" type="Label" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject0"]
 layout_mode = 0
@@ -3294,6 +3298,7 @@ offset_left = 30.0
 offset_top = 25.0
 offset_right = 130.0
 offset_bottom = 125.0
+expand_mode = 1
 
 [node name="ProjectNameLabel" type="Label" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject1"]
 layout_mode = 0
@@ -3347,6 +3352,7 @@ offset_left = 30.0
 offset_top = 25.0
 offset_right = 130.0
 offset_bottom = 125.0
+expand_mode = 1
 
 [node name="ProjectNameLabel" type="Label" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon1/SupplierProject2"]
 layout_mode = 0
@@ -3426,6 +3432,7 @@ offset_left = 30.0
 offset_top = 25.0
 offset_right = 130.0
 offset_bottom = 125.0
+expand_mode = 1
 
 [node name="ProjectNameLabel" type="Label" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject0"]
 layout_mode = 0
@@ -3479,6 +3486,7 @@ offset_left = 30.0
 offset_top = 25.0
 offset_right = 130.0
 offset_bottom = 125.0
+expand_mode = 1
 
 [node name="ProjectNameLabel" type="Label" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject1"]
 layout_mode = 0
@@ -3532,6 +3540,7 @@ offset_left = 30.0
 offset_top = 25.0
 offset_right = 130.0
 offset_bottom = 125.0
+expand_mode = 1
 
 [node name="ProjectNameLabel" type="Label" parent="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject2"]
 layout_mode = 0
