@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Project" load_steps=5 format=3 uid="uid://dmrn718brfgwp"]
+[gd_resource type="Resource" script_class="Project" load_steps=6 format=3 uid="uid://dmrn718brfgwp"]
 
 [ext_resource type="PackedScene" uid="uid://b2aadk2jpdkas" path="res://scenes/computer_scene/buffs/jiu_ri_zhi_wang_de_shang_ci.tscn" id="1_dka8s"]
 [ext_resource type="Script" uid="uid://7a2lp0yd04fg" path="res://scripts/computer_scene/resource_type/project.gd" id="1_ju5dx"]
+[ext_resource type="Texture2D" uid="uid://gmydmobjhft4" path="res://assets/projects/shuang_wang.png" id="1_xxnwp"]
 [ext_resource type="PackedScene" uid="uid://cvgfq5xk3litx" path="res://scenes/computer_scene/buffs/ren_zhong_dao_yuan.tscn" id="2_xxnwp"]
 [ext_resource type="PackedScene" uid="uid://be0mwhecua20m" path="res://scenes/computer_scene/buffs/ru_lv_bo_bing.tscn" id="3_im3w0"]
 
@@ -16,4 +17,5 @@ description = "初始buff：
 ②任重道远：每回合开始时给bug增长率添加一个范围在-10%到+10%的修正
 ③如履薄冰：每回合开始时获得-5~+5项目进度"
 initial_buffs = Array[Resource]([ExtResource("1_dka8s"), ExtResource("2_xxnwp"), ExtResource("3_im3w0")])
+icon = ExtResource("1_xxnwp")
 metadata/_custom_type_script = "uid://7a2lp0yd04fg"
