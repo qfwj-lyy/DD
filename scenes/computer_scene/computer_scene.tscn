@@ -153,6 +153,7 @@
 [ext_resource type="Texture2D" uid="uid://osce41texsv3" path="res://assets/animation_frame/guide_talk_with_hand/frame_00014.png" id="120_5y03h"]
 [ext_resource type="Texture2D" uid="uid://bn0t4cteqb058" path="res://assets/animation_frame/guide_talk_with_hand/frame_00015.png" id="121_2lues"]
 [ext_resource type="Script" uid="uid://clvuhw5w4w1df" path="res://scripts/animation/guide_talk_animation.gd" id="136_of4mo"]
+[ext_resource type="Texture2D" uid="uid://dv0y66dgkywb5" path="res://assets/computer_scene/speaking_bubble.png" id="137_o5h8y"]
 
 [sub_resource type="Animation" id="Animation_cd3q4"]
 length = 0.001
@@ -1224,240 +1225,6 @@ _data = {
 &"open": SubResource("Animation_d88ux")
 }
 
-[sub_resource type="Theme" id="Theme_dlmsr"]
-
-[sub_resource type="Animation" id="Animation_li4rp"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CalenderButtonBorder:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_rv4hl"]
-resource_name = "buyyon_down"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(0.9, 0.9)]
-}
-
-[sub_resource type="Animation" id="Animation_2uldg"]
-resource_name = "button_up"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.04, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0.9, 0.9), Vector2(1.2, 1.2), Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_vs8io"]
-resource_name = "hover"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CalenderButtonBorder:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
-}
-
-[sub_resource type="Animation" id="Animation_o32ln"]
-resource_name = "hover_over"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1.1, 1.1), Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CalenderButtonBorder:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.1),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_li4rp"]
-_data = {
-&"RESET": SubResource("Animation_li4rp"),
-&"button_down": SubResource("Animation_rv4hl"),
-&"button_up": SubResource("Animation_2uldg"),
-&"hover": SubResource("Animation_vs8io"),
-&"hover_over": SubResource("Animation_o32ln")
-}
-
-[sub_resource type="Animation" id="Animation_si5nn"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_jqns5"]
-resource_name = "button_down"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(0.9, 0.9)]
-}
-
-[sub_resource type="Animation" id="Animation_w8dcv"]
-resource_name = "button_up"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0.9, 0.9), Vector2(1.2, 1.2), Vector2(1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_l2ol0"]
-_data = {
-&"RESET": SubResource("Animation_si5nn"),
-&"button_down": SubResource("Animation_jqns5"),
-&"button_up": SubResource("Animation_w8dcv")
-}
-
-[sub_resource type="Animation" id="Animation_ftseh"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1060, 460)]
-}
-
-[sub_resource type="Animation" id="Animation_onm7m"]
-resource_name = "close"
-length = 0.35
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.35),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1060, 460), Vector2(1060, 360), Vector2(1060, 1600)]
-}
-
-[sub_resource type="Animation" id="Animation_ggfum"]
-resource_name = "open"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1060, 1600), Vector2(1060, 360), Vector2(1060, 460)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ftseh"]
-_data = {
-&"RESET": SubResource("Animation_ftseh"),
-&"close": SubResource("Animation_onm7m"),
-&"open": SubResource("Animation_ggfum")
-}
-
 [sub_resource type="Animation" id="Animation_22qv2"]
 length = 0.001
 tracks/0/type = "value"
@@ -1696,6 +1463,240 @@ _data = {
 &"RESET": SubResource("Animation_7ubm4"),
 &"close": SubResource("Animation_f77dy"),
 &"open": SubResource("Animation_l2ol0")
+}
+
+[sub_resource type="Theme" id="Theme_dlmsr"]
+
+[sub_resource type="Animation" id="Animation_li4rp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CalenderButtonBorder:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rv4hl"]
+resource_name = "buyyon_down"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 0.9)]
+}
+
+[sub_resource type="Animation" id="Animation_2uldg"]
+resource_name = "button_up"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.04, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vs8io"]
+resource_name = "hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CalenderButtonBorder:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_o32ln"]
+resource_name = "hover_over"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CalenderButtonBorder:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_li4rp"]
+_data = {
+&"RESET": SubResource("Animation_li4rp"),
+&"button_down": SubResource("Animation_rv4hl"),
+&"button_up": SubResource("Animation_2uldg"),
+&"hover": SubResource("Animation_vs8io"),
+&"hover_over": SubResource("Animation_o32ln")
+}
+
+[sub_resource type="Animation" id="Animation_si5nn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jqns5"]
+resource_name = "button_down"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 0.9)]
+}
+
+[sub_resource type="Animation" id="Animation_w8dcv"]
+resource_name = "button_up"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l2ol0"]
+_data = {
+&"RESET": SubResource("Animation_si5nn"),
+&"button_down": SubResource("Animation_jqns5"),
+&"button_up": SubResource("Animation_w8dcv")
+}
+
+[sub_resource type="Animation" id="Animation_ftseh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1060, 460)]
+}
+
+[sub_resource type="Animation" id="Animation_onm7m"]
+resource_name = "close"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1060, 460), Vector2(1060, 360), Vector2(1060, 1600)]
+}
+
+[sub_resource type="Animation" id="Animation_ggfum"]
+resource_name = "open"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1060, 1600), Vector2(1060, 360), Vector2(1060, 460)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ftseh"]
+_data = {
+&"RESET": SubResource("Animation_ftseh"),
+&"close": SubResource("Animation_onm7m"),
+&"open": SubResource("Animation_ggfum")
 }
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s6lbx"]
@@ -3652,251 +3653,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_j4xds")
 }
 
-[node name="CalendarScene" type="Panel" parent="." node_paths=PackedStringArray("debug_hand", "activity_hand", "unused_hand", "round_tips_label")]
-visible = false
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 1060.0
-offset_top = 460.0
-offset_right = 1980.0
-offset_bottom = 1600.0
-mouse_filter = 1
-theme = SubResource("Theme_dlmsr")
-script = ExtResource("17_br20j")
-debug_hand = NodePath("DebugHand")
-activity_hand = NodePath("ActivityHand")
-unused_hand = NodePath("UnusedHand")
-round_tips_label = NodePath("ScrollContainer/RoundTipsLabel")
-
-[node name="BackGround" type="Panel" parent="CalendarScene"]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_right = 920.0
-offset_bottom = 1240.0
-mouse_filter = 2
-
-[node name="BackgroundRect" type="TextureRect" parent="CalendarScene/BackGround"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("36_1r1dv")
-expand_mode = 1
-
-[node name="CalenderButton" type="Button" parent="CalendarScene"]
-layout_mode = 0
-offset_left = 360.0
-offset_top = -50.0
-offset_right = 560.0
-pivot_offset = Vector2(100, 25)
-mouse_filter = 1
-script = ExtResource("23_ya4ev")
-
-[node name="CalenderButtonAnim" type="AnimationPlayer" parent="CalendarScene/CalenderButton"]
-libraries = {
-&"": SubResource("AnimationLibrary_li4rp")
-}
-
-[node name="ButtonRect" type="TextureRect" parent="CalendarScene/CalenderButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(100.5, 25.5)
-texture = ExtResource("38_l2ol0")
-
-[node name="CalenderButtonBorder" type="TextureRect" parent="CalendarScene/CalenderButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("23_ltark")
-
-[node name="ExecutePlanButton" type="Button" parent="CalendarScene"]
-layout_mode = 0
-offset_left = 660.0
-offset_top = 350.0
-offset_right = 860.0
-offset_bottom = 450.0
-pivot_offset = Vector2(100, 50)
-mouse_filter = 1
-text = "执行计划"
-
-[node name="ExecutePlanAnim" type="AnimationPlayer" parent="CalendarScene/ExecutePlanButton"]
-libraries = {
-&"": SubResource("AnimationLibrary_l2ol0")
-}
-
-[node name="ExecuteRect" type="TextureRect" parent="CalendarScene/ExecutePlanButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("39_s0nu0")
-
-[node name="Label" type="Label" parent="CalendarScene/ExecutePlanButton/ExecuteRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "执行计划"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="DescriptionRect" type="TextureRect" parent="CalendarScene"]
-layout_mode = 1
-offset_left = 60.0
-offset_top = 350.0
-offset_right = 572.0
-offset_bottom = 476.0
-texture = ExtResource("40_1r1dv")
-
-[node name="DebugPanel" type="Control" parent="CalendarScene"]
-anchors_preset = 0
-offset_left = 60.0
-offset_top = 60.0
-offset_right = 60.0
-offset_bottom = 310.0
-
-[node name="Panel" type="Panel" parent="CalendarScene/DebugPanel"]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 800.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-
-[node name="DebugRect" type="TextureRect" parent="CalendarScene"]
-layout_mode = 1
-offset_left = 60.0
-offset_top = 60.0
-offset_right = 860.0
-offset_bottom = 310.0
-texture = ExtResource("40_f77dy")
-expand_mode = 1
-
-[node name="DebugHand" type="Panel" parent="CalendarScene"]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 60.0
-offset_top = 60.0
-offset_right = 860.0
-offset_bottom = 310.0
-mouse_filter = 1
-script = ExtResource("26_06as4")
-
-[node name="ActivityPanel" type="Control" parent="CalendarScene"]
-anchors_preset = 0
-offset_left = 60.0
-offset_top = 490.0
-offset_right = 60.0
-offset_bottom = 740.0
-
-[node name="Panel" type="Panel" parent="CalendarScene/ActivityPanel"]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 800.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-
-[node name="ActivityRect" type="TextureRect" parent="CalendarScene"]
-layout_mode = 0
-offset_left = 60.0
-offset_top = 490.0
-offset_right = 860.0
-offset_bottom = 740.0
-texture = ExtResource("43_5v3lk")
-expand_mode = 1
-
-[node name="ActivityHand" type="Panel" parent="CalendarScene"]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 60.0
-offset_top = 490.0
-offset_right = 860.0
-offset_bottom = 740.0
-mouse_filter = 1
-script = ExtResource("26_06as4")
-
-[node name="UnusedPanel" type="Control" parent="CalendarScene"]
-anchors_preset = 0
-offset_left = 60.0
-offset_top = 780.0
-offset_right = 60.0
-offset_bottom = 1080.0
-
-[node name="Panel" type="Panel" parent="CalendarScene/UnusedPanel"]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 800.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-
-[node name="UnusedRect" type="TextureRect" parent="CalendarScene"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 60.0
-offset_top = 750.0
-offset_right = -60.0
-offset_bottom = -90.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("44_22qv2")
-expand_mode = 1
-
-[node name="UnusedHand" type="Panel" parent="CalendarScene"]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 60.0
-offset_top = 750.0
-offset_right = 860.0
-offset_bottom = 1050.0
-mouse_filter = 1
-script = ExtResource("26_06as4")
-
-[node name="CalenderSelfAnim" type="AnimationPlayer" parent="CalendarScene"]
-libraries = {
-&"": SubResource("AnimationLibrary_ftseh")
-}
-
-[node name="ScrollContainer" type="ScrollContainer" parent="CalendarScene"]
-layout_mode = 0
-offset_left = 85.0
-offset_top = 365.0
-offset_right = 555.0
-offset_bottom = 465.0
-
-[node name="RoundTipsLabel" type="Label" parent="CalendarScene/ScrollContainer"]
-custom_minimum_size = Vector2(470, 10)
-layout_mode = 2
-mouse_filter = 1
-theme_override_colors/font_color = Color(0.5058824, 0.45882353, 0.40784314, 1)
-autowrap_mode = 3
-
 [node name="CompanyScene" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
@@ -4160,6 +3916,251 @@ libraries = {
 &"": SubResource("AnimationLibrary_4l718")
 }
 
+[node name="CalendarScene" type="Panel" parent="." node_paths=PackedStringArray("debug_hand", "activity_hand", "unused_hand", "round_tips_label")]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1060.0
+offset_top = 460.0
+offset_right = 1980.0
+offset_bottom = 1600.0
+mouse_filter = 1
+theme = SubResource("Theme_dlmsr")
+script = ExtResource("17_br20j")
+debug_hand = NodePath("DebugHand")
+activity_hand = NodePath("ActivityHand")
+unused_hand = NodePath("UnusedHand")
+round_tips_label = NodePath("ScrollContainer/RoundTipsLabel")
+
+[node name="BackGround" type="Panel" parent="CalendarScene"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 920.0
+offset_bottom = 1240.0
+mouse_filter = 2
+
+[node name="BackgroundRect" type="TextureRect" parent="CalendarScene/BackGround"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("36_1r1dv")
+expand_mode = 1
+
+[node name="CalenderButton" type="Button" parent="CalendarScene"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = -50.0
+offset_right = 560.0
+pivot_offset = Vector2(100, 25)
+mouse_filter = 1
+script = ExtResource("23_ya4ev")
+
+[node name="CalenderButtonAnim" type="AnimationPlayer" parent="CalendarScene/CalenderButton"]
+libraries = {
+&"": SubResource("AnimationLibrary_li4rp")
+}
+
+[node name="ButtonRect" type="TextureRect" parent="CalendarScene/CalenderButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(100.5, 25.5)
+texture = ExtResource("38_l2ol0")
+
+[node name="CalenderButtonBorder" type="TextureRect" parent="CalendarScene/CalenderButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("23_ltark")
+
+[node name="ExecutePlanButton" type="Button" parent="CalendarScene"]
+layout_mode = 0
+offset_left = 660.0
+offset_top = 350.0
+offset_right = 860.0
+offset_bottom = 450.0
+pivot_offset = Vector2(100, 50)
+mouse_filter = 1
+text = "执行计划"
+
+[node name="ExecutePlanAnim" type="AnimationPlayer" parent="CalendarScene/ExecutePlanButton"]
+libraries = {
+&"": SubResource("AnimationLibrary_l2ol0")
+}
+
+[node name="ExecuteRect" type="TextureRect" parent="CalendarScene/ExecutePlanButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("39_s0nu0")
+
+[node name="Label" type="Label" parent="CalendarScene/ExecutePlanButton/ExecuteRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "执行计划"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DescriptionRect" type="TextureRect" parent="CalendarScene"]
+layout_mode = 1
+offset_left = 60.0
+offset_top = 350.0
+offset_right = 572.0
+offset_bottom = 476.0
+texture = ExtResource("40_1r1dv")
+
+[node name="DebugPanel" type="Control" parent="CalendarScene"]
+anchors_preset = 0
+offset_left = 60.0
+offset_top = 60.0
+offset_right = 60.0
+offset_bottom = 310.0
+
+[node name="Panel" type="Panel" parent="CalendarScene/DebugPanel"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 800.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="DebugRect" type="TextureRect" parent="CalendarScene"]
+layout_mode = 1
+offset_left = 60.0
+offset_top = 60.0
+offset_right = 860.0
+offset_bottom = 310.0
+texture = ExtResource("40_f77dy")
+expand_mode = 1
+
+[node name="DebugHand" type="Panel" parent="CalendarScene"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 60.0
+offset_top = 60.0
+offset_right = 860.0
+offset_bottom = 310.0
+mouse_filter = 1
+script = ExtResource("26_06as4")
+
+[node name="ActivityPanel" type="Control" parent="CalendarScene"]
+anchors_preset = 0
+offset_left = 60.0
+offset_top = 490.0
+offset_right = 60.0
+offset_bottom = 740.0
+
+[node name="Panel" type="Panel" parent="CalendarScene/ActivityPanel"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 800.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="ActivityRect" type="TextureRect" parent="CalendarScene"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 490.0
+offset_right = 860.0
+offset_bottom = 740.0
+texture = ExtResource("43_5v3lk")
+expand_mode = 1
+
+[node name="ActivityHand" type="Panel" parent="CalendarScene"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 60.0
+offset_top = 490.0
+offset_right = 860.0
+offset_bottom = 740.0
+mouse_filter = 1
+script = ExtResource("26_06as4")
+
+[node name="UnusedPanel" type="Control" parent="CalendarScene"]
+anchors_preset = 0
+offset_left = 60.0
+offset_top = 780.0
+offset_right = 60.0
+offset_bottom = 1080.0
+
+[node name="Panel" type="Panel" parent="CalendarScene/UnusedPanel"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 800.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="UnusedRect" type="TextureRect" parent="CalendarScene"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 60.0
+offset_top = 750.0
+offset_right = -60.0
+offset_bottom = -90.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("44_22qv2")
+expand_mode = 1
+
+[node name="UnusedHand" type="Panel" parent="CalendarScene"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 60.0
+offset_top = 750.0
+offset_right = 860.0
+offset_bottom = 1050.0
+mouse_filter = 1
+script = ExtResource("26_06as4")
+
+[node name="CalenderSelfAnim" type="AnimationPlayer" parent="CalendarScene"]
+libraries = {
+&"": SubResource("AnimationLibrary_ftseh")
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CalendarScene"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 365.0
+offset_right = 555.0
+offset_bottom = 465.0
+
+[node name="RoundTipsLabel" type="Label" parent="CalendarScene/ScrollContainer"]
+custom_minimum_size = Vector2(470, 10)
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.5058824, 0.45882353, 0.40784314, 1)
+autowrap_mode = 3
+
 [node name="DataBaseScene" type="Panel" parent="."]
 visible = false
 layout_mode = 0
@@ -4356,11 +4357,12 @@ offset_top = 80.0
 offset_right = 480.0
 offset_bottom = 210.0
 
-[node name="DialogueManager" type="Control" parent="." node_paths=PackedStringArray("text_label", "guide_talk_animation")]
+[node name="DialogueManager" type="Control" parent="." node_paths=PackedStringArray("text_label", "guide_talk_animation", "bubble")]
 anchors_preset = 0
 script = ExtResource("31_yw0uv")
-text_label = NodePath("NextSceneInputRegion/TextLabel")
+text_label = NodePath("NextSceneInputRegion/Bubble/TextLabel")
 guide_talk_animation = NodePath("NextSceneInputRegion/GuideTalkAnimation")
+bubble = NodePath("NextSceneInputRegion/Bubble")
 
 [node name="NextSceneInputRegion" type="Control" parent="DialogueManager"]
 anchors_preset = 0
@@ -4369,38 +4371,50 @@ offset_top = 1272.0
 offset_right = 2560.0
 offset_bottom = 1600.0
 
-[node name="TextLabel" type="Label" parent="DialogueManager/NextSceneInputRegion"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 178.0
-offset_top = 18.0
-offset_right = -13.0
-offset_bottom = -126.0
-grow_horizontal = 2
-grow_vertical = 2
-autowrap_mode = 3
-text_overrun_behavior = 6
-
 [node name="OpenCharacter" type="Button" parent="DialogueManager/NextSceneInputRegion"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -110.0
-offset_top = -7.0
-offset_right = -386.0
+offset_left = 274.0
+offset_top = -10.0
+offset_right = -2.0
+offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 flat = true
 
 [node name="GuideTalkAnimation" type="AnimatedSprite2D" parent="DialogueManager/NextSceneInputRegion"]
-position = Vector2(132, 117)
+position = Vector2(366, 117)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_s6lbx")
-animation = &"talk_without_hand"
+animation = &"talk_with_hand_down"
+flip_h = true
 script = ExtResource("136_of4mo")
+
+[node name="Bubble" type="TextureRect" parent="DialogueManager/NextSceneInputRegion"]
+layout_mode = 0
+offset_left = -146.0
+offset_top = -78.0
+offset_right = 379.0
+offset_bottom = 147.0
+texture = ExtResource("137_o5h8y")
+expand_mode = 1
+
+[node name="TextLabel" type="Label" parent="DialogueManager/NextSceneInputRegion/Bubble"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 22.0
+offset_right = -25.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.5058824, 0.45882353, 0.40784314, 1)
+text = "测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试 "
+autowrap_mode = 3
 
 [node name="MandatoryGuide" type="Control" parent="."]
 anchors_preset = 0
@@ -4475,6 +4489,16 @@ mouse_filter = 2
 [connection signal="mouse_entered" from="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject2" to="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject2" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject2" to="BrowserScene/MainScrollContainer/MainVBox/MainControl/ProjectPanel/SupplierIcon2/SupplierProject2" method="_on_mouse_exited"]
 [connection signal="pressed" from="BrowserScene/ExitBrowser(Flag)" to="BrowserScene" method="_on_exit_browser_pressed"]
+[connection signal="gui_input" from="CompanyScene" to="CompanyScene" method="_on_gui_input"]
+[connection signal="button_down" from="CompanyScene/RefreshEmployee" to="CompanyScene" method="_on_refresh_employee_button_down"]
+[connection signal="button_up" from="CompanyScene/RefreshEmployee" to="CompanyScene" method="_on_refresh_employee_button_up"]
+[connection signal="pressed" from="CompanyScene/RefreshEmployee" to="CompanyScene" method="_on_refresh_employee_pressed"]
+[connection signal="button_down" from="CompanyScene/FireStaff" to="CompanyScene" method="_on_fire_staff_button_down"]
+[connection signal="button_up" from="CompanyScene/FireStaff" to="CompanyScene" method="_on_fire_staff_button_up"]
+[connection signal="pressed" from="CompanyScene/FireStaff" to="CompanyScene" method="_on_fire_staff_pressed"]
+[connection signal="button_down" from="CompanyScene/ExitCompany" to="CompanyScene" method="_on_exit_company_button_down"]
+[connection signal="button_up" from="CompanyScene/ExitCompany" to="CompanyScene" method="_on_exit_company_button_up"]
+[connection signal="pressed" from="CompanyScene/ExitCompany" to="CompanyScene" method="_on_exit_company_pressed"]
 [connection signal="gui_input" from="CalendarScene" to="CalendarScene" method="_on_gui_input"]
 [connection signal="button_down" from="CalendarScene/CalenderButton" to="CalendarScene" method="_on_calender_button_button_down"]
 [connection signal="button_up" from="CalendarScene/CalenderButton" to="CalendarScene" method="_on_calender_button_button_up"]
@@ -4490,16 +4514,6 @@ mouse_filter = 2
 [connection signal="child_exiting_tree" from="CalendarScene/ActivityHand" to="CalendarScene/ActivityHand" method="_on_child_exiting_tree"]
 [connection signal="child_entered_tree" from="CalendarScene/UnusedHand" to="CalendarScene/UnusedHand" method="_on_child_entered_tree"]
 [connection signal="child_exiting_tree" from="CalendarScene/UnusedHand" to="CalendarScene/UnusedHand" method="_on_child_exiting_tree"]
-[connection signal="gui_input" from="CompanyScene" to="CompanyScene" method="_on_gui_input"]
-[connection signal="button_down" from="CompanyScene/RefreshEmployee" to="CompanyScene" method="_on_refresh_employee_button_down"]
-[connection signal="button_up" from="CompanyScene/RefreshEmployee" to="CompanyScene" method="_on_refresh_employee_button_up"]
-[connection signal="pressed" from="CompanyScene/RefreshEmployee" to="CompanyScene" method="_on_refresh_employee_pressed"]
-[connection signal="button_down" from="CompanyScene/FireStaff" to="CompanyScene" method="_on_fire_staff_button_down"]
-[connection signal="button_up" from="CompanyScene/FireStaff" to="CompanyScene" method="_on_fire_staff_button_up"]
-[connection signal="pressed" from="CompanyScene/FireStaff" to="CompanyScene" method="_on_fire_staff_pressed"]
-[connection signal="button_down" from="CompanyScene/ExitCompany" to="CompanyScene" method="_on_exit_company_button_down"]
-[connection signal="button_up" from="CompanyScene/ExitCompany" to="CompanyScene" method="_on_exit_company_button_up"]
-[connection signal="pressed" from="CompanyScene/ExitCompany" to="CompanyScene" method="_on_exit_company_pressed"]
 [connection signal="gui_input" from="CharacterScene" to="CharacterScene" method="_on_gui_input"]
 [connection signal="gui_input" from="DialogueManager/NextSceneInputRegion" to="DialogueManager" method="_on_next_scene_input_region_gui_input"]
 [connection signal="pressed" from="DialogueManager/NextSceneInputRegion/OpenCharacter" to="DialogueManager" method="_on_open_character_pressed"]

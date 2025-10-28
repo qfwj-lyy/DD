@@ -1,15 +1,35 @@
 extends Control
 class_name Card
 
-@export var money : int = 0
-@export var mood : int = 0
-@export var time : int = 0
+@export var money : int = 0:
+	set(i):
+		money = i
+		if money_label:
+			money_label.text = str(i)
+@export var mood : int = 0:
+	set(i):
+		mood = i
+		if mood_label:
+			mood_label.text = str(i)
+@export var time : int = 0:
+	set(i):
+		time = i
+		if time_label:
+			time_label.text = str(i)
 @export var progress : int = 0
 @export var bug : int = 0
 @export var skill : int = 0
 
 @export_multiline var description : String
 
+@onready var time_label: Label = $TimePanel/Time
+@onready var money_label: Label = $MoneyPanel/Money
+@onready var mood_label: Label = $MoodPanel/Mood
+
+func _ready() -> void:
+	money_label.text = str(money)
+	mood_label.text = str(mood)
+	time_label.text = str(time)
 
 @onready var buffs: Node = $Buffs
 
@@ -76,11 +96,6 @@ func _on_gui_input(event: InputEvent) -> void:
 			reparent(G.M.current_scene.unused_hand)
 			condition = Condition.at_unused_hand
 
-#region 测试用
-@onready var label: Label = $Label
-func _ready() -> void:
-	label.text = description
-#endregion
 
 
 #region 悬停动画区
@@ -90,7 +105,7 @@ func _ready() -> void:
 
 var mouse_in : bool = false
 
-func _on_area_2d_mouse_entered() -> void:
+func _on_mouse_entered() -> void:
 	mouse_in = true
 	card_anim.play("hover")
 	border.visible = true
@@ -100,9 +115,8 @@ func _on_area_2d_mouse_entered() -> void:
 	else:
 		G.M.current_scene.calendar_scene.show_card_description(description)
 
-func _on_area_2d_mouse_exited() -> void:
+func _on_mouse_exited() -> void:
 	mouse_in = false
 	card_anim.play("hover_over")
 	border.visible = false
-
 #endregion

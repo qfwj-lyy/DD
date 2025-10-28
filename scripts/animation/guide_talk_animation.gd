@@ -1,8 +1,11 @@
 extends AnimatedSprite2D
 
+@onready var bubble: TextureRect = $"../Bubble"
+
 var condition := 0
 var _can_talk := false
 func talk():
+	bubble.show()
 	if _can_talk:
 		return
 	_can_talk = true

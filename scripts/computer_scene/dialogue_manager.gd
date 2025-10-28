@@ -8,6 +8,7 @@ class_name DialogueManager
 #@export var right_avater : TextureRect
 
 @export var guide_talk_animation : Node
+@export var bubble : Node
 
 var dialogue_segment : DialogueSegment
 
@@ -18,6 +19,9 @@ var typer : Tween
 func _append_character(character : String):
 	text_label.text += character
 func display_next_scene() ->void:
+	if not dialogue_segment:
+		bubble.hide()
+		return
 	if index >= len(dialogue_segment.dialogue_scenes):
 		clear()
 		return
