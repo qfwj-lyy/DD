@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6h4v0hx5xfh2"]
+[gd_scene load_steps=5 format=3 uid="uid://c6h4v0hx5xfh2"]
 
 [ext_resource type="PackedScene" uid="uid://cl4ah171acyxi" path="res://scenes/computer_scene/cards/card.tscn" id="1_ut06m"]
 [ext_resource type="Script" uid="uid://6bbps2e1eqgu" path="res://scripts/computer_scene/debug_cards/debug_card.gd" id="2_e44sg"]
 [ext_resource type="Script" uid="uid://bxtyh0uosrwvq" path="res://scripts/computer_scene/buffs/ai_tiao_zheng_xiang_mu_kuang_jia.gd" id="3_juo4i"]
+[ext_resource type="Texture2D" uid="uid://dpb47rolwbt1y" path="res://assets/cards/debug_five.png" id="3_tv25s"]
 
 [node name="aiTiaoZhengXiangMuKuangJia(Once)" instance=ExtResource("1_ut06m")]
 script = ExtResource("2_e44sg")
@@ -11,6 +12,9 @@ time = 3
 description = "ai调整项目框架
 资金10/心情0/时间3
 本轮游戏的剩余时间内，每回合开始时项目进度+3"
+
+[node name="TextureRect" parent="." index="0"]
+texture = ExtResource("3_tv25s")
 
 [node name="Buff" type="Node" parent="Buffs" index="0"]
 script = ExtResource("3_juo4i")

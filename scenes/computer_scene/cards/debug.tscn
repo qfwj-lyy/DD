@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjyw54e7ki60m"]
+[gd_scene load_steps=3 format=3 uid="uid://bjyw54e7ki60m"]
 
 [ext_resource type="PackedScene" uid="uid://dubitep1ioo2t" path="res://scenes/computer_scene/cards/debug_card.tscn" id="1_c1k4e"]
+[ext_resource type="Texture2D" uid="uid://dfoq24lhrk70p" path="res://assets/cards/debug_three.png" id="2_y7iax"]
 
 [node name="Debug" instance=ExtResource("1_c1k4e")]
 money = 2
@@ -10,3 +11,6 @@ bug = -3
 description = "debug
 资金2/心情-1/时间1
 效果：bug-4"
+
+[node name="TextureRect" parent="." index="0"]
+texture = ExtResource("2_y7iax")

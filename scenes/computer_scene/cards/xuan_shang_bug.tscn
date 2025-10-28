@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c233xwaodvihf"]
+[gd_scene load_steps=4 format=3 uid="uid://c233xwaodvihf"]
 
 [ext_resource type="PackedScene" uid="uid://cl4ah171acyxi" path="res://scenes/computer_scene/cards/card.tscn" id="1_vcs58"]
 [ext_resource type="Script" uid="uid://6bbps2e1eqgu" path="res://scripts/computer_scene/debug_cards/debug_card.gd" id="2_o0ith"]
+[ext_resource type="Texture2D" uid="uid://buwkriew48b7" path="res://assets/cards/debug_four.png" id="3_o0ith"]
 
 [node name="XuanShangbug" instance=ExtResource("1_vcs58")]
 script = ExtResource("2_o0ith")
@@ -10,3 +11,6 @@ bug = -5
 description = "悬赏bug
 资金4/心情0/时间0
 bug-5"
+
+[node name="TextureRect" parent="." index="0"]
+texture = ExtResource("3_o0ith")

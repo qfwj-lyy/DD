@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://clur14vwewow6"]
+[gd_scene load_steps=5 format=3 uid="uid://clur14vwewow6"]
 
 [ext_resource type="PackedScene" uid="uid://cl4ah171acyxi" path="res://scenes/computer_scene/cards/card.tscn" id="1_3tb7f"]
 [ext_resource type="Script" uid="uid://6bbps2e1eqgu" path="res://scripts/computer_scene/debug_cards/debug_card.gd" id="2_fnoej"]
+[ext_resource type="Texture2D" uid="uid://dfoq24lhrk70p" path="res://assets/cards/debug_three.png" id="3_cfumj"]
 [ext_resource type="Script" uid="uid://pfwgulo3nmyf" path="res://scripts/computer_scene/buffs/gai_jin_kuang_jia.gd" id="3_elh4g"]
 
 [node name="GaiJinKuangJia(Once)" instance=ExtResource("1_3tb7f")]
@@ -12,6 +13,9 @@ time = 3
 description = "改进框架
 资金5/心情-3/时间3
 本轮游戏的剩余时间内，每回合开始时项目进度+2"
+
+[node name="TextureRect" parent="." index="0"]
+texture = ExtResource("3_cfumj")
 
 [node name="Buff" type="Node" parent="Buffs" index="0"]
 script = ExtResource("3_elh4g")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxpdh31ftop81"]
+[gd_scene load_steps=4 format=3 uid="uid://bxpdh31ftop81"]
 
 [ext_resource type="PackedScene" uid="uid://dubitep1ioo2t" path="res://scenes/computer_scene/cards/debug_card.tscn" id="1_5wyj2"]
+[ext_resource type="Texture2D" uid="uid://dpb47rolwbt1y" path="res://assets/cards/debug_five.png" id="2_di631"]
 [ext_resource type="Script" uid="uid://ddbvmc2fk5ej0" path="res://scripts/computer_scene/buffs/ai_dai_ma_shen_cha_zhi_du.gd" id="2_h1xvj"]
 
 [node name="AIDaiMaShenChaZhiDu" instance=ExtResource("1_5wyj2")]
@@ -8,6 +9,9 @@ money = 5
 description = "ai代码审查制度（仅一张）
 资金5/心情0/时间0
 本轮游戏的剩余时间内，每出一张debug卡，bug-2"
+
+[node name="TextureRect" parent="." index="0"]
+texture = ExtResource("2_di631")
 
 [node name="AIDaiMaShenChaZhiDu" type="Node" parent="Buffs" index="0"]
 script = ExtResource("2_h1xvj")

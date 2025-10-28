@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://8wqfekulcaa7"]
+[gd_scene load_steps=4 format=3 uid="uid://8wqfekulcaa7"]
 
 [ext_resource type="PackedScene" uid="uid://dubitep1ioo2t" path="res://scenes/computer_scene/cards/debug_card.tscn" id="1_6t2uy"]
+[ext_resource type="Texture2D" uid="uid://dfoq24lhrk70p" path="res://assets/cards/debug_three.png" id="2_03mqn"]
 [ext_resource type="Script" uid="uid://kmirxldvrtyi" path="res://scripts/computer_scene/buffs/duan_dian_tiao_shi.gd" id="2_wd5er"]
 
 [node name="DuanDianTiaoShi" instance=ExtResource("1_6t2uy")]
@@ -10,6 +11,9 @@ time = 1
 description = "断点调试
 资金2/心情-3/时间2
 本回合的剩余时间内，每单位时间bug-2"
+
+[node name="TextureRect" parent="." index="0"]
+texture = ExtResource("2_03mqn")
 
 [node name="Buff" type="Node" parent="Buffs" index="0"]
 script = ExtResource("2_wd5er")

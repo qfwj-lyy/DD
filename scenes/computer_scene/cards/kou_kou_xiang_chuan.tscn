@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmruxnjr6yjtc"]
+[gd_scene load_steps=5 format=3 uid="uid://dmruxnjr6yjtc"]
 
 [ext_resource type="PackedScene" uid="uid://cl4ah171acyxi" path="res://scenes/computer_scene/cards/card.tscn" id="1_4ym2g"]
 [ext_resource type="Script" uid="uid://bse3ljhhcaude" path="res://scripts/computer_scene/activity_cards/activity_card.gd" id="2_xmho3"]
+[ext_resource type="Texture2D" uid="uid://dhnklju3hspre" path="res://assets/cards/ac_five.png" id="3_i3hmt"]
 [ext_resource type="Script" uid="uid://by6ne4lbwec5n" path="res://scripts/computer_scene/buffs/kou_kou_xiang_chuan.gd" id="3_vvyrr"]
 
 [node name="KouKouXiangChuan(Once)" instance=ExtResource("1_4ym2g")]
@@ -11,6 +12,9 @@ time = 1
 description = "口口相传
 资金10/心情0/时间1
 本轮游戏的剩余时间内，每单位时间心情+1"
+
+[node name="TextureRect" parent="." index="0"]
+texture = ExtResource("3_i3hmt")
 
 [node name="Buff" type="Node" parent="Buffs" index="0"]
 script = ExtResource("3_vvyrr")
