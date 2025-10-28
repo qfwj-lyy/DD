@@ -1,13 +1,13 @@
 extends Control
 class_name DialogueManager
 
-@export_group("UI")
+
 #@export var character_name_Label = Label
 @export var text_label = Label
 #@export var left_avater : TextureRect
 #@export var right_avater : TextureRect
 
-@onready var animated_sprite_2d: AnimatedSprite2D = $NextSceneInputRegion/OpenCharacter/AnimatedSprite2D
+@export var guide_talk_animation : Node
 
 var dialogue_segment : DialogueSegment
 
@@ -30,7 +30,7 @@ func display_next_scene() ->void:
 		index += 1
 		
 		G.kill_sound("typing")
-		animated_sprite_2d.stop()
+		guide_talk_animation.stop_talk()
 		
 		return
 	
@@ -39,9 +39,9 @@ func display_next_scene() ->void:
 	
 	typer = get_tree().create_tween()
 	typer.connect("finished", G.kill_sound.bind("typing"))
-	typer.connect("finished", animated_sprite_2d.stop)
+	typer.connect("finished", guide_talk_animation.stop_talk)
 	G.play_sound("typing" , 0 , randf_range(0 , 7))
-	animated_sprite_2d.play("default")
+	guide_talk_animation.talk()
 	
 	text_label.text = ""
 	for character in dialogue_scene.text :
@@ -72,7 +72,7 @@ func display_sentence(s : String):
 	if typer and typer.is_running():
 		G.kill_sound("typing")
 		typer.kill()
-		animated_sprite_2d.stop()
+		guide_talk_animation.stop_talk()
 	var d_segment = DialogueSegment.new()
 	var d_scene = DialogueScene.new()
 	d_scene.text = s
@@ -91,7 +91,7 @@ func clear():
 		G.kill_sound("typing")
 		typer.kill()
 	typer = null
-	animated_sprite_2d.stop()
+	guide_talk_animation.stop_talk()
 
 func _on_next_scene_input_region_gui_input(event: InputEvent) -> void:
 	if event.is_action_released("LeftMouseDown"):
