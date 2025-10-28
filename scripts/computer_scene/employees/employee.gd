@@ -46,6 +46,9 @@ var last_click_time : int
 func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("LeftMouseDown"):
 		if condition == Condition.at_store:
+			if Employee.chosen_employee:
+				Employee.chosen_employee.animation_player.play("back")
+				Employee.chosen_employee = null
 			if Time.get_ticks_msec() - last_click_time <= 300:
 				if G.M.current_scene.company_scene.current_staff_amount >= G.M.current_scene.company_scene.staff_amount_limit:
 					G.play_sound("illegal_operation")

@@ -3692,7 +3692,7 @@ text = "简历"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Employee0" type="PanelContainer" parent="CompanyScene"]
+[node name="Employee0" type="Panel" parent="CompanyScene"]
 layout_mode = 0
 offset_left = 40.0
 offset_top = 80.0
@@ -3700,7 +3700,7 @@ offset_right = 160.0
 offset_bottom = 240.0
 mouse_filter = 1
 
-[node name="Employee1" type="PanelContainer" parent="CompanyScene"]
+[node name="Employee1" type="Panel" parent="CompanyScene"]
 layout_mode = 0
 offset_left = 200.0
 offset_top = 80.0
@@ -3708,7 +3708,7 @@ offset_right = 320.0
 offset_bottom = 240.0
 mouse_filter = 1
 
-[node name="Employee2" type="PanelContainer" parent="CompanyScene"]
+[node name="Employee2" type="Panel" parent="CompanyScene"]
 layout_mode = 0
 offset_left = 360.0
 offset_top = 80.0
@@ -3716,7 +3716,7 @@ offset_right = 480.0
 offset_bottom = 240.0
 mouse_filter = 1
 
-[node name="Employee3" type="PanelContainer" parent="CompanyScene"]
+[node name="Employee3" type="Panel" parent="CompanyScene"]
 layout_mode = 0
 offset_left = 520.0
 offset_top = 80.0
@@ -3724,7 +3724,7 @@ offset_right = 640.0
 offset_bottom = 240.0
 mouse_filter = 1
 
-[node name="Employee4" type="PanelContainer" parent="CompanyScene"]
+[node name="Employee4" type="Panel" parent="CompanyScene"]
 layout_mode = 0
 offset_left = 680.0
 offset_top = 80.0
@@ -3795,28 +3795,31 @@ text = "雇员"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Staff0" type="PanelContainer" parent="CompanyScene"]
+[node name="Staff0" type="Panel" parent="CompanyScene"]
 layout_mode = 0
 offset_left = 100.0
 offset_top = 350.0
-offset_right = 250.0
-offset_bottom = 550.0
+offset_right = 220.0
+offset_bottom = 510.0
+scale = Vector2(1.25, 1.25)
 mouse_filter = 1
 
-[node name="Staff1" type="PanelContainer" parent="CompanyScene"]
+[node name="Staff1" type="Panel" parent="CompanyScene"]
 layout_mode = 0
 offset_left = 345.0
 offset_top = 350.0
-offset_right = 495.0
-offset_bottom = 550.0
+offset_right = 465.0
+offset_bottom = 510.0
+scale = Vector2(1.25, 1.25)
 mouse_filter = 1
 
-[node name="Staff2" type="PanelContainer" parent="CompanyScene"]
+[node name="Staff2" type="Panel" parent="CompanyScene"]
 layout_mode = 0
 offset_left = 590.0
 offset_top = 350.0
-offset_right = 740.0
-offset_bottom = 550.0
+offset_right = 710.0
+offset_bottom = 510.0
+scale = Vector2(1.25, 1.25)
 mouse_filter = 1
 
 [node name="FireStaff" type="Button" parent="CompanyScene"]

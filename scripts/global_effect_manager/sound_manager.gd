@@ -65,7 +65,7 @@ func get_all_sound_nodes():
 func kill_sound(sound_name : String):
 	var s_s = load("res://assets/sounds/"+ sound_name +".mp3")
 	for s_n:AudioStreamPlayer in get_all_sound_nodes():
-		if s_n.stream == s_s:
-			s_n.queue_free()
-			return
-	print("warning：kill_sound() fail")
+		if is_instance_valid(s_n):
+			if s_n.stream == s_s:
+				s_n.queue_free()
+	#print("warning：kill_sound() fail")
