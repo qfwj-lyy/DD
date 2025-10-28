@@ -12,17 +12,89 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rvwmx")
-project_name_label = NodePath("ProjectButton/ProjectNameLabel")
-initial_progress_label = NodePath("ProjectButton/InitialProgressLabel")
-initial_bug_amount_label = NodePath("ProjectButton/InitialBugAmountLabel")
-bug_amount_limit_label = NodePath("ProjectButton/BugAmountLimitLabel")
-initial_money_label = NodePath("ProjectButton/InitialMoneyLabel")
-initial_mood_label = NodePath("ProjectButton/InitialMoodLabel")
-initial_skill_label = NodePath("ProjectButton/InitialSkillLabel")
-description_label = NodePath("ProjectButton/DescriptionLabel")
-deposit_reward_label = NodePath("ProjectButton/DepositRewardLabel")
+project_name_label = NodePath("ProjectNameLabel")
+initial_progress_label = NodePath("InitialProgressLabel")
+initial_bug_amount_label = NodePath("InitialBugAmountLabel")
+bug_amount_limit_label = NodePath("BugAmountLimitLabel")
+initial_money_label = NodePath("InitialMoneyLabel")
+initial_mood_label = NodePath("InitialMoodLabel")
+initial_skill_label = NodePath("InitialSkillLabel")
+description_label = NodePath("DescriptionLabel")
+deposit_reward_label = NodePath("DepositRewardLabel")
 
-[node name="ProjectButton" type="Button" parent="."]
+[node name="ProjectNameLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 879.0
+offset_top = 547.0
+offset_right = 1007.0
+offset_bottom = 592.0
+text = "项目名称"
+
+[node name="InitialProgressLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 884.0
+offset_top = 588.0
+offset_right = 1076.0
+offset_bottom = 633.0
+text = "项目初始进度"
+
+[node name="InitialBugAmountLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1287.0
+offset_top = 581.0
+offset_right = 1505.0
+offset_bottom = 626.0
+text = "项目初始bug数"
+
+[node name="BugAmountLimitLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1285.0
+offset_top = 645.0
+offset_right = 1567.0
+offset_bottom = 690.0
+text = "用户对bug的忍耐度"
+
+[node name="InitialMoneyLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 884.0
+offset_top = 622.0
+offset_right = 1012.0
+offset_bottom = 667.0
+text = "初始资金"
+
+[node name="InitialMoodLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 886.0
+offset_top = 669.0
+offset_right = 1014.0
+offset_bottom = 714.0
+text = "参与意向"
+
+[node name="InitialSkillLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 884.0
+offset_top = 726.0
+offset_right = 1108.0
+offset_bottom = 771.0
+text = "项目内容熟练度"
+
+[node name="DescriptionLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 879.0
+offset_top = 796.0
+offset_right = 1815.0
+offset_bottom = 1000.0
+text = "buffs内容："
+
+[node name="DepositRewardLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1315.0
+offset_top = 735.0
+offset_right = 1507.0
+offset_bottom = 780.0
+text = "项目总收入："
+
+[node name="AcceptTaskIcon" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,76 +106,12 @@ offset_bottom = -545.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ProjectNameLabel" type="Label" parent="ProjectButton"]
+[node name="RejectTaskIcon" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 18.0
-offset_top = 16.0
-offset_right = 82.0
-offset_bottom = 39.0
-text = "项目名称"
+offset_right = 8.0
+offset_bottom = 8.0
 
-[node name="InitialProgressLabel" type="Label" parent="ProjectButton"]
+[node name="ProjectIcon" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 23.0
-offset_top = 57.0
-offset_right = 215.0
-offset_bottom = 102.0
-text = "项目初始进度"
-
-[node name="InitialBugAmountLabel" type="Label" parent="ProjectButton"]
-layout_mode = 0
-offset_left = 426.0
-offset_top = 50.0
-offset_right = 644.0
-offset_bottom = 95.0
-text = "项目初始bug数"
-
-[node name="BugAmountLimitLabel" type="Label" parent="ProjectButton"]
-layout_mode = 0
-offset_left = 424.0
-offset_top = 114.0
-offset_right = 706.0
-offset_bottom = 159.0
-text = "用户对bug的忍耐度"
-
-[node name="InitialMoneyLabel" type="Label" parent="ProjectButton"]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 91.0
-offset_right = 151.0
-offset_bottom = 136.0
-text = "初始资金"
-
-[node name="InitialMoodLabel" type="Label" parent="ProjectButton"]
-layout_mode = 0
-offset_left = 25.0
-offset_top = 138.0
-offset_right = 153.0
-offset_bottom = 183.0
-text = "参与意向"
-
-[node name="InitialSkillLabel" type="Label" parent="ProjectButton"]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 195.0
-offset_right = 247.0
-offset_bottom = 240.0
-text = "项目内容熟练度"
-
-[node name="DescriptionLabel" type="Label" parent="ProjectButton"]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 265.0
-offset_right = 954.0
-offset_bottom = 469.0
-text = "buffs内容："
-
-[node name="DepositRewardLabel" type="Label" parent="ProjectButton"]
-layout_mode = 0
-offset_left = 454.0
-offset_top = 204.0
-offset_right = 614.0
-offset_bottom = 249.0
-text = "项目总收入："
-
-[connection signal="pressed" from="ProjectButton" to="." method="_on_project_button_pressed"]
+offset_right = 40.0
+offset_bottom = 40.0

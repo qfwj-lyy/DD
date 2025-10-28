@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Project" load_steps=4 format=3 uid="uid://lepcg7lbfqtl"]
+[gd_resource type="Resource" script_class="Project" load_steps=5 format=3 uid="uid://lepcg7lbfqtl"]
 
 [ext_resource type="PackedScene" uid="uid://cd6rf0dya4jhd" path="res://scenes/computer_scene/buffs/zhong_wang_suo_gui.tscn" id="1_8yosg"]
+[ext_resource type="Texture2D" uid="uid://dp8pjdpk8cgoo" path="res://assets/projects/quan_ming_da_fei_ji.png" id="1_hnvxr"]
 [ext_resource type="Script" uid="uid://7a2lp0yd04fg" path="res://scripts/computer_scene/resource_type/project.gd" id="1_u25i4"]
 [ext_resource type="PackedScene" uid="uid://ckpbf0m7memhf" path="res://scenes/computer_scene/buffs/fang_zhen_ti_yan.tscn" id="2_6i3sm"]
 
@@ -15,7 +16,8 @@ initial_money = 20.0
 initial_mood = 50.0
 initial_skill = 20.0
 deposit_reward = 20.0
-description = "√①众望所归：每回合开始时，获得(项目进度-bug数)的资金（不会为负）
+description = "①众望所归：每回合开始时，获得(项目进度-bug数)的资金（不会为负）
 ②仿真体验：交付时bug数若低于bug上限的80%，获得额外50%的存款"
 initial_buffs = Array[Resource]([ExtResource("1_8yosg"), ExtResource("2_6i3sm")])
+icon = ExtResource("1_hnvxr")
 metadata/_custom_type_script = "uid://7a2lp0yd04fg"
