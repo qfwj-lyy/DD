@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Project" load_steps=3 format=3 uid="uid://cep0p7gioxyo2"]
+[gd_resource type="Resource" script_class="Project" load_steps=4 format=3 uid="uid://cep0p7gioxyo2"]
 
+[ext_resource type="Texture2D" uid="uid://bt10uqyrwm7gq" path="res://assets/projects/you_zhi_shui_tie.png" id="1_73ouv"]
 [ext_resource type="Script" uid="uid://7a2lp0yd04fg" path="res://scripts/computer_scene/resource_type/project.gd" id="1_kbje1"]
 [ext_resource type="PackedScene" uid="uid://da20ico2ibtul" path="res://scenes/computer_scene/buffs/fan_shui.tscn" id="1_p2ruw"]
 
@@ -15,4 +16,5 @@ deposit_reward = 20.0
 description = "初始buff：
 ①反水：每回合开始时，进度增加bug数*20%（向下取整）"
 initial_buffs = Array[Resource]([ExtResource("1_p2ruw")])
+icon = ExtResource("1_73ouv")
 metadata/_custom_type_script = "uid://7a2lp0yd04fg"

@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Project" load_steps=4 format=3 uid="uid://crym3w501hldc"]
+[gd_resource type="Resource" script_class="Project" load_steps=5 format=3 uid="uid://crym3w501hldc"]
 
+[ext_resource type="Texture2D" uid="uid://cen8rti8ri2sh" path="res://assets/projects/xiao_chuang.png" id="1_bnhjj"]
 [ext_resource type="PackedScene" uid="uid://bdomval7hcv0p" path="res://scenes/computer_scene/buffs/ppt_da_sai.tscn" id="1_ei302"]
 [ext_resource type="Script" uid="uid://7a2lp0yd04fg" path="res://scripts/computer_scene/resource_type/project.gd" id="1_f4dcj"]
 [ext_resource type="PackedScene" uid="uid://cbu5ks3o4f45g" path="res://scenes/computer_scene/buffs/bi_sai_deadline.tscn" id="2_bnhjj"]
@@ -17,4 +18,5 @@ description = "初始buff：
 ①ppt大赛：每回合开始时，bug上限增加5%（向下取整）
 ②比赛ddl：项目需要在150单位时间内交付"
 initial_buffs = Array[Resource]([ExtResource("1_ei302"), ExtResource("2_bnhjj")])
+icon = ExtResource("1_bnhjj")
 metadata/_custom_type_script = "uid://7a2lp0yd04fg"
