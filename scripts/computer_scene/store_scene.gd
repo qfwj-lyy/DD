@@ -71,6 +71,7 @@ func _on_refresh_cards_button_up() -> void:
 		G.D.display_sentence("刷新商店需要3资金")
 
 func show_card_description(d : String):
+	
 	description_label.text = d
 	
 

@@ -363,6 +363,7 @@ _data = {
 script = ExtResource("1_oo155")
 
 [node name="TestModeScene" type="Panel" parent="."]
+visible = false
 offset_left = 753.0
 offset_top = 470.0
 offset_right = 1721.0
@@ -404,7 +405,6 @@ script = ExtResource("4_q8mjp")
 script = ExtResource("5_pc0jn")
 
 [node name="MainMenu" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 1
