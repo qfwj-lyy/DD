@@ -50,11 +50,8 @@ func read_data_file_and_initialize() -> void:
 # 递归处理所有节点
 func scale_all_nodes(node: Node):
 	# 检查节点是否有position和size属性
-	print(0)
 	if node.has_method("get_position") and node.has_method("set_position"):
-		print("1")
 		var new_pos = node.get_position() * 2
-		print(new_pos)
 		node.set_position(new_pos)
 	
 	if node.has_method("get_size") and node.has_method("set_size"):
@@ -67,7 +64,6 @@ func scale_all_nodes(node: Node):
 # 整个软件的开始
 func _ready() -> void:
 	print("这是测试版。正式版需要修改存储地址")
-	print("这是测试版。正式版需要修改初始的current_scene")
 	print("测试开启了窗口置顶")
 	#get_tree().root.content_scale_size = Vector2(1,1)
 

@@ -42,7 +42,10 @@ var skill_amount : float:
 
 
 var bug_rate : float
-var deposit_amount : float
+var deposit_amount : float:
+	set(i):
+		deposit_amount = i
+		G.M.current_scene.character_scene.deposit_label.text = "存款：" + str(int(i))
 var hand_card_amount_limit : int = 5
 
 var overall_time_amount : float # 时空穿越所需要，目前没有需求

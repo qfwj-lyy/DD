@@ -1,4 +1,5 @@
 extends Panel
+@export var deposit_label : Node
 
 func _ready() -> void:
 	hide()

@@ -23,6 +23,7 @@ bug_amount_limit_label = NodePath("BugAmountLimitLabel")
 initial_money_label = NodePath("InitialMoneyLabel")
 initial_mood_label = NodePath("InitialMoodLabel")
 initial_skill_label = NodePath("InitialSkillLabel")
+
 description_label = NodePath("DescriptionPanel/DescriptionLabel")
 deposit_reward_label = NodePath("DescriptionPanel/DepositRewardLabel")
 
@@ -39,50 +40,97 @@ offset_left = 1100.0
 offset_top = 540.0
 offset_right = 1228.0
 offset_bottom = 585.0
+=======
+description_label = NodePath("DescriptionLabel")
+deposit_reward_label = NodePath("DepositRewardLabel")
+
+[node name="ProjectNameLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 879.0
+offset_top = 547.0
+offset_right = 1007.0
+offset_bottom = 592.0
+
 text = "项目名称"
 
 [node name="InitialProgressLabel" type="Label" parent="."]
 layout_mode = 0
+<<<<<<< HEAD
 offset_left = 1100.0
 offset_top = 740.0
 offset_right = 1292.0
 offset_bottom = 785.0
+=======
+offset_left = 884.0
+offset_top = 588.0
+offset_right = 1076.0
+offset_bottom = 633.0
+>>>>>>> 5fa73ee011a4ad8e49d51720d13058bb0b1a1858
 text = "项目初始进度"
 
 [node name="InitialBugAmountLabel" type="Label" parent="."]
 layout_mode = 0
+<<<<<<< HEAD
 offset_left = 1100.0
 offset_top = 790.0
 offset_right = 1318.0
 offset_bottom = 835.0
+=======
+offset_left = 1287.0
+offset_top = 581.0
+offset_right = 1505.0
+offset_bottom = 626.0
+>>>>>>> 5fa73ee011a4ad8e49d51720d13058bb0b1a1858
 text = "项目初始bug数"
 
 [node name="BugAmountLimitLabel" type="Label" parent="."]
 layout_mode = 0
+<<<<<<< HEAD
 offset_left = 1100.0
 offset_top = 840.0
 offset_right = 1382.0
 offset_bottom = 885.0
+=======
+offset_left = 1285.0
+offset_top = 645.0
+offset_right = 1567.0
+offset_bottom = 690.0
+>>>>>>> 5fa73ee011a4ad8e49d51720d13058bb0b1a1858
 text = "用户对bug的忍耐度"
 
 [node name="InitialMoneyLabel" type="Label" parent="."]
 layout_mode = 0
+<<<<<<< HEAD
 offset_left = 1100.0
 offset_top = 590.0
 offset_right = 1228.0
 offset_bottom = 635.0
+=======
+offset_left = 884.0
+offset_top = 622.0
+offset_right = 1012.0
+offset_bottom = 667.0
+>>>>>>> 5fa73ee011a4ad8e49d51720d13058bb0b1a1858
 text = "初始资金"
 
 [node name="InitialMoodLabel" type="Label" parent="."]
 layout_mode = 0
+<<<<<<< HEAD
 offset_left = 1100.0
 offset_top = 640.0
 offset_right = 1228.0
 offset_bottom = 685.0
+=======
+offset_left = 886.0
+offset_top = 669.0
+offset_right = 1014.0
+offset_bottom = 714.0
+>>>>>>> 5fa73ee011a4ad8e49d51720d13058bb0b1a1858
 text = "参与意向"
 
 [node name="InitialSkillLabel" type="Label" parent="."]
 layout_mode = 0
+<<<<<<< HEAD
 offset_left = 1100.0
 offset_top = 690.0
 offset_right = 1324.0
@@ -90,6 +138,31 @@ offset_bottom = 735.0
 text = "项目内容熟练度"
 
 [node name="AcceptTaskIcon" type="Panel" parent="."]
+=======
+offset_left = 884.0
+offset_top = 726.0
+offset_right = 1108.0
+offset_bottom = 771.0
+text = "项目内容熟练度"
+
+[node name="DescriptionLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 879.0
+offset_top = 796.0
+offset_right = 1815.0
+offset_bottom = 1000.0
+text = "buffs内容："
+
+[node name="DepositRewardLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1315.0
+offset_top = 735.0
+offset_right = 1507.0
+offset_bottom = 780.0
+text = "项目总收入："
+
+[node name="AcceptTaskIcon" type="TextureRect" parent="."]
+>>>>>>> 5fa73ee011a4ad8e49d51720d13058bb0b1a1858
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -101,6 +174,7 @@ offset_bottom = -375.0
 grow_horizontal = 2
 grow_vertical = 2
 
+<<<<<<< HEAD
 [node name="RejectTaskIcon" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 1400.0
@@ -152,3 +226,14 @@ offset_left = 1060.0
 offset_top = 540.0
 offset_right = 1070.0
 offset_bottom = 890.0
+=======
+[node name="RejectTaskIcon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="ProjectIcon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+>>>>>>> 5fa73ee011a4ad8e49d51720d13058bb0b1a1858
