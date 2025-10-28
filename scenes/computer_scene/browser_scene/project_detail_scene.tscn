@@ -39,13 +39,6 @@ offset_left = 1100.0
 offset_top = 540.0
 offset_right = 1228.0
 offset_bottom = 585.0
-
-[node name="ProjectNameLabel2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 879.0
-offset_top = 547.0
-offset_right = 1007.0
-offset_bottom = 592.0
 text = "项目名称"
 
 [node name="InitialProgressLabel" type="Label" parent="."]
