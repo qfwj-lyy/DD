@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bo4i2qcv834vx"]
+[gd_scene load_steps=3 format=3 uid="uid://bo4i2qcv834vx"]
 
 [ext_resource type="PackedScene" uid="uid://dubitep1ioo2t" path="res://scenes/computer_scene/cards/debug_card.tscn" id="1_0dalp"]
+[ext_resource type="Texture2D" uid="uid://dfoq24lhrk70p" path="res://assets/cards/debug_three.png" id="2_m2h3b"]
 
 [node name="LianXiHelloWorld" instance=ExtResource("1_0dalp")]
 mood = -2
@@ -9,3 +10,6 @@ skill = 3
 description = "练习Hello World
 资金0/心情-1/时间1
 技术+3"
+
+[node name="TextureRect" parent="." index="0"]
+texture = ExtResource("2_m2h3b")

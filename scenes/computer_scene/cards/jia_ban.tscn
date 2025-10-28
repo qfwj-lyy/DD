@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6xqifrgdvjha"]
+[gd_scene load_steps=5 format=3 uid="uid://b6xqifrgdvjha"]
 
 [ext_resource type="PackedScene" uid="uid://dubitep1ioo2t" path="res://scenes/computer_scene/cards/debug_card.tscn" id="1_e6a72"]
+[ext_resource type="Texture2D" uid="uid://buwkriew48b7" path="res://assets/cards/debug_four.png" id="2_5ebuv"]
 [ext_resource type="Script" uid="uid://bsbp8hx758p31" path="res://scripts/computer_scene/buffs/jia_ban.gd" id="2_qamte"]
 [ext_resource type="Script" uid="uid://cs12vryminu57" path="res://scripts/computer_scene/buffs/jia_ban_buff_1.gd" id="3_5ebuv"]
 
@@ -10,6 +11,9 @@ time = 1
 description = "加班
 资金0/心情-10/时间1
 本回合剩余时间内，心情不会增加，每推进1项目进度，资金+2"
+
+[node name="TextureRect" parent="." index="0"]
+texture = ExtResource("2_5ebuv")
 
 [node name="Buff" type="Node" parent="Buffs" index="0"]
 script = ExtResource("2_qamte")

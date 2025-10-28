@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://brduvs2vx4a5y"]
+[gd_scene load_steps=4 format=3 uid="uid://brduvs2vx4a5y"]
 
 [ext_resource type="PackedScene" uid="uid://cl4ah171acyxi" path="res://scenes/computer_scene/cards/card.tscn" id="1_vyv3a"]
 [ext_resource type="Script" uid="uid://bse3ljhhcaude" path="res://scripts/computer_scene/activity_cards/activity_card.gd" id="2_ijlcq"]
+[ext_resource type="Texture2D" uid="uid://37d6bp7op3wr" path="res://assets/cards/ac_three.png" id="3_ijlcq"]
 
 [node name="KanKanChuangWai" instance=ExtResource("1_vyv3a")]
 script = ExtResource("2_ijlcq")
@@ -9,3 +10,6 @@ mood = 1
 description = "看看窗外
 资金0/心情1/时间0
 无额外效果"
+
+[node name="TextureRect" parent="." index="0"]
+texture = ExtResource("3_ijlcq")

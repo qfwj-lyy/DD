@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://gsr53cs8vokl"]
+[gd_scene load_steps=4 format=3 uid="uid://gsr53cs8vokl"]
 
 [ext_resource type="PackedScene" uid="uid://cl4ah171acyxi" path="res://scenes/computer_scene/cards/card.tscn" id="1_vpya1"]
 [ext_resource type="Script" uid="uid://bse3ljhhcaude" path="res://scripts/computer_scene/activity_cards/activity_card.gd" id="2_8i1sj"]
+[ext_resource type="Texture2D" uid="uid://cvpp6p2oje336" path="res://assets/cards/ac_four.png" id="3_8i1sj"]
 
 [node name="HeCha" instance=ExtResource("1_vpya1")]
 script = ExtResource("2_8i1sj")
@@ -11,3 +12,6 @@ time = 1
 description = "喝茶
 资金2/心情5/时间1
 无额外效果"
+
+[node name="TextureRect" parent="." index="0"]
+texture = ExtResource("3_8i1sj")

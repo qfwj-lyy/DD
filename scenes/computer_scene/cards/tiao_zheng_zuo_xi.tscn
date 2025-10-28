@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bsauty0ws54vg"]
+[gd_scene load_steps=5 format=3 uid="uid://bsauty0ws54vg"]
 
 [ext_resource type="PackedScene" uid="uid://cl4ah171acyxi" path="res://scenes/computer_scene/cards/card.tscn" id="1_ywn3v"]
 [ext_resource type="Script" uid="uid://bse3ljhhcaude" path="res://scripts/computer_scene/activity_cards/activity_card.gd" id="2_y40ya"]
+[ext_resource type="Texture2D" uid="uid://cvpp6p2oje336" path="res://assets/cards/ac_four.png" id="3_qq75u"]
 [ext_resource type="Script" uid="uid://bylbyp7dquvra" path="res://scripts/computer_scene/buffs/tiao_zheng_zuo_xi.gd" id="3_y40ya"]
 
 [node name="TiaoZhengZuoXi" instance=ExtResource("1_ywn3v")]
@@ -11,6 +12,9 @@ time = 3
 description = "调整作息
 资金0/心情-2/时间4
 本回合剩余时间内，每单位时间心情+2"
+
+[node name="TextureRect" parent="." index="0"]
+texture = ExtResource("3_qq75u")
 
 [node name="Buff" type="Node" parent="Buffs" index="0"]
 script = ExtResource("3_y40ya")
