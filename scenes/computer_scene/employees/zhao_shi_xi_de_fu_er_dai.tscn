@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://di6dmnal3qh68"]
 
 [ext_resource type="PackedScene" uid="uid://dhjv4wwlto6p1" path="res://scenes/computer_scene/employees/employee.tscn" id="1_glnfd"]
-[ext_resource type="Texture2D" uid="uid://df6ddocu607hh" path="res://assets/computer_scene/employee_level1.png" id="2_s5c2w"]
+[ext_resource type="Texture2D" uid="uid://b8cpbah73skkm" path="res://assets/employees/黄毛富二代_202510280326_23727.png" id="2_s5c2w"]
 
 [node name="ZhaoShiXiDeFuErDai" instance=ExtResource("1_glnfd")]
 joining_expenditure = -3
