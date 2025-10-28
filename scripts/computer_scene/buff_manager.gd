@@ -31,7 +31,7 @@ func add_buff_icon(node: Node):
 	if node is Buff:
 		var icon_node = buff_icon.duplicate()
 		buff_icons.add_child(icon_node)
-		icon_node.set_description(node.description)
+		icon_node.set_icon(node)
 		
 		var buff_and_icon = [node, icon_node]
 		buff_and_icon_list.append(buff_and_icon)

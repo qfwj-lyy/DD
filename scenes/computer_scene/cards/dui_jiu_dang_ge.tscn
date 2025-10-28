@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2ugo3qrc3gcg"]
+[gd_scene load_steps=6 format=3 uid="uid://c2ugo3qrc3gcg"]
 
 [ext_resource type="PackedScene" uid="uid://cl4ah171acyxi" path="res://scenes/computer_scene/cards/card.tscn" id="1_qeri0"]
 [ext_resource type="Script" uid="uid://bse3ljhhcaude" path="res://scripts/computer_scene/activity_cards/activity_card.gd" id="2_qeri0"]
 [ext_resource type="Texture2D" uid="uid://dhnklju3hspre" path="res://assets/cards/ac_five.png" id="3_ekrl2"]
 [ext_resource type="Script" uid="uid://dd3qpme5hj015" path="res://scripts/computer_scene/buffs/dui_jiu_dang_ge.gd" id="3_i0htx"]
+[ext_resource type="Texture2D" uid="uid://dfsgewq4fjbnm" path="res://assets/computer_scene/bad_mood_buff.png" id="5_arlqt"]
 
 [node name="DuiJiuDangGe" instance=ExtResource("1_qeri0")]
 script = ExtResource("2_qeri0")
@@ -21,4 +22,6 @@ texture = ExtResource("3_ekrl2")
 script = ExtResource("3_i0htx")
 duration = -9
 execution_time = 2
+icon = ExtResource("5_arlqt")
+description = "本回合结束时bug增长率+5%"
 metadata/_custom_type_script = "uid://dwhc1hbrg4em"

@@ -15,7 +15,7 @@ func kill_sound(sound_name : String):
 
 #region settings文件的读写
 # res仅供测试，正式版路径user://data/settings.json
-const SETTINGS_PATH := "res://settings.json"
+const SETTINGS_PATH := "user://debug_deadline.json"
 func write_setting_data(setting : String, condition) -> void:
 	var file = FileAccess.open(SETTINGS_PATH,FileAccess.READ)
 	var string = file.get_as_text()

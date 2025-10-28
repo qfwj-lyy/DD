@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bej78e1d4u22p"]
+[gd_scene load_steps=5 format=3 uid="uid://bej78e1d4u22p"]
 
 [ext_resource type="PackedScene" uid="uid://dhjv4wwlto6p1" path="res://scenes/computer_scene/employees/employee.tscn" id="1_b7bos"]
+[ext_resource type="Texture2D" uid="uid://ddanithc2hc0b" path="res://assets/computer_scene/good_buff.png" id="2_b4in0"]
 [ext_resource type="Texture2D" uid="uid://ns7c2dorqyol" path="res://assets/employees/通用_202510280325_54488.png" id="2_ci45s"]
 
 [sub_resource type="GDScript" id="GDScript_ci45s"]
@@ -24,9 +25,10 @@ description = "咖啡续命级码农
 script = SubResource("GDScript_ci45s")
 duration = -7
 execution_time = 1
+icon = ExtResource("2_b4in0")
 description = "增益：每回合开始时给bug增长率一个-5%~0%的修正"
 metadata/_custom_type_script = "uid://dwhc1hbrg4em"
 
-[node name="EmployeeRect" parent="." index="2"]
+[node name="EmployeeRect" parent="." index="1"]
 texture = ExtResource("2_ci45s")
 expand_mode = 1

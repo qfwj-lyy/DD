@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6xqifrgdvjha"]
+[gd_scene load_steps=7 format=3 uid="uid://b6xqifrgdvjha"]
 
 [ext_resource type="PackedScene" uid="uid://dubitep1ioo2t" path="res://scenes/computer_scene/cards/debug_card.tscn" id="1_e6a72"]
 [ext_resource type="Texture2D" uid="uid://buwkriew48b7" path="res://assets/cards/debug_four.png" id="2_5ebuv"]
 [ext_resource type="Script" uid="uid://bsbp8hx758p31" path="res://scripts/computer_scene/buffs/jia_ban.gd" id="2_qamte"]
 [ext_resource type="Script" uid="uid://cs12vryminu57" path="res://scripts/computer_scene/buffs/jia_ban_buff_1.gd" id="3_5ebuv"]
+[ext_resource type="Texture2D" uid="uid://dfsgewq4fjbnm" path="res://assets/computer_scene/bad_mood_buff.png" id="4_mssua"]
+[ext_resource type="Texture2D" uid="uid://ddanithc2hc0b" path="res://assets/computer_scene/good_buff.png" id="6_5600i"]
 
 [node name="JiaBan" instance=ExtResource("1_e6a72")]
 mood = -10
@@ -18,11 +20,13 @@ texture = ExtResource("2_5ebuv")
 [node name="Buff" type="Node" parent="Buffs" index="0"]
 script = ExtResource("2_qamte")
 duration = -9
+icon = ExtResource("4_mssua")
 description = "本回合剩余时间内，心情不会增加"
 metadata/_custom_type_script = "uid://dwhc1hbrg4em"
 
 [node name="Buff2" type="Node" parent="Buffs" index="1"]
 script = ExtResource("3_5ebuv")
 duration = -9
+icon = ExtResource("6_5600i")
 description = "本回合剩余时间内，每推进1项目进度，资金+2"
 metadata/_custom_type_script = "uid://dwhc1hbrg4em"

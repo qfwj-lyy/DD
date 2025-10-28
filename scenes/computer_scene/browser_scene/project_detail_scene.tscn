@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cax5mq720ke3t" path="res://assets/computer_scene/close.png" id="4_phpt5"]
 [ext_resource type="Texture2D" uid="uid://bcthvv1wghrxk" path="res://assets/projects/background_level2.png" id="4_qlnok"]
 
-[node name="ProjectDetailScene" type="Control" node_paths=PackedStringArray("project_name_label", "initial_progress_label", "initial_bug_amount_label", "bug_amount_limit_label", "initial_money_label", "initial_mood_label", "initial_skill_label", "description_label", "deposit_reward_label", "accept_task_icon", "reject_task_icon", "project_icon")]
+[node name="ProjectDetailScene" type="Control" node_paths=PackedStringArray("project_name_label", "initial_progress_label", "initial_bug_amount_label", "bug_amount_limit_label", "initial_money_label", "initial_mood_label", "initial_skill_label", "description_label", "deposit_reward_label", "reject_task_icon", "project_icon", "texture_rect_level_0", "texture_rect_level_1", "texture_rect_level_2")]
 z_index = 4096
 custom_minimum_size = Vector2(980, 360)
 layout_mode = 3
@@ -30,9 +30,11 @@ initial_mood_label = NodePath("InitialMoodLabel")
 initial_skill_label = NodePath("InitialSkillLabel")
 description_label = NodePath("DescriptionPanel/DescriptionLabel")
 deposit_reward_label = NodePath("DescriptionPanel/DepositRewardLabel")
-accept_task_icon = NodePath("AcceptTaskIcon")
 reject_task_icon = NodePath("RejectTaskIcon")
 project_icon = NodePath("ProjectIcon")
+texture_rect_level_0 = NodePath("Background/TextureRectLevel0")
+texture_rect_level_1 = NodePath("Background/TextureRectLevel1")
+texture_rect_level_2 = NodePath("Background/TextureRectLevel2")
 
 [node name="Background" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -44,6 +46,7 @@ offset_bottom = 1250.0
 mouse_filter = 1
 
 [node name="TextureRectLevel0" type="TextureRect" parent="Background"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,6 +57,7 @@ texture = ExtResource("2_sjdqb")
 expand_mode = 1
 
 [node name="TextureRectLevel1" type="TextureRect" parent="Background"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -64,6 +68,7 @@ texture = ExtResource("3_7i22h")
 expand_mode = 1
 
 [node name="TextureRectLevel2" type="TextureRect" parent="Background"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -75,11 +80,12 @@ expand_mode = 1
 
 [node name="ProjectNameLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1208.0
-offset_top = 571.0
-offset_right = 1336.0
-offset_bottom = 616.0
-text = "项目名称"
+offset_left = 1204.0
+offset_top = 590.0
+offset_right = 1588.0
+offset_bottom = 635.0
+text = "测试测试测试测试测试测试"
+text_overrun_behavior = 6
 
 [node name="InitialProgressLabel" type="Label" parent="."]
 layout_mode = 0
@@ -95,6 +101,7 @@ offset_left = 840.0
 offset_top = 747.0
 offset_right = 1058.0
 offset_bottom = 792.0
+theme_override_font_sizes/font_size = 28
 text = "项目初始bug数"
 
 [node name="BugAmountLimitLabel" type="Label" parent="."]
@@ -103,7 +110,8 @@ offset_left = 838.0
 offset_top = 796.0
 offset_right = 1120.0
 offset_bottom = 841.0
-text = "用户对bug的忍耐度"
+theme_override_font_sizes/font_size = 28
+text = "用户对bug忍耐度"
 
 [node name="InitialMoneyLabel" type="Label" parent="."]
 layout_mode = 0
@@ -135,7 +143,6 @@ offset_left = 1488.0
 offset_top = 545.0
 offset_right = 1538.0
 offset_bottom = 595.0
-mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="RejectTaskIcon"]
 layout_mode = 1
@@ -152,7 +159,7 @@ offset_left = 840.0
 offset_top = 540.0
 offset_right = 1040.0
 offset_bottom = 740.0
-mouse_filter = 1
+expand_mode = 1
 
 [node name="DescriptionPanel" type="Panel" parent="."]
 layout_mode = 0
@@ -165,8 +172,9 @@ mouse_filter = 1
 [node name="DescriptionLabel" type="Label" parent="DescriptionPanel"]
 layout_mode = 1
 offset_right = 555.0
-offset_bottom = 204.0
+offset_bottom = 243.0
 text = "buffs内容："
+autowrap_mode = 3
 
 [node name="DepositRewardLabel" type="Label" parent="DescriptionPanel"]
 layout_mode = 1
@@ -179,7 +187,7 @@ offset_bottom = -35.0
 grow_vertical = 0
 text = "项目总收入："
 
-[node name="AcceptTaskIcon" type="Panel" parent="."]
+[node name="AcceptTaskButton" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -193,7 +201,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="TextureRect" type="TextureRect" parent="AcceptTaskIcon"]
+[node name="TextureRect" type="TextureRect" parent="AcceptTaskButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -203,7 +211,7 @@ grow_vertical = 2
 texture = ExtResource("3_i6rdu")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="AcceptTaskIcon"]
+[node name="Label" type="Label" parent="AcceptTaskButton"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 15
@@ -214,3 +222,6 @@ grow_vertical = 2
 text = "接受"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="gui_input" from="RejectTaskIcon" to="." method="_on_reject_task_icon_gui_input"]
+[connection signal="pressed" from="AcceptTaskButton" to="." method="_on_accept_task_button_pressed"]

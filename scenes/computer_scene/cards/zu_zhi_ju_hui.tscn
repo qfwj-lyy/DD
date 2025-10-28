@@ -21,4 +21,5 @@ texture = ExtResource("3_wmrol")
 script = ExtResource("3_g2u1g")
 duration = -9
 execution_time = 3
+description = "本回合剩余时间内，每单位时间心情-1，技术+3"
 metadata/_custom_type_script = "uid://dwhc1hbrg4em"

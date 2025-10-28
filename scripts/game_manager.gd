@@ -63,8 +63,8 @@ func scale_all_nodes(node: Node):
 		scale_all_nodes(child)
 # 整个软件的开始
 func _ready() -> void:
-	print("这是测试版。正式版需要修改存储地址")
-	print("测试开启了窗口置顶")
+	#print("这是测试版。正式版需要修改存储地址")
+	#print("测试开启了窗口置顶")
 	#get_tree().root.content_scale_size = Vector2(1,1)
 
 	DisplayServer.window_set_size(Vector2(1280 , 800))

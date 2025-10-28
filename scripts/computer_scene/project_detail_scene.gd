@@ -11,32 +11,32 @@ var project_button
 @export var initial_skill_label: Node
 @export var description_label: Node
 @export var deposit_reward_label : Node
-@export var accept_task_icon : TextureRect
 @export var reject_task_icon : TextureRect
 @export var project_icon : TextureRect
+@export var texture_rect_level_0: Node
+@export var texture_rect_level_1: Node
+@export var texture_rect_level_2: Node
 
 func set_project_information(project : Project , level):
 	displayed_project = project
 	project_icon.texture = project.icon
-	project_name_label.text = "项目名称：" + project.project_name
+	project_name_label.text = project.project_name
 	initial_progress_label.text = "项目初始进度：" + str(int(project.initial_progress))
 	initial_bug_amount_label.text = "项目初始bug数：" + str(int(project.initial_bug_amount))
-	bug_amount_limit_label.text = "用户对bug的忍耐度：" + str(int(project.bug_amount_limit))
+	bug_amount_limit_label.text = "用户对bug忍耐度:" + str(int(project.bug_amount_limit))
 	initial_money_label.text = "初始资金：" + str(int(project.initial_money))
 	initial_mood_label.text = "参与意向：" + str(int(project.initial_mood))
 	initial_skill_label.text = "项目内容熟练度：" + str(int(project.initial_skill))
 	deposit_reward_label.text = "项目总收入：" + str(int(project.deposit_reward))
 	description_label.text = project.description
 	match level:
-		"LOW":
-			pass
-		"MID":
-			pass
-		"HIGH":
-			pass
+		ProjectSupplier.ProjectLevel.LOW:
+			texture_rect_level_0.show()
+		ProjectSupplier.ProjectLevel.MID:
+			texture_rect_level_1.show()
+		ProjectSupplier.ProjectLevel.HIGH:
+			texture_rect_level_2.show()
 	
-func _on_project_button_pressed() -> void:
-	choose_project()
 
 func choose_project():
 	if G.P.has_project:
@@ -70,3 +70,6 @@ func choose_project():
 func _on_reject_task_icon_gui_input(event: InputEvent) -> void:
 	if event.is_action_released("LeftMouseDown"):
 		queue_free()
+
+func _on_accept_task_button_pressed() -> void:
+	choose_project()

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsauty0ws54vg"]
+[gd_scene load_steps=6 format=3 uid="uid://bsauty0ws54vg"]
 
 [ext_resource type="PackedScene" uid="uid://cl4ah171acyxi" path="res://scenes/computer_scene/cards/card.tscn" id="1_ywn3v"]
 [ext_resource type="Script" uid="uid://bse3ljhhcaude" path="res://scripts/computer_scene/activity_cards/activity_card.gd" id="2_y40ya"]
 [ext_resource type="Texture2D" uid="uid://cvpp6p2oje336" path="res://assets/cards/ac_four.png" id="3_qq75u"]
 [ext_resource type="Script" uid="uid://bylbyp7dquvra" path="res://scripts/computer_scene/buffs/tiao_zheng_zuo_xi.gd" id="3_y40ya"]
+[ext_resource type="Texture2D" uid="uid://ddanithc2hc0b" path="res://assets/computer_scene/good_buff.png" id="5_m7ry0"]
 
 [node name="TiaoZhengZuoXi" instance=ExtResource("1_ywn3v")]
 script = ExtResource("2_y40ya")
@@ -20,4 +21,6 @@ texture = ExtResource("3_qq75u")
 script = ExtResource("3_y40ya")
 duration = -9
 execution_time = 3
+icon = ExtResource("5_m7ry0")
+description = "本回合剩余时间内，每单位时间心情+2"
 metadata/_custom_type_script = "uid://dwhc1hbrg4em"

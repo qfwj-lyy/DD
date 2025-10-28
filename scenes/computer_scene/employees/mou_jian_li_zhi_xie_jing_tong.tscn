@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnlu71bu6okh8"]
+[gd_scene load_steps=5 format=3 uid="uid://bnlu71bu6okh8"]
 
 [ext_resource type="PackedScene" uid="uid://dhjv4wwlto6p1" path="res://scenes/computer_scene/employees/employee.tscn" id="1_722y8"]
 [ext_resource type="Script" uid="uid://cb260f8732kag" path="res://scripts/computer_scene/buffs/property_buff.gd" id="2_kmytk"]
+[ext_resource type="Texture2D" uid="uid://ddanithc2hc0b" path="res://assets/computer_scene/good_buff.png" id="3_hjti8"]
 [ext_resource type="Texture2D" uid="uid://dsxh4c0ig821c" path="res://assets/employees/沧桑_202510280326_43751.png" id="3_kmytk"]
 
 [node name="MouJianLiZhiXieJingTong" instance=ExtResource("1_722y8")]
@@ -18,9 +19,10 @@ script = ExtResource("2_kmytk")
 project_progress = 5
 duration = -7
 execution_time = 3
+icon = ExtResource("3_hjti8")
 description = "增益：每单位时间项目进度+5"
 metadata/_custom_type_script = "uid://cb260f8732kag"
 
-[node name="EmployeeRect" parent="." index="2"]
+[node name="EmployeeRect" parent="." index="1"]
 texture = ExtResource("3_kmytk")
 expand_mode = 1

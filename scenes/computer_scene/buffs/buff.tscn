@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cnv0vfvik148k"]
+[gd_scene load_steps=3 format=3 uid="uid://cnv0vfvik148k"]
 
 [ext_resource type="Script" uid="uid://dwhc1hbrg4em" path="res://scripts/computer_scene/buffs/buff.gd" id="1_ypt3p"]
+[ext_resource type="Texture2D" uid="uid://dn15d3dlfgdiq" path="res://assets/computer_scene/buff_background.png" id="2_rgpp1"]
 
 [node name="Buff" type="Node"]
 script = ExtResource("1_ypt3p")
+icon = ExtResource("2_rgpp1")

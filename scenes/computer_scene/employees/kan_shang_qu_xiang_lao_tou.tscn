@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://beamy6viw6kku"]
+[gd_scene load_steps=7 format=3 uid="uid://beamy6viw6kku"]
 
 [ext_resource type="PackedScene" uid="uid://dhjv4wwlto6p1" path="res://scenes/computer_scene/employees/employee.tscn" id="1_depv1"]
 [ext_resource type="Texture2D" uid="uid://u3gydxy0lqcw" path="res://assets/employees/大牛_202510280325_45442.png" id="2_l72nb"]
+[ext_resource type="Texture2D" uid="uid://ddanithc2hc0b" path="res://assets/computer_scene/good_buff.png" id="2_xedrc"]
 
 [sub_resource type="GDScript" id="GDScript_l72nb"]
 script/source = "extends Buff
@@ -38,6 +39,7 @@ description = "看上去像老头的30岁青年
 [node name="Buff" type="Node" parent="Buffs" index="0"]
 script = SubResource("GDScript_l72nb")
 duration = -7
+icon = ExtResource("2_xedrc")
 description = "增益：手牌上限+2"
 metadata/_custom_type_script = "uid://dwhc1hbrg4em"
 
@@ -45,6 +47,7 @@ metadata/_custom_type_script = "uid://dwhc1hbrg4em"
 script = SubResource("GDScript_xedrc")
 duration = -7
 execution_time = 1
+icon = ExtResource("2_xedrc")
 description = "增益：每回合开始时获得当前项目进度*10%的项目进度（向下取整）"
 metadata/_custom_type_script = "uid://dwhc1hbrg4em"
 
@@ -52,9 +55,10 @@ metadata/_custom_type_script = "uid://dwhc1hbrg4em"
 script = SubResource("GDScript_lsl7l")
 duration = -7
 execution_time = 1
+icon = ExtResource("2_xedrc")
 description = "增益：每回合开始时减少当前bug数*10%的bug（向下取整）"
 metadata/_custom_type_script = "uid://dwhc1hbrg4em"
 
-[node name="EmployeeRect" parent="." index="2"]
+[node name="EmployeeRect" parent="." index="1"]
 texture = ExtResource("2_l72nb")
 expand_mode = 1

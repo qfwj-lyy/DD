@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://solv7juotum6"]
+[gd_scene load_steps=6 format=3 uid="uid://solv7juotum6"]
 
 [ext_resource type="PackedScene" uid="uid://cl4ah171acyxi" path="res://scenes/computer_scene/cards/card.tscn" id="1_nerpe"]
 [ext_resource type="Script" uid="uid://bse3ljhhcaude" path="res://scripts/computer_scene/activity_cards/activity_card.gd" id="2_goicj"]
 [ext_resource type="Script" uid="uid://baemv6n8an8e8" path="res://scripts/computer_scene/buffs/wang_ba_tong_xiao.gd" id="3_goicj"]
 [ext_resource type="Texture2D" uid="uid://dhnklju3hspre" path="res://assets/cards/ac_five.png" id="3_j7ynr"]
+[ext_resource type="Texture2D" uid="uid://dfsgewq4fjbnm" path="res://assets/computer_scene/bad_mood_buff.png" id="5_7emw0"]
 
 [node name="WangBaTongXiao" instance=ExtResource("1_nerpe")]
 script = ExtResource("2_goicj")
@@ -21,4 +22,6 @@ texture = ExtResource("3_j7ynr")
 script = ExtResource("3_goicj")
 duration = -9
 execution_time = 3
+icon = ExtResource("5_7emw0")
+description = "本回合剩余时间内，每单位时间心情-3"
 metadata/_custom_type_script = "uid://dwhc1hbrg4em"

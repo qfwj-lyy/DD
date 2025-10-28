@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6h4v0hx5xfh2"]
+[gd_scene load_steps=6 format=3 uid="uid://c6h4v0hx5xfh2"]
 
 [ext_resource type="PackedScene" uid="uid://cl4ah171acyxi" path="res://scenes/computer_scene/cards/card.tscn" id="1_ut06m"]
 [ext_resource type="Script" uid="uid://6bbps2e1eqgu" path="res://scripts/computer_scene/debug_cards/debug_card.gd" id="2_e44sg"]
 [ext_resource type="Script" uid="uid://bxtyh0uosrwvq" path="res://scripts/computer_scene/buffs/ai_tiao_zheng_xiang_mu_kuang_jia.gd" id="3_juo4i"]
 [ext_resource type="Texture2D" uid="uid://dpb47rolwbt1y" path="res://assets/cards/debug_five.png" id="3_tv25s"]
+[ext_resource type="Texture2D" uid="uid://ddanithc2hc0b" path="res://assets/computer_scene/good_buff.png" id="5_uyiaj"]
 
 [node name="aiTiaoZhengXiangMuKuangJia(Once)" instance=ExtResource("1_ut06m")]
 script = ExtResource("2_e44sg")
@@ -20,4 +21,6 @@ texture = ExtResource("3_tv25s")
 script = ExtResource("3_juo4i")
 duration = -9999
 execution_time = 1
+icon = ExtResource("5_uyiaj")
+description = "本轮游戏的剩余时间内，每回合开始时项目进度+3"
 metadata/_custom_type_script = "uid://dwhc1hbrg4em"

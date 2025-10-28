@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dv41xrwaxg2it"]
+[gd_scene load_steps=6 format=3 uid="uid://dv41xrwaxg2it"]
 
 [ext_resource type="PackedScene" uid="uid://cl4ah171acyxi" path="res://scenes/computer_scene/cards/card.tscn" id="1_t1wqu"]
 [ext_resource type="Script" uid="uid://bnnchvw06cjkj" path="res://scripts/computer_scene/buffs/jie_dai_root.gd" id="2_mbdop"]
 [ext_resource type="Texture2D" uid="uid://cvpp6p2oje336" path="res://assets/cards/ac_four.png" id="3_ieeg5"]
 [ext_resource type="Script" uid="uid://cc5k7pmsewn6c" path="res://scripts/computer_scene/buffs/jie_dai.gd" id="3_mbdop"]
+[ext_resource type="Texture2D" uid="uid://dvjkb3cq1qwt8" path="res://assets/computer_scene/bad_buff.png" id="5_m8t1l"]
 
 [node name="JieDai" instance=ExtResource("1_t1wqu")]
 script = ExtResource("2_mbdop")
@@ -20,5 +21,6 @@ texture = ExtResource("3_ieeg5")
 script = ExtResource("3_mbdop")
 duration = -9
 execution_time = 3
+icon = ExtResource("5_m8t1l")
 description = "本回合剩余时间内每单位时间资金-2"
 metadata/_custom_type_script = "uid://dwhc1hbrg4em"
