@@ -50,3 +50,8 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_released("LeftMouseDown"):
 		window_operation_status = ""
 #endregion
+
+
+func _on_texture_rect_gui_input(event: InputEvent) -> void:
+	if event.is_action_released("LeftMouseDown"):
+		visible = false

@@ -1,5 +1,4 @@
-
-[gd_scene load_steps=220 format=3 uid="uid://ei0t0movgv01"]
+[gd_scene load_steps=222 format=3 uid="uid://ei0t0movgv01"]
 
 [ext_resource type="Script" uid="uid://cyxxmhvja0apb" path="res://scripts/computer_scene/computer_scene.gd" id="1_8g14y"]
 [ext_resource type="Texture2D" uid="uid://by5p2m3k3u3yo" path="res://assets/computer_scene/desktop_background.png" id="2_rw1u3"]
@@ -4309,5 +4308,6 @@ mouse_filter = 2
 [connection signal="child_entered_tree" from="CalendarScene/UnusedHand" to="CalendarScene/UnusedHand" method="_on_child_entered_tree"]
 [connection signal="child_exiting_tree" from="CalendarScene/UnusedHand" to="CalendarScene/UnusedHand" method="_on_child_exiting_tree"]
 [connection signal="gui_input" from="CharacterScene" to="CharacterScene" method="_on_gui_input"]
+[connection signal="gui_input" from="CharacterScene/Close/TextureRect" to="CharacterScene" method="_on_texture_rect_gui_input"]
 [connection signal="gui_input" from="DialogueManager/NextSceneInputRegion" to="DialogueManager" method="_on_next_scene_input_region_gui_input"]
 [connection signal="pressed" from="DialogueManager/NextSceneInputRegion/OpenCharacter" to="DialogueManager" method="_on_open_character_pressed"]

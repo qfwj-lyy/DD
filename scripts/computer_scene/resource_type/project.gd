@@ -13,3 +13,5 @@ class_name Project
 @export var deposit_reward : float
 @export_multiline var description : String
 @export var initial_buffs : Array[Resource]
+
+@export var icon : Texture2D
