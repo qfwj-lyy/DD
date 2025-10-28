@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=220 format=3 uid="uid://ei0t0movgv01"]
 
 [ext_resource type="Script" uid="uid://cyxxmhvja0apb" path="res://scripts/computer_scene/computer_scene.gd" id="1_8g14y"]
@@ -691,6 +692,9 @@ _data = {
 &"button_down": SubResource("Animation_t7krb"),
 &"button_up": SubResource("Animation_5yyiv")
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2f0w7"]
+bg_color = Color(0.6431373, 0, 0, 1)
 
 [sub_resource type="GDScript" id="GDScript_d84jm"]
 script/source = "extends Control
@@ -2541,12 +2545,16 @@ theme_override_colors/font_color = Color(0.42352942, 0.38431373, 0.38431373, 1)
 theme_override_font_sizes/font_size = 20
 
 [node name="DeliverProjectButton" type="Button" parent="PropertyManager"]
-visible = false
 layout_mode = 0
 offset_left = 231.0
 offset_top = 427.0
 offset_right = 399.0
 offset_bottom = 480.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_2f0w7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2f0w7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2f0w7")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2f0w7")
+theme_override_styles/focus = SubResource("StyleBoxFlat_2f0w7")
 text = "交付项目"
 
 [node name="LabelProperty" type="Control" parent="PropertyManager"]
