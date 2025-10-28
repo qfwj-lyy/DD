@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://r87qtl7hufmt"]
+[gd_scene load_steps=7 format=3 uid="uid://r87qtl7hufmt"]
 
 [ext_resource type="Script" uid="uid://bcy5o23ro4f5y" path="res://scripts/computer_scene/project_detail_scene.gd" id="1_rvwmx"]
+[ext_resource type="Texture2D" uid="uid://b2p4snljiko4f" path="res://assets/projects/background_level0.png" id="2_sjdqb"]
+[ext_resource type="Texture2D" uid="uid://dbex0l6c10r8p" path="res://assets/projects/background_level1.png" id="3_7i22h"]
+[ext_resource type="Texture2D" uid="uid://c18x81oqpy43y" path="res://assets/projects/accept_button.png" id="3_i6rdu"]
+[ext_resource type="Texture2D" uid="uid://cax5mq720ke3t" path="res://assets/computer_scene/close.png" id="4_phpt5"]
+[ext_resource type="Texture2D" uid="uid://bcthvv1wghrxk" path="res://assets/projects/background_level2.png" id="4_qlnok"]
 
 [node name="ProjectDetailScene" type="Control" node_paths=PackedStringArray("project_name_label", "initial_progress_label", "initial_bug_amount_label", "bug_amount_limit_label", "initial_money_label", "initial_mood_label", "initial_skill_label", "description_label", "deposit_reward_label", "accept_task_icon", "reject_task_icon", "project_icon")]
 z_index = 4096
@@ -30,86 +35,116 @@ reject_task_icon = NodePath("RejectTaskIcon")
 project_icon = NodePath("ProjectIcon")
 
 [node name="Background" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 offset_left = 800.0
 offset_top = 500.0
-offset_right = 1500.0
+offset_right = 1600.0
 offset_bottom = 1250.0
+mouse_filter = 1
 
-[node name="ProjectNameLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 1100.0
-offset_top = 540.0
-offset_right = 1228.0
-offset_bottom = 585.0
-text = "项目名称"
-
-[node name="InitialProgressLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 1100.0
-offset_top = 740.0
-offset_right = 1292.0
-offset_bottom = 785.0
-text = "项目初始进度"
-
-[node name="InitialBugAmountLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 1100.0
-offset_top = 790.0
-offset_right = 1318.0
-offset_bottom = 835.0
-text = "项目初始bug数"
-
-[node name="BugAmountLimitLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 1100.0
-offset_top = 840.0
-offset_right = 1382.0
-offset_bottom = 885.0
-text = "用户对bug的忍耐度"
-
-[node name="InitialMoneyLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 1100.0
-offset_top = 590.0
-offset_right = 1228.0
-offset_bottom = 635.0
-text = "初始资金"
-
-[node name="InitialMoodLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 1100.0
-offset_top = 640.0
-offset_right = 1228.0
-offset_bottom = 685.0
-text = "参与意向"
-
-[node name="InitialSkillLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 1100.0
-offset_top = 690.0
-offset_right = 1324.0
-offset_bottom = 735.0
-text = "项目内容熟练度"
-
-[node name="AcceptTaskIcon" type="TextureRect" parent="."]
+[node name="TextureRectLevel0" type="TextureRect" parent="Background"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1284.0
-offset_top = 1125.0
-offset_right = -1076.0
-offset_bottom = -375.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_sjdqb")
+expand_mode = 1
+
+[node name="TextureRectLevel1" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_7i22h")
+expand_mode = 1
+
+[node name="TextureRectLevel2" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_qlnok")
+expand_mode = 1
+
+[node name="ProjectNameLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1208.0
+offset_top = 571.0
+offset_right = 1336.0
+offset_bottom = 616.0
+text = "项目名称"
+
+[node name="InitialProgressLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1172.0
+offset_top = 787.0
+offset_right = 1364.0
+offset_bottom = 832.0
+text = "项目初始进度"
+
+[node name="InitialBugAmountLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 747.0
+offset_right = 1058.0
+offset_bottom = 792.0
+text = "项目初始bug数"
+
+[node name="BugAmountLimitLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 838.0
+offset_top = 796.0
+offset_right = 1120.0
+offset_bottom = 841.0
+text = "用户对bug的忍耐度"
+
+[node name="InitialMoneyLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1173.0
+offset_top = 639.0
+offset_right = 1301.0
+offset_bottom = 684.0
+text = "初始资金"
+
+[node name="InitialMoodLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1174.0
+offset_top = 689.0
+offset_right = 1302.0
+offset_bottom = 734.0
+text = "参与意向"
+
+[node name="InitialSkillLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1175.0
+offset_top = 738.0
+offset_right = 1399.0
+offset_bottom = 783.0
+text = "项目内容熟练度"
 
 [node name="RejectTaskIcon" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 1400.0
-offset_top = 550.0
-offset_right = 1450.0
-offset_bottom = 600.0
+offset_left = 1488.0
+offset_top = 545.0
+offset_right = 1538.0
+offset_bottom = 595.0
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="RejectTaskIcon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_phpt5")
 
 [node name="ProjectIcon" type="TextureRect" parent="."]
 layout_mode = 0
@@ -117,20 +152,15 @@ offset_left = 840.0
 offset_top = 540.0
 offset_right = 1040.0
 offset_bottom = 740.0
-
-[node name="LevelPanel" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 1450.0
-offset_top = 450.0
-offset_right = 1550.0
-offset_bottom = 550.0
+mouse_filter = 1
 
 [node name="DescriptionPanel" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 863.0
-offset_top = 920.0
-offset_right = 1463.0
-offset_bottom = 1200.0
+offset_left = 878.0
+offset_top = 872.0
+offset_right = 1533.0
+offset_bottom = 1196.0
+mouse_filter = 1
 
 [node name="DescriptionLabel" type="Label" parent="DescriptionPanel"]
 layout_mode = 1
@@ -149,11 +179,38 @@ offset_bottom = -35.0
 grow_vertical = 0
 text = "项目总收入："
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 1060.0
-offset_top = 540.0
-offset_right = 1070.0
-offset_bottom = 890.0
+[node name="AcceptTaskIcon" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1373.0
+offset_top = 1128.0
+offset_right = -987.0
+offset_bottom = -372.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
 
-[connection signal="gui_input" from="RejectTaskIcon" to="." method="_on_reject_task_icon_gui_input"]
+[node name="TextureRect" type="TextureRect" parent="AcceptTaskIcon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_i6rdu")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="AcceptTaskIcon"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "接受"
+horizontal_alignment = 1
+vertical_alignment = 1
