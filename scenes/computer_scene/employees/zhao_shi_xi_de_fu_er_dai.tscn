@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://di6dmnal3qh68"]
+[gd_scene load_steps=3 format=3 uid="uid://di6dmnal3qh68"]
 
 [ext_resource type="PackedScene" uid="uid://dhjv4wwlto6p1" path="res://scenes/computer_scene/employees/employee.tscn" id="1_glnfd"]
+[ext_resource type="Texture2D" uid="uid://b8cpbah73skkm" path="res://assets/employees/黄毛富二代_202510280326_23727.png" id="2_s5c2w"]
 
 [node name="ZhaoShiXiDeFuErDai" instance=ExtResource("1_glnfd")]
 joining_expenditure = -3
@@ -10,3 +11,7 @@ pay_interval_days = 5
 description = "找实习的富二代
 -3入职资金，6离职资金，工资：-3资金/5时间
 无特殊效果"
+
+[node name="EmployeeRect" parent="." index="2"]
+texture = ExtResource("2_s5c2w")
+expand_mode = 1

@@ -10,7 +10,7 @@ class_name Calender
 
 func _ready() -> void:
 	position.y = 1600 #这里我也不知道为什么，反正就是有个bug
-	#visible = false
+	visible = true
 
 signal a_debug_card_used()
 signal an_activity_card_used()

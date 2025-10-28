@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://celhihld0r7vr"]
+[gd_scene load_steps=4 format=3 uid="uid://celhihld0r7vr"]
 
 [ext_resource type="PackedScene" uid="uid://dhjv4wwlto6p1" path="res://scenes/computer_scene/employees/employee.tscn" id="1_iwlvo"]
+[ext_resource type="Texture2D" uid="uid://kifjvb82wmsp" path="res://assets/employees/李华_202510280326_51834.png" id="2_2wqk5"]
 
 [sub_resource type="GDScript" id="GDScript_2wqk5"]
 script/source = "extends Buff
@@ -23,3 +24,7 @@ duration = -7
 execution_time = 1
 description = "增益：每回合开始时，获得当前项目进度的 -10% ~ 10%的项目进度（向上取整）"
 metadata/_custom_type_script = "uid://dwhc1hbrg4em"
+
+[node name="EmployeeRect" parent="." index="2"]
+texture = ExtResource("2_2wqk5")
+expand_mode = 1

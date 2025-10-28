@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://beamy6viw6kku"]
+[gd_scene load_steps=6 format=3 uid="uid://beamy6viw6kku"]
 
 [ext_resource type="PackedScene" uid="uid://dhjv4wwlto6p1" path="res://scenes/computer_scene/employees/employee.tscn" id="1_depv1"]
+[ext_resource type="Texture2D" uid="uid://dsxh4c0ig821c" path="res://assets/employees/沧桑_202510280326_43751.png" id="2_l72nb"]
 
 [sub_resource type="GDScript" id="GDScript_l72nb"]
 script/source = "extends Buff
@@ -53,3 +54,7 @@ duration = -7
 execution_time = 1
 description = "增益：每回合开始时减少当前bug数*10%的bug（向下取整）"
 metadata/_custom_type_script = "uid://dwhc1hbrg4em"
+
+[node name="EmployeeRect" parent="." index="2"]
+texture = ExtResource("2_l72nb")
+expand_mode = 1
