@@ -1,10 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://cd6rf0dya4jhd"]
+[gd_scene load_steps=4 format=3 uid="uid://cd6rf0dya4jhd"]
 
 [ext_resource type="PackedScene" uid="uid://cnv0vfvik148k" path="res://scenes/computer_scene/buffs/buff.tscn" id="1_e0g3e"]
 [ext_resource type="Script" uid="uid://cx3ptsrd2gg3m" path="res://scripts/computer_scene/buffs/zhong_wang_suo_gui.gd" id="2_uny8c"]
+[ext_resource type="Texture2D" uid="uid://ddanithc2hc0b" path="res://assets/computer_scene/good_buff.png" id="3_uny8c"]
 
 [node name="ZhongWangSuoGui" instance=ExtResource("1_e0g3e")]
 script = ExtResource("2_uny8c")
 duration = -9999
 execution_time = 1
+icon = ExtResource("3_uny8c")
 description = "众望所归：每回合开始时，获得(项目进度-bug数)的资金（不会为负）"

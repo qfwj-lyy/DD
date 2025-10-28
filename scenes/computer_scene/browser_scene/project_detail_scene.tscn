@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bcy5o23ro4f5y" path="res://scripts/computer_scene/project_detail_scene.gd" id="1_rvwmx"]
 
-[node name="ProjectDetailScene" type="Control" node_paths=PackedStringArray("project_name_label", "initial_progress_label", "initial_bug_amount_label", "bug_amount_limit_label", "initial_money_label", "initial_mood_label", "initial_skill_label", "description_label", "deposit_reward_label")]
+[node name="ProjectDetailScene" type="Control" node_paths=PackedStringArray("project_name_label", "initial_progress_label", "initial_bug_amount_label", "bug_amount_limit_label", "initial_money_label", "initial_mood_label", "initial_skill_label", "description_label", "deposit_reward_label", "accept_task_icon", "reject_task_icon", "project_icon")]
 z_index = 4096
 custom_minimum_size = Vector2(980, 360)
 layout_mode = 3
@@ -21,6 +21,9 @@ initial_mood_label = NodePath("InitialMoodLabel")
 initial_skill_label = NodePath("InitialSkillLabel")
 description_label = NodePath("DescriptionLabel")
 deposit_reward_label = NodePath("DepositRewardLabel")
+accept_task_icon = NodePath("AcceptTaskIcon")
+reject_task_icon = NodePath("RejectTaskIcon")
+project_icon = NodePath("ProjectIcon")
 
 [node name="ProjectNameLabel" type="Label" parent="."]
 layout_mode = 0

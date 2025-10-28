@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhhr0nhgyfwvh"
-path="res://.godot/imported/buff_icon.png-c6ff7bc1f2c0e4190d35b9c1395e0921.ctex"
+uid="uid://cvo5cnfqqd2hs"
+path="res://.godot/imported/buff_description_rect.png-a6d2d18033fb07b837654160ba40aac0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/computer_scene/buff_icon.png"
-dest_files=["res://.godot/imported/buff_icon.png-c6ff7bc1f2c0e4190d35b9c1395e0921.ctex"]
+source_file="res://assets/computer_scene/buff_description_rect.png"
+dest_files=["res://.godot/imported/buff_description_rect.png-a6d2d18033fb07b837654160ba40aac0.ctex"]
 
 [params]
 

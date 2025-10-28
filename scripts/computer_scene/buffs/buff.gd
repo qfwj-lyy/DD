@@ -15,7 +15,7 @@ enum ExecutionTime {
 }
 @export var execution_time : ExecutionTime
 
-
+@export var icon : Texture2D
 
 @export_multiline var description : String
 

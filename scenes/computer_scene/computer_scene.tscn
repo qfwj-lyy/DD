@@ -44,7 +44,7 @@
 [ext_resource type="Script" uid="uid://dkh4wj1hlvyoe" path="res://scripts/computer_scene/calender_execute_panel.gd" id="26_06as4"]
 [ext_resource type="Texture2D" uid="uid://dn15d3dlfgdiq" path="res://assets/computer_scene/buff_background.png" id="26_7ubm4"]
 [ext_resource type="Script" uid="uid://bhn5ooiof1qnc" path="res://scripts/computer_scene/buff_icon.gd" id="26_si5nn"]
-[ext_resource type="Texture2D" uid="uid://dhhr0nhgyfwvh" path="res://assets/computer_scene/buff_icon.png" id="28_4l718"]
+[ext_resource type="Texture2D" uid="uid://cvo5cnfqqd2hs" path="res://assets/computer_scene/buff_description_rect.png" id="29_56utc"]
 [ext_resource type="Script" uid="uid://b7ucmjrb5s02j" path="res://scripts/computer_scene/dialogue_manager.gd" id="31_yw0uv"]
 [ext_resource type="Texture2D" uid="uid://b4b0vk44f3ar1" path="res://assets/computer_scene/property_open_icon.png" id="32_ea52w"]
 [ext_resource type="Script" uid="uid://caey344n82p3a" path="res://scripts/computer_scene/mandatory_guide.gd" id="33_d84jm"]
@@ -2629,33 +2629,28 @@ script = ExtResource("26_si5nn")
 buff_description = NodePath("BuffDescription")
 description_label = NodePath("BuffDescription/BuffDescriptionLabel")
 
-[node name="TextureRect" type="TextureRect" parent="PropertyManager/BuffManager/BuffIcon"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("28_4l718")
-expand_mode = 1
-
-[node name="BuffDescription" type="Panel" parent="PropertyManager/BuffManager/BuffIcon"]
+[node name="BuffDescription" type="TextureRect" parent="PropertyManager/BuffManager/BuffIcon"]
 layout_mode = 0
 offset_left = -250.0
 offset_top = 50.0
 offset_right = 50.0
 offset_bottom = 450.0
 mouse_filter = 2
+texture = ExtResource("29_56utc")
 
 [node name="BuffDescriptionLabel" type="Label" parent="PropertyManager/BuffManager/BuffIcon/BuffDescription"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.42352942, 0.38431373, 0.38431373, 1)
-text = "测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试 "
+text = "测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"
 autowrap_mode = 3
 text_overrun_behavior = 6
 

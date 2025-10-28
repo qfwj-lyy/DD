@@ -11,6 +11,9 @@ var project_button
 @export var initial_skill_label: Node
 @export var description_label: Node
 @export var deposit_reward_label : Node
+@export var accept_task_icon : Node
+@export var reject_task_icon : Node
+@export var project_icon : TextureRect
 
 func set_project_information(project : Project):
 	displayed_project = project
@@ -34,6 +37,8 @@ func choose_project():
 	project_button.clear()
 	
 	var p : Project = displayed_project
+	project_icon.texture = p.icon
+	
 	G.P.set_current_project(p)
 	G.P.set_money(p.initial_money)
 	G.P.set_mood(p.initial_mood)
@@ -42,6 +47,7 @@ func choose_project():
 	G.P.set_bug_amount(p.initial_bug_amount)
 	G.P.set_bug_limit(p.bug_amount_limit)
 	G.P.set_bug_rate(p.initial_bug_rate)
+	
 	
 	G.D.display_sentence("接下来就是把项目进度推到100了，好好干，以后年薪百万不是梦啊")
 	for buff_resource in p.initial_buffs:

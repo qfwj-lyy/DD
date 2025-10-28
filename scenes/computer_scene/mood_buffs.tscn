@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bru0rmu3w8g8e"]
+[gd_scene load_steps=8 format=3 uid="uid://bru0rmu3w8g8e"]
 
 [ext_resource type="Script" uid="uid://cabdu12l424p3" path="res://scripts/computer_scene/mood_buffs.gd" id="1_ijhca"]
+[ext_resource type="Texture2D" uid="uid://x6ll2porpwpl" path="res://assets/computer_scene/mood_buff.png" id="2_nrgxu"]
 
 [sub_resource type="GDScript" id="GDScript_d84jm"]
 script/source = "extends Buff
@@ -95,18 +96,21 @@ script = ExtResource("1_ijhca")
 [node name="Mood20Buff" type="Node" parent="."]
 script = SubResource("GDScript_d84jm")
 duration = -8
+icon = ExtResource("2_nrgxu")
 description = "心情20buff：增加1手牌上限"
 metadata/_custom_type_script = "uid://dwhc1hbrg4em"
 
 [node name="Mood50Buff" type="Node" parent="."]
 script = SubResource("GDScript_t7krb")
 duration = -8
+icon = ExtResource("2_nrgxu")
 description = "心情50buff：增加2手牌上限"
 metadata/_custom_type_script = "uid://dwhc1hbrg4em"
 
 [node name="Mood60Buff" type="Node" parent="."]
 script = SubResource("GDScript_kbgpp")
 duration = -8
+icon = ExtResource("2_nrgxu")
 description = "心情60buff：商店可以刷出稀有卡片"
 metadata/_custom_type_script = "uid://dwhc1hbrg4em"
 
@@ -114,6 +118,7 @@ metadata/_custom_type_script = "uid://dwhc1hbrg4em"
 script = SubResource("GDScript_5yyiv")
 duration = -8
 execution_time = 3
+icon = ExtResource("2_nrgxu")
 description = "心情90buff：bug数每单位时间-1"
 metadata/_custom_type_script = "uid://dwhc1hbrg4em"
 
@@ -122,5 +127,6 @@ script = SubResource("GDScript_d88ux")
 project_progress = 3
 duration = -8
 execution_time = 2
+icon = ExtResource("2_nrgxu")
 description = "心情100buff：项目进度每回合+3"
 metadata/_custom_type_script = "uid://cb260f8732kag"
