@@ -3920,7 +3920,6 @@ libraries = {
 }
 
 [node name="CalendarScene" type="Panel" parent="." node_paths=PackedStringArray("debug_hand", "activity_hand", "unused_hand", "round_tips_label")]
-visible = false
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 1060.0
